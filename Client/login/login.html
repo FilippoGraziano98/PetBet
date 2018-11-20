@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title> PetBet - Login </title>
+		<meta name="author" content="PetBet">
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<script type="text/javascript" lang="javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" lang="javascript" src="login.js"></script>
+		<link rel=stylesheet type="text/css" href="../css/main_style.css">
+		</script>
+	</head>
+	<body>
+		<div class=title name="login_header" id="login_header">
+			ACCEDI<br>
+			<br>
+		</div>
+		<div class=subtitle name="login_sub_header" id="login_sub_header">
+		</div>
+		<div class=form_paragraph name="login_paragraph" id="login_paragraph">
+			<br>
+			<form method="post" name="formLogin">
+					<br><br><br><br><br><br><br> 
+					<input type="text" name="email"  placeholder="Email" required autofocus/>
+					<br><br>
+					<input type="password" name="password" placeholder="Password" required/>
+					<br><br>
+					<input type="checkbox" name="rememberMe" size="3">
+					Ricordami
+					<br><br>
+				<button class=users name="login_btn" id="login_btn" onclick="login()">Login</button><br>
+					<br><br>
+					Non hai un account?
+					<a href="../register/register.html" title="Link per registrazione">Registrati<a> 
+			</form>
+		</div>
+	</body>
+</html>

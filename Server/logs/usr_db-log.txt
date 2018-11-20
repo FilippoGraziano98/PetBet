@@ -1,0 +1,103 @@
+[insert] gerald,h4ck3rpwd
+[insert] filippo,gugu
+[insert] gerald,h4ck3rpwd
+[insert] gerald,h4ck3rpwd
+[insert] gerald,h4ck3rpwd
+[insert] gerald,h4ck3rpwd
+[insert] ff,gg
+[query] gerald,h4ck3rpwd	-> found[insert] gerald,h4ck3rpwd
+[insert] gerald,h4ck3rpwd
+[insert] gerald,h4ck3rpwd
+[insert] gerald,h4ck3rpwd
+[insert] gerald,h4ck3rpwd
+[insert] gerald,h4ck3rpwd
+[insert] browser,gugu
+[insert] browser2,gugu
+[insert] chrome3,gaga
+[insert] chrom4,g6g7
+[insert] ghjit,wow3
+[insert] hiserver,nicetomeetyou
+[insert] himate,wowo
+[insert] hiela,ggwp
+[insert] gret,groot
+[insert] jet,jst
+[insert] hhht,
+[insert] groot,gret
+[insert] tret,troot
+[insert] RED,REBd
+[insert] gret,gruot
+[insert] treg,trevv
+[insert] gret,grant
+[insert] ,
+[query] gerald,h4ck3rpwd	-> found[query] gerald,h4ck3rpwd	-> found[query] gerald,h4ck3rpwd	-> found[query] gerald,h4ck3rpwd	-> found[query] gerald,h4ck3rpwd	-> found[query] gerald,h4ck3rpwd	-> found[insert] greta,grunt
+[insert] ,
+[insert] ,
+[insert] ,
+[insert] greta,gruntre
+[insert] ,
+[insert] greta,
+[insert] ,
+[insert] greta,grunnn
+[query] ,	->not found
+[query] ,	->not found
+[query] ,	->not found
+[query] ,	->not found
+[query] ,	->not found
+[query] ,	->not found
+[query] greta,gruuuuu	->not found
+[query] ,	->not found
+[query] ,	->not found
+[query] ,	->not found
+[query] ,	->not found
+[query] ,	->not found
+[query] greta,gruuugt	->not found
+[query] greta,gruntre	->not found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gruntre	-> found
+[query] greta,gretre	->not found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] ,	-> found
+[query] ,	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[query] groot,gret	-> found
+[insert] hansel,gretel

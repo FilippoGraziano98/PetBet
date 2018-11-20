@@ -1,0 +1,87 @@
+:root{
+	--transparent-white: rgba(255, 255, 255, 0.6);
+
+	--light-green: rgba(76,175,80);
+	--forest-green: rgb(34,139,34);
+	--dark-green: rgba(0,100,0);
+
+	--red: rgba(255,0,0);
+	--dark-red: rgba(139,0,0);
+
+	--black: rgba(0,0,0);
+	--dark-gray: rgba(128,128,128);
+}
+
+body {
+	background-image: url("../img/gorilla.jpg");
+	/*just one occurence of the image*/
+	/*background-repeat:no-repeat;*/
+	/*fitting image to browser size*/
+	background-size:cover;
+}
+
+div {
+	text-align:center;
+	background-color: var(--transparent-white);
+	width: 800px;
+	margin: 0 auto;
+}
+
+div.title {
+	font-family: arial;
+	font-size:60px;
+	font-style:extra-bold;
+	font-variant:small-caps;
+	font-weight:bolder;
+	text-decoration:italic;
+	color:blue
+}
+
+div.subtitle {
+	font-family: arial;
+	font-size:30px;
+	font-style:bold;
+	font-variant:small-caps;
+	font-weight:bolder;
+	text-decoration:italic;
+	color:green
+}
+
+div.form_paragraph {
+}
+
+div.login_buttons_paragraph {
+	text-align: right;
+	background-color: var(--transparent);
+}
+
+div.menu {
+	text-align: left;
+	background-color: var(--transparent);
+}
+
+button.users {
+	background-color: var(--dark-green);
+  border: outset;
+  border-color: var(--dark-gray);
+  color: white; /*text color*/
+ 	width: 150px;
+  padding: 16px 0px; /*top&bottom - left&right*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+button.menu {
+	background-color: var(--dark-red);
+  border: outset;
+  border-color: var(--dark-gray);
+  color: white; /*text color*/
+	width: 200px;
+  padding: 16px 0px; /*top&bottom - left&right*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}

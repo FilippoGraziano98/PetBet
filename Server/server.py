@@ -17,7 +17,11 @@ def server_log(response):
 	log+="\t "+str(request)+"\n"
 	log+="\t cookies:"+str(request.cookies)+"\n"
 	if request.method=="POST":
-		log+="\t data: "+str(request.form)
+			if ("application/x-www-form-urlencoded" in request.headers['Content-Type']):
+				#usr = str(request.form['username'])+","+str(request.form['password'])
+				log+="\t data: "+str(request.form)
+			elif ("application/json" in request.headers['Content-Type']):
+				log+="\t data: "+str(request.json)
 	logger.log(log)
 	return response
 
@@ -31,34 +35,35 @@ def index():
 
 @app.route('/register', methods=['POST'])
 def register():
-	try:
-		usr = str(request.form['username'])+","+str(request.form['password'])
-	except:
-		user_data=request.json
-		usr=str(user_data.get('username'))+","+str(user_data.get('password'))
-	user_dbms.insert(usr)
-	return render_template('registration_success.html')
-#	response={"msg":"registration_success"}
-#	return json.dumps(response)
+	if ("application/x-www-form-urlencoded" in request.headers['Content-Type']):
+		usr = request.form
+	elif ("application/json" in request.headers['Content-Type']):
+		usr = request.json
+	else :
+		logger.log("\n[WARNING] Not recognizing the Content-Type of the following register request:")
+		return json.dumps({"msg":"registration_failure__server_not_able_to_understand_data"})
+	
+	if (user_dbms.insert(usr)):
+		response={"msg":"registration_success"}
+	else:
+		response={"msg":"registration_failure__username_already_in_use"}
+	return json.dumps(response)
 
 @app.route('/login', methods=['POST'])
 def login():
-	try:
-		usr = str(request.form['username'])+","+str(request.form['password'])
-	except:
-		user_data=request.json
-		usr=str(user_data.get('username'))+","+str(user_data.get('password'))
-	accept=user_dbms.query(usr)
-	if(accept):
-#		response=make_response(render_template('login_success.html'))
-#		response.set_cookie("session-id","abcd",max_age=60*60*24)#cookie lasting for a hole-day
-#		return response
+	if ("application/x-www-form-urlencoded" in request.headers['Content-Type']):
+		usr = request.form
+	elif ("application/json" in request.headers['Content-Type']):
+		usr = request.json
+	else :
+		logger.log("\n[WARNING] Not recognizing the Content-Type of the following login request:")
+		return json.dumps({"msg":"login_failure__server_not_able_to_understand_data"})
+
+	if (user_dbms.query(usr)):
 		response={"msg":"login_success","cookies":"abcd"}
-		return json.dumps(response)
 	else:
-#		return render_template('login_fail.html')
-		response={"msg":"login_fail"}
-		return json.dumps(response)
+		response={"msg":"login_failure__credentials_not_valid"}
+	return json.dumps(response)
 
 print
 logger=logger("logs/log.txt")

@@ -17,6 +17,14 @@ Content-Type: application/json
 Content-Length: 48
 
 {"username": "gerald", "password": "h4ck3rpwd"}
+
+
+POST /register HTTP/1.1
+Content-Type: application/json
+Content-Length: 278
+
+{"username": "1761694", "giornoNascita": "1", "cittaResidenza": "ge", "password": "e", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "44444", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "ge", "indirizzoResidenza": "gre", "email": "gg@gmail.com"}
+
 -----
 
 POST /login HTTP/1.1

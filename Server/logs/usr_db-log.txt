@@ -101,3 +101,52 @@
 [query] groot,gret	-> found
 [query] groot,gret	-> found
 [insert] hansel,gretel
+[insert] {"username": "33", "giornoNascita": "1", "residenza": "fret", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "email": "gg@gmail.com", "annoNascita": "2000", "sesso": "maschio", "password": "a", "luogoNascita": "fret"}
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "ge", "password": "e", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "44444", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "ge", "indirizzoResidenza": "gre", "email": "gg@gmail.com"}
+[insert] {"username": "gerald", "password": "h4ck3rpwd"}
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "ge", "indirizzoResidenza": "gre", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "44444", "cittaNascita": "ge", "annoNascita": "2000", "sesso": "maschio", "password": "e", "email": "gg@gmail.com"}
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "tm", "password": "e", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "Rm", "indirizzoResidenza": "v gt", "email": "gg@gmail.com"}
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "r", "password": "r", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "r", "indirizzoResidenza": "r", "email": "gg@gmail.com"}
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "t", "password": "3", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "t", "indirizzoResidenza": "t", "email": "gg@gmail.com"}
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "r", "password": "3", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "33333", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "r", "indirizzoResidenza": "r", "email": "gg@gmail.com"}
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "r", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[insert] {"username": "33", "giornoNascita": "1", "cittaResidenza": "4", "password": "f", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[insert] {"username": "ff", "giornoNascita": "1", "cittaResidenza": "4", "password": "r", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[insert] {"username": "ff", "giornoNascita": "1", "cittaResidenza": "4", "password": "f", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[insert] {"username": "ff", "giornoNascita": "1", "cittaResidenza": "4", "password": "r", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: ff[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "r", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "r", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694[check_username] requested user: 1761694[check_username] requested user: 1761694[check_username] requested user: 1761694[check_username] requested user: 1761694[check_username] requested user: 1761694[check_username] requested user: 1761694	-> username not available!
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "d", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "e", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "e", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "r", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "q", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "5", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "t", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "7", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "1761694", "giornoNascita": "1", "cittaResidenza": "4", "password": "i", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "4", "indirizzoResidenza": "4", "email": "gg@gmail.com"}
+[check_username] requested user: 1761694	-> username not available!
+[insert] {"username": "", "giornoNascita": "1", "cittaResidenza": "", "password": "", "meseNascita": "01m", "nome": "", "cognome": "", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": ""}
+[check_username] requested user: 	-> username available
+[query 2018-11-21 23:08:51.898586] {"password": "t", "user": "1761694"}
+[query 2018-11-21 23:09:03.469270] {"password": "t", "user": "1761694"}
+[query 2018-11-21 23:11:13.315710] {"password": "t", "user": "1761694"}
+[query 2018-11-21 23:12:32.917473] {"password": "r", "user": "1761694"}
+[query 2018-11-21 23:12:43.792771] {"password": "t", "user": "1761694"}
+[query 2018-11-21 23:13:19.502739] {"password": "t", "user": "1761694"}	->not found
+[query 2018-11-21 23:13:35.517539] {"password": "yy", "user": "1761694"}	->not found
+[query 2018-11-21 23:17:50.491892] {"password": "e", "user": "1761694"}	-> valid credentials
+[query 2018-11-21 23:23:35.084059] {"password": "e", "user": "1761694"}	-> valid credentials
+[query 2018-11-21 23:23:49.229915] {"password": "e", "user": "1761694"}	-> valid credentials
+[query 2018-11-21 23:25:20.467188] {"password": "e", "user": "1761694"}	-> valid credentials
+[query 2018-11-21 23:25:36.163500] {"password": "t", "user": "1761694"}	-> not valid credentials

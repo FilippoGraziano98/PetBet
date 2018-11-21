@@ -7,23 +7,23 @@ $(document).ready(function(){
 	console.log("redirect_from: "+redirect);
 	if(redirect=="registration"){
 		document.getElementById("login_sub_header").innerHTML="Congratulations!<br>\nServer accepted your registration.<br>\nYou are now a user of PetBet!<br>\n<br>";
-		//window.location.href=
+		//now removing redirect_from from the visualized url
+		var current_url = window.location.href;
+		var update_url = current_url.split("?")[0]
+		console.log(update_url)
+		if(update_url.includes("login.html")){
+			//window.location.href=update_url; //this resulted in reloading the page
+			history.pushState(null, null, update_url);
+		}
 	}
 });
 
-function setCookie(name,value,days) {
-	var expires = "";
-	if (days) {
-		var date = new Date();
-			date.setTime(date.getTime() + (days*24*60*60*1000));
-			expires = "; expires=" + date.toUTCString();
-	}
-	document.cookie = name + "=" + (value || "")	+ expires + "; path=/";
-}
-
 function login(){
 	var url='http://filippo-ubuntu:8000/login'
-	var data={'email':$('#email').val(),'password':$('#password').val()}
+	var data={
+		'user':$('#user').val(),
+		'password':$('#password').val()
+	}
 	$.post(url, data, function onsuccess(_response){
 			var response = JSON.parse(_response);
 			console.log(response);
@@ -37,13 +37,12 @@ function login(){
 				console.log(localStorage.cookies)
 				//goto home with cookies
 				//window.location.replace("../login/login.html?redirect_from=registration")
-			}
-			else if(response.msg=="login_fail"){
-				//window.alert("Your registration failed!\nTry again.")
+			} else if(response.msg=="login_failure__credentials_not_valid"){
 				document.getElementById("login_sub_header").innerHTML="Login failed!<br>\nUser and/or Password wrong!<br>"
-			}
-			else {
-			
+			} else if(response.msg=="login_failure__server_not_able_to_understand_data"){
+				document.getElementById("reg_sub_header").innerHTML="Server wasn't able to parse your data!<br>\nCheck the way you are sending your requests<br>"
+			} else {
+				console.log("unrecognized_server_response");
 			}
 		});
 	document.forms["login_form"].reset();

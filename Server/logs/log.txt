@@ -467,3 +467,179 @@
 	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
 	 cookies:{}
 	 data: ImmutableMultiDict([('username', u'hansel'), ('password', u'gretel')])
+[2018-11-21 19:49:01.119051] server restarted
+[2018-11-21 19:49:01.335304] server restarted
+[2018-11-21 19:49:57.114293] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'33'), ('giornoNascita', u'1'), ('residenza', u'fret'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('email', u'gg@gmail.com'), ('annoNascita', u'2000'), ('sesso', u'maschio'), ('password', u'a'), ('luogoNascita', u'fret')])
+[2018-11-21 19:51:14.102793] server restarted
+[2018-11-21 19:52:02.868576] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'33'), ('giornoNascita', u'1'), ('residenza', u'fret'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('email', u'gg@gmail.com'), ('annoNascita', u'2000'), ('sesso', u'maschio'), ('password', u'a'), ('luogoNascita', u'fret')])
+[2018-11-21 20:00:59.456604] server restarted
+[2018-11-21 20:00:59.557899] server restarted
+[2018-11-21 20:02:32.686641] server restarted
+[2018-11-21 20:04:41.753992] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'33'), ('giornoNascita', u'1'), ('residenza', u'fret'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('email', u'gg@gmail.com'), ('annoNascita', u'2000'), ('sesso', u'maschio'), ('password', u'a'), ('luogoNascita', u'fret')])
+[2018-11-21 20:12:27.043162] server restarted
+[2018-11-21 20:13:11.523839] server restarted
+[2018-11-21 20:13:11.626840] server restarted
+[2018-11-21 20:13:39.328328] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'ge'), ('password', u'e'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'44444'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'ge'), ('indirizzoResidenza', u'gre'), ('email', u'gg@gmail.com')])
+[2018-11-21 20:13:50.185988] server restarted
+[2018-11-21 20:15:45.044962] 127.0.0.1 - "POST /login" 400 BAD REQUEST -
+	 <Request 'http://0.0.0.0:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([])
+[2018-11-21 20:17:24.946961] 127.0.0.1 - "POST /register" 400 BAD REQUEST -
+	 <Request 'http://0.0.0.0:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([])
+[2018-11-21 20:18:54.385345] server restarted
+[2018-11-21 20:21:40.415988] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://0.0.0.0:8000/register' [POST]>
+	 cookies:{}
+	 data: {u'username': u'gerald', u'password': u'h4ck3rpwd'}
+[2018-11-21 20:23:58.837812] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://0.0.0.0:8000/register' [POST]>
+	 cookies:{}
+	 data: {u'username': u'1761694', u'giornoNascita': u'1', u'cittaResidenza': u'ge', u'indirizzoResidenza': u'gre', u'meseNascita': u'01m', u'nome': u'Fil', u'cognome': u'Gra', u'cap': u'44444', u'cittaNascita': u'ge', u'annoNascita': u'2000', u'sesso': u'maschio', u'password': u'e', u'email': u'gg@gmail.com'}
+[2018-11-21 20:24:36.122435] server restarted
+[2018-11-21 20:25:08.585322] server restarted
+[2018-11-21 20:25:33.994303] server restarted
+[2018-11-21 20:40:34.631641] server restarted
+[2018-11-21 20:40:34.735435] server restarted
+[2018-11-21 20:43:01.381326] server restarted
+[2018-11-21 20:44:14.256700] server restarted
+[2018-11-21 20:48:31.970361] server restarted
+[2018-11-21 20:50:28.230271] server restarted
+[2018-11-21 20:51:13.896233] server restarted
+[2018-11-21 20:54:46.214649] server restarted
+[2018-11-21 20:55:07.346688] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'ff'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u'f'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 20:58:18.538586] server restarted
+[2018-11-21 20:59:32.493662] server restarted
+[2018-11-21 21:00:29.607414] server restarted
+[2018-11-21 21:03:38.260176] server restarted
+[2018-11-21 21:03:43.449027] server restarted
+[2018-11-21 21:04:51.011356] server restarted
+[2018-11-21 21:04:55.189312] server restarted
+[2018-11-21 21:25:12.693421] server restarted
+[2018-11-21 21:28:08.443738] server restarted
+[2018-11-21 21:28:08.559120] server restarted
+[2018-11-21 21:30:58.453878] server restarted
+[2018-11-21 21:31:22.872452] server restarted
+[2018-11-21 21:31:59.362776] server restarted
+[2018-11-21 21:32:24.773423] server restarted
+[2018-11-21 21:32:29.036911] 127.0.0.1 - "GET /index" 200 OK -
+	 <Request 'http://0.0.0.0:8000/' [GET]>
+	 cookies:{}
+
+[2018-11-21 21:32:56.260179] server restarted
+[2018-11-21 21:34:25.028620] 127.0.0.1 - "GET /index" 200 OK -
+	 <Request 'http://0.0.0.0:8000/' [GET]>
+	 cookies:{}
+
+[2018-11-21 21:36:35.698262] server restarted
+[2018-11-21 21:36:54.025104] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u'd'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 21:38:25.938775] server restarted
+[2018-11-21 21:39:11.566531] server restarted
+[2018-11-21 21:39:54.349650] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u'e'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 21:40:38.477888] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u'r'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 21:42:32.315550] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u'q'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 21:42:57.038299] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u'5'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 22:22:17.443061] server restarted
+[2018-11-21 22:22:17.681502] server restarted
+[2018-11-21 22:24:17.746148] server restarted
+[2018-11-21 22:24:20.057356] server restarted
+[2018-11-21 22:24:20.158669] server restarted
+[2018-11-21 22:24:29.411800] server restarted
+[2018-11-21 22:24:52.783937] server restarted
+[2018-11-21 22:24:55.316796] server restarted
+[2018-11-21 22:24:55.423087] server restarted
+[2018-11-21 22:25:01.607281] server restarted
+[2018-11-21 22:25:03.782030] server restarted
+[2018-11-21 22:25:38.663332] server restarted
+[2018-11-21 22:25:38.764762] server restarted
+[2018-11-21 22:33:57.971818] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u't'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 22:35:58.250967] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u'7'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 22:37:12.126031] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u'1761694'), ('giornoNascita', u'1'), ('cittaResidenza', u'4'), ('password', u'i'), ('meseNascita', u'01m'), ('nome', u'Fil'), ('cognome', u'Gra'), ('cap', u'55555'), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u'4'), ('indirizzoResidenza', u'4'), ('email', u'gg@gmail.com')])
+[2018-11-21 22:39:10.891912] 127.0.0.1 - "POST /register" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('username', u''), ('giornoNascita', u'1'), ('cittaResidenza', u''), ('password', u''), ('meseNascita', u'01m'), ('nome', u''), ('cognome', u''), ('cap', u''), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u''), ('indirizzoResidenza', u''), ('email', u'')])
+[2018-11-21 23:02:15.655861] server restarted
+[2018-11-21 23:02:15.759636] server restarted
+[2018-11-21 23:03:32.678076] server restarted
+[2018-11-21 23:04:04.315358] server restarted
+[2018-11-21 23:06:29.956681] server restarted
+[2018-11-21 23:08:40.449765] server restarted
+[2018-11-21 23:08:58.838512] server restarted
+[2018-11-21 23:08:58.942109] server restarted
+[2018-11-21 23:12:24.178329] server restarted
+[2018-11-21 23:13:11.807972] server restarted
+[2018-11-21 23:13:19.505581] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u't'), ('user', u'1761694')])
+[2018-11-21 23:13:35.520800] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'yy'), ('user', u'1761694')])
+[2018-11-21 23:16:17.903779] server restarted
+[2018-11-21 23:17:21.940938] server restarted
+[2018-11-21 23:17:50.494237] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'e'), ('user', u'1761694')])
+[2018-11-21 23:18:07.564791] server restarted
+[2018-11-21 23:19:50.740089] server restarted
+[2018-11-21 23:20:52.565312] server restarted
+[2018-11-21 23:23:35.087480] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'e'), ('user', u'1761694')])
+[2018-11-21 23:23:49.230915] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'e'), ('user', u'1761694')])
+[2018-11-21 23:25:20.468373] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'e'), ('user', u'1761694')])
+[2018-11-21 23:25:36.166120] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u't'), ('user', u'1761694')])

@@ -1,4 +1,7 @@
-#!/home/filippo/VirtualEnv/web/bin/python
+#!/bin/bash
+"exec" "$HOME/VirtualEnv/web/bin/python" "$0"
+#multiline shebang
+#http://rosettacode.org/wiki/Multiline_shebang#Python
 
 from flask import Flask, request, render_template, make_response
 from flask_cors import CORS

@@ -6,10 +6,21 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<script type="text/javascript" lang="javascript" src="../js/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" lang="javascript" src="../js/cookie.js"></script>
 		<script type="text/javascript" lang="javascript" src="login.js"></script>
-		<link rel=stylesheet type="text/css" href="../css/main_style.css">
+		<script type="text/javascript" lang="javascript">
+			function validaForm() {
+				if(document.formLogin.email.value=="") {
+					alert("Il campo email non pu\u00F2 essere vuoto");
+					return false;
+				}
+				if(document.formLogin.password.value=="") {
+					alert("Il campo password non pu\u00F2 essere vuoto");
+					return false;
+				}
+				return true;
+			}
 		</script>
+		<link rel=stylesheet type="text/css" href="../css/main_style.css">
 	</head>
 	<body>
 		<div class=title name="login_header" id="login_header">
@@ -19,11 +30,12 @@
 		<div class=subtitle name="login_sub_header" id="login_sub_header">
 		</div>
 		<div class=form_paragraph name="login_paragraph" id="login_paragraph">
-			<br><br><br><br>
-			<form method="post" name="login_form" id="login_form">
-					<input type="text" name="user" id="user" placeholder="Username or Email" required autofocus/>
+			<br>
+			<form method="post" name="formLogin">
+					<br><br><br><br><br><br><br> 
+					<input type="text" name="email"  placeholder="Email" autofocus/>
 					<br><br>
-					<input type="password" name="password" id="password" placeholder="Password" required/>
+					<input type="password" name="password" placeholder="Password" />
 					<br><br>
 					<input type="checkbox" name="rememberMe" size="3">
 					Ricordami
@@ -31,8 +43,7 @@
 				<button class=users name="login_btn" id="login_btn" onclick="login()">Login</button><br>
 					<br><br>
 					Non hai un account?
-					<a href="../register/register.html" title="Link per registrazione">Registrati<a>
-					<br><br>
+					<a href="../register/register.html" title="Link per registrazione">Registrati<a> 
 			</form>
 		</div>
 	</body>

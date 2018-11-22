@@ -6,14 +6,15 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<script type="text/javascript" lang="javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" lang="javascript" src="../js/cookie.js"></script>
 		<script type="text/javascript" lang="javascript" src="login.js"></script>
 		<script type="text/javascript" lang="javascript">
 			function validaForm() {
-				if(document.formLogin.email.value=="") {
-					alert("Il campo email non pu\u00F2 essere vuoto");
+				if(document.login_form.user.value=="") {
+					alert("Il campo user non pu\u00F2 essere vuoto");
 					return false;
 				}
-				if(document.formLogin.password.value=="") {
+				if(document.login_form.password.value=="") {
 					alert("Il campo password non pu\u00F2 essere vuoto");
 					return false;
 				}
@@ -31,11 +32,11 @@
 		</div>
 		<div class=form_paragraph name="login_paragraph" id="login_paragraph">
 			<br>
-			<form method="post" name="formLogin">
+			<form method="post" name="login_form" id="login_form">
 					<br><br><br><br><br><br><br> 
-					<input type="text" name="email"  placeholder="Email" autofocus/>
+					<input type="text" name="user" id="user" placeholder="Username/Email" autofocus/>
 					<br><br>
-					<input type="password" name="password" placeholder="Password" />
+					<input type="password" name="password" id="password" placeholder="Password" />
 					<br><br>
 					<input type="checkbox" name="rememberMe" size="3">
 					Ricordami

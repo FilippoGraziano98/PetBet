@@ -10,47 +10,47 @@
 		<link rel=stylesheet type="text/css" href="../css/main_style.css">
 		<script type="text/javascript">
 			function validaAccessForm() {
-				var c = parseInt(document.form.cap.value);
-				if (isNaN(c) || document.form.cap.value.length != 5) {
+				var c = parseInt(document.register_form.cap.value);
+				if (isNaN(c) || document.register_form.cap.value.length != 5) {
 					alert("CAP non valido");
 					return false;
 				}
-				var n = parseInt(document.form.inputUtente.value);
+				var n = parseInt(document.register_form.inputUtente.value);
 				if (!isNaN(n)) {
 					alert("Il nome utente non pu\u00F2 essere un numero");
 					return false;
 				}
-				if (document.form.inputPassword.value != document.form.inputConfermaPassword.value) {
+				if (document.register_form.inputPassword.value != document.register_form.inputConfermaPassword.value) {
 					alert("Hai inserito password diverse");
 					return false;				
-				}if(document.form.inputUtente.value=="") {
+				}if(document.register_form.inputUtente.value=="") {
 					alert("Il campo utente non pu\u00F2 essere vuoto");
 					return false;
-				}if(document.form.inputCognome.value=="") {
+				}if(document.register_form.inputCognome.value=="") {
 					alert("Il campo cognome non pu\u00F2 essere vuoto");
 					return false;
-				}if(document.form.nascita.value=="") {
+				}if(document.register_form.nascita.value=="") {
 					alert("Il campo nascita non pu\u00F2 essere vuoto");
 					return false;
-				}if(document.form.residenza.value=="") {
+				}if(document.register_form.residenza.value=="") {
 					alert("Il campo residenza non pu\u00F2 essere vuoto");
 					return false;
-				}if(document.form.indirizzo.value=="") {
+				}if(document.register_form.indirizzo.value=="") {
 					alert("Il campo indirizzo non pu\u00F2 essere vuoto");
 					return false;
-				}if(document.form.cap.value=="") {
+				}if(document.register_form.cap.value=="") {
 					alert("Il campo cap non pu\u00F2 essere vuoto");
 					return false;
-				}if(document.form.username.value=="") {
+				}if(document.register_form.username.value=="") {
 					alert("Il campo username non pu\u00F2 essere vuoto");
 					return false;
-				}if(document.form.email.value=="") {
+				}if(document.register_form.email.value=="") {
 					alert("Inserisci email");
 					return false;
-				}if(document.form.password.value=="") {
+				}if(document.register_form.password.value=="") {
 					alert("Inserisci la password");
 					return false;
-				}if(document.form.confermaPassword.value=="") {
+				}if(document.register_form.confermaPassword.value=="") {
 					alert("Ripeti la password");
 					return false;
 				}
@@ -66,26 +66,26 @@
 		<div class=subtitle name="reg_sub_header" id="reg_sub_header" align=center>
 		</div>
 		<div class=form_paragraph name="reg_paragraph" id="reg_paragraph" align=center>
-			<form method="post" name="form" onSubmit="return validaAccessForm()">
+			<form name="register_form" id="register_form">
 				<br><br><br><br>
 				<br>
 				<h2> DATI PERSONALI </h2>
 				<br><br>
-				Nome: <font face="verdana" size="+1" color="red"> * </font>
+				Nome: <p class=campo_obbligatorio> * </p>
 				<br><br>
-				<input type="text" name="inputUtente"  placeholder="Nome"  autofocus/>
+				<input type="text" name="inputUtente" id="inputUtente" placeholder="Nome"  autofocus/>
 				<br><br>
-				Cognome: <font face="verdana" size="+1" color="red"> * </font>
+				Cognome: <p class=campo_obbligatorio> * </p>
 				<br><br>
-				<input type="text" name="inputCognome"  placeholder="Cognome" />
+				<input type="text" name="inputCognome" id="inputCognome" placeholder="Cognome" />
 				<br><br><br>
 				Sesso:
-				<input type="radio" name="sesso" value="maschio" Checked> M
-				<input type="radio" name="sesso" value="femmina"> F
+				<input type="radio" name="sesso" id="sesso" value="maschio" Checked> M
+				<input type="radio" name="sesso" id="sesso" value="femmina"> F
 				<br><br><br>
 				Data di nascita:
 				<br><br>
-				<select size=1 cols=31 name="giorno">
+				<select size=1 cols=31 name="giorno" id="giorno">
 				<option selected value="1">01
 				<option value="2">02
 				<option value="3">03
@@ -118,7 +118,7 @@
 				<option value="30">30
 				<option value="31">31
 				</select>
-				<select size=1 cols=12 name="mese">
+				<select size=1 cols=12 name="mese" id="mese">
 				<option selected value="01m">01
 				<option value="02m">02
 				<option value="03m">03
@@ -132,7 +132,7 @@
 				<option value="11m">11
 				<option value="12m">12
 				</select>
-				<select size=1 cols=70 name="anno">
+				<select size=1 cols=70 name="anno" id="anno">
 				<option selected value="2000">2000
 				<option value="1999">1999
 				<option value="1998">1998
@@ -218,19 +218,19 @@
 				<br><br>
 				Luogo di nascita:
 				<br><br>
-				<input type="text" name="nascita" placeholder="Luogo di nascita" >
+				<input type="text" name="nascita" id="nascita" placeholder="Luogo di nascita" >
 				<br><br>
 				Luogo di residenza:
 				<br><br>
-				<input type="text" name="residenza" placeholder="Indirizzo di residenza" >
+				<input type="text" name="residenza" id="residenza" placeholder="Indirizzo di residenza" >
 				<br><br>
 				Indirizzo di residenza:
 				<br><br>
-				<input type="text" name="indirizzo" placeholder="Indirizzo di residenza">
+				<input type="text" name="indirizzo" id="indirizzo" placeholder="Indirizzo di residenza">
 				<br><br>
 				CAP:
 				<br><br>
-				<input type="text" name="cap" maxlength="5" size="5" placeholder="CAP" >
+				<input type="text" name="cap" id="cap" maxlength="5" size="5" placeholder="CAP" >
 				<br><br>
 			
 
@@ -239,7 +239,7 @@
 				
 				<h2> DATI DI ACCESSO </h2>
 				<br>
-				Nome Utente <font face="verdana" size="+1" color="red"> * </font>
+				Nome Utente <p class=campo_obbligatorio> * </p>
 				<br><br>
 				<input type="text" name="username" id="username"  placeholder="Nome Utente"/>
 				<br><br>
@@ -247,18 +247,18 @@
 				<br><br>
 				<input type="email" name="email" id="email" placeholder="Email"/>
 				<br><br>
-				Password <font face="verdana" size="+1" color="red"> * </font> 
+				Password <p class=campo_obbligatorio> * </p> 
 				<br><br>
 				<input type="password" name="password" id="password" placeholder="Password"/>
 				<br><br>
-				Ripeti la tua password <font face="verdana" size="+1" color="red"> * </font>
+				Ripeti la tua password <p class=campo_obbligatorio> * </p>
 				<br><br>
 				<input type="password" name="confermaPassword" id="confermaPassword" placeholder="Ripeti la tua password"/>
 				<br><br><br>
 				<button class=users name="reg_btn" id="reg_btn" onclick="register()">Registrati</button>
 				<br><br><br><br>
 				</b>
-				<font face="verdana" size="+1" color="red"> * campo obbligatorio </font>
+				<p class=campo_obbligatorio> * campo obbligatorio </p>
 				<br><br><br><br>
 			</form>
 		</div>

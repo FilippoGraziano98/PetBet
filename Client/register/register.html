@@ -8,40 +8,35 @@
 		<script type="text/javascript" lang="javascript" src="../js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" lang="javascript" src="register.js"></script>
 		<link rel=stylesheet type="text/css" href="../css/main_style.css">
+		<link rel=stylesheet type="text/css" href="register.css">
 		<script type="text/javascript">
 			function validaAccessForm() {
-				var c = parseInt(document.register_form.cap.value);
-				if (isNaN(c) || document.register_form.cap.value.length != 5) {
+				if(document.register_form.inputUtente.value=="") {
+					alert("Il nome utente non pu\u00F2 essere vuoto");
+					return false;
+				}	if (!isNaN(parseInt(document.register_form.inputUtente.value))) {
+					alert("Il nome utente non pu\u00F2 essere un numero");
+					return false;
+				} if(document.register_form.inputCognome.value=="") {
+					alert("Il campo cognome non pu\u00F2 essere vuoto");
+					return false;
+				} if(document.register_form.nascita.value=="") {
+					alert("Il campo nascita non pu\u00F2 essere vuoto");
+					return false;
+				} if(document.register_form.residenza.value=="") {
+					alert("Il campo residenza non pu\u00F2 essere vuoto");
+					return false;
+				} if(document.register_form.indirizzo.value=="") {
+					alert("Il campo indirizzo non pu\u00F2 essere vuoto");
+					return false;
+				} if(document.register_form.cap.value=="") {
+					alert("Il campo cap non pu\u00F2 essere vuoto");
+					return false;
+				}	if (isNaN(parseInt(document.register_form.cap.value)) || document.register_form.cap.value.length != 5) {
 					alert("CAP non valido");
 					return false;
 				}
-				var n = parseInt(document.register_form.inputUtente.value);
-				if (!isNaN(n)) {
-					alert("Il nome utente non pu\u00F2 essere un numero");
-					return false;
-				}
-				if (document.register_form.inputPassword.value != document.register_form.inputConfermaPassword.value) {
-					alert("Hai inserito password diverse");
-					return false;				
-				}if(document.register_form.inputUtente.value=="") {
-					alert("Il campo utente non pu\u00F2 essere vuoto");
-					return false;
-				}if(document.register_form.inputCognome.value=="") {
-					alert("Il campo cognome non pu\u00F2 essere vuoto");
-					return false;
-				}if(document.register_form.nascita.value=="") {
-					alert("Il campo nascita non pu\u00F2 essere vuoto");
-					return false;
-				}if(document.register_form.residenza.value=="") {
-					alert("Il campo residenza non pu\u00F2 essere vuoto");
-					return false;
-				}if(document.register_form.indirizzo.value=="") {
-					alert("Il campo indirizzo non pu\u00F2 essere vuoto");
-					return false;
-				}if(document.register_form.cap.value=="") {
-					alert("Il campo cap non pu\u00F2 essere vuoto");
-					return false;
-				}if(document.register_form.username.value=="") {
+				if(document.register_form.username.value=="") {
 					alert("Il campo username non pu\u00F2 essere vuoto");
 					return false;
 				}if(document.register_form.email.value=="") {
@@ -53,6 +48,9 @@
 				}if(document.register_form.confermaPassword.value=="") {
 					alert("Ripeti la password");
 					return false;
+				} if (document.register_form.inputPassword.value != document.register_form.inputConfermaPassword.value) {
+					alert("Hai inserito password diverse");
+					return false;				
 				}
 				return true;
 			}

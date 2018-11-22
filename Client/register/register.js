@@ -20,6 +20,7 @@ function register(){
 				var response = JSON.parse(_response);
 				console.log(response)
 				if(response.msg=="registration_success"){
+					document.forms["register_form"].reset();
 					window.location.replace("../login/login.html?redirect_from=registration")
 				} else if(response.msg=="registration_failure__username_already_in_use"){
 					document.getElementById("reg_sub_header").innerHTML="Username already in use!<br>\nChange username<br>"
@@ -29,6 +30,10 @@ function register(){
 					console.log("unrecognized_server_response");
 				}
 			});
-		document.forms["register_form"].reset();
+		//document.forms["register_form"].reset();
+		return true;
+	} else {
+		console.log("invalid form")
+		return false;
 	}
 };

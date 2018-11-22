@@ -48,7 +48,7 @@
 				}if(document.register_form.confermaPassword.value=="") {
 					alert("Ripeti la password");
 					return false;
-				} if (document.register_form.inputPassword.value != document.register_form.inputConfermaPassword.value) {
+				} if (document.register_form.password.value != document.register_form.confermaPassword.value) {
 					alert("Hai inserito password diverse");
 					return false;				
 				}
@@ -253,7 +253,7 @@
 				<br><br>
 				<input type="password" name="confermaPassword" id="confermaPassword" placeholder="Ripeti la tua password"/>
 				<br><br><br>
-				<button class=users name="reg_btn" id="reg_btn" onclick="register()">Registrati</button>
+				<button class=users name="reg_btn" id="reg_btn" onclick="event.preventDefault(); register()">Registrati</button>
 				<br><br><br><br>
 				</b>
 				<p class=campo_obbligatorio> * campo obbligatorio </p>

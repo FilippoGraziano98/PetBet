@@ -150,3 +150,42 @@
 [query 2018-11-21 23:23:49.229915] {"password": "e", "user": "1761694"}	-> valid credentials
 [query 2018-11-21 23:25:20.467188] {"password": "e", "user": "1761694"}	-> valid credentials
 [query 2018-11-21 23:25:36.163500] {"password": "t", "user": "1761694"}	-> not valid credentials
+[insert 2018-11-22 23:50:10.978717] {"username": "33", "giornoNascita": "1", "cittaResidenza": "", "password": "y", "meseNascita": "01m", "nome": "Fil", "cognome": "Gra", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": "gg@gmail.com"}
+[check_username 2018-11-22 23:50:11.041516] requested user: 33
+	-> username available
+[insert 2018-11-22 23:52:19.253911] {"username": "44", "giornoNascita": "1", "cittaResidenza": "", "password": "3", "meseNascita": "01m", "nome": "tre", "cognome": "", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": "gg@gmail.com"}
+[check_username 2018-11-22 23:52:19.276287] requested user: 44
+	-> username available
+[insert 2018-11-22 23:53:38.837034] {"username": "ff", "giornoNascita": "1", "cittaResidenza": "", "password": "", "meseNascita": "01m", "nome": "tre", "cognome": "tre", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": ""}
+[check_username 2018-11-22 23:53:38.837829] requested user: ff
+	-> username not available!
+[insert 2018-11-22 23:54:40.633252] {"username": "", "giornoNascita": "1", "cittaResidenza": "", "password": "", "meseNascita": "01m", "nome": "tre", "cognome": "tre", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": ""}
+[check_username 2018-11-22 23:54:40.633502] requested user: 
+	-> username available
+[insert 2018-11-22 23:59:31.677393] {"username": "ff", "giornoNascita": "1", "cittaResidenza": "fret", "password": "e", "meseNascita": "01m", "nome": "tre", "cognome": "tre", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "rew", "indirizzoResidenza": "rty", "email": "gg@gmail.com"}
+[check_username 2018-11-22 23:59:31.677689] requested user: ff
+	-> username not available!
+[insert 2018-11-23 00:02:00.963814] {"username": "qq", "giornoNascita": "1", "cittaResidenza": "qwe", "password": "r", "meseNascita": "01m", "nome": "tre", "cognome": "tre", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "rew", "indirizzoResidenza": "rty", "email": "gg@gmail.com"}
+[check_username 2018-11-23 00:02:00.964519] requested user: qq
+	-> username available
+[insert 2018-11-23 00:07:14.908563] {"username": "", "giornoNascita": "1", "cittaResidenza": "", "password": "", "meseNascita": "01m", "nome": "", "cognome": "", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": ""}
+[check_username 2018-11-23 00:07:14.909300] requested user: 
+	-> username not available!
+[insert 2018-11-23 00:08:01.225312] {"username": "", "giornoNascita": "1", "cittaResidenza": "", "password": "", "meseNascita": "01m", "nome": "", "cognome": "", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": ""}
+[check_username 2018-11-23 00:08:01.226215] requested user: 
+	-> username not available!
+[insert 2018-11-23 00:10:50.841485] {"username": "ff", "giornoNascita": "1", "cittaResidenza": "qwe", "password": "f", "meseNascita": "01m", "nome": "tre", "cognome": "tre", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "rew", "indirizzoResidenza": "rty", "email": "gg@gmail.com"}
+[check_username 2018-11-23 00:10:50.841812] requested user: ff
+	-> username not available!
+[insert 2018-11-23 00:11:33.832647] {"username": "rew", "giornoNascita": "1", "cittaResidenza": "qwe", "password": "q", "meseNascita": "01m", "nome": "tre", "cognome": "tre", "cap": "55555", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "rew", "indirizzoResidenza": "rty", "email": "gg@gmail.com"}
+[check_username 2018-11-23 00:11:33.833137] requested user: rew
+	-> username available
+[query 2018-11-23 00:19:48.106662] {"password": "", "user": ""}	-> valid credentials
+[query 2018-11-23 00:19:54.420328] {"password": "", "user": ""}	-> valid credentials
+[query 2018-11-23 00:19:55.442100] {"password": "", "user": ""}	-> valid credentials
+[insert 2018-11-23 00:20:44.179720] {"username": "", "giornoNascita": "1", "cittaResidenza": "", "password": "", "meseNascita": "01m", "nome": "", "cognome": "", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": ""}
+[check_username 2018-11-23 00:20:44.180497] requested user: 
+	-> username not available!
+[insert 2018-11-23 00:20:50.712900] {"username": "", "giornoNascita": "1", "cittaResidenza": "", "password": "", "meseNascita": "01m", "nome": "", "cognome": "", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": ""}
+[check_username 2018-11-23 00:20:50.713704] requested user: 
+	-> username not available!

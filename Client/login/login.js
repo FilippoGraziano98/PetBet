@@ -31,11 +31,6 @@ function login(){
 			if(response.msg=="login_success"){
 				console.log("cookies: "+response.cookies);
 				setCookie("sessionid","abcd",true);
-				document.cookies="session-id="+response.cookies;
-				//document.cookies.sessionid=response.cookies;
-				localStorage.cookies="session-id="+response.cookies;
-				sessionStorage.cookies="session-id="+response.cookies;
-				console.log(localStorage.cookies)
 				//goto home with cookies
 				//window.location.replace("../login/login.html?redirect_from=registration")
 			} else if(response.msg=="login_failure__credentials_not_valid"){

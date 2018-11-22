@@ -643,3 +643,5 @@
 	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
 	 cookies:{}
 	 data: ImmutableMultiDict([('password', u't'), ('user', u'1761694')])
+[2018-11-22 14:08:22.759684] server restarted
+[2018-11-22 14:08:23.022835] server restarted

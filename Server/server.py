@@ -1,4 +1,4 @@
-#!/home/filippo/VirtualEnv/web/bin/python
+#!$HOME/VirtualEnv/web/bin/python
 
 from flask import Flask, request, render_template, make_response
 from flask_cors import CORS

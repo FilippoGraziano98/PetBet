@@ -49,35 +49,119 @@
 		<script>
 			function myMove() {
 				alert("Scommessa piazzata!");
+				document.getElementById("redbutton").disabled = true;
+				document.getElementById("blubutton").disabled = true;
+				document.getElementById("yellowbutton").disabled = true;
+				document.getElementById("whitebutton").disabled = true;
+				document.getElementById("greenbutton").disabled = true;
+				document.getElementById("orangebutton").disabled = true;
+				
 				var elem1 = document.getElementById("animate1");   
 				var elem2 = document.getElementById("animate2");   
 				var elem3 = document.getElementById("animate3");   
 				var elem4 = document.getElementById("animate4");   
-				  var elem5 = document.getElementById("animate5");   
-				  var elem6 = document.getElementById("animate6");   
+				var elem5 = document.getElementById("animate5");   
+				var elem6 = document.getElementById("animate6");
+				   
 				var pos1 = 0;
 				var pos2 = 0;
 				var pos3 = 0;
 				var pos4 = 0;
 				var pos5 = 0;
 				var pos6 = 0;
-				var id = setInterval(frame, );
+				
+				var finish = "";
+				
+				var id = setInterval(frame, 1);
+				
+				function timeStamp() {
+					/*  sostituisci gli alert con quello che volevi fare tu,
+					 	il tempo non sono riuscito a metterlo perchè la funzione alert non me lo faceva stampare,
+					 	comunque puoi usare performance.now() (https://stackoverflow.com/questions/313893/how-to-measure-time-taken-by-a-function-to-execute)
+					*/
+					switch(finish) {
+						case "red":
+							alert("Rosso ha finito in secondi");
+							break;
+						case "blu":
+							alert("Blu ha finito in secondi");
+							break;
+						case "green":
+							alert("Verde ha finito in secondi");
+							break;
+						case "yellow":
+							alert("Giallo ha finito in secondi");
+							break;
+						case "white":
+							alert("Bianco ha finito in secondi");
+							break;
+						case "orange":
+							alert("Arancione ha finito in secondi");
+							break;
+						default: 
+							alert("Error");
+					}
+				}
+				
 				function frame() {
-					if (pos1 == 350 || pos2 == 350 || pos3 == 350 || pos4 == 350 || pos5 == 350 || pos6 == 350) {
+					if (pos1 > 350 && pos2 > 350 && pos3 > 350 && pos4 > 350 && pos5 > 350 && pos6 > 350) {
 						clearInterval(id);
+						document.getElementById("redbutton").disabled = false;
+						document.getElementById("blubutton").disabled = false;
+						document.getElementById("yellowbutton").disabled = false;
+						document.getElementById("whitebutton").disabled = false;
+						document.getElementById("greenbutton").disabled = false;
+						document.getElementById("orangebutton").disabled = false;
+						
 					} else {
-						pos1 = pos1 + Math.floor(Math.random()*1.1);  
-						elem1.style.left = pos1 + 'px'; 
-						pos2 = pos2 + Math.floor(Math.random()*1.1);  
-						elem2.style.left = pos2 + 'px';
-						pos3 = pos3 + Math.floor(Math.random()*1.1);  
-						elem3.style.left = pos3 + 'px';
-						pos4 = pos4 + Math.floor(Math.random()*1.1);  
-						elem4.style.left = pos4 + 'px';
-						pos5 = pos5 + Math.floor(Math.random()*1.1);  
-						elem5.style.left = pos5 + 'px';
-						pos6 = pos4 + Math.floor(Math.random()*1.1);  
-						elem6.style.left = pos6 + 'px';
+						if(pos1 < 350) {
+							pos1 = pos1 + Math.floor(Math.random()*1.1);  
+							elem1.style.left = pos1 + 'px'; 
+						} else if (pos1 == 350) { 
+							finish = "red"; 
+							timeStamp();
+							pos1++;
+						}
+						if(pos2 < 350) {
+							pos2 = pos2 + Math.floor(Math.random()*1.1);  
+							elem2.style.left = pos2 + 'px';
+						} else if (pos2 == 350){
+							finish = "blu";
+							timeStamp();
+							pos2++;	
+						}
+						if(pos3 < 350) {
+							pos3 = pos3 + Math.floor(Math.random()*1.1);  
+							elem3.style.left = pos3 + 'px';
+						} else if (pos3 == 350) { 
+							finish = "green";
+							timeStamp();
+							pos3++;
+						}
+						if(pos4 < 350) {
+							pos4 = pos4 + Math.floor(Math.random()*1.1);  
+							elem4.style.left = pos4 + 'px';
+						} else if (pos4 == 350) { 
+							finish = "yellow";
+							timeStamp();
+							pos4++;
+						}
+						if(pos5 < 350) {
+							pos5 = pos5 + Math.floor(Math.random()*1.1);  
+							elem5.style.left = pos5 + 'px';
+						} else if (pos5 == 350) { 
+							finish = "white";
+							timeStamp();
+							pos5++;
+						}
+						if(pos6 < 350) {
+							pos6 = pos4 + Math.floor(Math.random()*1.1);  
+							elem6.style.left = pos6 + 'px';
+						} else if (pos6 == 350) { 
+							finish = "orange";
+							timeStamp();
+							pos6++;
+						}				
 					}
 				}
 			}
@@ -86,6 +170,7 @@
 	</head>
 	<body>
 		<div align=center>
+			<br><br><br>
 			<div id ="container">
 				<br><br>
 				<div id ="animate1"></div>
@@ -103,17 +188,18 @@
 			<p>
 				Scegli su chi vuoi scommettere:
 				<br><br>
-				<button onclick="myMove()">ROSSO</button>
+				<button name="redbutton" id="redbutton" onclick="myMove()">ROSSO</button>
 				<br><br>
-				<button onclick="myMove()">BLU</button>
+				<button name="blubutton" id="blubutton" onclick="myMove()">BLU</button>
 				<br><br>
-				<button onclick="myMove()">VERDE</button>
+				<button name="greenbutton" id="greenbutton" onclick="myMove()">VERDE</button>
 				<br><br>
-				<button onclick="myMove()">GIALLO</button>
+				<button name="yellowbutton" id="yellowbutton" onclick="myMove()">GIALLO</button>
 				<br><br>
-				<button onclick="myMove()">BIANCO</button>
+				<button name="whitebutton" id="whitebutton" onclick="myMove()">BIANCO</button>
 				<br><br>
-				<button onclick="myMove()">ARANCIONE</button>
+				<button name="orangebutton" id="orangebutton" onclick="myMove()">ARANCIONE</button>
+				<br><br><br>
 			</p> 
 		</div>
 	</body>

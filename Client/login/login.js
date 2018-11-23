@@ -30,7 +30,7 @@ function login(){
 			console.log(response);
 			if(response.msg=="login_success"){
 				console.log("cookies: "+response.cookies);
-				setCookie("sessionid","abcd",true);
+				setCookie(response.cookies.split("=")[0],response.cookies.split("=")[1],1);
 				//goto home with cookies
 				//window.location.replace("../login/login.html?redirect_from=registration")
 			} else if(response.msg=="login_failure__credentials_not_valid"){

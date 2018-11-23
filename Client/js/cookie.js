@@ -1,19 +1,21 @@
 function setCookie(name,value,days) {
+	var expires = "";
+	if (days) {
+		var date = new Date();
+			date.setTime(date.getTime() + (days*24*60*60*1000));
+			expires = "; expires=" + date.toUTCString();
+	}
+	var cookie = name + "=" + (value || "")	+ expires + "; path=/";
+	
 	console.log(navigator.userAgent);
 	if (navigator.userAgent.includes("Chrome")){
-		document.cookies="session-id="+response.cookies;
-		//document.cookies.sessionid=response.cookies;
-		localStorage.cookies="session-id="+response.cookies;
-		sessionStorage.cookies="session-id="+response.cookies;
-		console.log(localStorage.cookies);
+		document.cookie=cookie;
+		localStorage.cookies=cookie;
+		sessionStorage.cookies=cookie;
+		console.log("localStorage"+localStorage.cookies);
+		console.log("sessionStorage"+sessionStorage.cookies);
 	} else if (navigator.userAgent.includes("Firefox")){
-		var expires = "";
-		if (days) {
-			var date = new Date();
-				date.setTime(date.getTime() + (days*24*60*60*1000));
-				expires = "; expires=" + date.toUTCString();
-		}
-		document.cookie = name + "=" + (value || "")	+ expires + "; path=/";
+		document.cookie=cookie;
 	}
 }
 

@@ -721,3 +721,74 @@
 	 <Request 'http://filippo-ubuntu:8000/register' [POST]>
 	 cookies:{}
 	 data: ImmutableMultiDict([('username', u''), ('giornoNascita', u'1'), ('cittaResidenza', u''), ('password', u''), ('meseNascita', u'01m'), ('nome', u''), ('cognome', u''), ('cap', u''), ('sesso', u'maschio'), ('annoNascita', u'2000'), ('cittaNascita', u''), ('indirizzoResidenza', u''), ('email', u'')])
+[2018-11-23 10:36:46.688013] server restarted
+[2018-11-23 10:36:46.888763] server restarted
+[2018-11-23 10:37:18.368250] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 10:44:55.785606] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 10:45:11.389501] server restarted
+[2018-11-23 10:45:26.544877] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 10:52:48.429088] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 10:54:01.191400] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 10:54:34.209743] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 10:58:43.706066] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:01:12.714471] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:04:24.799901] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:06:00.687816] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:06:52.912528] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:08:01.406287] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:08:24.312615] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:09:03.118644] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:09:42.001723] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:10:38.352107] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])
+[2018-11-23 11:11:04.753786] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'q'), ('user', u'rew')])

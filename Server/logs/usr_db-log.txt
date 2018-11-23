@@ -189,3 +189,20 @@
 [insert 2018-11-23 00:20:50.712900] {"username": "", "giornoNascita": "1", "cittaResidenza": "", "password": "", "meseNascita": "01m", "nome": "", "cognome": "", "cap": "", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "", "email": ""}
 [check_username 2018-11-23 00:20:50.713704] requested user: 
 	-> username not available!
+[query 2018-11-23 10:37:18.257210] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 10:44:55.784470] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 10:45:26.534854] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 10:52:48.428073] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 10:54:01.187646] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 10:54:34.208156] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 10:58:43.705029] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:01:12.713253] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:04:24.798888] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:06:00.686900] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:06:52.911665] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:08:01.404859] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:08:24.311525] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:09:03.117830] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:09:42.000531] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:10:38.349971] {"password": "q", "user": "rew"}	-> valid credentials
+[query 2018-11-23 11:11:04.750637] {"password": "q", "user": "rew"}	-> valid credentials

@@ -63,7 +63,7 @@ def login():
 		return json.dumps({"msg":"login_failure__server_not_able_to_understand_data"})
 
 	if (user_dbms.query(usr)):
-		response={"msg":"login_success","cookies":"abcd"}
+		response={"msg":"login_success","cookies":"session-id=abcd"}
 	else:
 		response={"msg":"login_failure__credentials_not_valid"}
 	return json.dumps(response)

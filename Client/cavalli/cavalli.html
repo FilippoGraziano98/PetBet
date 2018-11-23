@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		#container {
+		  width: 400px;
+		  height: 410px;
+		  position: relative;
+		  background: black;
+		}
+		#animate1 {
+		  width: 50px;
+		  height: 50px;
+		  position: absolute;
+		  background-color: red;
+		}
+		#animate2 {
+		  width: 50px;
+		  height: 50px;
+		  position: absolute;
+		  background-color: blue;
+		}
+		#animate3 {
+		  width: 50px;
+		  height: 50px;
+		  position: absolute;
+		  background-color: green;
+		}
+		#animate4 {
+		  width: 50px;
+		  height: 50px;
+		  position: absolute;
+		  background-color: yellow;
+		}
+		#animate5 {
+		  width: 50px;
+		  height: 50px;
+		  position: absolute;
+		  background-color: white;
+		}
+		#animate6 {
+		  width: 50px;
+		  height: 50px;
+		  position: absolute;
+		  background-color: orange;
+		}
+		</style>
+		<script>
+		
+		function myMove() {
+		  alert("Scommessa piazzata!");
+		  var elem1 = document.getElementById("animate1");   
+		  var elem2 = document.getElementById("animate2");   
+		  var elem3 = document.getElementById("animate3");   
+		  var elem4 = document.getElementById("animate4");   
+  		  var elem5 = document.getElementById("animate5");   
+  		  var elem6 = document.getElementById("animate6");   
+		  var pos1 = 0;
+		  var pos2 = 0;
+		  var pos3 = 0;
+		  var pos4 = 0;
+		  var pos5 = 0;
+		  var pos6 = 0;
+		  var id = setInterval(frame, );
+		  function frame() {
+			if (pos1 == 350 || pos2 == 350 || pos3 == 350 || pos4 == 350 || pos5 == 350 || pos6 == 350) {
+			  clearInterval(id);
+			} else {
+			  pos1 = pos1 + Math.floor(Math.random()*1.1);  
+			  elem1.style.left = pos1 + 'px'; 
+			  pos2 = pos2 + Math.floor(Math.random()*1.1);  
+			  elem2.style.left = pos2 + 'px';
+			  pos3 = pos3 + Math.floor(Math.random()*1.1);  
+			  elem3.style.left = pos3 + 'px';
+			  pos4 = pos4 + Math.floor(Math.random()*1.1);  
+			  elem4.style.left = pos4 + 'px';
+			  pos5 = pos5 + Math.floor(Math.random()*1.1);  
+			  elem5.style.left = pos5 + 'px';
+			  pos6 = pos4 + Math.floor(Math.random()*1.1);  
+			  elem6.style.left = pos6 + 'px';
+			}
+		  }
+		}
+		
+		</script>
+
+	</head>
+	<body>
+		<div align=center>
+		<div id ="container">
+		<br><br>
+		<div id ="animate1"></div>
+		<br><br><br>
+		<div id ="animate2"></div>
+		<br><br><br>
+		<div id ="animate3"></div>
+		<br><br><br>
+		<div id ="animate4"></div>
+		<br><br><br>
+		<div id ="animate5"></div>
+		<br><br><br>
+		<div id ="animate6"></div>
+		</div>
+		<p>
+		Scegli su chi vuoi scommettere:
+		<br><br>
+		<button onclick="myMove()">ROSSO</button>
+		<br><br>
+		<button onclick="myMove()">BLU</button>
+		<br><br>
+		<button onclick="myMove()">VERDE</button>
+		<br><br>
+		<button onclick="myMove()">GIALLO</button>
+		<br><br>
+		<button onclick="myMove()">BIANCO</button>
+		<br><br>
+		<button onclick="myMove()">ARANCIONE</button>
+		</p> 
+		</div>
+	</body>
+</html>
+

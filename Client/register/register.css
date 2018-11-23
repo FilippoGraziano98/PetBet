@@ -2,5 +2,21 @@ p.campo_obbligatorio {
 	display: inline; /*not to get the paragraph on a new line*/
 	font-family: verdana;
 	font-size:18px;
+	font-style: bold;
 	color:red
+}
+
+p.campi_dati {
+	display: inline; /*not to get the paragraph on a new line*/
+	font-family: verdana;
+	font-size:18px;
+	font-weight: bold
+}
+
+p.titolo {
+	display: inline; /*not to get the paragraph on a new line*/
+	font-family: verdana;
+	font-size:25px;
+	font-weight: bold;
+	color:darkblue
 }

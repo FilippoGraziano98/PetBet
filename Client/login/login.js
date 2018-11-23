@@ -34,7 +34,7 @@ function login(){
 				//goto home with cookies
 				//window.location.replace("../login/login.html?redirect_from=registration")
 			} else if(response.msg=="login_failure__credentials_not_valid"){
-				document.getElementById("login_sub_header").innerHTML="Login failed!<br>\nUser and/or Password wrong!<br>"
+				document.getElementById("login_sub_header").innerHTML="Login failed!<br>\nUser and/or Password wrong!<br>\nTry again!<br>"
 			} else if(response.msg=="login_failure__server_not_able_to_understand_data"){
 				document.getElementById("reg_sub_header").innerHTML="Server wasn't able to parse your data!<br>\nCheck the way you are sending your requests<br>"
 			} else {

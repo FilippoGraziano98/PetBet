@@ -16,6 +16,15 @@ $(document).ready(function(){
 			history.pushState(null, null, update_url);
 		}
 	}
+	var cookie=getCookies();
+	if(cookie){
+		var name = getNameFromCookie(cookie);
+		document.getElementById("login_sub_header").innerHTML = 
+			document.getElementById("login_sub_header").innerHTML
+			+ "<br><br>You are alredy logged in as: "
+			+ name
+			+"<br>\n Continuing will result in logging out from previos session<br>";
+	}	
 });
 
 function login(){
@@ -38,8 +47,7 @@ function login(){
 					console.log("not checked");
 					setCookie(response.cookies.split("=")[0],response.cookies.split("=")[1],1,false);
 				}
-				//goto home with cookies
-				//window.location.replace("../login/login.html?redirect_from=registration")
+				window.location.replace("../index.html")
 			} else if(response.msg=="login_failure__credentials_not_valid"){
 				document.getElementById("login_sub_header").innerHTML="Login failed!<br>\nUser and/or Password wrong!<br>\nTry again!<br>"
 			} else if(response.msg=="login_failure__server_not_able_to_understand_data"){

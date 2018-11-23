@@ -65,7 +65,7 @@ def login():
 	(access, name) = user_dbms.query(usr);
 
 	if (access):
-		response={"msg":"login_success","cookies":"session-id="+name+"@1234567890"}
+		response={"msg":"login_success","cookies":"session-id="+name+"@petbet"}
 	else:
 		response={"msg":"login_failure__credentials_not_valid"}
 	return json.dumps(response)

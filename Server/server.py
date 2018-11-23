@@ -62,8 +62,10 @@ def login():
 		logger.log("\n[WARNING] Not recognizing the Content-Type of the following login request:")
 		return json.dumps({"msg":"login_failure__server_not_able_to_understand_data"})
 
-	if (user_dbms.query(usr)):
-		response={"msg":"login_success","cookies":"session-id=abcd"}
+	(access, name) = user_dbms.query(usr);
+
+	if (access):
+		response={"msg":"login_success","cookies":"session-id="+name+"@1234567890"}
 	else:
 		response={"msg":"login_failure__credentials_not_valid"}
 	return json.dumps(response)

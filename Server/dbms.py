@@ -50,10 +50,11 @@ class dbms:
 			return False
 	
 	def query(self, data):
-		self.log.write("[query "+str(datetime.now())+"] "+json.dumps(data, ensure_ascii=False))
+		self.log.write("[queryLogin "+str(datetime.now())+"] "+json.dumps(data, ensure_ascii=False))
 		for registered_user in self.list_current_users():
 			if (data['user']==registered_user['username'] or data['user']==registered_user['email']) and data['password']==registered_user['password']:
 				self.log.write("\t-> valid credentials"+"\n")
-				return True
+				name = registered_user['nome']
+				return (True, name)
 		self.log.write("\t-> not valid credentials"+"\n")
-		return False
+		return (False, "")

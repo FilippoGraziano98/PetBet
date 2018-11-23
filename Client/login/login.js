@@ -25,12 +25,19 @@ function login(){
 			'user':$('#user').val(),
 			'password':$('#password').val()
 		}
+		var remember = document.getElementById('rememberMe').checked;
 		$.post(url, data, function onsuccess(_response){
 			var response = JSON.parse(_response);
 			console.log(response);
 			if(response.msg=="login_success"){
 				console.log("cookies: "+response.cookies);
-				setCookie(response.cookies.split("=")[0],response.cookies.split("=")[1],1);
+				if(remember){//cannot read here if rememberMe is checked because at this point the form was already resetted
+					console.log("rememberMe checked");
+					setCookie(response.cookies.split("=")[0],response.cookies.split("=")[1],1,true);
+				} else {
+					console.log("not checked");
+					setCookie(response.cookies.split("=")[0],response.cookies.split("=")[1],1,false);
+				}
 				//goto home with cookies
 				//window.location.replace("../login/login.html?redirect_from=registration")
 			} else if(response.msg=="login_failure__credentials_not_valid"){

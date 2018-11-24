@@ -84,35 +84,35 @@ function myMove() {
 			
 		} else {
 			if(pos1 < 750) {
-				pos1 = pos1 + Math.floor(Math.random()*1.1);  
+				pos1 = pos1 + Math.floor(Math.random()*1.3);  
 				elem1.style.left = pos1 + 'px'; 
 			} else if (pos1 == 750) { 
 				horseCuttingFinishLine("red");
 				pos1++;
 			}
 			if(pos2 < 750) {
-				pos2 = pos2 + Math.floor(Math.random()*1.1);  
+				pos2 = pos2 + Math.floor(Math.random()*1.3);  
 				elem2.style.left = pos2 + 'px';
 			} else if (pos2 == 750){
 				horseCuttingFinishLine("blu");
 				pos2++;	
 			}
 			if(pos3 < 750) {
-				pos3 = pos3 + Math.floor(Math.random()*1.1);  
+				pos3 = pos3 + Math.floor(Math.random()*1.3);  
 				elem3.style.left = pos3 + 'px';
 			} else if (pos3 == 750) {
 				horseCuttingFinishLine("green");
 				pos3++;
 			}
 			if(pos4 < 750) {
-				pos4 = pos4 + Math.floor(Math.random()*1.1);  
+				pos4 = pos4 + Math.floor(Math.random()*1.3);  
 				elem4.style.left = pos4 + 'px';
 			} else if (pos4 == 750) {
 				horseCuttingFinishLine("yellow");
 				pos4++;
 			}
 			if(pos5 < 750) {
-				pos5 = pos5 + Math.floor(Math.random()*1.1);  
+				pos5 = pos5 + Math.floor(Math.random()*1.3);  
 				elem5.style.left = pos5 + 'px';
 			} else if (pos5 == 750) {
 				horseCuttingFinishLine("white");

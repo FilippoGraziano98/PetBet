@@ -2,14 +2,17 @@
 	width: 800px;
 	height: 400px;
 	position: relative;
-	background: url(../img/pista_cavalli_opacity75.jpg);
+	/*background: url(../img/cavalli/mary_poppins_opacity75.jpg);*/
+	background: url(../img/cavalli/pista_cavalli_standard.jpeg);
+	background-size:800px 500px;
 }
 
 div.horse {
 	width: 50px;
 	height: 50px;
 	position: absolute;
-	content: url(../img/cavallo-immagine-animata-0271.gif);
+	/*content: url(../img/cavalli/horse_running.png);*/
+	content: url(../img/cavalli/cavallo-immagine-animata-0271.gif);
 	background-color: var(--no-color);
 }
 

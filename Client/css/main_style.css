@@ -25,7 +25,7 @@
 }
 
 body {
-	background-image: url("../img/gorilla.jpg");
+	background-image: url("../img/home/gorilla.jpg");
 	/*just one occurence of the image*/
 	/*background-repeat:no-repeat;*/
 	/*fitting image to browser size*/

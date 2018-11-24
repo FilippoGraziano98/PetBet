@@ -8,8 +8,8 @@
 }
 
 div.horse {
-	width: 80px;
-	height: 80px;
+	width: 100px;
+	height: 100px;
 	position: absolute;
 	/*content: url(../img/cavalli/horse_running.png);*/
 	content: url(../img/cavalli/cavallo-immagine-animata-0271.gif);

@@ -260,3 +260,11 @@
 [queryLogin 2018-11-23 20:22:38.694346] {"password": "q", "user": "rew"}	-> valid credentials
 [queryLogin 2018-11-23 20:22:51.942094] {"password": "q", "user": "rew"}	-> valid credentials
 [queryLogin 2018-11-23 20:23:06.672878] {"password": "q", "user": "rew"}	-> valid credentials
+[queryLogin 2018-11-24 13:37:51.207351] {"password": "q", "user": "tre"}	-> not valid credentials
+[queryLogin 2018-11-24 13:37:58.485485] {"password": "q", "user": "rew"}	-> valid credentials
+[queryLogin 2018-11-24 13:39:06.427190] {"password": "q", "user": "rew"}	-> valid credentials
+[queryLogin 2018-11-24 13:56:49.064037] {"password": "q", "user": "rew"}	-> valid credentials
+[queryLogin 2018-11-24 14:00:13.941063] {"password": "q", "user": "rew"}	-> valid credentials
+[queryLogin 2018-11-24 14:01:15.215003] {"password": "q", "user": "rew"}	-> valid credentials
+[queryLogin 2018-11-24 15:28:28.135697] {"password": "q", "user": "rew"}	-> valid credentials
+[queryLogin 2018-11-24 15:34:43.573207] {"password": "q", "user": "rew"}	-> valid credentials

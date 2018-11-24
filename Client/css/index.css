@@ -1,0 +1,78 @@
+/* HEADER */
+div.header {
+	width: auto;
+	height: 100px;
+	background-color: var(--transparent-black);
+}
+
+div.header_area {
+	background-color: var(--no-colour);
+	float:left;
+	display: inline;
+	font-family: arial;
+	font-size:60px;
+	text-decoration:italic;
+	color: var(--light-green);
+	text-align: center;
+	line-height: 100px;
+	/* per allineamento verticale:
+	 * line-height indica la spaziatura tra due linee di testo,
+	 * va messa pari alla height del div
+	 */
+}
+
+div.header_area[id=main_title] {
+	width:65%;
+	font-style:extra-bold;
+	font-variant:small-caps;
+	font-weight:bolder;
+}
+
+div.header_area[id=login] {
+	width:25%;
+	text-align:right;
+	font-size:30px;
+}
+
+button.users {
+ 	width: 45%;
+  display: inline-block;
+}
+
+a[id=logout] {
+	color: var(--light-green);
+	text-decoration: underline;
+}
+
+a[id=logout]:hover {
+	color: var(--dark-green);
+	text-decoration: underline;
+	cursor:pointer;
+}
+
+/* BODY */
+div.body {
+	clear:left; /*not to overlap with the header's floating elements*/
+	width: auto;
+	height: 1000px;
+	background-color: var(--no-colour);
+}
+
+div.body_area {
+	background-color: var(--no-colour);
+	float:left;
+	display: inline;
+	font-size:60px;
+}
+
+div.body_area[id=left_menu] {
+	width: 20%;
+	text-align:center;
+}
+
+div.body_area[id=dynamic_area] {
+	width: 75%;
+	height:300px;
+	background-color: var(--red);
+	text-align:center;
+}

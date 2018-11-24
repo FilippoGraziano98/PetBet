@@ -1,4 +1,6 @@
 :root{
+	--no-colour: rgba(255, 255, 255, 0);
+
 	--transparent-white: rgba(255, 255, 255, 0.6);
 
 	--light-green: rgba(76,175,80);
@@ -9,6 +11,7 @@
 	--dark-red: rgba(139,0,0);
 
 	--black: rgba(0,0,0);
+	--transparent-black: rgba(0,0,0,0.8);
 	--dark-gray: rgba(128,128,128);
 }
 
@@ -34,7 +37,7 @@ div.title {
 	font-variant:small-caps;
 	font-weight:bolder;
 	text-decoration:italic;
-	color:blue
+	color: var(--light-green);
 }
 
 div.subtitle {
@@ -55,9 +58,8 @@ div.login_buttons_paragraph {
 	background-color: var(--transparent);
 }
 
-div.menu {
-	text-align: left;
-	background-color: var(--transparent);
+button:hover{
+	cursor:pointer;
 }
 
 button.users {

@@ -1,6 +1,6 @@
 #container {
 	width: 800px;
-	height: 400px;
+	height: 450px;
 	position: relative;
 	/*background: url(../img/cavalli/mary_poppins_opacity75.jpg);*/
 	background: url(../img/cavalli/pista_cavalli_standard.jpeg);
@@ -8,8 +8,8 @@
 }
 
 div.horse {
-	width: 50px;
-	height: 50px;
+	width: 80px;
+	height: 80px;
 	position: absolute;
 	/*content: url(../img/cavalli/horse_running.png);*/
 	content: url(../img/cavalli/cavallo-immagine-animata-0271.gif);
@@ -50,13 +50,6 @@ div.horse {
 		drop-shadow(-2px 0 0 var(--white))
 		drop-shadow(0 2px 0 var(--white))
 		drop-shadow(0 -2px 0 var(--white)); var(--white);
-}
-#animate6 {
-	filter:
-		drop-shadow(2px 0 0 var(--dark-orange))
-		drop-shadow(-2px 0 0 var(--dark-orange))
-		drop-shadow(0 2px 0 var(--dark-orange))
-		drop-shadow(0 -2px 0 var(--dark-orange));
 }
 
 /* CLASSIFICA */
@@ -114,7 +107,4 @@ p.horse[id=yellow] {
 p.horse[id=white] {
 	color: var(--white);
 
-}
-p.horse[id=orange] {
-	color: var(--dark-orange);
 }

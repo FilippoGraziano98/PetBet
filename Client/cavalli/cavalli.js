@@ -20,21 +20,18 @@ function myMove() {
 	document.getElementById("yellowbutton").disabled = true;
 	document.getElementById("whitebutton").disabled = true;
 	document.getElementById("greenbutton").disabled = true;
-	document.getElementById("orangebutton").disabled = true;
 	
 	var elem1 = document.getElementById("animate1");   
 	var elem2 = document.getElementById("animate2");   
 	var elem3 = document.getElementById("animate3");   
 	var elem4 = document.getElementById("animate4");   
 	var elem5 = document.getElementById("animate5");   
-	var elem6 = document.getElementById("animate6");
 	   
 	var pos1 = 0;
 	var pos2 = 0;
 	var pos3 = 0;
 	var pos4 = 0;
 	var pos5 = 0;
-	var pos6 = 0;
 	
 	document.getElementById("classifica").innerHTML = 
 		"<p class=title>Classifica:</p><br><br>"
@@ -70,11 +67,6 @@ function myMove() {
 					document.getElementById("classifica").innerHTML +
 					"<p class=horse id='white'>White Horse: </p><p class=time>"+finish_time+"</p><br>"
 				break;
-			case "orange":
-				document.getElementById("classifica").innerHTML = 
-					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='orange'>Orange Horse: </p><p class=time>"+finish_time+"</p><br>"
-				break;
 			default:
 				//this is never supposed to happen
 				alert("Error");
@@ -82,14 +74,13 @@ function myMove() {
 	}
 	
 	function frame() {
-		if (pos1 > 750 && pos2 > 750 && pos3 > 750 && pos4 > 750 && pos5 > 750 && pos6 > 750) {
+		if (pos1 > 750 && pos2 > 750 && pos3 > 750 && pos4 > 750 && pos5 > 750) {
 			clearInterval(id);
 			document.getElementById("redbutton").disabled = false;
 			document.getElementById("blubutton").disabled = false;
 			document.getElementById("yellowbutton").disabled = false;
 			document.getElementById("whitebutton").disabled = false;
 			document.getElementById("greenbutton").disabled = false;
-			document.getElementById("orangebutton").disabled = false;
 			
 		} else {
 			if(pos1 < 750) {
@@ -126,13 +117,6 @@ function myMove() {
 			} else if (pos5 == 750) {
 				horseCuttingFinishLine("white");
 				pos5++;
-			}
-			if(pos6 < 750) {
-				pos6 = pos4 + Math.floor(Math.random()*1.1);  
-				elem6.style.left = pos6 + 'px';
-			} else if (pos6 == 750) {
-				horseCuttingFinishLine("orange");
-				pos6++;
 			}				
 		}
 	}

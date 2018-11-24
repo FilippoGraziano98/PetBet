@@ -1,0 +1,117 @@
+#container {
+	width: 800px;
+	height: 400px;
+	position: relative;
+	background: url(../img/pista_cavalli_opacity75.jpg);
+}
+
+div.horse {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	content: url(../img/horse_running.png);
+	background-color: var(--no-color);
+}
+
+#animate1 {
+	filter:
+		drop-shadow(2px 0 0 var(--red))
+		drop-shadow(-2px 0 0 var(--red))
+		drop-shadow(0 2px 0 var(--red))
+		drop-shadow(0 -2px 0 var(--red));
+}
+#animate2 {
+	filter:
+		drop-shadow(2px 0 0 var(--blue))
+		drop-shadow(-2px 0 0 var(--blue))
+		drop-shadow(0 2px 0 var(--blue))
+		drop-shadow(0 -2px 0 var(--blue));
+}
+#animate3 {
+	filter:
+		drop-shadow(2px 0 0 var(--forest-green))
+		drop-shadow(-2px 0 0 var(--forest-green))
+		drop-shadow(0 2px 0 var(--forest-green))
+		drop-shadow(0 -2px 0 var(--forest-green));
+}
+#animate4 {
+	filter:
+		drop-shadow(2px 0 0 var(--yellow))
+		drop-shadow(-2px 0 0 var(--yellow))
+		drop-shadow(0 2px 0 var(--yellow))
+		drop-shadow(0 -2px 0 var(--yellow));
+}
+#animate5 {
+	filter:
+		drop-shadow(2px 0 0 var(--white))
+		drop-shadow(-2px 0 0 var(--white))
+		drop-shadow(0 2px 0 var(--white))
+		drop-shadow(0 -2px 0 var(--white)); var(--white);
+}
+#animate6 {
+	filter:
+		drop-shadow(2px 0 0 var(--dark-orange))
+		drop-shadow(-2px 0 0 var(--dark-orange))
+		drop-shadow(0 2px 0 var(--dark-orange))
+		drop-shadow(0 -2px 0 var(--dark-orange));
+}
+
+/* CLASSIFICA */
+
+p.title {
+	font-family: arial;
+	font-size:30px;
+	font-style:extra-bold;
+	font-variant:small-caps;
+	font-weight:bolder;
+	text-decoration:italic;
+	color: var(--dark-green);
+	text-shadow: 
+   1px   0  0   var(--black), 
+  -1px   0  0   var(--black), 
+   0    1px 0   var(--black), 
+   0   -1px 0   var(--black);
+}
+
+p.horse {
+	font-family: arial;
+	font-size:25px;
+	font-style:extra-bold;
+	text-decoration:italic;
+	display: inline;
+	text-shadow: 
+   1px   0  0   var(--black), 
+  -1px   0  0   var(--black), 
+   0    1px 0   var(--black), 
+   0   -1px 0   var(--black);
+}
+
+p.time {
+	font-family: arial;
+	font-size:25px;
+	font-style:bold;
+	text-decoration:italic;
+	color: var(--black);
+	display: inline
+}
+
+p.horse[id=red] {
+	color: var(--red);
+}
+p.horse[id=blu] {
+	color: var(--blue);
+	
+}
+p.horse[id=green] {
+	color: var(--forest-green);
+}
+p.horse[id=yellow] {
+	color: var(--yellow);
+}
+p.horse[id=white] {
+	color: var(--white);
+
+}
+p.horse[id=orange] {
+	color: var(--dark-orange);
+}

@@ -1,7 +1,11 @@
 :root{
 	--no-colour: rgba(255, 255, 255, 0);
 
+	--white: rgba(255, 255, 255);
 	--transparent-white: rgba(255, 255, 255, 0.6);
+
+	--blue: rgba(0,0,255);
+	--dark-blue: rgba(25,25,112);
 
 	--light-green: rgba(76,175,80);
 	--forest-green: rgb(34,139,34);
@@ -9,6 +13,11 @@
 
 	--red: rgba(255,0,0);
 	--dark-red: rgba(139,0,0);
+
+	--orange: rgba(255,165,0);
+	--dark-orange: rgba(255,140,0);
+
+	--yellow: rgba(255,255,0);
 
 	--black: rgba(0,0,0);
 	--transparent-black: rgba(0,0,0,0.8);

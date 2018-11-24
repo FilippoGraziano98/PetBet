@@ -43,10 +43,6 @@ function myMove() {
 	var id = setInterval(frame, 1);
 	
 	function horseCuttingFinishLine(horse) {
-		/*  sostituisci gli alert con quello che volevi fare tu,
-		 	il tempo non sono riuscito a metterlo perchè la funzione alert non me lo faceva stampare,
-		 	comunque puoi usare performance.now() (https://stackoverflow.com/questions/313893/how-to-measure-time-taken-by-a-function-to-execute)
-		*/
 		var finish_time = msToTime(Date.now() - start_timer);
 		switch(horse) {
 			case "red":

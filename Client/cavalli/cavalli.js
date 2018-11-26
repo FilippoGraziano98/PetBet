@@ -33,7 +33,8 @@ function myMove() {
 	var pos5 = 0;
 	
 	document.getElementById("classifica").innerHTML = 
-		"<p class=title>Classifica:</p><br><br>"
+		"<p class=title>Corsa di Cavalli</p>" +
+		"<p class=title>Classifica:</p><br>"
 	var start_timer = Date.now();
 	
 	var id = setInterval(frame, 1);
@@ -81,6 +82,8 @@ function myMove() {
 	function frame() {
 		if (pos1 > 750 && pos2 > 750 && pos3 > 750 && pos4 > 750 && pos5 > 750) {
 			clearInterval(id);
+			document.getElementById("classifica").innerHTML = 
+					document.getElementById("classifica").innerHTML + "<br>"
 			document.getElementById("redbutton").disabled = false;
 			document.getElementById("blubutton").disabled = false;
 			document.getElementById("yellowbutton").disabled = false;

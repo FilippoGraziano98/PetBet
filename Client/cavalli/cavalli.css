@@ -1,10 +1,15 @@
+div {
+	width: auto;
+	height: auto;
+}
+
 #container {
 	width: 800px;
 	height: 450px;
 	position: relative;
 	/*background: url(../img/cavalli/mary_poppins_opacity75.jpg);*/
 	background: url(../img/cavalli/pista_cavalli_lunga.jpg);
-	background-size:800px 500px;
+	background-size:100% 530px;
 }
 
 div.horse {

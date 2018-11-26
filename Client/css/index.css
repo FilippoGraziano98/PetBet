@@ -72,7 +72,5 @@ div.body_area[id=left_menu] {
 
 div.body_area[id=dynamic_area] {
 	width: 75%;
-	height:300px;
-	background-color: var(--red);
 	text-align:center;
 }

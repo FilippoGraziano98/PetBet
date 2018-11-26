@@ -1,17 +1,16 @@
 function msToTime(millisec_interval) {
-  var milliseconds = parseInt((millisec_interval % 1000) / 100),
+  var milliseconds = parseInt((millisec_interval % 1000)),
     seconds = parseInt((millisec_interval / 1000) % 60),
     minutes = parseInt((millisec_interval / (1000 * 60)) % 60),
     hours = parseInt((millisec_interval / (1000 * 60 * 60)) % 24);
 
-  if (hours > 0){
-  	console.log("[ERROR], this shouldn't take hours lol")
+  if (hours > 0 || minutes > 0){
+  	console.log("[ERROR], this shouldn't take hours or minutes lol")
   }
 
-  minutes = (minutes < 10) ? "0" + minutes : minutes;
   seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-  return minutes + ":" + seconds + "." + milliseconds;
+  return seconds + "." + milliseconds;
 }
 
 function myMove() {
@@ -38,6 +37,7 @@ function myMove() {
 	var start_timer = Date.now();
 	
 	var id = setInterval(frame, 1);
+	var pos = 1;
 	
 	function horseCuttingFinishLine(horse) {
 		var finish_time = msToTime(Date.now() - start_timer);
@@ -45,27 +45,32 @@ function myMove() {
 			case "red":
 				document.getElementById("classifica").innerHTML = 
 					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='red'>Red Horse: </p><p class=time>"+finish_time+"</p><br>"
+					"<p class=horse id='red'>"+pos+" - Red Horse: </p><p class=time>"+finish_time+"</p><br>"
+					pos++;
 				break;
 			case "blu":
 				document.getElementById("classifica").innerHTML = 
 					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='blu'>Blu Horse: </p><p class=time>"+finish_time+"</p><br>"
+					"<p class=horse id='blu'>"+pos+" - Blu Horse: </p><p class=time>"+finish_time+"</p><br>"
+					pos++;
 				break;
 			case "green":
 				document.getElementById("classifica").innerHTML = 
 					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='green'>Green Horse: </p><p class=time>"+finish_time+"</p><br>"
+					"<p class=horse id='green'>"+pos+" - Green Horse: </p><p class=time>"+finish_time+"</p><br>"
+					pos++;
 				break;
 			case "yellow":
 				document.getElementById("classifica").innerHTML = 
 					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='yellow'>Yellow Horse: </p><p class=time>"+finish_time+"</p><br>"
+					"<p class=horse id='yellow'>"+pos+" - Yellow Horse: </p><p class=time>"+finish_time+"</p><br>"
+					pos++;
 				break;
 			case "white":
 				document.getElementById("classifica").innerHTML = 
 					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='white'>White Horse: </p><p class=time>"+finish_time+"</p><br>"
+					"<p class=horse id='white'>"+pos+" - White Horse: </p><p class=time>"+finish_time+"</p><br>"
+					pos++;
 				break;
 			default:
 				//this is never supposed to happen

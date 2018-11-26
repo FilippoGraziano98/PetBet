@@ -36,5 +36,5 @@ var cavalli_html = '\
 
 
 function loadCavalli(){
-	document.getElementById("dynamic_area").innerHTML = cavalli_html
+	document.getElementById("dynamic_area").innerHTML = cavalli_html 
 }

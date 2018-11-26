@@ -16,6 +16,18 @@ div.horse {
 	background-color: var(--no-color);
 }
 
+.button {
+    background-color: #555555; /* Green */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 #animate1 {
 	filter:
 		drop-shadow(2px 0 0 var(--red))

@@ -39,25 +39,6 @@ div {
 	margin: 0 auto;
 }
 
-div.strisciapari {
-	text-align:center;
-	background-color: white;
-	width: 800px;
-	height: 50px;
-	line-height: 50px;
-	margin: 0 auto;
-}
-
-
-div.strisciadispari {
-	text-align:center;
-	background-color: silver;
-	width: 800px;
-	height: 50px;
-	line-height: 50px;
-	margin: 0 auto;
-}
-
 div.title {
 	font-family: arial;
 	font-size:60px;
@@ -67,6 +48,7 @@ div.title {
 	text-decoration:italic;
 	color: var(--light-green);
 }
+
 
 div.subtitle {
 	font-family: arial;

@@ -34,7 +34,14 @@ function myMove() {
 	
 	document.getElementById("classifica").innerHTML = 
 		"<p class=title>Corsa di Cavalli</p>" +
-		"<p class=title>Classifica:</p><br>"
+		"<p class=title>Classifica:</p><br><table>"+
+			"<tr id=1>"+
+			"<tr id=2>"+
+			"<tr id=3>"+
+			"<tr id=4>"+
+			"<tr id=5>"+
+			"</table>"
+	console.log(document.getElementById("classifica").innerHTML)
 	var start_timer = Date.now();
 	
 	var id = setInterval(frame, 1);
@@ -44,33 +51,28 @@ function myMove() {
 		var finish_time = msToTime(Date.now() - start_timer);
 		switch(horse) {
 			case "red":
-				document.getElementById("classifica").innerHTML = 
-					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='red'>"+pos+" - Red Horse: </p><p class=time>"+finish_time+"</p><br>"
+				document.getElementById(pos).innerHTML = 
+					"<td><p class=horse id='red'>"+pos+"</p></td><td><p class=horse id='red'> Red Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			case "blu":
-				document.getElementById("classifica").innerHTML = 
-					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='blu'>"+pos+" - Blu Horse: </p><p class=time>"+finish_time+"</p><br>"
+				document.getElementById(pos).innerHTML = 
+					"<td><p class=horse id='blu'>"+pos+"</p></td><td><p class=horse id='blu'> Blu Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			case "green":
-				document.getElementById("classifica").innerHTML = 
-					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='green'>"+pos+" - Green Horse: </p><p class=time>"+finish_time+"</p><br>"
+				document.getElementById(pos).innerHTML = 
+					"<td><p class=horse id='green'>"+pos+"</p></td><td><p class=horse id='green'> Green Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			case "yellow":
-				document.getElementById("classifica").innerHTML = 
-					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='yellow'>"+pos+" - Yellow Horse: </p><p class=time>"+finish_time+"</p><br>"
+				document.getElementById(pos).innerHTML = 
+					"<td><p class=horse id='yellow'>"+pos+"</p></td><td><p class=horse id='yellow'> Yellow Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			case "white":
-				document.getElementById("classifica").innerHTML = 
-					document.getElementById("classifica").innerHTML +
-					"<p class=horse id='white'>"+pos+" - White Horse: </p><p class=time>"+finish_time+"</p><br>"
+				document.getElementById(pos).innerHTML = 
+					"<td><p class=horse id='white'>"+pos+"</p></td><td><p class=horse id='white'> White Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			default:
@@ -82,8 +84,7 @@ function myMove() {
 	function frame() {
 		if (pos1 > 750 && pos2 > 750 && pos3 > 750 && pos4 > 750 && pos5 > 750) {
 			clearInterval(id);
-			document.getElementById("classifica").innerHTML = 
-					document.getElementById("classifica").innerHTML + "<br>"
+			console.log(document.getElementById("classifica").innerHTML)
 			document.getElementById("redbutton").disabled = false;
 			document.getElementById("blubutton").disabled = false;
 			document.getElementById("yellowbutton").disabled = false;

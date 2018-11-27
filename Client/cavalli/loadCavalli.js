@@ -4,7 +4,7 @@ var cavalli_html = '\
 			<p class=title>Corsa di Cavalli</p><br>\
 		</div>\
 		<div>\
-				<div class=field id ="container">\
+			<div class=field id ="container">\
 				<div class=horse id ="animate1"></div>\
 				<br><br><br>\
 				<div class=horse id ="animate2"></div>\
@@ -16,16 +16,31 @@ var cavalli_html = '\
 				<div class=horse id ="animate5"></div>\
 			</div>\
 				Scegli su chi vuoi scommettere:\
-				<div class=strisciapari id="striscia0">Cavallo Rosso:\
-				<button class=button name="redbutton" id="redbutton" onclick="myMove()">???</button></div>\
-				<div class=strisciadispari id="striscia1"> Cavallo Blu:\
-				<button class=button name="blubutton" id="blubutton" onclick="myMove()">???</button></div>\
-				<div class=strisciapari id="striscia2">Cavallo Verde:\
-				<button class=button name="greenbutton" id="greenbutton" onclick="myMove()">???</button></div>\
-				<div class=strisciadispari id="striscia3"> Cavallo Giallo:\
-				<button class=button name="yellowbutton" id="yellowbutton" onclick="myMove()">???</button></div>\
-				<div class=strisciapari id="striscia4"> Cavallo Bianco:\
-				<button class=button name="whitebutton" id="whitebutton" onclick="myMove()">???</button></div>\
+				<div  style="overflow-x:auto;">\
+					<table>\
+						<tr>\
+							<td>Cavallo Rosso:</td>\
+							<td><button class=button name="redbutton" id="redbutton" onclick="myMove()">???</button></td>\
+						</tr>\
+						<tr>\
+							<td>Cavallo Blu:</td>\
+							<td><button class=button name="blubutton" id="blubutton" onclick="myMove()">???</button></td>\
+						</tr>\
+						<tr>\
+							<td>Cavallo Verde:</td>\
+							<td><button class=button name="greenbutton" id="greenbutton" onclick="myMove()">???</button></td>\
+						</tr>\
+						<tr>\
+							<td>Cavallo Giallo:</td>\
+							<td><button class=button name="yellowbutton" id="yellowbutton" onclick="myMove()">???</button></td>\
+						</tr>\
+						<tr>\
+							<td>Cavallo Bianco:</td>\
+							<td><button class=button name="whitebutton" id="whitebutton" onclick="myMove()">???</button></td>\
+						</tr>\
+					</table>\
+				</div>\
+			</div>\
 		'
 
 

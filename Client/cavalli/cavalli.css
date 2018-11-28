@@ -6,6 +6,7 @@ div {
 #container {
 	width: 800px;
 	height: 450px;
+	font-size: 18px;
 	position: relative;
 	/*background: url(../img/cavalli/mary_poppins_opacity75.jpg);*/
 	background: url(../img/cavalli/pista_cavalli_lunga.jpg);
@@ -78,14 +79,18 @@ tr:nth-child(even){background-color: #f2f2f2}
 		drop-shadow(2px 0 0 var(--white))
 		drop-shadow(-2px 0 0 var(--white))
 		drop-shadow(0 2px 0 var(--white))
-		drop-shadow(0 -2px 0 var(--white)); var(--white);
+		drop-shadow(0 -2px 0 var(--white));
 }
 
 /* CLASSIFICA */
 
+#classifica {
+	width: 500px;
+}
+
 p.title {
 	font-family: arial;
-	font-size:30px;
+	font-size:40px;
 	font-style:extra-bold;
 	font-variant:small-caps;
 	font-weight:bolder;

@@ -38,15 +38,14 @@ function myMove() {
 	var pos5 = 0;
 	
 	document.getElementById("classifica").innerHTML = 
-		"<p class=title>Corsa di Cavalli</p>" +
-		"<p class=title>Classifica:</p><table>"+
-			"<tr id=1>"+
-			"<tr id=2>"+
-			"<tr id=3>"+
-			"<tr id=4>"+
-			"<tr id=5>"+
+		"<p class=title>Classifica:</p>"+
+			"<table>"+
+				"<tr id=1>"+
+				"<tr id=2>"+
+				"<tr id=3>"+
+				"<tr id=4>"+
+				"<tr id=5>"+
 			"</table><br>"
-	console.log(document.getElementById("classifica").innerHTML)
 	var start_timer = Date.now();
 	
 	var id = setInterval(frame, 1);

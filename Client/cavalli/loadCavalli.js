@@ -1,5 +1,15 @@
 var cavalli_html = '\
 		<link rel=stylesheet type="text/css" href="cavalli/cavalli.css">\
+		<style type="text/css" id="style_horse_red">\
+		</style>\
+		<style type="text/css" id="style_horse_blue">\
+		</style>\
+		<style type="text/css" id="style_horse_green">\
+		</style>\
+		<style type="text/css" id="style_horse_yellow">\
+		</style>\
+		<style type="text/css" id="style_horse_white">\
+		</style>\
 		<div name="classifica" id="classifica">\
 			<p class=title>Corsa di Cavalli</p><br>\
 		</div>\
@@ -16,7 +26,7 @@ var cavalli_html = '\
 				<div class=horse id ="animate5"></div>\
 			</div>\
 				Scegli su chi vuoi scommettere:\
-				<div  style="overflow-x:auto;">\
+				<div style="overflow-x:auto;">\
 					<table>\
 						<tr>\
 							<td>Cavallo Rosso:</td>\

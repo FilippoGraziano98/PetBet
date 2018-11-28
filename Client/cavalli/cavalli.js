@@ -14,6 +14,11 @@ function msToTime(millisec_interval) {
 }
 
 function myMove() {
+	document.getElementById("style_horse_red").innerHTML = '#animate1 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
+	document.getElementById("style_horse_blue").innerHTML = '#animate2 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
+	document.getElementById("style_horse_green").innerHTML = '#animate3 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
+	document.getElementById("style_horse_yellow").innerHTML = '#animate4 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
+	document.getElementById("style_horse_white").innerHTML = '#animate5 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
 	document.getElementById("redbutton").disabled = true;
 	document.getElementById("blubutton").disabled = true;
 	document.getElementById("yellowbutton").disabled = true;
@@ -34,13 +39,13 @@ function myMove() {
 	
 	document.getElementById("classifica").innerHTML = 
 		"<p class=title>Corsa di Cavalli</p>" +
-		"<p class=title>Classifica:</p><br><table>"+
+		"<p class=title>Classifica:</p><table>"+
 			"<tr id=1>"+
 			"<tr id=2>"+
 			"<tr id=3>"+
 			"<tr id=4>"+
 			"<tr id=5>"+
-			"</table>"
+			"</table><br>"
 	console.log(document.getElementById("classifica").innerHTML)
 	var start_timer = Date.now();
 	
@@ -49,13 +54,14 @@ function myMove() {
 	
 	function horseCuttingFinishLine(horse) {
 		var finish_time = msToTime(Date.now() - start_timer);
+		document.getElementById("style_horse_"+horse).innerHTML = '';
 		switch(horse) {
 			case "red":
 				document.getElementById(pos).innerHTML = 
 					"<td><p class=horse id='red'>"+pos+"</p></td><td><p class=horse id='red'> Red Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
-					pos++;
+				pos++;
 				break;
-			case "blu":
+			case "blue":
 				document.getElementById(pos).innerHTML = 
 					"<td><p class=horse id='blu'>"+pos+"</p></td><td><p class=horse id='blu'> Blu Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
@@ -103,7 +109,7 @@ function myMove() {
 				pos2 = pos2 + Math.floor(Math.random()*1.3);  
 				elem2.style.left = pos2 + 'px';
 			} else if (pos2 == 750){
-				horseCuttingFinishLine("blu");
+				horseCuttingFinishLine("blue");
 				pos2++;	
 			}
 			if(pos3 < 750) {

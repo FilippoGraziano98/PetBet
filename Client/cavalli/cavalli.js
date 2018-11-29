@@ -17,7 +17,7 @@ function showInfoHorse(e) {
 	var classifica_html = document.getElementById("classifica").innerHTML.replace("<br><br><br><br>", "<br>");
 	sessionStorage.setItem("PetBetClassifica", JSON.stringify(classifica_html));
 	var color = e.target.id.split("_")[1];
-	document.getElementById("style_horse_"+color).innerHTML = '#animate_'+color+' {width: 110px; height:110px;}';
+	document.getElementById("style_horse_"+color).innerHTML = '#animate_'+color+' {width: 115px; height:115px;}';
 	info_html =
 		"<p class=title>Informazioni sul Cavallo</p>"+
 			"<table>"+
@@ -83,7 +83,7 @@ function myMove() {
 	var elem5 = document.getElementById("animate_white");   
 	
 	var start_line = 0;
-	var finish_line = 730;
+	var finish_line = 720;
 	
 	var pos1 = start_line;
 	var pos2 = start_line;
@@ -116,7 +116,6 @@ function myMove() {
 	
 	function horseCuttingFinishLine(horse) {
 		var finish_time = msToTime(Date.now() - start_timer);
-		document.getElementById("style_horse_"+horse).innerHTML = '';
 		switch(horse) {
 			case "red":
 				document.getElementById(pos).innerHTML = 
@@ -177,39 +176,58 @@ function myMove() {
 			}
 			
 		} else {
-			if(pos1 < finish_line) {
+			if(pos1 < finish_line && pos1 != finish_line-70) {
 				pos1 = pos1 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 1"))+Math.random()*0.4));  
 				elem1.style.left = pos1 + 'px'; 
-			} else if (pos1 == finish_line) { 
+			} else if (pos1 == finish_line-70) { 
 				horseCuttingFinishLine("red");
 				pos1++;
+			} else if (pos1 == finish_line) {
+				document.getElementById("style_horse_red").innerHTML = '';
+				pos1++
 			}
-			if(pos2 < finish_line) {
+			
+			if(pos2 < finish_line && pos2 != finish_line-70) {
 				pos2 = pos2 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 2"))+Math.random()*0.4));  
 				elem2.style.left = pos2 + 'px';
-			} else if (pos2 == finish_line){
+			} else if (pos2 == finish_line-70){
 				horseCuttingFinishLine("blue");
 				pos2++;	
+			} else if (pos2 == finish_line) {
+				document.getElementById("style_horse_blue").innerHTML = '';
+				pos2++;
 			}
-			if(pos3 < finish_line) {
+			
+			if(pos3 < finish_line && pos3 != finish_line-70) {
 				pos3 = pos3 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 3"))+Math.random()*0.4));  
 				elem3.style.left = pos3 + 'px';
-			} else if (pos3 == finish_line) {
+			} else if (pos3 == finish_line-70) {
 				horseCuttingFinishLine("green");
 				pos3++;
+			} else if (pos3 == finish_line) {
+				document.getElementById("style_horse_green").innerHTML = '';
+				pos3++;
 			}
-			if(pos4 < finish_line) {
+			
+			if(pos4 < finish_line && pos4 != finish_line-70) {
 				pos4 = pos4 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 4"))+Math.random()*0.4));  
 				elem4.style.left = pos4 + 'px';
-			} else if (pos4 == finish_line) {
+			} else if (pos4 == finish_line-70) {
 				horseCuttingFinishLine("yellow");
 				pos4++;
+			} else if (pos4 == finish_line) {
+				document.getElementById("style_horse_yellow").innerHTML = '';
+				pos4++;
 			}
-			if(pos5 < finish_line) {
+			
+			if(pos5 < finish_line && pos5 != finish_line-70) {
 				pos5 = pos5 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 5"))+Math.random()*0.4));  
 				elem5.style.left = pos5 + 'px';
-			} else if (pos5 == finish_line) {
+			} else if (pos5 == finish_line-70) {
 				horseCuttingFinishLine("white");
+				pos5++;
+			} else if (pos5 == finish_line) {
+				document.getElementById("style_horse_white").innerHTML = '';
 				pos5++;
 			}				
 		}

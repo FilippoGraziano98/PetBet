@@ -40,17 +40,17 @@ function hideInfoHorse(e) {
 }
 
 function setQuote() {
-	var vel1 = Math.random()*0.5+1.1;
-	var vel2 = Math.random()*0.5+1.1;
-	var vel3 = Math.random()*0.5+1.1;
-	var vel4 = Math.random()*0.5+1.1;
-	var vel5 = Math.random()*0.5+1.1;
+	var vel1 = Math.random()*0.4+1.2;
+	var vel2 = Math.random()*0.4+1.2;
+	var vel3 = Math.random()*0.4+1.2;
+	var vel4 = Math.random()*0.4+1.2;
+	var vel5 = Math.random()*0.4+1.2;
 	
-	var quota1 = 5.8-vel1*3+Math.random()*0.7;
-	var quota2 = 5.8-vel2*3+Math.random()*0.7;
-	var quota3 = 5.8-vel3*3+Math.random()*0.7;
-	var quota4 = 5.8-vel4*3+Math.random()*0.7;
-	var quota5 = 5.8-vel5*3+Math.random()*0.7;
+	var quota1 = 5.8-vel1*3+Math.random()*1.5;
+	var quota2 = 5.8-vel2*3+Math.random()*1.5;
+	var quota3 = 5.8-vel3*3+Math.random()*1.5;
+	var quota4 = 5.8-vel4*3+Math.random()*1.5;
+	var quota5 = 5.8-vel5*3+Math.random()*1.5;
 	
 	sessionStorage.setItem("PetBet - Velocita 1", JSON.stringify(vel1));
 	sessionStorage.setItem("PetBet - Velocita 2", JSON.stringify(vel2));

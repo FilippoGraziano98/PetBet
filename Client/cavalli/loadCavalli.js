@@ -28,15 +28,8 @@ var cavalli_html = '\
 				</td>\
 				<td>\
 					<div name="classifica" id="classifica">\
-						<p class=title>Informazioni sul Cavallo</p>\
-						<table>\
-							<tr>\
-								<td><p> Colore: </p></td>\
-								<td><p>-</p></td>\
-							<tr>\
-								<td><p> Vittorie: </p></td>\
-								<td><p>-/-</p></td>\
-						</table><br>\
+						<p class=title>Benvenuto all\'Ippodromo</p><br><br>\
+						<p> Fai una scommessa per iniziare </p><br><br>\
 					</div>\
 				</td>\
 		</table>\
@@ -75,5 +68,6 @@ function loadCavalli(){
 	for(var i=0; i<5; i++){
 		var col = colors[i];
 		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
+		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 	}
 }

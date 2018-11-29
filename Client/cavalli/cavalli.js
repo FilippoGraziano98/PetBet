@@ -14,7 +14,10 @@ function msToTime(millisec_interval) {
 }
 
 function showInfoHorse(e) {
+	var classifica_html = document.getElementById("classifica").innerHTML.replace("<br><br><br><br>", "<br>");
+	sessionStorage.setItem("PetBetClassifica", JSON.stringify(classifica_html));
 	var color = e.target.id.split("_")[1];
+	document.getElementById("style_horse_"+color).innerHTML = '#animate_'+color+' {width: 110px; height:110px;}';
 	info_html =
 		"<p class=title>Informazioni sul Cavallo</p>"+
 			"<table>"+
@@ -28,6 +31,14 @@ function showInfoHorse(e) {
 	document.getElementById("classifica").innerHTML = info_html;
 }
 
+function hideInfoHorse(e) {
+	var color = e.target.id.split("_")[1];
+	document.getElementById("style_horse_"+color).innerHTML = "";
+	classifica_html = JSON.parse(sessionStorage.getItem("PetBetClassifica"));
+	document.getElementById("classifica").innerHTML = classifica_html;
+	sessionStorage.removeItem("PetBetClassifica");
+}
+
 function myMove() {
 	var colors = ['red','blue','green', 'yellow','white'];
 
@@ -35,6 +46,7 @@ function myMove() {
 		var col = colors[i];
 		document.getElementById("style_horse_"+col).innerHTML = '#animate_'+col+' {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
 		document.getElementById("animate_"+col).removeEventListener("mouseenter", showInfoHorse, false);
+		document.getElementById("animate_"+col).removeEventListener("mouseout", hideInfoHorse, false);
 		document.getElementById(col+"button").disabled = true;
 	}
 	
@@ -54,19 +66,19 @@ function myMove() {
 	var pos5 = start_line;
 	
 	var classifica_html =
-		"<p class=title>Classifica:</p>"+
-			"<table>";
+		'<p class=title>Classifica:</p>\
+			<table>'
 	for(var i=1; i<6; i++){
 		classifica_html =
 			classifica_html+
-				"<tr id="+i+">"+
-					"<td class=pos><p>"+i+"</p></td>"+
-					"<td class=horse><p>-</p></td>"+
-					"<td class=time><p>--.---</p></td>";
+				'<tr id='+i+'>\
+					<td class=pos><p>'+i+'</p></td>\
+					<td class=horse><p>-</p></td>\
+					<td class=time><p>--.---</p></td>'
 	}
 	classifica_html =
 		classifica_html+
-			"</table><br>";
+			'</table><br>';
 	
 	document.getElementById("classifica").innerHTML = classifica_html;
 		
@@ -127,6 +139,7 @@ function myMove() {
 			for(var i=0; i<5; i++){
 				var col = colors[i];
 				document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
+				document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 				document.getElementById(col+"button").disabled = false;
 			}
 			

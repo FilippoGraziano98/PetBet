@@ -34,7 +34,7 @@ var cavalli_html = '\
 				</td>\
 		</table>\
 		<div name="quote" id="quote" style="overflow-x:auto;">\
-			Scegli su chi vuoi scommettere:\
+			<p>Scegli su chi vuoi scommettere:</p>\
 			<table>\
 				<tr>\
 					<td>Cavallo Rosso:</td>\
@@ -70,4 +70,6 @@ function loadCavalli(){
 		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
 		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 	}
+	
+	setQuote();
 }

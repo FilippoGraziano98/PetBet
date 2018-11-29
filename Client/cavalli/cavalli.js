@@ -39,6 +39,32 @@ function hideInfoHorse(e) {
 	sessionStorage.removeItem("PetBetClassifica");
 }
 
+function setQuote() {
+	var vel1 = Math.random()*0.5+1.1;
+	var vel2 = Math.random()*0.5+1.1;
+	var vel3 = Math.random()*0.5+1.1;
+	var vel4 = Math.random()*0.5+1.1;
+	var vel5 = Math.random()*0.5+1.1;
+	
+	var quota1 = 5.8-vel1*3+Math.random()*0.7;
+	var quota2 = 5.8-vel2*3+Math.random()*0.7;
+	var quota3 = 5.8-vel3*3+Math.random()*0.7;
+	var quota4 = 5.8-vel4*3+Math.random()*0.7;
+	var quota5 = 5.8-vel5*3+Math.random()*0.7;
+	
+	sessionStorage.setItem("PetBet - Velocita 1", JSON.stringify(vel1));
+	sessionStorage.setItem("PetBet - Velocita 2", JSON.stringify(vel2));
+	sessionStorage.setItem("PetBet - Velocita 3", JSON.stringify(vel3));
+	sessionStorage.setItem("PetBet - Velocita 4", JSON.stringify(vel4));
+	sessionStorage.setItem("PetBet - Velocita 5", JSON.stringify(vel5));
+
+	document.getElementById("redbutton").innerHTML = String(quota1).substring(0,4);
+	document.getElementById("bluebutton").innerHTML = String(quota2).substring(0,4);
+	document.getElementById("greenbutton").innerHTML = String(quota3).substring(0,4);
+	document.getElementById("yellowbutton").innerHTML = String(quota4).substring(0,4);
+	document.getElementById("whitebutton").innerHTML = String(quota5).substring(0,4);		
+}
+
 function myMove() {
 	var colors = ['red','blue','green', 'yellow','white'];
 
@@ -64,6 +90,7 @@ function myMove() {
 	var pos3 = start_line;
 	var pos4 = start_line;
 	var pos5 = start_line;
+	
 	
 	var classifica_html =
 		'<p class=title>Classifica:</p>\
@@ -141,39 +168,45 @@ function myMove() {
 				document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
 				document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 				document.getElementById(col+"button").disabled = false;
+				sessionStorage.removeItem("PetBet - Velocita 1");
+				sessionStorage.removeItem("PetBet - Velocita 2");
+				sessionStorage.removeItem("PetBet - Velocita 3");				
+				sessionStorage.removeItem("PetBet - Velocita 4");
+				sessionStorage.removeItem("PetBet - Velocita 5");
+				setQuote();
 			}
 			
 		} else {
 			if(pos1 < finish_line) {
-				pos1 = pos1 + Math.floor(Math.random()*1.9);  
+				pos1 = pos1 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 1"))+Math.random()*0.4));  
 				elem1.style.left = pos1 + 'px'; 
 			} else if (pos1 == finish_line) { 
 				horseCuttingFinishLine("red");
 				pos1++;
 			}
 			if(pos2 < finish_line) {
-				pos2 = pos2 + Math.floor(Math.random()*1.9);  
+				pos2 = pos2 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 2"))+Math.random()*0.4));  
 				elem2.style.left = pos2 + 'px';
 			} else if (pos2 == finish_line){
 				horseCuttingFinishLine("blue");
 				pos2++;	
 			}
 			if(pos3 < finish_line) {
-				pos3 = pos3 + Math.floor(Math.random()*1.9);  
+				pos3 = pos3 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 3"))+Math.random()*0.4));  
 				elem3.style.left = pos3 + 'px';
 			} else if (pos3 == finish_line) {
 				horseCuttingFinishLine("green");
 				pos3++;
 			}
 			if(pos4 < finish_line) {
-				pos4 = pos4 + Math.floor(Math.random()*1.9);  
+				pos4 = pos4 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 4"))+Math.random()*0.4));  
 				elem4.style.left = pos4 + 'px';
 			} else if (pos4 == finish_line) {
 				horseCuttingFinishLine("yellow");
 				pos4++;
 			}
 			if(pos5 < finish_line) {
-				pos5 = pos5 + Math.floor(Math.random()*1.9);  
+				pos5 = pos5 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 5"))+Math.random()*0.4));  
 				elem5.style.left = pos5 + 'px';
 			} else if (pos5 == finish_line) {
 				horseCuttingFinishLine("white");

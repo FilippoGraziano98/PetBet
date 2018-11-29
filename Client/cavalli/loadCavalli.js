@@ -15,15 +15,15 @@ var cavalli_html = '\
 			<tr>\
 				<td>\
 					<div class=field name="container" id ="container">\
-						<div class=horse id ="animate_red"></div>\
+						<div class=horse id="animate_red"></div>\
 						<br><br><br>\
-						<div class=horse id ="animate_blue"></div>\
+						<div class=horse id="animate_blue"></div>\
 						<br><br><br>\
-						<div class=horse id ="animate_green"></div>\
+						<div class=horse id="animate_green"></div>\
 						<br><br><br>\
-						<div class=horse id ="animate_yellow"></div>\
+						<div class=horse id="animate_yellow"></div>\
 						<br><br><br>\
-						<div class=horse id ="animate_white"></div>\
+						<div class=horse id="animate_white"></div>\
 					</div>\
 				</td>\
 				<td>\
@@ -70,6 +70,23 @@ function loadCavalli(){
 		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
 		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 	}
-	
+	if( ! localStorage.getItem("PetBet - Horses") ){
+		var horses = [
+				{"id":1, "name":"Nearco", "age":3, "wins":0, "races":0},
+				{"id":2, "name":"Tenerani", "age":4, "wins":0, "races":0},
+				{"id":3, "name":"Donatello", "age":5, "wins":0, "races":0},
+				{"id":4, "name":"Niccolò dell'Arca'", "age":3, "wins":0, "races":0},
+				{"id":5, "name":"Orsenigo", "age":4, "wins":0, "races":0},
+				{"id":6, "name":"Astolfina", "age":5, "wins":0, "races":0},
+				{"id":7, "name":"Macherio", "age":4, "wins":0, "races":0},
+				{"id":8, "name":"Fante", "age":5, "wins":0, "races":0},
+				{"id":9, "name":"Gladiolo", "age":6, "wins":0, "races":0},
+				{"id":10, "name":"Vezzano", "age":5, "wins":0, "races":0},
+				{"id":11, "name":"Sirte", "age":6, "wins":0, "races":0},
+				{"id":12, "name":"Arco", "age":7, "wins":0, "races":0}
+			]
+
+		localStorage.setItem("PetBet - Horses", JSON.stringify(horses));
+	}
 	setQuote();
 }

@@ -9,6 +9,8 @@ function msToTime(millisec_interval) {
   }
 
   seconds = (seconds < 10) ? "0" + seconds : seconds;
+  console.log(String(milliseconds).length);
+	milliseconds = String(milliseconds)+"0".repeat(3-String(milliseconds).length)
 
   return seconds + "." + milliseconds;
 }
@@ -16,17 +18,34 @@ function msToTime(millisec_interval) {
 function showInfoHorse(e) {
 	var classifica_html = document.getElementById("classifica").innerHTML.replace("<br><br><br><br>", "<br>");
 	sessionStorage.setItem("PetBetClassifica", JSON.stringify(classifica_html));
+
 	var color = e.target.id.split("_")[1];
+	var horse = document.getElementById("animate_"+color);
+	var horse_id = horse.horse_id;
+	var horse_name = horse.horse_name;
+	var horse_age = horse.horse_age;
+	var horse_wins = horse.horse_wins;
+	var horse_races = horse.horse_races;
+
 	document.getElementById("style_horse_"+color).innerHTML = '#animate_'+color+' {width: 115px; height:115px;}';
 	info_html =
 		"<p class=title>Informazioni sul Cavallo</p>"+
 			"<table>"+
 				"<tr>"+
-					"<td><p> Colore: </p></td>"+
+					"<td><p> Id: </p></td>"+
+					"<td><p>"+horse_id+"</p></td>"+
+				"<tr>"+
+					"<td><p> Name: </p></td>"+
+					"<td><p>"+horse_name+"</p></td>"+
+				"<tr>"+
+					"<td><p> Age: </p></td>"+
+					"<td><p>"+horse_age+"</p></td>"+
+				"<tr>"+
+					"<td><p> Colour: </p></td>"+
 					"<td><p>"+color+"</p></td>"+
 				"<tr>"+
 					"<td><p> Vittorie: </p></td>"+
-					"<td><p>0/0</p></td>"+
+					"<td><p>"+horse_wins+"/"+horse_races+"</p></td>"+
 			"</table><br>"
 	document.getElementById("classifica").innerHTML = info_html;
 }
@@ -40,6 +59,31 @@ function hideInfoHorse(e) {
 }
 
 function setQuote() {
+	var horses = JSON.parse(localStorage.getItem("PetBet - Horses"));
+	var n_horses = horses.length;
+	
+	var race_horses = [];
+	var race_horses_idx = [];
+	var idx;
+	for(var i=0; i<5; i++){
+		do {
+			idx = Math.floor(Math.random()*n_horses);
+		} while( race_horses_idx.includes(idx) );
+		race_horses_idx.push(idx);
+		race_horses.push(horses[idx]);
+		console.log(race_horses[i]);
+	}
+
+	var colors = ['red','blue','green', 'yellow','white'];
+	for(var i=0; i<5; i++){
+		var col = colors[i];
+		document.getElementById("animate_"+col).horse_id = race_horses[i].id;
+		document.getElementById("animate_"+col).horse_name = race_horses[i].name;
+		document.getElementById("animate_"+col).horse_age = race_horses[i].age;
+		document.getElementById("animate_"+col).horse_wins = race_horses[i].wins;
+		document.getElementById("animate_"+col).horse_races = race_horses[i].races;
+	}
+	
 	var vel1 = Math.random()*0.4+1.2;
 	var vel2 = Math.random()*0.4+1.2;
 	var vel3 = Math.random()*0.4+1.2;
@@ -167,14 +211,10 @@ function myMove() {
 				document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
 				document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 				document.getElementById(col+"button").disabled = false;
-				sessionStorage.removeItem("PetBet - Velocita 1");
-				sessionStorage.removeItem("PetBet - Velocita 2");
-				sessionStorage.removeItem("PetBet - Velocita 3");				
-				sessionStorage.removeItem("PetBet - Velocita 4");
-				sessionStorage.removeItem("PetBet - Velocita 5");
-				setQuote();
+				sessionStorage.removeItem("PetBet - Velocita "+i);
 			}
-			
+			setQuote();
+		
 		} else {
 			if(pos1 < finish_line && pos1 != finish_line-70) {
 				pos1 = pos1 + Math.floor(Math.random()*(JSON.parse(sessionStorage.getItem("PetBet - Velocita 1"))+Math.random()*0.4));  

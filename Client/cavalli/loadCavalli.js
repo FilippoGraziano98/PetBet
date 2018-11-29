@@ -15,19 +15,28 @@ var cavalli_html = '\
 			<tr>\
 				<td>\
 					<div class=field name="container" id ="container">\
-						<div class=horse id ="animate1"></div>\
+						<div class=horse id ="animate_red"></div>\
 						<br><br><br>\
-						<div class=horse id ="animate2"></div>\
+						<div class=horse id ="animate_blue"></div>\
 						<br><br><br>\
-						<div class=horse id ="animate3"></div>\
+						<div class=horse id ="animate_green"></div>\
 						<br><br><br>\
-						<div class=horse id ="animate4"></div>\
+						<div class=horse id ="animate_yellow"></div>\
 						<br><br><br>\
-						<div class=horse id ="animate5"></div>\
+						<div class=horse id ="animate_white"></div>\
 					</div>\
 				</td>\
 				<td>\
 					<div name="classifica" id="classifica">\
+						<p class=title>Informazioni sul Cavallo</p>\
+						<table>\
+							<tr>\
+								<td><p> Colore: </p></td>\
+								<td><p>-</p></td>\
+							<tr>\
+								<td><p> Vittorie: </p></td>\
+								<td><p>-/-</p></td>\
+						</table><br>\
 					</div>\
 				</td>\
 		</table>\
@@ -40,7 +49,7 @@ var cavalli_html = '\
 				</tr>\
 				<tr>\
 					<td>Cavallo Blu:</td>\
-					<td><button class=button name="blubutton" id="blubutton" onclick="myMove()">???</button></td>\
+					<td><button class=button name="bluebutton" id="bluebutton" onclick="myMove()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td>Cavallo Verde:</td>\
@@ -60,5 +69,11 @@ var cavalli_html = '\
 
 
 function loadCavalli(){
-	document.getElementById("dynamic_area").innerHTML = cavalli_html
+	document.getElementById("dynamic_area").innerHTML = cavalli_html;
+
+	var colors = ['red','blue','green', 'yellow','white'];
+	for(var i=0; i<5; i++){
+		var col = colors[i];
+		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
+	}
 }

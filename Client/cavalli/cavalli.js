@@ -13,39 +13,63 @@ function msToTime(millisec_interval) {
   return seconds + "." + milliseconds;
 }
 
-function myMove() {
-	document.getElementById("style_horse_red").innerHTML = '#animate1 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
-	document.getElementById("style_horse_blue").innerHTML = '#animate2 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
-	document.getElementById("style_horse_green").innerHTML = '#animate3 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
-	document.getElementById("style_horse_yellow").innerHTML = '#animate4 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
-	document.getElementById("style_horse_white").innerHTML = '#animate5 {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
-	document.getElementById("redbutton").disabled = true;
-	document.getElementById("blubutton").disabled = true;
-	document.getElementById("yellowbutton").disabled = true;
-	document.getElementById("whitebutton").disabled = true;
-	document.getElementById("greenbutton").disabled = true;
-	
-	var elem1 = document.getElementById("animate1");   
-	var elem2 = document.getElementById("animate2");   
-	var elem3 = document.getElementById("animate3");   
-	var elem4 = document.getElementById("animate4");   
-	var elem5 = document.getElementById("animate5");   
-	   
-	var pos1 = 0;
-	var pos2 = 0;
-	var pos3 = 0;
-	var pos4 = 0;
-	var pos5 = 0;
-	
-	document.getElementById("classifica").innerHTML = 
-		"<p class=title>Classifica:</p>"+
+function showInfoHorse(e) {
+	var color = e.target.id.split("_")[1];
+	info_html =
+		"<p class=title>Informazioni sul Cavallo</p>"+
 			"<table>"+
-				"<tr id=1>"+
-				"<tr id=2>"+
-				"<tr id=3>"+
-				"<tr id=4>"+
-				"<tr id=5>"+
+				"<tr>"+
+					"<td><p> Colore: </p></td>"+
+					"<td><p>"+color+"</p></td>"+
+				"<tr>"+
+					"<td><p> Vittorie: </p></td>"+
+					"<td><p>0/0</p></td>"+
 			"</table><br>"
+	document.getElementById("classifica").innerHTML = info_html;
+}
+
+function myMove() {
+	var colors = ['red','blue','green', 'yellow','white'];
+
+	for(var i=0; i<5; i++){
+		var col = colors[i];
+		document.getElementById("style_horse_"+col).innerHTML = '#animate_'+col+' {content: url(img/cavalli/cavallo-immagine-animata-0271.gif)}';
+		document.getElementById("animate_"+col).removeEventListener("mouseenter", showInfoHorse, false);
+		document.getElementById(col+"button").disabled = true;
+	}
+	
+	var elem1 = document.getElementById("animate_red");   
+	var elem2 = document.getElementById("animate_blue");   
+	var elem3 = document.getElementById("animate_green");   
+	var elem4 = document.getElementById("animate_yellow");   
+	var elem5 = document.getElementById("animate_white");   
+	
+	var start_line = 0;
+	var finish_line = 730;
+	
+	var pos1 = start_line;
+	var pos2 = start_line;
+	var pos3 = start_line;
+	var pos4 = start_line;
+	var pos5 = start_line;
+	
+	var classifica_html =
+		"<p class=title>Classifica:</p>"+
+			"<table>";
+	for(var i=1; i<6; i++){
+		classifica_html =
+			classifica_html+
+				"<tr id="+i+">"+
+					"<td class=pos><p>"+i+"</p></td>"+
+					"<td class=horse><p>-</p></td>"+
+					"<td class=time><p>--.---</p></td>";
+	}
+	classifica_html =
+		classifica_html+
+			"</table><br>";
+	
+	document.getElementById("classifica").innerHTML = classifica_html;
+		
 	var start_timer = Date.now();
 	
 	var id = setInterval(frame, 1);
@@ -57,27 +81,37 @@ function myMove() {
 		switch(horse) {
 			case "red":
 				document.getElementById(pos).innerHTML = 
-					"<td><p class=horse id='red'>"+pos+"</p></td><td><p class=horse id='red'> Red Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
+					"<td class=pos><p class=horse id='red'>"+pos+"</p></td>"+
+					"<td class=horse><p class=horse id='red'> Red Horse: </p></td>"+
+					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
 				pos++;
 				break;
 			case "blue":
 				document.getElementById(pos).innerHTML = 
-					"<td><p class=horse id='blu'>"+pos+"</p></td><td><p class=horse id='blu'> Blu Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
+					"<td class=pos><p class=horse id='blu'>"+pos+"</p></td>"+
+					"<td class=horse><p class=horse id='blu'> Blu Horse: </p></td>"+
+					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			case "green":
 				document.getElementById(pos).innerHTML = 
-					"<td><p class=horse id='green'>"+pos+"</p></td><td><p class=horse id='green'> Green Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
+					"<td class=pos><p class=horse id='green'>"+pos+"</p></td>"+
+					"<td class=horse><p class=horse id='green'> Green Horse: </p></td>"+
+					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			case "yellow":
 				document.getElementById(pos).innerHTML = 
-					"<td><p class=horse id='yellow'>"+pos+"</p></td><td><p class=horse id='yellow'> Yellow Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
+					"<td class=pos><p class=horse id='yellow'>"+pos+"</p></td>"+
+					"<td class=horse><p class=horse id='yellow'> Yellow Horse: </p></td>"+
+					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			case "white":
 				document.getElementById(pos).innerHTML = 
-					"<td><p class=horse id='white'>"+pos+"</p></td><td><p class=horse id='white'> White Horse: </p></td><td><p class=time>"+finish_time+"</p></td><br>"
+					"<td class=pos><p class=horse id='white'>"+pos+"</p></td>"+
+					"<td class=horse><p class=horse id='white'> White Horse: </p></td>"+
+					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
 					pos++;
 				break;
 			default:
@@ -87,48 +121,48 @@ function myMove() {
 	}
 	
 	function frame() {
-		if (pos1 > 750 && pos2 > 750 && pos3 > 750 && pos4 > 750 && pos5 > 750) {
+		if (pos1 > finish_line && pos2 > finish_line && pos3 > finish_line && pos4 > finish_line && pos5 > finish_line) {
 			clearInterval(id);
-			console.log(document.getElementById("classifica").innerHTML)
-			document.getElementById("redbutton").disabled = false;
-			document.getElementById("blubutton").disabled = false;
-			document.getElementById("yellowbutton").disabled = false;
-			document.getElementById("whitebutton").disabled = false;
-			document.getElementById("greenbutton").disabled = false;
+			console.log(document.getElementById("classifica").innerHTML);
+			for(var i=0; i<5; i++){
+				var col = colors[i];
+				document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
+				document.getElementById(col+"button").disabled = false;
+			}
 			
 		} else {
-			if(pos1 < 750) {
-				pos1 = pos1 + Math.floor(Math.random()*1.3);  
+			if(pos1 < finish_line) {
+				pos1 = pos1 + Math.floor(Math.random()*1.9);  
 				elem1.style.left = pos1 + 'px'; 
-			} else if (pos1 == 750) { 
+			} else if (pos1 == finish_line) { 
 				horseCuttingFinishLine("red");
 				pos1++;
 			}
-			if(pos2 < 750) {
-				pos2 = pos2 + Math.floor(Math.random()*1.3);  
+			if(pos2 < finish_line) {
+				pos2 = pos2 + Math.floor(Math.random()*1.9);  
 				elem2.style.left = pos2 + 'px';
-			} else if (pos2 == 750){
+			} else if (pos2 == finish_line){
 				horseCuttingFinishLine("blue");
 				pos2++;	
 			}
-			if(pos3 < 750) {
-				pos3 = pos3 + Math.floor(Math.random()*1.3);  
+			if(pos3 < finish_line) {
+				pos3 = pos3 + Math.floor(Math.random()*1.9);  
 				elem3.style.left = pos3 + 'px';
-			} else if (pos3 == 750) {
+			} else if (pos3 == finish_line) {
 				horseCuttingFinishLine("green");
 				pos3++;
 			}
-			if(pos4 < 750) {
-				pos4 = pos4 + Math.floor(Math.random()*1.3);  
+			if(pos4 < finish_line) {
+				pos4 = pos4 + Math.floor(Math.random()*1.9);  
 				elem4.style.left = pos4 + 'px';
-			} else if (pos4 == 750) {
+			} else if (pos4 == finish_line) {
 				horseCuttingFinishLine("yellow");
 				pos4++;
 			}
-			if(pos5 < 750) {
-				pos5 = pos5 + Math.floor(Math.random()*1.3);  
+			if(pos5 < finish_line) {
+				pos5 = pos5 + Math.floor(Math.random()*1.9);  
 				elem5.style.left = pos5 + 'px';
-			} else if (pos5 == 750) {
+			} else if (pos5 == finish_line) {
 				horseCuttingFinishLine("white");
 				pos5++;
 			}				

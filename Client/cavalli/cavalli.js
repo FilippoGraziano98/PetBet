@@ -25,15 +25,16 @@ function setGame() {
 
 
 		//setto info cavallo
-		document.getElementById("animate_"+col).horse_id = race_horses[i].id;
-		document.getElementById("animate_"+col).horse_name = race_horses[i].name;
-		document.getElementById("animate_"+col).horse_age = race_horses[i].age;
-		document.getElementById("animate_"+col).horse_wins = race_horses[i].wins;
-		document.getElementById("animate_"+col).horse_races = race_horses[i].races;
+		var horse = document.getElementById("animate_"+col);
+		horse.horse_id = race_horses[i].id;
+		horse.horse_name = race_horses[i].name;
+		horse.horse_age = race_horses[i].age;
+		horse.horse_wins = race_horses[i].wins;
+		horse.horse_races = race_horses[i].races;
 
 		//scelgo random la velocità del cavallo e setto la relativa quota
-		//var vel1 = Math.random()*0.35+1.25-Math.floor((horse_id-1)/(3*4))*0.2-Math.abs((4-eta)/3)*0.1;		
-		horses_velocity[i] = Math.random()*0.4+1.2;
+		//horses_velocity[i] = Math.random()*0.4+1.2;
+		horses_velocity[i] = Math.random()*0.35+1.25-Math.floor((horse.horse_id-1)/n_horses)*0.2-Math.abs((4-horse.horse_age)/(n_horses/4))*0.1;		
 		horses_quotes[i] = 5.8-horses_velocity[i]*3+Math.random()*1.5;
 		document.getElementById(col+"button").innerHTML = String(horses_quotes[i]).substring(0,4);
 	}
@@ -50,7 +51,6 @@ function endGame() {
 				var col = COLORS[i];
 				document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
 				document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
-				sessionStorage.removeItem("PetBet - Velocita "+i);
 			}
 			document.getElementById("classifica").innerHTML =
 				old_html +

@@ -109,6 +109,29 @@ function setQuote() {
 	document.getElementById("whitebutton").innerHTML = String(quota5).substring(0,4);		
 }
 
+function timeReset() {
+	var time = setInterval(timer, 1000);
+	var t =5;
+	var old_html = document.getElementById("classifica").innerHTML;
+	function timer() {
+		if (t == 0) {
+			var colors = ['red','blue','green', 'yellow','white'];
+			clearInterval(time);
+			for(var i=0; i<5; i++){
+				var col = colors[i];
+				document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
+				document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
+				sessionStorage.removeItem("PetBet - Velocita "+i);
+			}
+			document.getElementById("classifica").innerHTML = old_html + "<p>Un'altra corsa sta per iniziare! </p> <br> <button class=button onclick='loadCavalli()'> VAI </button> <br>";			
+		}
+		if (t > 0) {
+			document.getElementById("classifica").innerHTML = old_html +"<p>La prossima corsa sarà disponibile tra " + t + "</p>";
+			t--;
+		}
+	}
+}
+
 function myMove() {
 	var colors = ['red','blue','green', 'yellow','white'];
 
@@ -202,18 +225,13 @@ function myMove() {
 		}
 	}
 	
+	
+	
 	function frame() {
 		if (pos1 > finish_line && pos2 > finish_line && pos3 > finish_line && pos4 > finish_line && pos5 > finish_line) {
 			clearInterval(id);
 			console.log(document.getElementById("classifica").innerHTML);
-			for(var i=0; i<5; i++){
-				var col = colors[i];
-				document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
-				document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
-				document.getElementById(col+"button").disabled = false;
-				sessionStorage.removeItem("PetBet - Velocita "+i);
-			}
-			setQuote();
+			timeReset();
 		
 		} else {
 			if(pos1 < finish_line && pos1 != finish_line-70) {

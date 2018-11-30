@@ -69,6 +69,7 @@ function loadCavalli(){
 		var col = colors[i];
 		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
 		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
+		document.getElementById(col+"button").disabled = false;
 	}
 	if( ! localStorage.getItem("PetBet - Horses") ){
 		var horses = [

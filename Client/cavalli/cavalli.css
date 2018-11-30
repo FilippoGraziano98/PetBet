@@ -132,9 +132,8 @@ p.horse {
 p.horse[id=red] {
 	color: var(--red);
 }
-p.horse[id=blu] {
+p.horse[id=blue] {
 	color: var(--blue);
-	
 }
 p.horse[id=green] {
 	color: var(--forest-green);

@@ -54,7 +54,9 @@ function hideInfoHorse(e) {
 	var color = e.target.id.split("_")[1];
 	document.getElementById("style_horse_"+color).innerHTML = "";
 	classifica_html = JSON.parse(sessionStorage.getItem("PetBetClassifica"));
-	document.getElementById("classifica").innerHTML = classifica_html;
+	if(classifica_html){
+		document.getElementById("classifica").innerHTML = classifica_html;
+	}
 	sessionStorage.removeItem("PetBetClassifica");
 }
 
@@ -84,6 +86,8 @@ function setQuote() {
 		document.getElementById("animate_"+col).horse_races = race_horses[i].races;
 	}
 	
+	
+//	var vel1 = Math.random()*0.35+1.25-Math.floor((horse_id-1)/(3*4))*0.2-Math.abs((4-eta)/3)*0.1;
 	var vel1 = Math.random()*0.4+1.2;
 	var vel2 = Math.random()*0.4+1.2;
 	var vel3 = Math.random()*0.4+1.2;
@@ -123,10 +127,12 @@ function timeReset() {
 				document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 				sessionStorage.removeItem("PetBet - Velocita "+i);
 			}
-			document.getElementById("classifica").innerHTML = old_html + "<p>Un'altra corsa sta per iniziare! </p> <br> <button class=button onclick='loadCavalli()'> VAI </button> <br>";			
+			document.getElementById("classifica").innerHTML =
+				old_html +
+				"<p>Un'altra corsa sta per iniziare! </p> <br> <button class=button onclick='loadCavalli()'> VAI </button> <br>";			
 		}
 		if (t > 0) {
-			document.getElementById("classifica").innerHTML = old_html +"<p>La prossima corsa sarà disponibile tra " + t + "</p>";
+			document.getElementById("classifica").innerHTML = old_html +"<p>La prossima corsa sarà disponibile tra " + t + " ...</p>";
 			t--;
 		}
 	}
@@ -181,51 +187,14 @@ function myMove() {
 	var id = setInterval(frame, 1);
 	var pos = 1;
 	
-	function horseCuttingFinishLine(horse) {
+	function horseCuttingFinishLine(horse_colour) {
 		var finish_time = msToTime(Date.now() - start_timer);
-		switch(horse) {
-			case "red":
-				document.getElementById(pos).innerHTML = 
-					"<td class=pos><p class=horse id='red'>"+pos+"</p></td>"+
-					"<td class=horse><p class=horse id='red'> Red Horse: </p></td>"+
-					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
-				pos++;
-				break;
-			case "blue":
-				document.getElementById(pos).innerHTML = 
-					"<td class=pos><p class=horse id='blu'>"+pos+"</p></td>"+
-					"<td class=horse><p class=horse id='blu'> Blu Horse: </p></td>"+
-					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
-					pos++;
-				break;
-			case "green":
-				document.getElementById(pos).innerHTML = 
-					"<td class=pos><p class=horse id='green'>"+pos+"</p></td>"+
-					"<td class=horse><p class=horse id='green'> Green Horse: </p></td>"+
-					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
-					pos++;
-				break;
-			case "yellow":
-				document.getElementById(pos).innerHTML = 
-					"<td class=pos><p class=horse id='yellow'>"+pos+"</p></td>"+
-					"<td class=horse><p class=horse id='yellow'> Yellow Horse: </p></td>"+
-					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
-					pos++;
-				break;
-			case "white":
-				document.getElementById(pos).innerHTML = 
-					"<td class=pos><p class=horse id='white'>"+pos+"</p></td>"+
-					"<td class=horse><p class=horse id='white'> White Horse: </p></td>"+
-					"<td class=time><p class=time>"+finish_time+"</p></td><br>"
-					pos++;
-				break;
-			default:
-				//this is never supposed to happen
-				alert("Error");
-		}
+		document.getElementById(pos).innerHTML = 
+			"<td class=pos><p class=horse id='"+horse_colour+"'>"+pos+"</p></td>"+
+			"<td class=horse><p class=horse id='"+horse_colour+"'>"+document.getElementById("animate_"+horse_colour).horse_name+"</p></td>"+
+			"<td class=time><p class=time>"+finish_time+"</p></td><br>"
+		pos++;
 	}
-	
-	
 	
 	function frame() {
 		if (pos1 > finish_line && pos2 > finish_line && pos3 > finish_line && pos4 > finish_line && pos5 > finish_line) {

@@ -38,23 +38,23 @@ var cavalli_html = '\
 			<table>\
 				<tr>\
 					<td>Cavallo Rosso:</td>\
-					<td><button class=button name="redbutton" id="redbutton" onclick="myMove()">???</button></td>\
+					<td><button class=button name="redbutton" id="redbutton" onclick="startGame()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td>Cavallo Blu:</td>\
-					<td><button class=button name="bluebutton" id="bluebutton" onclick="myMove()">???</button></td>\
+					<td><button class=button name="bluebutton" id="bluebutton" onclick="startGame()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td>Cavallo Verde:</td>\
-					<td><button class=button name="greenbutton" id="greenbutton" onclick="myMove()">???</button></td>\
+					<td><button class=button name="greenbutton" id="greenbutton" onclick="startGame()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td>Cavallo Giallo:</td>\
-					<td><button class=button name="yellowbutton" id="yellowbutton" onclick="myMove()">???</button></td>\
+					<td><button class=button name="yellowbutton" id="yellowbutton" onclick="startGame()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td>Cavallo Bianco:</td>\
-					<td><button class=button name="whitebutton" id="whitebutton" onclick="myMove()">???</button></td>\
+					<td><button class=button name="whitebutton" id="whitebutton" onclick="startGame()">???</button></td>\
 				</tr>\
 			</table>\
 		</div>\
@@ -64,9 +64,9 @@ var cavalli_html = '\
 function loadCavalli(){
 	document.getElementById("dynamic_area").innerHTML = cavalli_html;
 
-	var colors = ['red','blue','green', 'yellow','white'];
+	var COLORS = ['red','blue','green', 'yellow','white'];
 	for(var i=0; i<5; i++){
-		var col = colors[i];
+		var col = COLORS[i];
 		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
 		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 		document.getElementById(col+"button").disabled = false;
@@ -89,5 +89,5 @@ function loadCavalli(){
 
 		localStorage.setItem("PetBet - Horses", JSON.stringify(horses));
 	}
-	setQuote();
+	setGame();
 }

@@ -1,7 +1,4 @@
 function showInfoHorse(e) {
-	var classifica_html = document.getElementById("classifica").innerHTML.replace("<br><br><br><br>", "<br>");
-	sessionStorage.setItem("PetBetClassifica", JSON.stringify(classifica_html));
-
 	var color = e.target.id.split("_")[1];
 	var horse = document.getElementById("animate_"+color);
 	var horse_id = horse.horse_id;
@@ -10,7 +7,8 @@ function showInfoHorse(e) {
 	var horse_wins = horse.horse_wins;
 	var horse_races = horse.horse_races;
 
-	document.getElementById("style_horse_"+color).innerHTML = '#animate_'+color+' {width: 115px; height:115px;}';
+	document.getElementById("animate_"+color).style.width = "115px";
+	document.getElementById("animate_"+color).style.height = "115px";
 	info_html =
 		"<p class=title>Informazioni sul Cavallo</p>"+
 			"<table>"+
@@ -30,15 +28,17 @@ function showInfoHorse(e) {
 					"<td><p> Vittorie: </p></td>"+
 					"<td><p>"+horse_wins+"/"+horse_races+"</p></td>"+
 			"</table><br>"
-	document.getElementById("classifica").innerHTML = info_html;
+	
+	document.getElementById("classifica").style.display = 'none';	//hide classifica
+	document.getElementById("infoCavallo").innerHTML = info_html;
 }
 
 function hideInfoHorse(e) {
 	var color = e.target.id.split("_")[1];
-	document.getElementById("style_horse_"+color).innerHTML = "";
-	classifica_html = JSON.parse(sessionStorage.getItem("PetBetClassifica"));
-	if(classifica_html){
-		document.getElementById("classifica").innerHTML = classifica_html;
-	}
+	document.getElementById("animate_"+color).style.width = "100px";
+	document.getElementById("animate_"+color).style.height = "100px";
+	document.getElementById("infoCavallo").innerHTML = "";
+	document.getElementById("classifica").style.display = 'block'; //make classifica visible again
+
 	sessionStorage.removeItem("PetBetClassifica");
 }

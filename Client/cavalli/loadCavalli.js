@@ -1,15 +1,5 @@
 var cavalli_html = '\
 		<link rel=stylesheet type="text/css" href="cavalli/cavalli.css">\
-		<style type="text/css" id="style_horse_red">\
-		</style>\
-		<style type="text/css" id="style_horse_blue">\
-		</style>\
-		<style type="text/css" id="style_horse_green">\
-		</style>\
-		<style type="text/css" id="style_horse_yellow">\
-		</style>\
-		<style type="text/css" id="style_horse_white">\
-		</style>\
 		<div><p class=title>Corsa di Cavalli</p></div>\
 		<table>\
 			<tr>\
@@ -27,9 +17,13 @@ var cavalli_html = '\
 					</div>\
 				</td>\
 				<td>\
+					<div name="infoCavallo" id="infoCavallo">\
+					</div>\
 					<div name="classifica" id="classifica">\
 						<p class=title>Benvenuto all\'Ippodromo</p><br><br>\
 						<p> Fai una scommessa per iniziare </p><br><br>\
+					</div>\
+					<div name="timerEndGame" id="timerEndGame">\
 					</div>\
 				</td>\
 		</table>\
@@ -37,23 +31,28 @@ var cavalli_html = '\
 			<p>Scegli su chi vuoi scommettere:</p>\
 			<table>\
 				<tr>\
-					<td>Cavallo Rosso:</td>\
+					<td><p class=quota_cavallo_nome name="quota_nome_red" id="quota_nome_red"></p></td>\
+					<td><p class=quota_cavallo_colore name="quota_colore_red" id="quota_colore_red">Cavallo Rosso:</p></td>\
 					<td><button class=button name="redbutton" id="redbutton" onclick="startGame()">???</button></td>\
 				</tr>\
 				<tr>\
-					<td>Cavallo Blu:</td>\
+					<td><p class=quota_cavallo_nome name="quota_nome_blue" id="quota_nome_blue"></p></td>\
+					<td><p class=quota_cavallo_colore name="quota_colore_blue" id="quota_colore_blue">Cavallo Blu:</p></td>\
 					<td><button class=button name="bluebutton" id="bluebutton" onclick="startGame()">???</button></td>\
 				</tr>\
 				<tr>\
-					<td>Cavallo Verde:</td>\
+					<td><p class=quota_cavallo_nome name="quota_nome_green" id="quota_nome_green"></p></td>\
+					<td><p class=quota_cavallo_colore name="quota_colore_green" id="quota_colore_green">Cavallo Verde:</p></td>\
 					<td><button class=button name="greenbutton" id="greenbutton" onclick="startGame()">???</button></td>\
 				</tr>\
 				<tr>\
-					<td>Cavallo Giallo:</td>\
+					<td><p class=quota_cavallo_nome name="quota_nome_yellow" id="quota_nome_yellow"></p></td>\
+					<td><p class=quota_cavallo_colore name="quota_colore_yellow" id="quota_colore_yellow">Cavallo Giallo:</p></td>\
 					<td><button class=button name="yellowbutton" id="yellowbutton" onclick="startGame()">???</button></td>\
 				</tr>\
 				<tr>\
-					<td>Cavallo Bianco:</td>\
+					<td><p class=quota_cavallo_nome name="quota_nome_white" id="quota_nome_white"></p></td>\
+					<td><p class=quota_cavallo_colore name="quota_colore_white" id="quota_colore_white">Cavallo Bianco:</p></td>\
 					<td><button class=button name="whitebutton" id="whitebutton" onclick="startGame()">???</button></td>\
 				</tr>\
 			</table>\
@@ -69,7 +68,6 @@ function loadCavalli(){
 		var col = COLORS[i];
 		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
 		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
-		document.getElementById(col+"button").disabled = false;
 	}
 	if( ! localStorage.getItem("PetBet - Horses") ){
 		var horses = [

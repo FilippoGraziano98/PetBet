@@ -21,7 +21,6 @@ function prepareClassifica(){
 			'</table><br>';
 	
 	document.getElementById("classifica").innerHTML = classifica_html;
-
 }
 
 function addToClassifica(horse_colour){

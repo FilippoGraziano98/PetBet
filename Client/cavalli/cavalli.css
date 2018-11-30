@@ -3,7 +3,7 @@ div {
 	height: auto;
 }
 
-#container {
+div[id=container] {
 	width: 800px;
 	height: 450px;
 	font-size: 17px;
@@ -93,8 +93,13 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 /* CLASSIFICA */
-
-#classifica {
+div[id=infoCavallo] {
+	width: 500px;
+}
+div[id=classifica] {
+	width: 500px;
+}
+div[id=timerEndGame] {
 	width: 500px;
 }
 

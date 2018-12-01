@@ -38,11 +38,17 @@ table {
     width: 100%;
 }
 
-th, td {
-    text-align: center;
-    padding: 8px;
+td {
+	width:250px;
+  text-align: center;
+  padding: 8px;
 }
-
+td.info_key {
+	width:200px;
+}
+td.info_value {
+	width:300px;
+}
 td.pos {
 	width:50px;
 }

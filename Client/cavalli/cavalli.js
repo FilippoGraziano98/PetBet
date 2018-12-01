@@ -2,49 +2,49 @@ var COLORS = ['red','blue','green', 'yellow','white'];
 var START_LINE = 0;
 var FINISH_LINE = 720;
 
-var HORSES = [];//definito in setGame
+//definito in setGame
+var horses_database;			//JSON contenente la lista di tutti e 12 i cavalli
+var horses_animated = [];	//lista dei 5 document.getElementById("animate_"+col);
+var race_horses = [];			//lista di 5 oggetti horse (con tutte le info), che partecipano alla gara
 var horses_velocity = [];
 var horses_quotes = [];
 
 function setGame() {
-	var horses_database = JSON.parse(localStorage.getItem("PetBet - Horses"));
+	horses_database = JSON.parse(localStorage.getItem("PetBet - Horses"));
 	var n_horses = horses_database.length;
 	
-	var race_horses = [];
 	var race_horses_idx = [];
 	var idx;
 	for(var i=0; i<5; i++){
 		var col = COLORS[i];
-		HORSES[i] = document.getElementById("animate_"+COLORS[i]);
-		
+		horses_animated[i] = document.getElementById("animate_"+col);
 		//scelgo random un cavallo
 		do {
 			idx = Math.floor(Math.random()*n_horses);
 		} while( race_horses_idx.includes(idx) );
-		race_horses_idx.push(idx);
-		race_horses.push(horses_database[idx]);
+		race_horses_idx[i]=idx;
+		race_horses[i]=horses_database[idx];
 		console.log(race_horses[i]);
 
-
 		//setto info cavallo
-		var horse = document.getElementById("animate_"+col);
-		horse.horse_id = race_horses[i].id;
-		horse.horse_name = race_horses[i].name;
-		horse.horse_age = race_horses[i].age;
-		horse.horse_wins = race_horses[i].wins;
-		horse.horse_races = race_horses[i].races;
+		horses_animated[i].horse_id = race_horses[i].id;
+		horses_animated[i].horse_name = race_horses[i].name;
+		horses_animated[i].horse_razza = race_horses[i].razza;
+		horses_animated[i].horse_age = race_horses[i].age;
+		horses_animated[i].horse_wins = race_horses[i].wins;
+		horses_animated[i].horse_races = race_horses[i].races;
 
 		//riporto il cavallo all'inizio della corsa
-		HORSES[i].style.left = START_LINE+'px';
+		horses_animated[i].style.left = START_LINE+'px';
 
 		//scelgo random la velocità del cavallo e setto la relativa quota
 		//horses_velocity[i] = Math.random()*0.4+1.2;
-		horses_velocity[i] = Math.random()*0.35+1.25-Math.floor((horse.horse_id-1)/n_horses)*0.2-Math.abs((4-horse.horse_age)/(n_horses/4))*0.1;		
+		horses_velocity[i] = Math.random()*0.35+1.25-Math.floor((horses_animated[i].horse_id-1)/n_horses)*0.2-Math.abs((4-horses_animated[i].horse_age)/(n_horses/4))*0.1;		
 		horses_quotes[i] = 5.8-horses_velocity[i]*3+Math.random()*1.5;
 		document.getElementById(col+"button").innerHTML = String(horses_quotes[i]).substring(0,4);
 		
 		//personalizzo la tabella delle quote
-		document.getElementById("quota_nome_"+col).innerHTML = horse.horse_name
+		document.getElementById("quota_nome_"+col).innerHTML = horses_animated[i].horse_name
 		document.getElementById("quota_colore_"+col).innerHTML = "(colore: "+col+")";
 		
 		document.getElementById(col+"button").disabled = false;
@@ -58,12 +58,17 @@ function endGame() {
 	function timer() {
 		if (t == 0) {
 			clearInterval(time);
+			//salvo in memoria dati (wins & races) cavalli
 			for(var i=0; i<5; i++){
-				var col = COLORS[i];
+				var idx = race_horses[i].id;
+				//sfrutto il fatto che gli id sono crescenti da 1 in poi, e univoci in horses_database
+				horses_database[idx-1].wins = horses_animated[i].horse_wins;
+				horses_database[idx-1].races = horses_animated[i].horse_races;
+				localStorage.setItem("PetBet - Horses", JSON.stringify(horses_database));
 			}
 			document.getElementById("timerEndGame").innerHTML =
 				"<p>Un'altra corsa sta per iniziare! </p><br>"+
-				"<button class=button onclick='setGame()'> VAI </button> <br><br>";			
+				"<button class=button onclick='setGame()'> VAI </button> <br><br>";
 		}
 		if (t > 0) {
 			document.getElementById("timerEndGame").innerHTML = "<p>La prossima corsa sarà disponibile tra " + t + " ...</p>";
@@ -103,7 +108,7 @@ function startGame() {
 				var col = COLORS[i];
 				if(horses_position[i] < FINISH_LINE && horses_position[i] != FINISH_LINE-70) {
 					horses_position[i] = horses_position[i] + Math.floor(Math.random()*(horses_velocity[i]+Math.random()*0.4));  
-					HORSES[i].style.left = horses_position[i] + 'px'; 
+					horses_animated[i].style.left = horses_position[i] + 'px'; 
 				} else if (horses_position[i] == FINISH_LINE-70) { 
 					horseCuttingFinishLine(col);
 					horses_position[i]++;

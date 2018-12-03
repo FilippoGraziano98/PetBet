@@ -1,6 +1,9 @@
 var COLORS = ['red','blue','green', 'yellow','white'];
 var START_LINE = 0;
-var FINISH_LINE = 720;
+var FINISH_LINE = 850;
+var END_LANE = 910;
+
+var delay_coefficient = 1;
 
 //definito in setGame
 var horses_database;			//JSON contenente la lista di tutti e 12 i cavalli
@@ -45,7 +48,7 @@ function setGame() {
 		
 		//personalizzo la tabella delle quote
 		document.getElementById("quota_nome_"+col).innerHTML = horses_animated[i].horse_name
-		document.getElementById("quota_colore_"+col).innerHTML = "(colore: "+col+")";
+		document.getElementById("quota_colore_"+col).innerHTML = "(colore: "+color_eng2it(col)+")";
 		
 		document.getElementById(col+"button").disabled = false;
 		document.getElementById("timerEndGame").innerHTML ="";
@@ -54,7 +57,7 @@ function setGame() {
 
 function endGame() {
 	var time = setInterval(timer, 1000);
-	var t = 5;
+	var t = 3;
 	function timer() {
 		if (t == 0) {
 			clearInterval(time);
@@ -77,17 +80,41 @@ function endGame() {
 	}
 }
 
+function startGame_Timer(){
+	for(var i=0; i<5; i++){
+		var col = COLORS[i];
+		document.getElementById(col+"button").disabled = true;
+	}
+	document.getElementById("classifica").innerHTML = "<p class=startTimer>3</p>";
+	var time = setInterval(timer, 1000);
+	var t = 3;
+	function timer() {
+		switch (t) {
+			case 3:
+			case 2:
+				document.getElementById("classifica").innerHTML = "<p class=startTimer>"+String(t-1)+"</p>";
+				t--;
+				break;
+			case 1:
+				document.getElementById("classifica").innerHTML = "<p class=startTimer>GO!</p>";;	
+				startGame();
+				t--;
+				break;
+			case 0:
+				clearInterval(time);
+				prepareClassifica();
+		}
+	}	
+}
+
 function startGame() {
 	var horses_position = [];
 	for(var i=0; i<5; i++){
 		var col = COLORS[i];
 		document.getElementById("animate_"+col).style.content = "url(img/cavalli/cavallo-immagine-animata-0271.gif)";
-		document.getElementById(col+"button").disabled = true;
 
 		horses_position[i] = START_LINE;
 	}
-	
-	prepareClassifica();
 	
 	function horseCuttingFinishLine(horse_colour) {
 		addToClassifica(horse_colour);
@@ -95,26 +122,28 @@ function startGame() {
 
 	var id = setInterval(race, 1);	
 	function race() {
-		if (horses_position[0] > FINISH_LINE &&
-				horses_position[1] > FINISH_LINE &&
-				horses_position[2] > FINISH_LINE &&
-				horses_position[3] > FINISH_LINE &&
-				horses_position[4] > FINISH_LINE) {
+		if (horses_position[0] > END_LANE &&
+				horses_position[1] > END_LANE &&
+				horses_position[2] > END_LANE &&
+				horses_position[3] > END_LANE &&
+				horses_position[4] > END_LANE) {
 			clearInterval(id);
 			endGame();
 		
 		} else {
 			for(var i=0; i<5; i++){
 				var col = COLORS[i];
-				if(horses_position[i] < FINISH_LINE && horses_position[i] != FINISH_LINE-70) {
-					horses_position[i] = horses_position[i] + Math.floor(Math.random()*(horses_velocity[i]+Math.random()*0.4));  
+				if(horses_position[i] < END_LANE && horses_position[i] != FINISH_LINE) {
+					horses_position[i] = horses_position[i] + Math.floor((Math.random()*(horses_velocity[i]+Math.random()*0.4)*delay_coefficient));  
 					horses_animated[i].style.left = horses_position[i] + 'px'; 
-				} else if (horses_position[i] == FINISH_LINE-70) { 
+				} else if (horses_position[i] == FINISH_LINE) { 
 					horseCuttingFinishLine(col);
 					horses_position[i]++;
-				} else if (horses_position[i] == FINISH_LINE) {
+					horses_animated[i].style.left = horses_position[i] + 'px';
+				} else if (horses_position[i] == END_LANE) {
 					document.getElementById("animate_"+col).style.content = "url(img/cavalli/cavallo-fermo.png)";
 					horses_position[i]++;
+					horses_animated[i].style.left = horses_position[i] + 'px';
 				}
 			}		
 		}

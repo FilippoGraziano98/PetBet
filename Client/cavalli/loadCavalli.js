@@ -33,27 +33,27 @@ var cavalli_html = '\
 				<tr>\
 					<td><p class=quota_cavallo_nome name="quota_nome_red" id="quota_nome_red"></p></td>\
 					<td><p class=quota_cavallo_colore name="quota_colore_red" id="quota_colore_red">Cavallo Rosso:</p></td>\
-					<td><button class=button name="redbutton" id="redbutton" onclick="startGame()">???</button></td>\
+					<td><button class=button name="redbutton" id="redbutton" onclick="startGame_Timer()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td><p class=quota_cavallo_nome name="quota_nome_blue" id="quota_nome_blue"></p></td>\
 					<td><p class=quota_cavallo_colore name="quota_colore_blue" id="quota_colore_blue">Cavallo Blu:</p></td>\
-					<td><button class=button name="bluebutton" id="bluebutton" onclick="startGame()">???</button></td>\
+					<td><button class=button name="bluebutton" id="bluebutton" onclick="startGame_Timer()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td><p class=quota_cavallo_nome name="quota_nome_green" id="quota_nome_green"></p></td>\
 					<td><p class=quota_cavallo_colore name="quota_colore_green" id="quota_colore_green">Cavallo Verde:</p></td>\
-					<td><button class=button name="greenbutton" id="greenbutton" onclick="startGame()">???</button></td>\
+					<td><button class=button name="greenbutton" id="greenbutton" onclick="startGame_Timer()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td><p class=quota_cavallo_nome name="quota_nome_yellow" id="quota_nome_yellow"></p></td>\
 					<td><p class=quota_cavallo_colore name="quota_colore_yellow" id="quota_colore_yellow">Cavallo Giallo:</p></td>\
-					<td><button class=button name="yellowbutton" id="yellowbutton" onclick="startGame()">???</button></td>\
+					<td><button class=button name="yellowbutton" id="yellowbutton" onclick="startGame_Timer()">???</button></td>\
 				</tr>\
 				<tr>\
 					<td><p class=quota_cavallo_nome name="quota_nome_white" id="quota_nome_white"></p></td>\
 					<td><p class=quota_cavallo_colore name="quota_colore_white" id="quota_colore_white">Cavallo Bianco:</p></td>\
-					<td><button class=button name="whitebutton" id="whitebutton" onclick="startGame()">???</button></td>\
+					<td><button class=button name="whitebutton" id="whitebutton" onclick="startGame_Timer()">???</button></td>\
 				</tr>\
 			</table>\
 		</div>\

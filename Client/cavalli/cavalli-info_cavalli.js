@@ -40,6 +40,7 @@ function showInfoHorse(e) {
 
 	document.getElementById("animate_"+color).style.width = "115px";
 	document.getElementById("animate_"+color).style.height = "115px";
+	
 	info_html =
 		"<p class=title>Informazioni sul Cavallo</p>"+
 			"<table>"+
@@ -53,11 +54,11 @@ function showInfoHorse(e) {
 					"<td class=info_key><p> Razza: </p></td>"+
 					"<td class=info_value><p>"+horse_razza+"</p></td>"+
 				"<tr>"+
-					"<td class=info_key><p> Age: </p></td>"+
+					"<td class=info_key><p> Età: </p></td>"+
 					"<td class=info_value><p>"+horse_age+"</p></td>"+
 				"<tr>"+
-					"<td class=info_key><p> Colour: </p></td>"+
-					"<td class=info_value><p>"+color+"</p></td>"+
+					"<td class=info_key><p> Colore: </p></td>"+
+					"<td class=info_value><p>"+color_eng2it(color)+"</p></td>"+
 				"<tr>"+
 					"<td class=info_key><p> Vittorie: </p></td>"+
 					"<td class=info_value><p>"+horse_wins+"/"+horse_races+"</p></td>"+

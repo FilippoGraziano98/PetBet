@@ -4,12 +4,12 @@ div {
 }
 
 div[id=container] {
-	width: 800px;
+	width: 1000px;
 	height: 450px;
-	font-size: 17px;
+	font-size: 19px;
 	position: relative;
 	/*background: url(../img/cavalli/mary_poppins_opacity75.jpg);*/
-	background: url(../img/cavalli/pistatraguardo3.jpg);
+	background: url(../img/cavalli/pista_traguardo_lunga.jpg);
 	background-size:100% 530px;
 }
 
@@ -44,10 +44,10 @@ td {
   padding: 8px;
 }
 td.info_key {
-	width:200px;
+	width:180px;
 }
 td.info_value {
-	width:300px;
+	width:320px;
 }
 td.pos {
 	width:50px;
@@ -116,6 +116,10 @@ p {
 	text-decoration:italic;
 	color: var(--black);
 	display: inline
+}
+
+p.startTimer {
+	font-size:250px;
 }
 
 p.title {

@@ -1,7 +1,8 @@
 var COLORS = ['red','blue','green', 'yellow','white'];
 var START_LINE = 0;
-var FINISH_LINE = 850;
-var END_LANE = 910;
+var background_width = 1300;
+var FINISH_LINE = background_width - 150;
+var END_LANE = background_width - 90;
 
 var delay_coefficient = 1;
 
@@ -12,7 +13,8 @@ var race_horses = [];			//lista di 5 oggetti horse (con tutte le info), che part
 var horses_velocity = [];
 var horses_quotes = [];
 
-function setGame() {
+function setGame(idbutton) {
+	document.getElementById(idbutton).setAttribute("class", "button");
 	horses_database = JSON.parse(localStorage.getItem("PetBet - Horses"));
 	var n_horses = horses_database.length;
 	
@@ -48,14 +50,13 @@ function setGame() {
 		
 		//personalizzo la tabella delle quote
 		document.getElementById("quota_nome_"+col).innerHTML = horses_animated[i].horse_name
-		document.getElementById("quota_colore_"+col).innerHTML = "(colore: "+color_eng2it(col)+")";
 		
 		document.getElementById(col+"button").disabled = false;
 		document.getElementById("timerEndGame").innerHTML ="";
 	}
 }
 
-function endGame() {
+function endGame(idbutton) {
 	var time = setInterval(timer, 1000);
 	var t = 3;
 	function timer() {
@@ -71,7 +72,7 @@ function endGame() {
 			}
 			document.getElementById("timerEndGame").innerHTML =
 				"<p>Un'altra corsa sta per iniziare! </p><br>"+
-				"<button class=button onclick='setGame()'> VAI </button> <br><br>";
+				"<button class=button onclick='setGame(\""+idbutton+"\")'> VAI </button> <br><br>";
 		}
 		if (t > 0) {
 			document.getElementById("timerEndGame").innerHTML = "<p>La prossima corsa sarà disponibile tra " + t + " ...</p>";
@@ -80,7 +81,8 @@ function endGame() {
 	}
 }
 
-function startGame_Timer(){
+function startGame_Timer(idbutton){
+	document.getElementById(idbutton).setAttribute("class", "buttonselected");
 	for(var i=0; i<5; i++){
 		var col = COLORS[i];
 		document.getElementById(col+"button").disabled = true;
@@ -97,7 +99,7 @@ function startGame_Timer(){
 				break;
 			case 1:
 				document.getElementById("classifica").innerHTML = "<p class=startTimer>GO!</p>";;	
-				startGame();
+				startGame(idbutton);
 				t--;
 				break;
 			case 0:
@@ -107,7 +109,7 @@ function startGame_Timer(){
 	}	
 }
 
-function startGame() {
+function startGame(idbutton) {
 	var horses_position = [];
 	for(var i=0; i<5; i++){
 		var col = COLORS[i];
@@ -128,7 +130,7 @@ function startGame() {
 				horses_position[3] > END_LANE &&
 				horses_position[4] > END_LANE) {
 			clearInterval(id);
-			endGame();
+			endGame(idbutton);
 		
 		} else {
 			for(var i=0; i<5; i++){

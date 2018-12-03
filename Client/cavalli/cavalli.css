@@ -4,7 +4,7 @@ div {
 }
 
 div[id=container] {
-	width: 1000px;
+	width: 1300px;
 	height: 450px;
 	font-size: 19px;
 	position: relative;
@@ -21,11 +21,23 @@ div.horse {
 	background-color: var(--no-color);
 }
 
-.button {
-    background-color: #555555; /* Green */
+.buttonselected {
+    background-color: green;
     border: none;
     border-radius: 8px;
-    color: white;
+    color:  white; 
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button {
+    background-color: gray;
+    border: none;
+    border-radius: 8px;
+    color:  white;
     padding: 10px 32px;
     text-align: center;
     text-decoration: none;
@@ -40,9 +52,19 @@ table {
 
 td {
 	width:250px;
-  text-align: center;
-  padding: 8px;
+	text-align: center;
+	padding: 8px;
 }
+td.classifica {
+	width: 30%;	
+	height: 400px;
+}
+
+td.quote {
+	width: 70%;
+	height: 400px;
+}
+
 td.info_key {
 	width:180px;
 }
@@ -135,7 +157,7 @@ p.title {
    0   -1px 0   var(--black);
 }
 
-p.horse {
+p.horse, p.quota_cavallo_nome {
 	font-style:extra-bold;
 	text-shadow: 
    1px   0  0   var(--black), 
@@ -144,19 +166,19 @@ p.horse {
    0   -1px 0   var(--black);
 }
 
-p.horse[id=red] {
+p.horse[id=red], p.quota_cavallo_nome[id=quota_nome_red] {
 	color: var(--red);
 }
-p.horse[id=blue] {
+p.horse[id=blue], p.quota_cavallo_nome[id=quota_nome_blue] {
 	color: var(--blue);
 }
-p.horse[id=green] {
+p.horse[id=green], p.quota_cavallo_nome[id=quota_nome_green] {
 	color: var(--forest-green);
 }
-p.horse[id=yellow] {
+p.horse[id=yellow], p.quota_cavallo_nome[id=quota_nome_yellow] {
 	color: var(--yellow);
 }
-p.horse[id=white] {
+p.horse[id=white], p.quota_cavallo_nome[id=quota_nome_white] {
 	color: var(--white);
 
 }

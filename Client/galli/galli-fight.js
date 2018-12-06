@@ -1,4 +1,4 @@
-var ROUND_LEN = 10; // in secs
+var ROUND_LEN = 5*1000; // in millisecs
 
 function fight_start() {
 	var timerToTheCenter = setInterval(galliToTheCenter, 1);	
@@ -19,19 +19,18 @@ function fight_start() {
 }
 
 function fight_loop() {
-	var timerFight = setInterval(galliFight, 1000);
-	document.getElementById("timer").innerHTML = "<p>00:00</p>";
-	var secs = 0;	
+	var timerFight = setInterval(galliFight, 10);
+	var secs = 0;
+	document.getElementById("timer").innerHTML = "<p>"+msToTime(secs).substr(0,5)+"</p>";
 	function galliFight() {
-		if (secs == ROUND_LEN-1) {
-			document.getElementById("timer").innerHTML = "<p>01:00</p>";
+		if (secs == ROUND_LEN) {
+			document.getElementById("timer").innerHTML = "<p>"+msToTime(secs).substr(0,5)+"</p>";
 			fight_end();
 			clearInterval(timerFight);
 		} else {
 			//decrease lifes
-			secs++;
-			var secs_str = (secs < 10) ? "0" + secs : secs;
-			document.getElementById("timer").innerHTML = "<p>00:"+secs_str+"</p>";
+			secs+=10;
+			document.getElementById("timer").innerHTML = "<p>"+msToTime(secs).substr(0,5)+"</p>";
 		}
 	}
 }

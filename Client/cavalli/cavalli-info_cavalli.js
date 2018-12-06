@@ -38,8 +38,7 @@ function showInfoHorse(e) {
 			commento = "Cavallo da Corsa";
 	}
 
-	document.getElementById("animate_"+color).style.width = "115px";
-	document.getElementById("animate_"+color).style.height = "115px";
+	document.getElementById("animate_"+color).style.transform = "scale(1.20)";
 	
 	info_html =
 		"<p class=title>Informazioni sul Cavallo</p>"+
@@ -73,8 +72,7 @@ function showInfoHorse(e) {
 
 function hideInfoHorse(e) {
 	var color = e.target.id.split("_")[1];
-	document.getElementById("animate_"+color).style.width = "100px";
-	document.getElementById("animate_"+color).style.height = "100px";
+	document.getElementById("animate_"+color).style.transform = "";
 	document.getElementById("infoCavallo").innerHTML = "";
 	document.getElementById("classifica").style.display = 'block'; //make classifica visible again
 

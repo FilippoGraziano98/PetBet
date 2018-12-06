@@ -4,31 +4,68 @@ div {
 }
 
 div[id=container] {
-	width: 1000px;
-	height: 450px;
+	width: 800px;
+	height: 800px;
 	font-size: 19px;
 	position: relative;
-	/*background: url(../img/cavalli/mary_poppins_opacity75.jpg);*/
-/*	background: url(../img/cavalli/pista_traguardo_lunga.jpg);*/
+	background: url(../img/galli/boxe-ring_1.jpg);
 	background-color: var(--yellow);
-	background-size:100% 530px;
+	background-size:100% 100%;
 }
 
 div.gallo {
-	width: 100px;
-	height: 100px;
+	width: 125px;
+	height: 125px;
 	position: absolute;
-/*	content: url(../img/cavalli/cavallo-fermo.png);*/
 	background-color: var(--no-color);
 }
 div.gallo[id=gallo_red] {
-	text-align: bottom;
-	background-color: var(--red);
+	content: url(../img/galli/gallo-pugile_no_back_left.png);
+	filter:
+		drop-shadow(2px 0 0 var(--red))
+		drop-shadow(-2px 0 0 var(--red))
+		drop-shadow(0 2px 0 var(--red))
+		drop-shadow(0 -2px 0 var(--red));
+	top:150px;
+	left:150px;
 }
 div.gallo[id=gallo_blue] {
-	width:50%;
-	text-align: right;
-	background-color: var(--blue);
+	content: url(../img/galli/gallo-pugile_no_back_right.png);
+	filter:
+		drop-shadow(2px 0 0 var(--blue))
+		drop-shadow(-2px 0 0 var(--blue))
+		drop-shadow(0 2px 0 var(--blue))
+		drop-shadow(0 -2px 0 var(--blue));
+	top:150px;
+	right:150px;
+}
+div.gallo[id=gallo_yellow] {
+	content: url(../img/galli/gallo-pugile_no_back_right.png);
+	filter:
+		drop-shadow(2px 0 0 var(--yellow))
+		drop-shadow(-2px 0 0 var(--yellow))
+		drop-shadow(0 2px 0 var(--yellow))
+		drop-shadow(0 -2px 0 var(--yellow));
+	bottom:150px;
+	right:150px;
+}
+div.gallo[id=gallo_green] {
+	content: url(../img/galli/gallo-pugile_no_back_left.png);
+	filter:
+		drop-shadow(2px 0 0 var(--forest-green))
+		drop-shadow(-2px 0 0 var(--forest-green))
+		drop-shadow(0 2px 0 var(--forest-green))
+		drop-shadow(0 -2px 0 var(--forest-green));
+	bottom:150px;
+	left:150px;
+}
+div.fight {
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	background-color: var(--no-color);
+	top:225px;
+	left:225px;
 }
 .button {
     background-color: #555555; /* Green */
@@ -51,6 +88,12 @@ td {
 	width:250px;
   text-align: center;
   padding: 8px;
+}
+td.gallo_hp_header {
+	width:350px;
+}
+td.gallo_hp_value {
+	width:150px;
 }
 
 p {

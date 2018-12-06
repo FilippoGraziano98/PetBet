@@ -13,13 +13,13 @@ var cavalli_html = '\
 					<br><br><br>\
 					<div class=horse id="animate_white"></div>\
 				</div>\
-		<br><br>\
+		<br>\
 		<div name="quote" id="quote" style="overflow-x:auto;">\
 				<table>\
 					<tr>\
 						<td class=quote>\
 							<p>Scegli su chi vuoi scommettere:</p>\
-							<br><br><br>\
+							<br><br>\
 							<table>\
 								<tr>\
 									<td><p class=quota_cavallo_nome name="quota_nome_red" id="quota_nome_red"></p></td>\

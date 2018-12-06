@@ -1,6 +1,7 @@
 var RING_SIZE = 800;
 var GALLO_SIZE = 125;
 var DIST_BORDER = 150; //distance from border
+var MAX_HEALTH = 1000;
 
 class gallo {
 	constructor(gallo, vertical, horizontal){
@@ -9,7 +10,9 @@ class gallo {
 		this.top = RING_SIZE-GALLO_SIZE-vertical;				//distance of the div from the top border
 		this.bottom = vertical;													//distance of the div from the bottom border
 		this.right = RING_SIZE-GALLO_SIZE-horizontal;		//distance of the div from the right border
-		this.left = horizontal;													//distance of the div from the left border
+		this.left = horizontal;												//distance of the div from the left border
+		this.HEALTH_START = MAX_HEALTH;
+		this.health = MAX_HEALTH;
 	}
 	move(vertical, horizontal){
 		//vertical 		{>0 => up, 0 => nomove, <0 => down}
@@ -31,6 +34,9 @@ class gallo {
 		this.gallo_html.style.right = this.right + 'px';
 		this.gallo_html.style.bottom = this.bottom + 'px';
 		this.gallo_html.style.left = this.left+ 'px';
+	}
+	fight_getDamage(){
+		this.health -= Math.floor(Math.random()*2);
 	}
 }
 

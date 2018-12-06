@@ -67,6 +67,15 @@ div.fight {
 	top:225px;
 	left:225px;
 }
+
+div.gallo_hp_bar {
+	width: 100px;
+	height: 100%;
+	background-color: var(--dark-orange);
+	position: absolute;
+	left: 0px;
+}
+
 .button {
     background-color: #555555; /* Green */
     border: none;

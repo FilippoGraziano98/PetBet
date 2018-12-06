@@ -10,17 +10,32 @@ var galli_html = '\
 					<div class=galli_lifes name="galli_lifes" id="galli_lifes">\
 						<table>\
 							<tr>\
-								<td class=gallo_hp_header><p> Gallo Rosso HP:</p></td>\
-								<td class=gallo_hp_value><p id="gallo_red_HP">100</p></td>\
+								<td class=gallo_hp_header><p id="gallo_red_HP_header"></p></td>\
+								<td class=gallo_hp_value>\
+									<div style="background-color: var(--no-colour); border-style: solid; width:100px; height: 18px; position: relative;">\
+										<div class=gallo_hp_bar id="gallo_red_HP_value"></div>\
+								</td>\
 							<tr>\
-								<td class=gallo_hp_header><p> Gallo Blu HP:</p></td>\
-								<td class=gallo_hp_value><p id="gallo_blue_HP">100</p></td>\
+								<td class=gallo_hp_header><p id="gallo_blue_HP_header"></p></td>\
+								<td class=gallo_hp_value>\
+									<div style="background-color: var(--no-colour);border-style: solid; width:100px; height: 18px; position: relative;">\
+										<div class=gallo_hp_bar id="gallo_blue_HP_value"></div>\
+									</div>\
+								</td>\
 							<tr>\
-								<td class=gallo_hp_header><p> Gallo Giallo HP:</p></td>\
-								<td class=gallo_hp_value><p id="gallo_yellow_HP">100</p></td>\
+								<td class=gallo_hp_header><p id="gallo_yellow_HP_header"></p></td>\
+								<td class=gallo_hp_value>\
+									<div style="background-color: var(--no-colour);border-style: solid; width:100px; height: 18px; position: relative;">\
+										<div class=gallo_hp_bar id="gallo_yellow_HP_value"></div>\
+									</div>\
+								</td>\
 							<tr>\
-								<td class=gallo_hp_header><p> Gallo Verde HP:</p></td>\
-								<td class=gallo_hp_value><p id="gallo_green_HP">100</p></td>\
+								<td class=gallo_hp_header><p id="gallo_green_HP_header"></p></td>\
+								<td class=gallo_hp_value>\
+									<div style="background-color: var(--no-colour);border-style: solid; width:100px; height: 18px; position: relative;">\
+										<div class=gallo_hp_bar id="gallo_green_HP_value"></div>\
+									</div>\
+								</td>\
 						</table>\
 					</div>\
 					<br>\

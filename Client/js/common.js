@@ -15,7 +15,7 @@ function msToTime(millisec_interval) {
   }
 
   seconds = (seconds < 10) ? "0" + seconds : seconds;
-  console.log(String(milliseconds).length);
+  //console.log(String(milliseconds).length);
 	milliseconds = String(milliseconds)+"0".repeat(3-String(milliseconds).length)
 
   return seconds + "." + milliseconds;

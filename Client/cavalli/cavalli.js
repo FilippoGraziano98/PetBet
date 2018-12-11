@@ -13,8 +13,12 @@ var race_horses = [];			//lista di 5 oggetti horse (con tutte le info), che part
 var horses_velocity = [];
 var horses_quotes = [];
 
-function setGame(idbutton) {
-	document.getElementById(idbutton).setAttribute("class", "button");
+function setGame() {
+	document.getElementById("quota").innerHTML = "<p id='quota_int'>- - -</p>";
+	document.getElementById("vincita_potenziale").innerHTML = "<p>- - -</p>";
+	for(var c=0; c<5; c++) {	
+		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
+	}
 	horses_database = JSON.parse(localStorage.getItem("PetBet - Horses"));
 	var n_horses = horses_database.length;
 	
@@ -56,7 +60,7 @@ function setGame(idbutton) {
 	}
 }
 
-function endGame(idbutton) {
+function endGame() {
 	var time = setInterval(timer, 1000);
 	var t = 3;
 	function timer() {
@@ -71,8 +75,8 @@ function endGame(idbutton) {
 				localStorage.setItem("PetBet - Horses", JSON.stringify(horses_database));
 			}
 			document.getElementById("timerEndGame").innerHTML =
-				"<p>Un'altra corsa sta per iniziare! </p><br>"+
-				"<button class=button onclick='setGame(\""+idbutton+"\")'> VAI </button> <br><br>";
+				"<p>Un'altra corsa sta per iniziare! </p>"+
+				"<button class=menu onclick='setGame()'> VAI </button> <br><br>";
 		}
 		if (t > 0) {
 			document.getElementById("timerEndGame").innerHTML = "<p>La prossima corsa sarà disponibile tra " + t + " ...</p>";
@@ -81,13 +85,19 @@ function endGame(idbutton) {
 	}
 }
 
-function startGame_Timer(idbutton){
-	document.getElementById(idbutton).setAttribute("class", "buttonselected");
+function startGame_Timer(){
+	if (document.getElementById("quota_int").innerHTML.includes("- - -")) {
+		alert("Devi prima inserire una quota!");
+		return false;
+	}
+	alert("SCOMMESSA REGISTRATA CON SUCCESSO");
+	document.getElementById("bet").disabled = true;
+	document.getElementById("scommetti").disabled = true;
+	document.getElementById("classifica").innerHTML = "<p class=startTimer>3</p>";
 	for(var i=0; i<5; i++){
 		var col = COLORS[i];
 		document.getElementById(col+"button").disabled = true;
 	}
-	document.getElementById("classifica").innerHTML = "<p class=startTimer>3</p>";
 	var time = setInterval(timer, 1000);
 	var t = 3;
 	function timer() {
@@ -98,8 +108,8 @@ function startGame_Timer(idbutton){
 				t--;
 				break;
 			case 1:
-				document.getElementById("classifica").innerHTML = "<p class=startTimer>GO!</p>";;	
-				startGame(idbutton);
+				document.getElementById("classifica").innerHTML = "<p class=startTimer>GO!</p>";
+				startGame();
 				t--;
 				break;
 			case 0:
@@ -109,7 +119,25 @@ function startGame_Timer(idbutton){
 	}	
 }
 
-function startGame(idbutton) {
+function update_quote(idbutton) {
+	var i;
+	var color = idbutton.substring(0,idbutton.length-6);
+	for(var x=0; x<5; x++) {
+		if (COLORS[x] == color) i = x;
+	}
+	var money = document.getElementById("bet").value;
+	var chosen_quote = String(horses_quotes[i]).substring(0,4);
+	quote_calculator(chosen_quote, money);
+	for(var c=0; c<5; c++) {	
+		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
+	}
+	document.getElementById(idbutton).setAttribute("class", "buttonselected");
+	document.getElementById("scommetti").disabled = false;
+	document.getElementById("bet").disabled = false;
+}
+
+
+function startGame() {
 	var horses_position = [];
 	for(var i=0; i<5; i++){
 		var col = COLORS[i];
@@ -130,7 +158,7 @@ function startGame(idbutton) {
 				horses_position[3] > END_LANE &&
 				horses_position[4] > END_LANE) {
 			clearInterval(id);
-			endGame(idbutton);
+			endGame();
 		
 		} else {
 			for(var i=0; i<5; i++){

@@ -2,16 +2,20 @@ var cavalli_html = '\
 		<link rel=stylesheet type="text/css" href="cavalli/cavalli.css">\
 		<div><p class=title>Corsa di Cavalli</p></div>\
 				<br>\
-				<div class=field name="container" id ="container">\
-					<div class=horse id="animate_red"></div>\
-					<br><br><br>\
-					<div class=horse id="animate_blue"></div>\
-					<br><br><br>\
-					<div class=horse id="animate_green"></div>\
-					<br><br><br>\
-					<div class=horse id="animate_yellow"></div>\
-					<br><br><br>\
-					<div class=horse id="animate_white"></div>\
+				<div class=back name="backcavalli" id="backcavalli">\
+					<br><br>\
+					<div class=field name="container" id ="container">\
+						<div class=horse id="animate_red"></div>\
+						<br><br><br>\
+						<div class=horse id="animate_blue"></div>\
+						<br><br><br>\
+						<div class=horse id="animate_green"></div>\
+						<br><br><br>\
+						<div class=horse id="animate_yellow"></div>\
+						<br><br><br>\
+						<div class=horse id="animate_white"></div>\
+					</div>\
+					<br><br>\
 				</div>\
 		<br>\
 		<div name="quote" id="quote" style="overflow-x:auto;">\
@@ -23,23 +27,23 @@ var cavalli_html = '\
 							<table>\
 								<tr>\
 									<td><p class=quota_cavallo_nome name="quota_nome_red" id="quota_nome_red"></p></td>\
-									<td><button class=button name="redbutton" id="redbutton" onclick="startGame_Timer(this.id)">???</button></td>\
+									<td><button class=button name="redbutton" id="redbutton" onclick="update_quote(this.id)">???</button></td>\
 								</tr>\
 								<tr>\
 									<td><p class=quota_cavallo_nome name="quota_nome_blue" id="quota_nome_blue"></p></td>\
-									<td><button class=button name="bluebutton" id="bluebutton" onclick="startGame_Timer(this.id)">???</button></td>\
+									<td><button class=button name="bluebutton" id="bluebutton" onclick="update_quote(this.id)">???</button></td>\
 								</tr>\
 								<tr>\
 									<td><p class=quota_cavallo_nome name="quota_nome_green" id="quota_nome_green"></p></td>\
-									<td><button class=button name="greenbutton" id="greenbutton" onclick="startGame_Timer(this.id)">???</button></td>\
+									<td><button class=button name="greenbutton" id="greenbutton" onclick="update_quote(this.id)">???</button></td>\
 								</tr>\
 								<tr>\
 									<td><p class=quota_cavallo_nome name="quota_nome_yellow" id="quota_nome_yellow"></p></td>\
-									<td><button class=button name="yellowbutton" id="yellowbutton" onclick="startGame_Timer(this.id)">???</button></td>\
+									<td><button class=button name="yellowbutton" id="yellowbutton" onclick="update_quote(this.id)">???</button></td>\
 								</tr>\
 								<tr>\
 									<td><p class=quota_cavallo_nome name="quota_nome_white" id="quota_nome_white"></p></td>\
-									<td><button class=button name="whitebutton" id="whitebutton" onclick="startGame_Timer(this.id)">???</button></td>\
+									<td><button class=button name="whitebutton" id="whitebutton" onclick="update_quote(this.id)">???</button></td>\
 								</tr>\
 							</table>\
 						</td>\

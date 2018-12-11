@@ -51,6 +51,18 @@ a[id=logout]:hover {
 }
 
 /* BODY */
+
+
+
+div.bet {
+	background-color: var(--transparent-white);
+	display: block;
+	font-size:30px;
+	position: absolute;
+	width: 14%;
+	margin: 0 3%;
+}
+
 div.body {
 	clear:left; /*not to overlap with the header's floating elements*/
 	width: auto;
@@ -63,6 +75,7 @@ div.body_area {
 	float:left;
 	display: inline;
 	font-size:60px;
+
 }
 
 div.body_area[id=left_menu] {

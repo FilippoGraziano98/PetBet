@@ -10,7 +10,13 @@ div[id=container] {
 	position: relative;
 	/*background: url(../img/cavalli/mary_poppins_opacity75.jpg);*/
 	background: url(../img/cavalli/pista_traguardo_lunga.jpg);
+	border-radius: 25px;
+	border: 5px solid silver; 
 	background-size:100% 530px;
+}
+
+div.back {
+	background-color: teal;
 }
 
 div.horse {

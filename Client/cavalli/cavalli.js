@@ -2,7 +2,7 @@ var COLORS = ['red','blue','green', 'yellow','white'];
 var START_LINE = 0;
 var background_width = 1300;
 var FINISH_LINE = background_width - 150;
-var END_LANE = background_width - 90;
+var END_LANE = background_width - 100;
 
 var delay_coefficient = 1;
 

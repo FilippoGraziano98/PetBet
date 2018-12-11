@@ -52,7 +52,10 @@ a[id=logout]:hover {
 
 /* BODY */
 
-
+p[id=euro_symbol] {
+	all: initial;
+	font-size: 18;
+}
 
 div.bet {
 	background-color: var(--transparent-white);

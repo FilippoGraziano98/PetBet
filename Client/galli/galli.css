@@ -1,91 +1,113 @@
 div {
 	width: auto;
 	height: auto;
+	background-color: var(--no-colour);
 }
-
-div[id=container] {
-	width: 800px;
-	height: 800px;
-	font-size: 19px;
-	position: relative;
-	background: url(../img/galli/boxe-ring_1.jpg);
-	background-color: var(--yellow);
+div[id=header_div] {
+	background-color: var(--transparent-white);
+}
+div[id=body_div] {
+	width: 1360px;
+	height: 600px;
+	background: url(../img/galli/ring-fieno_1.png);
 	background-size:100% 100%;
 }
 
+div[id=container] {
+	width: 1024px;
+	height: 400px;
+	position: relative;
+}
+
 div.gallo {
-	width: 125px;
-	height: 125px;
+	width: 250px;
+	height: 300px;
 	position: absolute;
 	background-color: var(--no-color);
 }
 div.gallo[id=gallo_red] {
-	content: url(../img/galli/gallo-pugile_no_back_left.png);
+	content: url(../img/galli/gallo_red.png);
+	top: 100px;
+	left: 5px;
+}
+div.gallo[id=gallo_blue] {
+	content: url(../img/galli/gallo_blue.png);
+	top: 100px;
+	right: 5px;
+}
+
+div.ko {
+	content: url(../img/galli/ko.png);
+	position: absolute;
+	width: 250px;
+	height: 200px;
+	top: 150px;
+}
+div.ko[id=ko_red] {
 	filter:
 		drop-shadow(2px 0 0 var(--red))
 		drop-shadow(-2px 0 0 var(--red))
 		drop-shadow(0 2px 0 var(--red))
 		drop-shadow(0 -2px 0 var(--red));
-	top:150px;
-	left:150px;
+	left: 5px;
 }
-div.gallo[id=gallo_blue] {
-	content: url(../img/galli/gallo-pugile_no_back_right.png);
+div.ko[id=ko_blue] {
 	filter:
 		drop-shadow(2px 0 0 var(--blue))
 		drop-shadow(-2px 0 0 var(--blue))
 		drop-shadow(0 2px 0 var(--blue))
 		drop-shadow(0 -2px 0 var(--blue));
-	top:150px;
-	right:150px;
+	right: 5px;
 }
-div.gallo[id=gallo_yellow] {
-	content: url(../img/galli/gallo-pugile_no_back_right.png);
-	filter:
-		drop-shadow(2px 0 0 var(--yellow))
-		drop-shadow(-2px 0 0 var(--yellow))
-		drop-shadow(0 2px 0 var(--yellow))
-		drop-shadow(0 -2px 0 var(--yellow));
-	bottom:150px;
-	right:150px;
-}
-div.gallo[id=gallo_green] {
-	content: url(../img/galli/gallo-pugile_no_back_left.png);
-	filter:
-		drop-shadow(2px 0 0 var(--forest-green))
-		drop-shadow(-2px 0 0 var(--forest-green))
-		drop-shadow(0 2px 0 var(--forest-green))
-		drop-shadow(0 -2px 0 var(--forest-green));
-	bottom:150px;
-	left:150px;
-}
+
 div.fight {
 	width: 350px;
 	height: 350px;
 	position: absolute;
 	background-color: var(--no-color);
-	top:225px;
-	left:225px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
 }
 
+div.gallo_hp_bar_container {
+	background-color: var(--no-colour);
+	border-style: solid;
+	width:100px;
+	height: 18px;
+	position: relative;
+}
+div.gallo_hp_percentage {
+	background-color: var(--no-colour);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	z-index: 1;
+}
 div.gallo_hp_bar {
 	width: 100px;
 	height: 100%;
-	background-color: var(--dark-orange);
+	background-color: var(--forest-green);
 	position: absolute;
+	top: 0px;
 	left: 0px;
 }
 
 .button {
-    background-color: #555555; /* Green */
-    border: none;
-    border-radius: 8px;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+	background-color: #555555; /* Green */
+	border: none;
+	border-radius: 8px;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
 
 table {

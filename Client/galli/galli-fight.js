@@ -1,11 +1,11 @@
 var ROUND_LEN = 5*1000; // in millisecs
 
 function fight_start() {
+	GALLI_LIST.rotate_galli();
 	var timerToTheCenter = setInterval(galliToTheCenter, 1);	
 	function galliToTheCenter() {
-		if (Math.abs(GALLI_LIST.red.top - GALLI_LIST.yellow.top) < 5 &&
-				Math.abs(GALLI_LIST.blue.top - GALLI_LIST.green.top) < 5
-				) {
+		if (Math.abs(GALLI_LIST.red.right - GALLI_LIST.blue.right) < 50) {
+			GALLI_LIST.reset_rotation();
 			for(var g in GALLI_LIST){
 				if(GALLI_LIST[g] instanceof gallo){
 					GALLI_LIST[g].gallo_html.style.display = "none";
@@ -23,16 +23,10 @@ function fight_start() {
 function fight_loop() {
 	var timerFight = setInterval(galliFight, 10);
 	var secs = 0;
-	for(var g in GALLI_LIST){
-		if(GALLI_LIST[g] instanceof gallo){
-			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_header").innerHTML = GALLI_LIST[g].gallo_html.id;
-			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").innerHTML = GALLI_LIST[g].health;
-			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").style.width = Math.floor(GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START)+'px';
-		}
-	}
+	var end = false;//set to true if a gallo is dead
 	document.getElementById("timer").innerHTML = "<p>"+msToTime(secs).substr(0,5)+"</p>";
 	function galliFight() {
-		if (secs == ROUND_LEN) {
+		if (end || secs == ROUND_LEN) {
 			document.getElementById("timer").innerHTML = "<p>"+msToTime(secs).substr(0,5)+"</p>";
 			fight_end();
 			clearInterval(timerFight);
@@ -40,7 +34,11 @@ function fight_loop() {
 			for(var g in GALLI_LIST){
 				if(GALLI_LIST[g] instanceof gallo){
 					GALLI_LIST[g].fight_getDamage();
-					document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").innerHTML = GALLI_LIST[g].health;
+					if(GALLI_LIST[g].isDead){
+						GALLI_LIST[g].dead();
+						end=true;
+					}
+					document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_percentage").innerHTML = String(GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START).substr(0,5) + ' %';
 					document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").style.width = Math.floor(GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START)+'px';
 				}
 			}
@@ -56,13 +54,13 @@ function fight_end() {
 		document.getElementById("fight").style.content = "";
 		for(var g in GALLI_LIST){
 			if(GALLI_LIST[g] instanceof gallo){
-				GALLI_LIST[g].gallo_html.style.display = "block";
+				if(!GALLI_LIST[g].isDead){
+					GALLI_LIST[g].gallo_html.style.display = "block";
+				}
 			}
 		}
-		if (GALLI_LIST.red.top <= DIST_BORDER &&
-				GALLI_LIST.blue.top <= DIST_BORDER &&
-				GALLI_LIST.yellow.bottom <= DIST_BORDER &&
-				GALLI_LIST.green.bottom <= DIST_BORDER
+		if (GALLI_LIST.red.left <= DIST_BORDER &&
+				GALLI_LIST.blue.right <= DIST_BORDER
 				) {
 			clearInterval(timerToTheAngles);
 		} else {

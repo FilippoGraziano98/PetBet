@@ -1,22 +1,22 @@
 var cavalli_html = '\
 		<link rel=stylesheet type="text/css" href="cavalli/cavalli.css">\
 		<div><p class=title>Corsa di Cavalli</p></div>\
-				<br>\
-				<div class=back name="backcavalli" id="backcavalli">\
-					<br><br>\
-					<div class=field name="container" id ="container">\
-						<div class=horse id="animate_red"></div>\
-						<br><br><br>\
-						<div class=horse id="animate_blue"></div>\
-						<br><br><br>\
-						<div class=horse id="animate_green"></div>\
-						<br><br><br>\
-						<div class=horse id="animate_yellow"></div>\
-						<br><br><br>\
-						<div class=horse id="animate_white"></div>\
-					</div>\
-					<br><br>\
-				</div>\
+		<br>\
+		<div class=back name="backcavalli" id="backcavalli">\
+			<br><br>\
+			<div class=field name="container" id ="container">\
+				<div class=horse id="animate_red"></div>\
+				<br><br><br>\
+				<div class=horse id="animate_blue"></div>\
+				<br><br><br>\
+				<div class=horse id="animate_green"></div>\
+				<br><br><br>\
+				<div class=horse id="animate_yellow"></div>\
+				<br><br><br>\
+				<div class=horse id="animate_white"></div>\
+			</div>\
+			<br><br>\
+		</div>\
 		<br>\
 		<div name="quote" id="quote" style="overflow-x:auto;">\
 				<table>\

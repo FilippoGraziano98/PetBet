@@ -39,9 +39,9 @@ div.gallo[id=gallo_blue] {
 div.ko {
 	content: url(../img/galli/ko.png);
 	position: absolute;
-	width: 250px;
-	height: 200px;
-	top: 150px;
+	width: 4px; /*250px;*/
+	height: 5px; /*200px;*/
+	top: 200px;
 }
 div.ko[id=ko_red] {
 	filter:
@@ -49,7 +49,7 @@ div.ko[id=ko_red] {
 		drop-shadow(-2px 0 0 var(--red))
 		drop-shadow(0 2px 0 var(--red))
 		drop-shadow(0 -2px 0 var(--red));
-	left: 5px;
+	left: 100px;
 }
 div.ko[id=ko_blue] {
 	filter:
@@ -57,7 +57,7 @@ div.ko[id=ko_blue] {
 		drop-shadow(-2px 0 0 var(--blue))
 		drop-shadow(0 2px 0 var(--blue))
 		drop-shadow(0 -2px 0 var(--blue));
-	right: 5px;
+	right: 100px;
 }
 
 div.fight {

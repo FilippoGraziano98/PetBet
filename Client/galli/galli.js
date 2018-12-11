@@ -15,7 +15,9 @@ class gallo {
 		this.ko_html.style.display = "none";
 		this.right = RING_WIDTH-GALLO_WIDTH-horizontal;		//distance of the div from the right border
 		this.left = horizontal;												//distance of the div from the left border
-		this.ko_top = 0;
+		this.ko_top = 250;
+		this.ko_border = 150;
+		this.ko_size = 0;
 		this.HEALTH_START = MIN_HEALTH+Math.floor(Math.random()*(MAX_HEALTH-MIN_HEALTH));	//inizializzo la vita con un valore random tra 0 e 1000
 		this.health = this.HEALTH_START/accelleration_factor;//qui memorizzo la vita attuale
 		this.strength= MIN_STRENGTH+Math.floor(Math.random()*(MAX_STRENGTH-MIN_STRENGTH));//fisso la forza del gallo a un valore tra 0 e 100
@@ -61,13 +63,43 @@ class gallo {
 	dead(){
 		this.gallo_html.style.display = "none";
 		this.ko_html.style.display = "block";
-		var ko_down_timer = setInterval(ko_down(this), 1);
-		function ko_down(dead_gallo) {
-			if (dead_gallo.ko_top > 150) {
-				clearInterval(ko_down_timer);
-			} else {
-				dead_gallo.ko_top++;
-				dead_gallo.ko_html.style.top = dead_gallo.ko_top+'px';
+		var ko_down_timer = setInterval(zoom_out, 10);
+		function ko_down() {
+			for(var g in GALLI_LIST){
+				if(GALLI_LIST[g] instanceof gallo){
+					if(GALLI_LIST[g].isDead){
+						if (GALLI_LIST[g].ko_top > 150) {
+							clearInterval(ko_down_timer);
+						} else {
+							GALLI_LIST[g].ko_top++;
+							GALLI_LIST[g].ko_html.style.top = GALLI_LIST[g].ko_top+'px';
+						}
+					}
+				}
+			}
+		}
+		function zoom_out() {
+			for(var g in GALLI_LIST){
+				if(GALLI_LIST[g] instanceof gallo){
+					if(GALLI_LIST[g].isDead){
+						if (GALLI_LIST[g].ko_size >= 200) {
+							clearInterval(ko_down_timer);
+						} else {
+							GALLI_LIST[g].ko_size += 4;
+							GALLI_LIST[g].ko_html.style.height = GALLI_LIST[g].ko_size+'px';
+							GALLI_LIST[g].ko_html.style.width = Math.floor(GALLI_LIST[g].ko_size*5/4)+'px';
+							GALLI_LIST[g].ko_top -= 2;
+							GALLI_LIST[g].ko_html.style.top = GALLI_LIST[g].ko_top+'px';
+							GALLI_LIST[g].ko_border -= 2.5;
+							if(GALLI_LIST[g].gallo_html.id == "gallo_red") {
+								GALLI_LIST[g].ko_html.style.left = GALLI_LIST[g].ko_border+'px';
+							} else {
+								GALLI_LIST[g].ko_html.style.right = GALLI_LIST[g].ko_border+'px';
+							}
+							console.log(GALLI_LIST[g].ko_size, GALLI_LIST[g].ko_top, GALLI_LIST[g].ko_border)
+						}
+					}
+				}
 			}
 		}
 	}

@@ -1,6 +1,6 @@
-var RING_WIDTH = 1024;
+var RING_WIDTH = 1250;
 var GALLO_WIDTH = 250;
-var DIST_BORDER = 5; //distance from border
+var DIST_BORDER = 75; //distance from border
 var MIN_HEALTH = 800;
 var MAX_HEALTH = 1000;
 var MIN_STRENGTH = 50;
@@ -13,11 +13,14 @@ class gallo {
 		this.gallo_html = gallo;											//references the div containing the gallo
 		this.ko_html = document.getElementById("ko_"+this.gallo_html.id.split("_")[1]);
 		this.ko_html.style.display = "none";
+		this.winner_html = document.getElementById("winner_"+this.gallo_html.id.split("_")[1]);
+		this.winner_html.style.display = "none";
 		this.right = RING_WIDTH-GALLO_WIDTH-horizontal;		//distance of the div from the right border
 		this.left = horizontal;												//distance of the div from the left border
-		this.ko_top = 250;
-		this.ko_border = 150;
+		this.ko_top = 325;
+		this.ko_border = 250;
 		this.ko_size = 0;
+		this.winner_height = 0;
 		this.HEALTH_START = MIN_HEALTH+Math.floor(Math.random()*(MAX_HEALTH-MIN_HEALTH));	//inizializzo la vita con un valore random tra 0 e 1000
 		this.health = this.HEALTH_START/accelleration_factor;//qui memorizzo la vita attuale
 		this.strength= MIN_STRENGTH+Math.floor(Math.random()*(MAX_STRENGTH-MIN_STRENGTH));//fisso la forza del gallo a un valore tra 0 e 100
@@ -60,24 +63,40 @@ class gallo {
 			this.isDead = false;
 		}
 	}
+}
+
+//list of galli, global to all js (setted in populate_galli, called from loadGalli)
+var GALLI_LIST = {
+	populate_galli : function() {
+    this.red = new gallo(document.getElementById("gallo_red"),DIST_BORDER);
+    this.blue = new gallo(document.getElementById("gallo_blue"),RING_WIDTH-GALLO_WIDTH-DIST_BORDER);
+	},
+	rotate_galli : function() {
+		GALLI_LIST.red.gallo_html.style.transform = "rotate(10deg)";
+		GALLI_LIST.blue.gallo_html.style.transform = "rotate(-10deg)";
+	},
+	reset_rotation : function() {
+		GALLI_LIST.red.gallo_html.style.transform = "rotate(0deg)";
+		GALLI_LIST.blue.gallo_html.style.transform = "rotate(0deg)";
+	},
+	move_galli_to_the_center : function() {
+		GALLI_LIST.red.move(+2);
+		GALLI_LIST.blue.move(-2);
+	},
+	move_galli_to_the_angles : function() {
+		GALLI_LIST.red.move(-2);
+		GALLI_LIST.blue.move(+2);
+	}, 
 	dead(){
-		this.gallo_html.style.display = "none";
-		this.ko_html.style.display = "block";
-		var ko_down_timer = setInterval(zoom_out, 10);
-		function ko_down() {
-			for(var g in GALLI_LIST){
-				if(GALLI_LIST[g] instanceof gallo){
-					if(GALLI_LIST[g].isDead){
-						if (GALLI_LIST[g].ko_top > 150) {
-							clearInterval(ko_down_timer);
-						} else {
-							GALLI_LIST[g].ko_top++;
-							GALLI_LIST[g].ko_html.style.top = GALLI_LIST[g].ko_top+'px';
-						}
-					}
+		for(var g in GALLI_LIST){
+			if(GALLI_LIST[g] instanceof gallo){
+				if( GALLI_LIST[g].isDead ){
+					GALLI_LIST[g].gallo_html.style.display = "none";
+					GALLI_LIST[g].ko_html.style.display = "block";
 				}
 			}
 		}
+		var ko_down_timer = setInterval(zoom_out, 10);
 		function zoom_out() {
 			for(var g in GALLI_LIST){
 				if(GALLI_LIST[g] instanceof gallo){
@@ -102,30 +121,15 @@ class gallo {
 				}
 			}
 		}
-	}
-}
-
-//list of galli, global to all js (setted in populate_galli, called from loadGalli)
-var GALLI_LIST = {
-	populate_galli : function() {
-    this.red = new gallo(document.getElementById("gallo_red"),DIST_BORDER);
-    this.blue = new gallo(document.getElementById("gallo_blue"),RING_WIDTH-GALLO_WIDTH-DIST_BORDER);
 	},
-	rotate_galli : function() {
-		GALLI_LIST.red.gallo_html.style.transform = "rotate(10deg)";
-		GALLI_LIST.blue.gallo_html.style.transform = "rotate(-10deg)";
-	},
-	reset_rotation : function() {
-		GALLI_LIST.red.gallo_html.style.transform = "rotate(0deg)";
-		GALLI_LIST.blue.gallo_html.style.transform = "rotate(0deg)";
-	},
-	move_galli_to_the_center : function() {
-		GALLI_LIST.red.move(+2);
-		GALLI_LIST.blue.move(-2);
-	},
-	move_galli_to_the_angles : function() {
-		GALLI_LIST.red.move(-2);
-		GALLI_LIST.blue.move(+2);
+	celebrate_winner() {
+		for(var g in GALLI_LIST){
+			if(GALLI_LIST[g] instanceof gallo){
+				if( !GALLI_LIST[g].isDead ){
+					GALLI_LIST[g].winner_html.style.display = "block";
+				}
+			}
+		}
 	}
 }
 

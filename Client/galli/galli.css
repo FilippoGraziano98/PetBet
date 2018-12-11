@@ -11,12 +11,14 @@ div[id=body_div] {
 	height: 600px;
 	background: url(../img/galli/ring-fieno_1.png);
 	background-size:100% 100%;
+	position: relative;
 }
 
-div[id=container] {
-	width: 1024px;
-	height: 400px;
-	position: relative;
+div[id=battle_field] {
+	width: 1360px;
+	height: 600px;
+	position: absolute;
+	top: 0px;
 }
 
 div.gallo {
@@ -27,13 +29,13 @@ div.gallo {
 }
 div.gallo[id=gallo_red] {
 	content: url(../img/galli/gallo_red.png);
-	top: 100px;
-	left: 5px;
+	top: 175px;
+	left: 75px;
 }
 div.gallo[id=gallo_blue] {
 	content: url(../img/galli/gallo_blue.png);
-	top: 100px;
-	right: 5px;
+	top: 175px;
+	right: 75px;
 }
 
 div.ko {
@@ -41,7 +43,7 @@ div.ko {
 	position: absolute;
 	width: 4px; /*250px;*/
 	height: 5px; /*200px;*/
-	top: 200px;
+	top: 325px;
 }
 div.ko[id=ko_red] {
 	filter:
@@ -49,7 +51,7 @@ div.ko[id=ko_red] {
 		drop-shadow(-2px 0 0 var(--red))
 		drop-shadow(0 2px 0 var(--red))
 		drop-shadow(0 -2px 0 var(--red));
-	left: 100px;
+	left: 250px;
 }
 div.ko[id=ko_blue] {
 	filter:
@@ -57,12 +59,26 @@ div.ko[id=ko_blue] {
 		drop-shadow(-2px 0 0 var(--blue))
 		drop-shadow(0 2px 0 var(--blue))
 		drop-shadow(0 -2px 0 var(--blue));
-	right: 100px;
+	right: 250px;
+}
+
+div.winner {
+	content: url(../img/galli/coriandoli_from_bottom.gif);
+	position: absolute;
+	width: 32%;
+	height: 88%;
+	bottom: 75px;
+}
+div.winner[id=winner_red] {
+	left: 25px;
+}
+div.winner[id=winner_blue] {
+	right: 25px;
 }
 
 div.fight {
-	width: 350px;
-	height: 350px;
+	width: 400px;
+	height: 400px;
 	position: absolute;
 	background-color: var(--no-color);
 	top: 0;
@@ -70,6 +86,34 @@ div.fight {
 	bottom: 0;
 	left: 0;
 	margin: auto;
+}
+
+button {
+	background-color: #555555; /* Green */
+	border: none;
+	border-radius: 8px;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+button[id=fight_btn] {
+	width: 100px;
+	position:absolute;
+	bottom:50px;
+	left: 630px;/*50% of (field width - button width)*/
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+	width:271px;
+  text-align: center;
 }
 
 div.gallo_hp_bar_container {
@@ -98,42 +142,13 @@ div.gallo_hp_bar {
 	left: 0px;
 }
 
-.button {
-	background-color: #555555; /* Green */
-	border: none;
-	border-radius: 8px;
-	color: white;
-	padding: 10px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td {
-	width:250px;
-  text-align: center;
-  padding: 8px;
-}
-td.gallo_hp_header {
-	width:350px;
-}
-td.gallo_hp_value {
-	width:150px;
-}
-
 p {
 	font-family: arial;
 	font-size:25px;
 	font-style:bold;
 	text-decoration:italic;
 	color: var(--black);
-	display: inline
+	display: inline;
 }
 
 p.title {

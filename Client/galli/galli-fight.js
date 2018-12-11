@@ -35,7 +35,7 @@ function fight_loop() {
 				if(GALLI_LIST[g] instanceof gallo){
 					GALLI_LIST[g].fight_getDamage();
 					if(GALLI_LIST[g].isDead){
-						GALLI_LIST[g].dead();
+						GALLI_LIST.dead();
 						end=true;
 					}
 					document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_percentage").innerHTML = String(GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START).substr(0,5) + ' %';
@@ -49,20 +49,27 @@ function fight_loop() {
 }
 
 function fight_end() {
-	var timerToTheAngles = setInterval(galliToTheAngles, 1);	
-	function galliToTheAngles() {
-		document.getElementById("fight").style.content = "";
-		for(var g in GALLI_LIST){
-			if(GALLI_LIST[g] instanceof gallo){
-				if(!GALLI_LIST[g].isDead){
-					GALLI_LIST[g].gallo_html.style.display = "block";
-				}
+	document.getElementById("fight").style.content = "";
+	for(var g in GALLI_LIST){
+		if(GALLI_LIST[g] instanceof gallo){
+			if(!GALLI_LIST[g].isDead){
+				GALLI_LIST[g].gallo_html.style.display = "block";
 			}
 		}
+	}
+	var timerToTheAngles = setInterval(galliToTheAngles, 1);	
+	function galliToTheAngles() {
 		if (GALLI_LIST.red.left <= DIST_BORDER &&
 				GALLI_LIST.blue.right <= DIST_BORDER
 				) {
 			clearInterval(timerToTheAngles);
+			for(var g in GALLI_LIST){
+				if(GALLI_LIST[g] instanceof gallo){
+					if(GALLI_LIST[g].isDead){//se c'è un gallo ko
+						GALLI_LIST.celebrate_winner();
+					}
+				}
+			}
 		} else {
 			GALLI_LIST.move_galli_to_the_angles();
 		}

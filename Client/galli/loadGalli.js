@@ -13,8 +13,8 @@ var galli_html = '\
 								<div class=gallo_hp_bar id="gallo_red_HP_value"></div>\
 								<div class=gallo_hp_percentage id="gallo_red_HP_percentage"></div>\
 						</td>\
-						<td>\
-							<div class=timer name="timer" id="timer"></div>\
+						<td class=timer>\
+							<div class=timer name="timer" id="timer"><p>--.--</p></div>\
 						</td>\
 						<td class=gallo_hp_header><p id="gallo_blue_HP_header"></p></td>\
 						<td class=gallo_hp_value>\
@@ -26,15 +26,17 @@ var galli_html = '\
 				</table>\
 			</div>\
 			<br>\
-			<div class=field name="container" id ="container">\
+			<div class=field name="battle_field" id ="battle_field">\
 				<div class=gallo id="gallo_red"></div>\
 				<div class=ko id="ko_red"></div>\
+				<div class=winner id="winner_red"></div>\
 				<div class=gallo id="gallo_blue"></div>\
 				<div class=ko id="ko_blue"></div>\
+				<div class=winner id="winner_blue"></div>\
 				<div class=fight id="fight"></div>\
 			</div>\
 			<br>\
-			<button class=button name="fight_btn" id="fight_btn" onclick="fight_start()">Fight</button>\
+			<button name="fight_btn" id="fight_btn" onclick="fight_start()">Fight</button>\
 			<br><br>\
 		</div>\
 		'

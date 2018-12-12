@@ -51,16 +51,17 @@ div.horse {
     font-size: 16px;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
+/*moved in main_style.css*/
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    width: 100%;*/
+/*}*/
 
-td {
-	width:250px;
-	text-align: center;
-	padding: 8px;
-}
+/*td {*/
+/*	width:250px;*/
+/*	text-align: center;*/
+/*	padding: 8px;*/
+/*}*/
 td.classifica {
 	width: 30%;	
 	height: 380px;
@@ -86,9 +87,6 @@ td.horse {
 td.time{
 	width:150px;
 }
-
-tr:nth-child(even){background-color: #f2f2f2}
-
 
 #animate_red {
 	filter:
@@ -137,14 +135,15 @@ div[id=timerEndGame] {
 	width: 500px;
 }
 
-p {
-	font-family: arial;
-	font-size:25px;
-	font-style:bold;
-	text-decoration:italic;
-	color: var(--black);
-	display: inline
-}
+/*moved in main_style.css*/
+/*p {*/
+/*	font-family: arial;*/
+/*	font-size:25px;*/
+/*	font-style:bold;*/
+/*	text-decoration:italic;*/
+/*	color: var(--black);*/
+/*	display: inline*/
+/*}*/
 
 p.startTimer {
 	font-size:250px;

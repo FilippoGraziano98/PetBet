@@ -73,32 +73,50 @@ div.login_buttons_paragraph {
 	background-color: var(--transparent);
 }
 
+button {
+  border: outset;
+	border-radius: 8px;
+  border-color: var(--dark-gray);
+  color: white; /*text color*/
+  padding: 16px 0px; /*top&bottom - left&right*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
 button:hover{
 	cursor:pointer;
 }
 
 button.users {
 	background-color: var(--dark-green);
-  border: outset;
-  border-color: var(--dark-gray);
-  color: white; /*text color*/
  	width: 150px;
-  padding: 16px 0px; /*top&bottom - left&right*/
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
 }
 
 button.menu {
 	background-color: var(--dark-red);
-  border: outset;
-  border-color: var(--dark-gray);
-  color: white; /*text color*/
 	width: 200px;
-  padding: 16px 0px; /*top&bottom - left&right*/
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+td {
+	width:250px;
+	text-align: center;
+	padding: 8px;
+}
+
+p {
+	font-family: arial;
+	font-size:25px;
+	font-style:bold;
+	text-decoration:italic;
+	color: var(--black);
+	display: inline
 }

@@ -16,13 +16,13 @@ var galli_html = '\
 						<td class=timer>\
 							<div class=timer name="timer" id="timer"><p>--.--</p></div>\
 						</td>\
-						<td class=gallo_hp_header><p id="gallo_blue_HP_header"></p></td>\
 						<td class=gallo_hp_value>\
 							<div class=gallo_hp_bar_container id="gallo_blue_HP_container">\
 								<div class=gallo_hp_bar id="gallo_blue_HP_value"></div>\
 								<div class=gallo_hp_percentage id="gallo_blue_HP_percentage"></div>\
 							</div>\
 						</td>\
+						<td class=gallo_hp_header><p id="gallo_blue_HP_header"></p></td>\
 				</table>\
 			</div>\
 			<br>\
@@ -50,7 +50,7 @@ function loadGalli(){
 		if(GALLI_LIST[g] instanceof gallo){
 			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_header").innerHTML = GALLI_LIST[g].gallo_html.id;
 			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_percentage").innerHTML = GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START + ' %';
-			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").style.width = Math.floor(GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START)+'px';
+			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").style.width = Math.floor(GALLI_LIST[g].health*HP_BAR_WIDTH/GALLI_LIST[g].HEALTH_START)+'px';
 		}
 	}
 }

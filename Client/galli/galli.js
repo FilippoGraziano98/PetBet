@@ -1,11 +1,14 @@
 var RING_WIDTH = 1250;
 var GALLO_WIDTH = 250;
 var DIST_BORDER = 75; //distance from border
+var HP_BAR_WIDTH = 300;
+
 var MIN_HEALTH = 800;
 var MAX_HEALTH = 1000;
 var MIN_STRENGTH = 50;
 var MAX_STRENGTH = 100;
-var accelleration_factor = 4;
+
+var accelleration_factor = 1;
 
 class gallo {
 	constructor(gallo, horizontal){

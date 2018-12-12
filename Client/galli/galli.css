@@ -88,38 +88,21 @@ div.fight {
 	margin: auto;
 }
 
-button {
-	background-color: #555555; /* Green */
-	border: none;
-	border-radius: 8px;
-	color: white;
-	padding: 10px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-}
 button[id=fight_btn] {
+	background-color: var(--dark-red); /* Green */
 	width: 100px;
+	border: none;
+	padding: 10px 32px;
+	font-size: 16px;
 	position:absolute;
 	bottom:50px;
 	left: 630px;/*50% of (field width - button width)*/
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td {
-	width:271px;
-  text-align: center;
-}
-
 div.gallo_hp_bar_container {
 	background-color: var(--no-colour);
 	border-style: solid;
-	width:100px;
+	width:300px;
 	height: 18px;
 	position: relative;
 }
@@ -134,21 +117,12 @@ div.gallo_hp_percentage {
 	z-index: 1;
 }
 div.gallo_hp_bar {
-	width: 100px;
+	width: 100%;
 	height: 100%;
 	background-color: var(--forest-green);
 	position: absolute;
 	top: 0px;
 	left: 0px;
-}
-
-p {
-	font-family: arial;
-	font-size:25px;
-	font-style:bold;
-	text-decoration:italic;
-	color: var(--black);
-	display: inline;
 }
 
 p.title {

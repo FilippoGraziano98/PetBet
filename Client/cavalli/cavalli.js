@@ -14,8 +14,7 @@ var horses_velocity = [];
 var horses_quotes = [];
 
 function setGame() {
-	document.getElementById("quota").innerHTML = "<p id='quota_int'>- - -</p>";
-	document.getElementById("vincita_potenziale").innerHTML = "<p>- - -</p>";
+	initialize_bet_area();
 	for(var c=0; c<5; c++) {	
 		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
 	}
@@ -86,13 +85,11 @@ function endGame() {
 }
 
 function startGame_Timer(){
-	if (document.getElementById("quota_int").innerHTML.includes("- - -")) {
-		alert("Devi prima inserire una quota!");
+	var check = confirm_bet();
+	if(!check){
 		return false;
 	}
-	alert("SCOMMESSA REGISTRATA CON SUCCESSO");
-	document.getElementById("bet").disabled = true;
-	document.getElementById("scommetti").disabled = true;
+	
 	document.getElementById("classifica").innerHTML = "<p class=startTimer>3</p>";
 	for(var i=0; i<5; i++){
 		var col = COLORS[i];
@@ -119,6 +116,7 @@ function startGame_Timer(){
 	}	
 }
 
+//setta nella scommesssa la quota del cavallo selzionato
 function update_quote(idbutton) {
 	var i;
 	var color = idbutton.substring(0,idbutton.length-6);
@@ -132,8 +130,6 @@ function update_quote(idbutton) {
 		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
 	}
 	document.getElementById(idbutton).setAttribute("class", "buttonselected");
-	document.getElementById("scommetti").disabled = false;
-	document.getElementById("bet").disabled = false;
 }
 
 

@@ -35,4 +35,18 @@ function addToClassifica(horse_colour){
 	}
 	document.getElementById("animate_"+horse_colour).horse_races++;
 	rank_classifica++;
+	if (rank_classifica == 1) {
+		firstPlace(horse_colour);
+	}
+}
+
+function firstPlace(horse_colour) {
+	document.getElementById("ok_msg").innerHTML = "";
+	var button = sessionStorage.getItem("Chosen quote");
+	var chosen_horse = button.substring(0,button.length-6);
+	if (chosen_horse == horse_colour) {
+		writeWinnerMsg("COMPLIMENTI! IL TUO CAVALLO HA VINTO");
+	} else {
+		writeLoserMsg("IL TUO CAVALLO HA PERSO");	
+	}
 }

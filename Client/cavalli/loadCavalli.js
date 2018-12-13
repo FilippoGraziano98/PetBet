@@ -1,6 +1,6 @@
 var cavalli_html = '\
 		<link rel=stylesheet type="text/css" href="cavalli/cavalli.css">\
-		<div><p class=title>Corsa di Cavalli</p></div>\
+		<div id=header_div><p class=title>Corsa di Cavalli</p></div>\
 		<br>\
 		<div class=back name="backcavalli" id="backcavalli">\
 			<br><br>\

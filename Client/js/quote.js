@@ -17,14 +17,14 @@ function unfreeze_bet_area() {
 //controlla che vi sia una socmmessa presente
 function check_scommessa() {
 	if (document.getElementById("quota_int").innerHTML.includes("- - -")){
-		alert("Devi prima inserire una quota!");
+		document.getElementById("alert").innerHTML = "<p class=msg>Devi prima inserire una quota!</p>";
 		return false;
 	}
 	if (document.getElementById("bet").value == "") {
-		alert("Inserisci importo");
+		document.getElementById("alert").innerHTML = "<p class=msg>Inserisci importo</p>";
 		return false;
-		
 	}
+	document.getElementById("alert").innerHTML = "";
 	return true;
 }
 
@@ -32,7 +32,7 @@ function confirm_bet() {
 	if( !check_scommessa() ) {
 		return false;
 	}
-	alert("SCOMMESSA REGISTRATA CON SUCCESSO");
+	document.getElementById("ok_msg").innerHTML = "<p class=msg>SCOMMESSA REGISTRATA CON SUCCESSO</p>";
 	freeze_bet_area(true);
 	return true;
 }
@@ -47,12 +47,12 @@ function bet_update() {
 	var money = document.getElementById("bet").value;
 
 	if (money < 1) {
-		alert("La puntata minima è di €1");
+		document.getElementById("alert").innerHTML = "<p class=msg>La puntata minima è di €1</p>";
 		document.getElementById("vincita_potenziale").innerHTML = "<p>- - -</p>";
 		freeze_bet_area(false);
 		return false;
 	}
-	
+	document.getElementById("alert").innerHTML = "";
 	quote_calculator(quota, money);
 
 	return true;
@@ -68,5 +68,13 @@ function quote_calculator(chosen_quote, money) {
 	}
 	unfreeze_bet_area();
 	return true;
+}
+
+function writeWinnerMsg(msg) {
+	document.getElementById("winner_msg").innerHTML = "<p class=msg>" + msg + "</p>";
+}
+
+function writeLoserMsg(msg) {
+	document.getElementById("loser_msg").innerHTML = "<p class=msg>" + msg + "</p>";
 }
 

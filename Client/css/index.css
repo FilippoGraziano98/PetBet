@@ -57,6 +57,25 @@ p[id=euro_symbol] {
 	font-size: 18;
 }
 
+p.msg {
+	color: white;
+	font-size:20px;
+	font-style: bold;
+	text-shadow: 
+	   1px   0  0   var(--black), 
+	  -1px   0  0   var(--black), 
+	   0    1px 0   var(--black), 
+	   0   -1px 0   var(--black);
+}
+
+div[id=ok_msg] {
+	background-color: green;
+}
+
+div[id=alert] {
+	background-color: var(--dark-red);
+}
+
 div.bet {
 	background-color: var(--transparent-white);
 	display: block;

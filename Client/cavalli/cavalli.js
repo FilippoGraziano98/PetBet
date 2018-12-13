@@ -1,8 +1,8 @@
 var COLORS = ['red','blue','green', 'yellow','white'];
 var START_LINE = 0;
 var background_width = 1300;
-var FINISH_LINE = background_width - 150;
-var END_LANE = background_width - 100;
+var FINISH_LINE = background_width - 190;
+var END_LANE = background_width - 98;
 
 var delay_coefficient = 1;
 
@@ -14,6 +14,12 @@ var horses_velocity = [];
 var horses_quotes = [];
 
 function setGame() {
+	if (document.getElementById("winner_msg").value != "") {
+		document.getElementById("winner_msg").innerHTML = "";
+	}
+	else if (document.getElementById("loser_msg").value != "") {
+		document.getElementById("loser_msg").innerHTML = "";
+	}
 	initialize_bet_area();
 	for(var c=0; c<5; c++) {	
 		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
@@ -47,7 +53,7 @@ function setGame() {
 
 		//scelgo random la velocità del cavallo e setto la relativa quota
 		//horses_velocity[i] = Math.random()*0.4+1.2;
-		horses_velocity[i] = Math.random()*0.35+1.25-Math.floor((horses_animated[i].horse_id-1)/n_horses)*0.2-Math.abs((4-horses_animated[i].horse_age)/(n_horses/4))*0.1;		
+		horses_velocity[i] = Math.random()*0.15+1.45-Math.floor((horses_animated[i].horse_id-1)/n_horses)*0.2-Math.abs((4-horses_animated[i].horse_age)/(n_horses/4))*0.1;		
 		horses_quotes[i] = 5.8-horses_velocity[i]*3+Math.random()*1.5;
 		document.getElementById(col+"button").innerHTML = String(horses_quotes[i]).substring(0,4);
 		
@@ -59,30 +65,23 @@ function setGame() {
 	}
 }
 
-function endGame() {
-	var time = setInterval(timer, 1000);
-	var t = 3;
-	function timer() {
-		if (t == 0) {
-			clearInterval(time);
-			//salvo in memoria dati (wins & races) cavalli
-			for(var i=0; i<5; i++){
-				var idx = race_horses[i].id;
-				//sfrutto il fatto che gli id sono crescenti da 1 in poi, e univoci in horses_database
-				horses_database[idx-1].wins = horses_animated[i].horse_wins;
-				horses_database[idx-1].races = horses_animated[i].horse_races;
-				localStorage.setItem("PetBet - Horses", JSON.stringify(horses_database));
-			}
-			document.getElementById("timerEndGame").innerHTML =
-				"<p>Un'altra corsa sta per iniziare! </p>"+
-				"<button class=menu onclick='setGame()'> VAI </button> <br><br>";
-		}
-		if (t > 0) {
-			document.getElementById("timerEndGame").innerHTML = "<p>La prossima corsa sarà disponibile tra " + t + " ...</p>";
-			t--;
-		}
+//setta nella scommesssa la quota del cavallo selzionato
+function update_quote(idbutton) {
+	var i;
+	var color = idbutton.substring(0,idbutton.length-6);
+	for(var x=0; x<5; x++) {
+		if (COLORS[x] == color) i = x;
 	}
+	var money = document.getElementById("bet").value;
+	var chosen_quote = String(horses_quotes[i]).substring(0,4);
+	quote_calculator(chosen_quote, money);
+	for(var c=0; c<5; c++) {	
+		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
+	}
+	document.getElementById(idbutton).setAttribute("class", "buttonselected");
+	sessionStorage.setItem("Chosen quote", idbutton);
 }
+
 
 function startGame_Timer(){
 	var check = confirm_bet();
@@ -114,22 +113,6 @@ function startGame_Timer(){
 				prepareClassifica();
 		}
 	}	
-}
-
-//setta nella scommesssa la quota del cavallo selzionato
-function update_quote(idbutton) {
-	var i;
-	var color = idbutton.substring(0,idbutton.length-6);
-	for(var x=0; x<5; x++) {
-		if (COLORS[x] == color) i = x;
-	}
-	var money = document.getElementById("bet").value;
-	var chosen_quote = String(horses_quotes[i]).substring(0,4);
-	quote_calculator(chosen_quote, money);
-	for(var c=0; c<5; c++) {	
-		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
-	}
-	document.getElementById(idbutton).setAttribute("class", "buttonselected");
 }
 
 
@@ -175,3 +158,30 @@ function startGame() {
 		}
 	}
 }
+
+
+function endGame() {
+	var time = setInterval(timer, 1000);
+	var t = 3;
+	function timer() {
+		if (t == 0) {
+			clearInterval(time);
+			//salvo in memoria dati (wins & races) cavalli
+			for(var i=0; i<5; i++){
+				var idx = race_horses[i].id;
+				//sfrutto il fatto che gli id sono crescenti da 1 in poi, e univoci in horses_database
+				horses_database[idx-1].wins = horses_animated[i].horse_wins;
+				horses_database[idx-1].races = horses_animated[i].horse_races;
+				localStorage.setItem("PetBet - Horses", JSON.stringify(horses_database));
+			}
+			document.getElementById("timerEndGame").innerHTML =
+				"<p>Un'altra corsa sta per iniziare! </p>"+
+				"<button class=menu onclick='setGame()'> VAI </button> <br><br>";
+		}
+		if (t > 0) {
+			document.getElementById("timerEndGame").innerHTML = "<p>La prossima corsa sarà disponibile tra " + t + " ...</p>";
+			t--;
+		}
+	}
+}
+

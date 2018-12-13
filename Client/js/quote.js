@@ -73,10 +73,10 @@ function quote_calculator(chosen_quote, money) {
 }
 
 function writeWinnerMsg(msg="Scommessa vincente") {
-	document.getElementById("winner_msg").innerHTML = "<p class=emphasized_msg>" + msg + "</p>";
+	document.getElementById("winner_msg").innerHTML = "<p class=msg>" + msg + "</p>";
 }
 
 function writeLoserMsg(msg="Scommessa Perdente") {
-	document.getElementById("loser_msg").innerHTML = "<p class=emphasized_msg>" + msg + "</p>";
+	document.getElementById("loser_msg").innerHTML = "<p class=msg>" + msg + "</p>";
 }
 

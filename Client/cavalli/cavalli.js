@@ -17,7 +17,7 @@ function setGame() {
 	if (document.getElementById("winner_msg").value != "") {
 		document.getElementById("winner_msg").innerHTML = "";
 	}
-	else if (document.getElementById("loser_msg").value != "") {
+	if (document.getElementById("loser_msg").value != "") {
 		document.getElementById("loser_msg").innerHTML = "";
 	}
 	initialize_bet_area();

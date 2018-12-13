@@ -104,8 +104,20 @@ table {
     width: 100%;
 }
 
+td.top1 {
+	background-color: var(--dark-red);
+	height: 20px; 
+	border-top-left-radius:20px;
+}
+
+td.top2 {
+	background-color: var(--dark-red);
+	height: 20px; 
+	border-top-right-radius:20px;
+}
+
 tr:nth-child(even){
-	background-color: #f2f2f2
+	background-color: #F0F8FF;
 }
 
 td {

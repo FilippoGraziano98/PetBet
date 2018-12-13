@@ -84,6 +84,7 @@ div[id=loser_msg] {
 div.bet {
 	background-color: var(--transparent-white);
 	display: block;
+	border-radius: 20px;
 	font-size:30px;
 	position: absolute;
 	width: 14%;

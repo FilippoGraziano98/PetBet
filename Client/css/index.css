@@ -60,7 +60,19 @@ p[id=euro_symbol] {
 p.msg {
 	color: white;
 	font-size:20px;
+	font-variant: small-caps;
 	font-style: bold;
+	text-shadow: 
+	   1px   0  0   var(--black), 
+	  -1px   0  0   var(--black), 
+	   0    1px 0   var(--black), 
+	   0   -1px 0   var(--black);
+}
+p.emphasized_msg {
+	color: white;
+	font-size:30px;
+	font-variant: small-caps;
+	font-style: extra-bold;
 	text-shadow: 
 	   1px   0  0   var(--black), 
 	  -1px   0  0   var(--black), 
@@ -71,8 +83,13 @@ p.msg {
 div[id=ok_msg] {
 	background-color: green;
 }
-
 div[id=alert] {
+	background-color: var(--dark-red);
+}
+div[id=winner_msg] {
+	background-color: green;
+}
+div[id=loser_msg] {
 	background-color: var(--dark-red);
 }
 

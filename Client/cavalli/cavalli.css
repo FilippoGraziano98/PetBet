@@ -19,14 +19,6 @@ div[id=container] {
 	background-size:100% 530px;
 }
 
-div[id=winner_msg] {
-	background-color: green;
-}
-
-div[id=loser_msg] {
-	background-color: var(--dark-red);
-}
-
 div.back {
 	background-color: teal;
 }

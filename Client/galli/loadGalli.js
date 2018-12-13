@@ -39,20 +39,17 @@ var galli_html = '\
 				<br>\
 			</div>\
 		</div>\
+		<br>\
 		<div name="quote" id="quote">\
 			<table>\
 				<tr>\
-					<td class=quote>\
-						<br><br>\
-					</td>\
-				<tr>\
-					<td><p class=quota_gallo_nome name="quota_nome_red" id="quota_nome_red"> Gallo Rosso </p></td>\
-					<td><button class=quota_gallo_button name="redbutton" id="redbutton" onclick="start_round()">???</button></td>\
+					<td><p class=quota_gallo_nome name="gallo_red_quota_nome" id="gallo_red_quota_nome"> Gallo Rosso </p></td>\
+					<td><button class=quota_gallo_button name="gallo_red_quota_button" id="gallo_red_quota_button" onclick="bet_on(this)">???</button></td>\
 					\
 					<td><p>Scegli su chi vuoi scommettere:</p></td>\
 					\
-					<td><button class=quota_gallo_button name="bluebutton" id="bluebutton" onclick="start_round()">???</button></td>\
-					<td><p class=quota_gallo_nome name="quota_nome_blue" id="quota_nome_blue"> Gallo Blu </p></td>\
+					<td><button class=quota_gallo_button name="gallo_blue_quota_button" id="gallo_blue_quota_button" onclick="bet_on(this)">???</button></td>\
+					<td><p class=quota_gallo_nome name="gallo_blue_quota_nome" id="gallo_blue_quota_nome"> Gallo Blu </p></td>\
 			</table>\
 		</div>\
 		'
@@ -67,6 +64,11 @@ function loadGalli(){
 			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_header").innerHTML = GALLI_LIST[g].gallo_html.id;
 			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_percentage").innerHTML = GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START + ' %';
 			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").style.width = Math.floor(GALLI_LIST[g].health*HP_BAR_WIDTH/GALLI_LIST[g].HEALTH_START)+'px';
+			document.getElementById(GALLI_LIST[g].gallo_html.id+"_quota_button").innerHTML = String(GALLI_LIST[g].quota).substr(0,4);
 		}
 	}
+	initialize_bet_area();
+
+	document.getElementById("scommetti").addEventListener("click", ufficialize_bet);
+	freeze_bet_area(false);
 }

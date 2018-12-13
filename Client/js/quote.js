@@ -28,15 +28,16 @@ function check_scommessa() {
 	return true;
 }
 
-function confirm_bet() {
+function confirm_bet(msg="") {
 	if( !check_scommessa() ) {
 		return false;
 	}
-	document.getElementById("ok_msg").innerHTML = "<p class=msg>SCOMMESSA REGISTRATA CON SUCCESSO</p>";
+	document.getElementById("ok_msg").innerHTML = "<p class=msg>Scommessa registrata con successo</p><br><p class=msg>"+msg+"</p>";
 	freeze_bet_area(true);
 	return true;
 }
 
+//function called when changing the amount of money you want to bet
 function bet_update() {
 	if( !check_scommessa() ) {
 		freeze_bet_area(false);
@@ -58,6 +59,7 @@ function bet_update() {
 	return true;
 }
 
+//function to be called when pressing a quote button
 //calcola la vincita e prepara la scommessa
 function quote_calculator(chosen_quote, money) {
 	document.getElementById("quota").innerHTML = "<p id=quota_int>" + chosen_quote + "</p>";
@@ -70,11 +72,11 @@ function quote_calculator(chosen_quote, money) {
 	return true;
 }
 
-function writeWinnerMsg(msg) {
-	document.getElementById("winner_msg").innerHTML = "<p class=msg>" + msg + "</p>";
+function writeWinnerMsg(msg="Scommessa vincente") {
+	document.getElementById("winner_msg").innerHTML = "<p class=emphasized_msg>" + msg + "</p>";
 }
 
-function writeLoserMsg(msg) {
-	document.getElementById("loser_msg").innerHTML = "<p class=msg>" + msg + "</p>";
+function writeLoserMsg(msg="Scommessa Perdente") {
+	document.getElementById("loser_msg").innerHTML = "<p class=emphasized_msg>" + msg + "</p>";
 }
 

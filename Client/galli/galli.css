@@ -3,7 +3,7 @@ div {
 	height: auto;
 	background-color: var(--no-colour);
 }
-div[id=header_div] {
+div[id=header_div],[id=quote] {
 	background-color: var(--transparent-white);
 }
 div.background {
@@ -72,15 +72,15 @@ div.ko[id=ko_blue] {
 div.winner {
 	content: url(../img/galli/coriandoli_from_bottom.gif);
 	position: absolute;
-	width: 32%;
-	height: 88%;
-	bottom: 75px;
+	width: 35%;
+	height: 100%;
+	bottom: 0px;
 }
 div.winner[id=winner_red] {
-	left: 25px;
+	left: 0px;
 }
 div.winner[id=winner_blue] {
-	right: 25px;
+	right: 0px;
 }
 
 div.fight {
@@ -97,6 +97,13 @@ div.fight {
 
 button.quota_gallo_button {
 	background-color: var(--dark-red); /* Green */
+	width: 100px;
+	border: none;
+	padding: 10px 32px;
+	font-size: 16px;
+}
+button.quota_gallo_button_selected {
+  background-color: var(--dark-green);
 	width: 100px;
 	border: none;
 	padding: 10px 32px;

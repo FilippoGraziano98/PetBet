@@ -90,5 +90,7 @@ function loadCavalli(){
 
 		localStorage.setItem("PetBet - Horses", JSON.stringify(horses));
 	}
+	document.getElementById("scommetti").addEventListener("click", startGame_Timer);
+	freeze_bet_area(false);
 	setGame("redbutton");
 }

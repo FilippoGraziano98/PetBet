@@ -1,4 +1,5 @@
 var ROUND_LEN = 5*1000; // in millisecs
+var BREAK_LEN = 3; //in secs, time between two rounds
 var ROUND_NUMBER = 0;
 
 var MATCH_ACTIVE = false;
@@ -13,8 +14,8 @@ function start_round() {
 	MATCH_ACTIVE = true;
 	ROUND_NUMBER ++;
 	document.getElementById("round_number").innerHTML = "ROUND " + ROUND_NUMBER;
-	document.getElementById("timer").innerHTML = "<p>10</p>";
-	var secs = 9;
+	document.getElementById("timer").innerHTML = "<p>"+BREAK_LEN+"</p>";
+	var secs = BREAK_LEN-1;
 	var countdown_round = setInterval(galliToTheCenter, 1000);
 	
 	function galliToTheCenter() {
@@ -94,6 +95,7 @@ function fight_end() {
 			for(var g in GALLI_LIST){
 				if(GALLI_LIST[g] instanceof gallo && GALLI_LIST[g].isDead){//se c'è un gallo ko
 					GALLI_LIST.celebrate_winner();
+					bet_get_reward();
 					end_match = true;
 				}
 			}

@@ -5,10 +5,13 @@ var HP_BAR_WIDTH = 300;
 
 var MIN_HEALTH = 800;
 var MAX_HEALTH = 1000;
-var MIN_STRENGTH = 50;
+var MIN_STRENGTH = 80;
 var MAX_STRENGTH = 100;
 
-var accelleration_factor = 1;
+var MIN_QUOTA = 1;
+var MAX_QUOTA = 5;
+
+var accelleration_factor = 4;
 
 class gallo {
 	constructor(gallo, horizontal){
@@ -26,7 +29,8 @@ class gallo {
 		this.winner_height = 0;
 		this.HEALTH_START = MIN_HEALTH+Math.floor(Math.random()*(MAX_HEALTH-MIN_HEALTH));	//inizializzo la vita con un valore random tra 0 e 1000
 		this.health = this.HEALTH_START/accelleration_factor;//qui memorizzo la vita attuale
-		this.strength= MIN_STRENGTH+Math.floor(Math.random()*(MAX_STRENGTH-MIN_STRENGTH));//fisso la forza del gallo a un valore tra 0 e 100
+		this.strength = MIN_STRENGTH+Math.floor(Math.random()*(MAX_STRENGTH-MIN_STRENGTH));//fisso la forza del gallo a un valore tra 0 e 100
+		this.quota = MAX_QUOTA+Math.random()*0.3-Math.random()*(this.HEALTH_START/MAX_HEALTH)-Math.random()*2*(this.strength/MAX_STRENGTH);
 		this.isDead = false;
 		console.log(this);
 	}
@@ -127,10 +131,8 @@ var GALLI_LIST = {
 	},
 	celebrate_winner() {
 		for(var g in GALLI_LIST){
-			if(GALLI_LIST[g] instanceof gallo){
-				if( !GALLI_LIST[g].isDead ){
-					GALLI_LIST[g].winner_html.style.display = "block";
-				}
+			if(GALLI_LIST[g] instanceof gallo && !GALLI_LIST[g].isDead ){
+				GALLI_LIST[g].winner_html.style.display = "block";
 			}
 		}
 	}

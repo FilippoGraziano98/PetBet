@@ -6,19 +6,26 @@ div {
 div[id=header_div] {
 	background-color: var(--transparent-white);
 }
-div[id=body_div] {
-	width: 1360px;
-	height: 600px;
-	background: url(../img/galli/ring-fieno_1.png);
-	background-size:100% 100%;
+div.background {
+	width:1360px;
+	height:600px;
+	background-color: teal;
 	position: relative;
 }
 
 div[id=battle_field] {
-	width: 1360px;
-	height: 600px;
+	width: 1260px;
+	height: 500px;
+	border-radius:25px;
+	border: 5px solid silver;
+	background: url(../img/galli/ring-fieno_1.png);
+	background-size:100% 100%;
 	position: absolute;
-	top: 0px;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	margin: auto auto;
 }
 
 div.gallo {
@@ -88,15 +95,12 @@ div.fight {
 	margin: auto;
 }
 
-button[id=fight_btn] {
+button.quota_gallo_button {
 	background-color: var(--dark-red); /* Green */
 	width: 100px;
 	border: none;
 	padding: 10px 32px;
 	font-size: 16px;
-	position:absolute;
-	bottom:50px;
-	left: 630px;/*50% of (field width - button width)*/
 }
 
 div.gallo_hp_bar_container {

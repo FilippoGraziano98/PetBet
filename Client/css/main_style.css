@@ -104,7 +104,9 @@ table {
     width: 100%;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){
+	background-color: #f2f2f2
+}
 
 td {
 	width:250px;
@@ -120,5 +122,3 @@ p {
 	color: var(--black);
 	display: inline
 }
-
-

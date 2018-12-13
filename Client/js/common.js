@@ -4,6 +4,16 @@ function assert(condition, message) {
     }
 }
 
+/*HOW TO SLEEP*/
+	//async function galli_full_match() {
+	//	[...]
+	//	await sleep(6500);
+	//	[...]
+	//}
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function msToTime(millisec_interval) {
   var milliseconds = parseInt((millisec_interval % 1000)),
     seconds = parseInt((millisec_interval / 1000) % 60),

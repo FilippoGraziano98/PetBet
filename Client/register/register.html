@@ -32,20 +32,22 @@
 				} if(document.register_form.cap.value=="") {
 					alert("Il campo cap non pu\u00F2 essere vuoto");
 					return false;
-				}	if (isNaN(parseInt(document.register_form.cap.value)) || document.register_form.cap.value.length != 5) {
+				} if (isNaN(parseInt(document.register_form.cap.value)) || document.register_form.cap.value.length != 5) {
 					alert("CAP non valido");
 					return false;
-				}
-				if(document.register_form.username.value=="") {
+				} if (document.register_form.budget.value=="" || document.register_form.budget.value <= 0 || isNaN(parseInt(document.register_form.budget.value))) {
+					alert("Budget non valido");
+					return false;
+				} if(document.register_form.username.value=="") {
 					alert("Il campo username non pu\u00F2 essere vuoto");
 					return false;
-				}if(document.register_form.email.value=="") {
+				} if(document.register_form.email.value=="") {
 					alert("Inserisci email");
 					return false;
-				}if(document.register_form.password.value=="") {
+				} if(document.register_form.password.value=="") {
 					alert("Inserisci la password");
 					return false;
-				}if(document.register_form.confermaPassword.value=="") {
+				} if(document.register_form.confermaPassword.value=="") {
 					alert("Ripeti la password");
 					return false;
 				} if (document.register_form.password.value != document.register_form.confermaPassword.value) {
@@ -230,6 +232,10 @@
 				<br><br>
 				<input type="text" name="cap" id="cap" maxlength="5" size="5" placeholder="CAP" >
 				<br><br>
+				<p class=campi_dati> Budget </p> <p class=campo_obbligatorio> * </p>
+				<br><br>
+				<input type="text" name="budget" id="budget" maxlength="5" placeholder="Budget di partenza">
+				
 			
 
 				<br><br><br><br><br><br><br><br><br><br>

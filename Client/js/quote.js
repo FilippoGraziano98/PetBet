@@ -1,6 +1,13 @@
 function initialize_bet_area() {
-	document.getElementById("quota").innerHTML = "<p id='quota_int'>- - -</p>";
+	document.getElementById("quota").inner;HTML = "<p id='quota_int'>- - -</p>";
+	document.getElementById("bet").value = ""
 	document.getElementById("vincita_potenziale").innerHTML = "<p>- - -</p>";
+	
+	writeAlert("");
+	document.getElementById("ok_msg").innerHTML = "";
+	writeWinnerMsg("");
+	writeLoserMsg("");
+	
 	unfreeze_bet_area();
 }
 
@@ -17,14 +24,14 @@ function unfreeze_bet_area() {
 //controlla che vi sia una socmmessa presente
 function check_scommessa() {
 	if (document.getElementById("quota_int").innerHTML.includes("- - -")){
-		document.getElementById("alert").innerHTML = "<p class=msg>Devi prima inserire una quota!</p>";
+		writeAlert("Devi prima inserire una quota!");
 		return false;
 	}
 	if (document.getElementById("bet").value == "") {
-		document.getElementById("alert").innerHTML = "<p class=msg>Inserisci importo</p>";
+		writeAlert("Inserisci importo");
 		return false;
 	}
-	document.getElementById("alert").innerHTML = "";
+	writeAlert("");
 	return true;
 }
 
@@ -32,7 +39,10 @@ function confirm_bet(msg="") {
 	if( !check_scommessa() ) {
 		return false;
 	}
-	document.getElementById("ok_msg").innerHTML = "<p class=msg>Scommessa registrata con successo</p><br><p class=msg>"+msg+"</p>";
+	if ( msg == "" ) {
+		msg="Scommessa registrata con successo";
+	}
+	document.getElementById("ok_msg").innerHTML = "<p class=msg>"+msg+"</p>";
 	freeze_bet_area(true);
 	return true;
 }
@@ -48,12 +58,12 @@ function bet_update() {
 	var money = document.getElementById("bet").value;
 
 	if (money < 1) {
-		document.getElementById("alert").innerHTML = "<p class=msg>La puntata minima è di €1</p>";
+		writeAlert("La puntata minima è di €1");
 		document.getElementById("vincita_potenziale").innerHTML = "<p>- - -</p>";
 		freeze_bet_area(false);
 		return false;
 	}
-	document.getElementById("alert").innerHTML = "";
+	writeAlert("");
 	quote_calculator(quota, money);
 
 	return true;
@@ -72,11 +82,13 @@ function quote_calculator(chosen_quote, money) {
 	return true;
 }
 
-function writeWinnerMsg(msg="Scommessa vincente") {
-	document.getElementById("winner_msg").innerHTML = "<p class=msg>" + msg + "</p>";
+function writeAlert(msg="Input errato") {
+	document.getElementById("alert_msg").innerHTML = "<p class=msg>"+msg+"</p>";
 }
-
+function writeWinnerMsg(msg="Scommessa vincente") {
+	document.getElementById("winner_msg").innerHTML = "<p class=emphasized_msg>" + msg + "</p>";
+}
 function writeLoserMsg(msg="Scommessa Perdente") {
-	document.getElementById("loser_msg").innerHTML = "<p class=msg>" + msg + "</p>";
+	document.getElementById("loser_msg").innerHTML = "<p class=emphasized_msg>" + msg + "</p>";
 }
 

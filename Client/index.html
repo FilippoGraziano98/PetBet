@@ -38,30 +38,25 @@
 				<button class=menu name="cavalli_entry" id="cavalli_entry" onclick="loadCavalli()">Cavalli</button><br>
 				<button class=menu name="galli_entry" id="galli_entry" onclick="loadGalli()">Galli</button><br><br>
 				<div class=bet name="bet_space" id="left">
+					<div class=top></div>
 					<table>
 						<tr>
-							<td class=top1></td>
-							<td class=top2></td>
-						</tr>
-						<tr>
 							<td><p>Quota</p></td>
-							<td id="quota"><p id="quota_int">- - -</p></td>  
-						</tr>
+							<td id="quota"><p id="quota_int">- - -</p></td>
 						<tr>
 							<td><p>Puntata</p></td>
 							<td><p id=euro_symbol>&#8364 </p><input type="text" name="bet" id="bet" size=2 onChange="bet_update();"></td>
-						</tr>
-						</tr>
+						<tr>
 							<td><p>Vincita Potenzale</p></td>
 							<td id="vincita_potenziale"><p>- - -</p></td>
-						</tr>
-					</table>
-					<br>	
-					<button class=menu name="scommetti" id="scommetti">SCOMMETTI</button><br><br>
-					<div id="alert"> </div>
-					<div id="ok_msg"> </div>
-					<div id="winner_msg"> </div>
-					<div id="loser_msg"> </div> <br>		
+					</table>			
+					<button class=bet_button name="scommetti" id="scommetti">SCOMMETTI</button>
+					<br><br>
+					<div id="alert_msg"></div>
+					<div id="ok_msg"></div>
+					<div id="winner_msg"></div>
+					<div id="loser_msg"></div>
+					<div class=bottom></div>
 				</div>
 			</div>
 			<div class=body_area name="dynamic_area" id="dynamic_area">

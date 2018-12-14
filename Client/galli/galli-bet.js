@@ -38,4 +38,5 @@ function bet_get_reward(){
 		writeWinnerMsg();
 	else
 		writeLoserMsg();
+	sessionStorage.removeItem("Gallo-bet_on");
 }

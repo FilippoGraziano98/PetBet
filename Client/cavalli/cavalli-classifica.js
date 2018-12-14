@@ -49,4 +49,5 @@ function firstPlace(horse_colour) {
 	} else {
 		writeLoserMsg("IL TUO CAVALLO HA PERSO");	
 	}
+	sessionStorage.removeItem("Chosen quote");
 }

@@ -6,57 +6,11 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<script type="text/javascript" lang="javascript" src="../js/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" lang="javascript" src="register.js"></script>
+		<script type="text/javascript" lang="javascript" src="register-check.js"></script>
+		<script type="text/javascript" lang="javascript" src="register-server_interaction.js"></script>
 		<link rel=stylesheet type="text/css" href="../css/main_style.css">
-		<link rel=stylesheet type="text/css" href="register.css">
-		<script type="text/javascript">
-			function validaAccessForm() {
-				if(document.register_form.inputUtente.value=="") {
-					alert("Il nome utente non pu\u00F2 essere vuoto");
-					return false;
-				}	if (!isNaN(parseInt(document.register_form.inputUtente.value))) {
-					alert("Il nome utente non pu\u00F2 essere un numero");
-					return false;
-				} if(document.register_form.inputCognome.value=="") {
-					alert("Il campo cognome non pu\u00F2 essere vuoto");
-					return false;
-				} if(document.register_form.nascita.value=="") {
-					alert("Il campo nascita non pu\u00F2 essere vuoto");
-					return false;
-				} if(document.register_form.residenza.value=="") {
-					alert("Il campo residenza non pu\u00F2 essere vuoto");
-					return false;
-				} if(document.register_form.indirizzo.value=="") {
-					alert("Il campo indirizzo non pu\u00F2 essere vuoto");
-					return false;
-				} if(document.register_form.cap.value=="") {
-					alert("Il campo cap non pu\u00F2 essere vuoto");
-					return false;
-				} if (isNaN(parseInt(document.register_form.cap.value)) || document.register_form.cap.value.length != 5) {
-					alert("CAP non valido");
-					return false;
-				} if (document.register_form.budget.value=="" || document.register_form.budget.value <= 0 || isNaN(parseInt(document.register_form.budget.value))) {
-					alert("Budget non valido");
-					return false;
-				} if(document.register_form.username.value=="") {
-					alert("Il campo username non pu\u00F2 essere vuoto");
-					return false;
-				} if(document.register_form.email.value=="") {
-					alert("Inserisci email");
-					return false;
-				} if(document.register_form.password.value=="") {
-					alert("Inserisci la password");
-					return false;
-				} if(document.register_form.confermaPassword.value=="") {
-					alert("Ripeti la password");
-					return false;
-				} if (document.register_form.password.value != document.register_form.confermaPassword.value) {
-					alert("Hai inserito password diverse");
-					return false;				
-				}
-				return true;
-			}
-		</script>
+		<link rel=stylesheet type="text/css" href="../css/login&register.css">
+		<link rel=stylesheet type="text/css" href="../css/register.css">
 	</head>
 	<body>
 		<div class=title name="reg_header" id="reg_header" align=center>
@@ -64,6 +18,8 @@
 		</div>
 		<br><br>
 		<div class=subtitle name="reg_sub_header" id="reg_sub_header" align=center>
+		</div>
+		<div class=error name=error_msg id=error_msg>
 		</div>
 		<div class=form_paragraph name="reg_paragraph" id="reg_paragraph" align=center>
 			<form name="register_form" id="register_form">

@@ -8,23 +8,23 @@ var galli_html = '\
 				<div class=galli_lifes name="galli_lifes" id="galli_lifes">\
 					<table>\
 						<tr>\
-							<td class=gallo_hp_header><p id="gallo_red_HP_header"></p></td>\
-							<td class=gallo_hp_value>\
+							<td class=gallo_hp>\
+								<p class=text_on_wood id="gallo_red_HP_header"> Gallo Rosso </p>\
 								<div class=gallo_hp_bar_container id="gallo_red_HP_container">\
 									<div class=gallo_hp_bar id="gallo_red_HP_value"></div>\
 									<div class=gallo_hp_percentage id="gallo_red_HP_percentage"></div>\
 							</td>\
 							<td class=timer>\
-								<p id="round_number">ROUND 0</p><br>\
-								<div class=timer name="timer" id="timer"><p>--.--</p></div>\
+								<p class=text_on_wood id="round_number">ROUND 0</p><br>\
+								<p class=text_on_wood id="timer">--.--</p>\
 							</td>\
-							<td class=gallo_hp_value>\
+							<td class=gallo_hp>\
 								<div class=gallo_hp_bar_container id="gallo_blue_HP_container">\
 									<div class=gallo_hp_bar id="gallo_blue_HP_value"></div>\
 									<div class=gallo_hp_percentage id="gallo_blue_HP_percentage"></div>\
 								</div>\
+								<p class=text_on_wood id="gallo_blue_HP_header"> Gallo Blu </p>\
 							</td>\
-							<td class=gallo_hp_header><p id="gallo_blue_HP_header"></p></td>\
 					</table>\
 				</div>\
 				<br>\
@@ -61,7 +61,6 @@ function loadGalli(){
 	//displaying list of fighting galli
 	for(var g in GALLI_LIST){
 		if(GALLI_LIST[g] instanceof gallo){
-			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_header").innerHTML = GALLI_LIST[g].gallo_html.id;
 			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_percentage").innerHTML = GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START + ' %';
 			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").style.width = Math.floor(GALLI_LIST[g].health*HP_BAR_WIDTH/GALLI_LIST[g].HEALTH_START)+'px';
 			document.getElementById(GALLI_LIST[g].gallo_html.id+"_quota_button").innerHTML = String(GALLI_LIST[g].quota).substr(0,4);

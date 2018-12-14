@@ -7,27 +7,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<script type="text/javascript" lang="javascript" src="../js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" lang="javascript" src="../js/cookie.js"></script>
-		<script type="text/javascript" lang="javascript" src="login.js"></script>
-		<script type="text/javascript" lang="javascript">
-			function validaForm() {
-				if(document.login_form.user.value=="") {
-					alert("Il campo user non pu\u00F2 essere vuoto");
-					return false;
-				}
-				if(document.login_form.password.value=="") {
-					alert("Il campo password non pu\u00F2 essere vuoto");
-					return false;
-				}
-				return true;
-			}
-		</script>
+		<script type="text/javascript" lang="javascript" src="login-check.js"></script>
+		<script type="text/javascript" lang="javascript" src="login-server_interaction.js"></script>
 		<link rel=stylesheet type="text/css" href="../css/main_style.css">
+		<link rel=stylesheet type="text/css" href="../css/login&register.css">
 	</head>
 	<body>
 		<div class=title name="login_header" id="login_header">
 			ACCEDI<br>
 		</div>
 		<div class=subtitle name="login_sub_header" id="login_sub_header">
+		</div>
+		<div class=error name=error_msg id=error_msg>
 		</div>
 		<div class=form_paragraph name="login_paragraph" id="login_paragraph">
 			<br><br><br>

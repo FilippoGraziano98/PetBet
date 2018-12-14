@@ -13,11 +13,18 @@
 
 	--red: rgba(255,0,0);
 	--dark-red: rgba(139,0,0);
+	--dark-red-transparent: rgba(139,0,0,0.75);
 
 	--orange: rgba(255,165,0);
-	--dark-orange: rgba(255,140,0);
+	--medium-orange: rgba(255,140,0);
+	--dark-orange: rgba(255,76,0);
 
 	--yellow: rgba(255,255,0);
+
+	--brown: rgba(139,69,19);
+	--red-brown: rgba(165,42,42);
+	--dark-brown: rgba(63,37,11);
+	--maroon: rgba(128,0,0);
 
 	--black: rgba(0,0,0);
 	--transparent-black: rgba(0,0,0,0.8);
@@ -32,45 +39,11 @@ body {
 	background-size:cover;
 }
 
-input[type="text"] {
-    font-size:17px;
-    text-align: center;
-}
-
 div {
 	text-align:center;
 	background-color: var(--transparent-white);
 	width: auto;
 	margin: 0 auto;
-}
-
-div.title {
-	font-family: arial;
-	font-size:60px;
-	font-style:extra-bold;
-	font-variant:small-caps;
-	font-weight:bolder;
-	text-decoration:italic;
-	color: var(--light-green);
-}
-
-
-div.subtitle {
-	font-family: arial;
-	font-size:30px;
-	font-style:bold;
-	font-variant:small-caps;
-	font-weight:bolder;
-	text-decoration:italic;
-	color:green
-}
-
-div.form_paragraph {
-}
-
-div.login_buttons_paragraph {
-	text-align: right;
-	background-color: var(--transparent);
 }
 
 button {
@@ -94,7 +67,7 @@ button.users {
  	width: 150px;
 }
 
-button.menu {
+button.menu,button.bet_button {
 	background-color: var(--dark-red);
 	width: 200px;
 }
@@ -104,20 +77,8 @@ table {
     width: 100%;
 }
 
-td.top1 {
-	background-color: var(--dark-red);
-	height: 20px; 
-	border-top-left-radius:20px;
-}
-
-td.top2 {
-	background-color: var(--dark-red);
-	height: 20px; 
-	border-top-right-radius:20px;
-}
-
 tr:nth-child(even){
-	background-color: #F0F8FF;
+	background-color: var(--transparent-white);
 }
 
 td {
@@ -129,8 +90,6 @@ td {
 p {
 	font-family: arial;
 	font-size:25px;
-	font-style:bold;
-	text-decoration:italic;
 	color: var(--black);
-	display: inline
+	display: inline;
 }

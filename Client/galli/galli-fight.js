@@ -14,17 +14,17 @@ function start_round() {
 	MATCH_ACTIVE = true;
 	ROUND_NUMBER ++;
 	document.getElementById("round_number").innerHTML = "ROUND " + ROUND_NUMBER;
-	document.getElementById("timer").innerHTML = "<p>"+BREAK_LEN+"</p>";
+	document.getElementById("timer").innerHTML = String(BREAK_LEN);
 	var secs = BREAK_LEN-1;
 	var countdown_round = setInterval(galliToTheCenter, 1000);
 	
 	function galliToTheCenter() {
 		if (secs == 0) {
 			clearInterval(countdown_round);
-			document.getElementById("timer").innerHTML = "<p>FIGHT!</p>";
+			document.getElementById("timer").innerHTML = "FIGHT!";
 			fight_start();
 		} else {
-			document.getElementById("timer").innerHTML = "<p>"+secs+"</p>";
+			document.getElementById("timer").innerHTML = String(secs);
 			secs--;
 		}
 	}
@@ -41,7 +41,7 @@ function fight_start() {
 					GALLI_LIST[g].gallo_html.style.display = "none";
 				}
 			}
-			document.getElementById("fight").style.content = "url(img/galli/fight_1_1.gif)";
+			document.getElementById("fight").style.content = "url(img/galli/fight_round.gif)";
 			clearInterval(timerToTheCenter);
 			fight_loop();
 		} else {
@@ -54,10 +54,10 @@ function fight_loop() {
 	var timerFight = setInterval(galliFight, 10);
 	var secs = 0;
 	var end = false;//set to true if a gallo is dead
-	document.getElementById("timer").innerHTML = "<p>"+msToTime(secs).substr(0,5)+"</p>";
+	document.getElementById("timer").innerHTML = String(msToTime(secs)).substr(0,5);
 	function galliFight() {
 		if (end || secs == ROUND_LEN) {
-			document.getElementById("timer").innerHTML = "<p>"+msToTime(secs).substr(0,5)+"</p>";
+			document.getElementById("timer").innerHTML = String(msToTime(secs)).substr(0,5);
 			fight_end();
 			clearInterval(timerFight);
 		} else {
@@ -73,7 +73,7 @@ function fight_loop() {
 				}
 			}
 			secs+=10;
-			document.getElementById("timer").innerHTML = "<p>"+msToTime(secs).substr(0,5)+"</p>";
+			document.getElementById("timer").innerHTML = String(msToTime(secs)).substr(0,5);
 		}
 	}
 }

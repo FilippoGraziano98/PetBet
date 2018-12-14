@@ -55,6 +55,7 @@ class dbms:
 			if (data['user']==registered_user['username'] or data['user']==registered_user['email']) and data['password']==registered_user['password']:
 				self.log.write("\t-> valid credentials"+"\n")
 				name = registered_user['nome']
-				return (True, name)
+				budget = registered_user['budget']
+				return (True, name, budget)
 		self.log.write("\t-> not valid credentials"+"\n")
-		return (False, "")
+		return (False, "", 0)

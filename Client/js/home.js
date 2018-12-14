@@ -17,9 +17,14 @@ function unfreeze_menu() {
 $(document).ready(function(){
 	var cookie=getCookies();
 	if(cookie){
+		document.getElementById("login_btn").style.display = "none";
+		document.getElementById("register_btn").style.display = "none";
 		var name = getNameFromCookie(cookie);
-		document.getElementById("login").innerHTML = 
-			"Ciao "+name +', <a name="logout" id="logout" onclick="logout()">logout</a>';
+		var budget = getBudgetFromCookie(cookie);
+		document.getElementById("logged_user_name").innerHTML = 
+				"Ciao "+name +', <a name="logout" id="logout" onclick="logout()">logout</a>';
+		document.getElementById("logged_user_budget").innerHTML = 
+				"Il tuo budget è di "+budget;
 	}
 	else {
 		freeze_menu();

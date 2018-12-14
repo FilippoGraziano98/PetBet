@@ -7,29 +7,29 @@ function setCookie(name,value,days,permanent) {
 	var cookie = {[name]:(value || ""), "refreshings":0, "expires":expiration, "path":"/"};
 	
 	//clears eventual previous cookies
-	localStorage.removeItem("PetBetCookies");
-	sessionStorage.removeItem("PetBetCookies");
+	localStorage.removeItem("PetBet-Cookies");
+	sessionStorage.removeItem("PetBet-Cookies");
 
 	if(permanent){//use localStorage
-		localStorage.setItem("PetBetCookies", JSON.stringify(cookie));
+		localStorage.setItem("PetBet-Cookies", JSON.stringify(cookie));
 	} else {//use sessionStorage
-		sessionStorage.setItem("PetBetCookies", JSON.stringify(cookie));
+		sessionStorage.setItem("PetBet-Cookies", JSON.stringify(cookie));
 	}
-	console.log("localStorage -> "+localStorage.PetBetCookies);
-	console.log("sessionStorage -> "+sessionStorage.PetBetCookies);
+	console.log("localStorage -> "+localStorage.getItem("PetBet-Cookies"));
+	console.log("sessionStorage -> "+sessionStorage.getItem("PetBet-Cookies"));
 }
 
 function getCookies(){
-	console.log("localStorage -> "+localStorage.PetBetCookies);
-	console.log("sessionStorage -> "+sessionStorage.PetBetCookies);
-	//var cookie = JSON.parse(localStorage.getItem("PetBetCookies")) || JSON.parse(sessionStorage.getItem("PetBetCookies")) || false;
+	console.log("localStorage -> "+localStorage.getItem("PetBet-Cookies"));
+	console.log("sessionStorage -> "+sessionStorage.getItem("PetBet-Cookies"));
+	//var cookie = JSON.parse(localStorage.getItem("PetBet-Cookies")) || JSON.parse(sessionStorage.getItem("PetBet-Cookies")) || false;
 	var cookie = false;
 	var permanent = false;
-	if(localStorage.getItem("PetBetCookies")){
-		cookie = JSON.parse(localStorage.getItem("PetBetCookies"));
+	if(localStorage.getItem("PetBet-Cookies")){
+		cookie = JSON.parse(localStorage.getItem("PetBet-Cookies"));
 		permanent = true;
-	} else if(sessionStorage.getItem("PetBetCookies")) {
-		cookie = JSON.parse(sessionStorage.getItem("PetBetCookies"));
+	} else if(sessionStorage.getItem("PetBet-Cookies")) {
+		cookie = JSON.parse(sessionStorage.getItem("PetBet-Cookies"));
 		permanent = false;
 	} else {
 		cookie = false;
@@ -40,8 +40,8 @@ function getCookies(){
 		var expiration = Date.parse(getExpirationFromCookie(cookie));
 		var current_time = Date.now();
 		if(current_time > expiration){//se i cookie sono scaduti, buttali
-			localStorage.removeItem("PetBetCookies");
-			sessionStorage.removeItem("PetBetCookies");
+			localStorage.removeItem("PetBet-Cookies");
+			sessionStorage.removeItem("PetBet-Cookies");
 			return false;
 		} else {//altrimenti rinnova i cookie per un altro giorno!
 			return refreshCookie(cookie, permanent);
@@ -50,9 +50,11 @@ function getCookies(){
 }
 
 function getNameFromCookie(cookie){
-	return cookie['session-id'].split('@')[0];
+	return cookie['session-id'].split('@')[0].split('_')[0];
 }
-
+function getBudgetFromCookie(cookie){
+	return cookie['session-id'].split('@')[0].split('_')[1];
+}
 function getExpirationFromCookie(cookie){
 	return cookie['expires'];
 }
@@ -63,9 +65,9 @@ function refreshCookie(cookie, permanent){
 	cookie['expires'] = new_expiration.toUTCString();
 	cookie['refreshings']++;
 	if(permanent) {
-		localStorage.setItem("PetBetCookies", JSON.stringify(cookie));
+		localStorage.setItem("PetBet-Cookies", JSON.stringify(cookie));
 	} else {
-		sessionStorage.setItem("PetBetCookies", JSON.stringify(cookie));
+		sessionStorage.setItem("PetBet-Cookies", JSON.stringify(cookie));
 	}
 	return cookie;
 }

@@ -27,7 +27,8 @@ function check_scommessa() {
 		writeAlert("Devi prima inserire una quota!");
 		return false;
 	}
-	if (document.getElementById("bet").value == "") {
+	var importo_scommesso = document.getElementById("bet").value;
+	if (importo_scommesso == "") {
 		writeAlert("Inserisci importo");
 		return false;
 	}
@@ -56,9 +57,15 @@ function bet_update() {
 
 	var quota = document.getElementById("quota_int").innerHTML;
 	var money = document.getElementById("bet").value;
+	var user_budget = getBudgetFromCookie(getCookies());
 
 	if (money < 1) {
 		writeAlert("La puntata minima è di €1");
+		document.getElementById("vincita_potenziale").innerHTML = "<p>- - -</p>";
+		freeze_bet_area(false);
+		return false;
+	} else if (money > user_budget) {
+		writeAlert("Non puoi scommettere un importo superiore al tuo budget");
 		document.getElementById("vincita_potenziale").innerHTML = "<p>- - -</p>";
 		freeze_bet_area(false);
 		return false;

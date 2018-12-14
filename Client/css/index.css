@@ -13,11 +13,6 @@ div.header_area {
 	background-color: var(--no-colour);
 	float:left;
 	display: inline;
-	font-family: arial;
-	font-size:60px;
-	text-decoration:italic;
-	color: var(--light-green);
-	text-align: center;
 	line-height: 100px;
 	/* per allineamento verticale:
 	 * line-height indica la spaziatura tra due linee di testo,
@@ -27,7 +22,10 @@ div.header_area {
 
 div.header_area[id=main_title] {
 	width:65%;
-	font-style:extra-bold;
+	font-family: arial;
+	font-size:60px;
+	color: var(--light-green);
+	text-align: center;
 	font-variant:small-caps;
 	font-weight:bolder;
 }
@@ -36,6 +34,17 @@ div.header_area[id=login] {
 	width:25%;
 	text-align:right;
 	font-size:30px;
+}
+
+div.info_logged_user {
+	background-color: var(--no-colour);
+	color: var(--light-green);
+	text-align: center;
+	font-size:30px;
+	line-height: 50px;
+}
+div[id=logged_user_budget] {
+	font-size:20px;
 }
 
 button.users {
@@ -133,7 +142,6 @@ div.body_area {
 	float:left;
 	display: inline;
 	font-size:60px;
-
 }
 
 div.body_area[id=left_menu] {
@@ -142,6 +150,8 @@ div.body_area[id=left_menu] {
 }
 
 div.body_area[id=dynamic_area] {
+	background: url(../img/home/gorilla_pubblicita.jpg) no-repeat top center;
+	height:100%;
 	width: 75%;
 	text-align:center;
 	font-size: 18px;

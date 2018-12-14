@@ -18,13 +18,15 @@ CORS(app)   ## to accept cross origin requests, disabling Same Oprigin Policy
 def server_log(response):
 	log=request.remote_addr+" - \""+request.method+" /"+request.endpoint+"\" "+response.status+" -\n"
 	log+="\t "+str(request)+"\n"
-	log+="\t cookies:"+str(request.cookies)+"\n"
+	log+="\t\t cookies:"+str(request.cookies)+"\n"
 	if request.method=="POST":
 			if ("application/x-www-form-urlencoded" in request.headers['Content-Type']):
 				#usr = str(request.form['username'])+","+str(request.form['password'])
-				log+="\t data: "+str(request.form)
+				log+="\t\t data: "+str(request.form)
 			elif ("application/json" in request.headers['Content-Type']):
-				log+="\t data: "+str(request.json)
+				log+="\t\t data: "+str(request.json)
+	log+="\n"
+	log += "\t "+"<Response "+str(response.response)+">\n"
 	logger.log(log)
 	return response
 
@@ -62,10 +64,10 @@ def login():
 		logger.log("\n[WARNING] Not recognizing the Content-Type of the following login request:")
 		return json.dumps({"msg":"login_failure__server_not_able_to_understand_data"})
 
-	(access, name) = user_dbms.query(usr);
+	(access, name, budget) = user_dbms.query(usr);
 
 	if (access):
-		response={"msg":"login_success","cookies":"session-id="+name+"@petbet"}
+		response={"msg":"login_success","cookies":"session-id="+name+"_"+budget+"@petbet"}
 	else:
 		response={"msg":"login_failure__credentials_not_valid"}
 	return json.dumps(response)

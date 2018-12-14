@@ -64,6 +64,7 @@ var cavalli_html = '\
 
 
 function loadCavalli(){
+	document.getElementById("dynamic_area").style.background = "var(--no-colour)";
 	document.getElementById("dynamic_area").innerHTML = cavalli_html;
 
 	var COLORS = ['red','blue','green', 'yellow','white'];

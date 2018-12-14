@@ -55,6 +55,7 @@ var galli_html = '\
 		'
 
 function loadGalli(){
+	document.getElementById("dynamic_area").style.background = "var(--no-colour)";
 	document.getElementById("dynamic_area").innerHTML = galli_html;
 	GALLI_LIST.populate_galli();
 

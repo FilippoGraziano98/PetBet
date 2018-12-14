@@ -5,6 +5,7 @@ function register(){
 			'username':$('#username').val(),
 			'email':$('#email').val(),
 			'password':$('#password').val(),
+			'budget':$('#budget').val(),
 			'nome':$('#inputUtente').val(),
 			'cognome':$('#inputCognome').val(),
 			'sesso':$('#sesso').val(),

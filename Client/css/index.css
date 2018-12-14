@@ -1,4 +1,7 @@
 /* HEADER */
+input {
+	text-align: center;
+}
 div.header {
 	width: auto;
 	height: 100px;

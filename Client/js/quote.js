@@ -1,5 +1,5 @@
 function initialize_bet_area() {
-	document.getElementById("quota").inner;HTML = "<p id='quota_int'>- - -</p>";
+	document.getElementById("quota").innerHTML = "<p id='quota_int'>- - -</p>";
 	document.getElementById("bet").value = ""
 	document.getElementById("vincita_potenziale").innerHTML = "<p>- - -</p>";
 	

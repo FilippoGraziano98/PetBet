@@ -32,11 +32,16 @@
 }
 
 body {
-	background-image: url("../img/home/gorilla.jpg");
+	 background: url("../img/home/background-4.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	/* background-repeat:no-repeat;
 	/*just one occurence of the image*/
 	/*background-repeat:no-repeat;*/
 	/*fitting image to browser size*/
-	background-size:cover;
+	/*background-size:cover;*/
 }
 
 div {
@@ -48,10 +53,11 @@ div {
 
 button {
   border: outset;
-	border-radius: 8px;
+  border-radius: 8px;
   border-color: var(--dark-gray);
   color: white; /*text color*/
   padding: 16px 0px; /*top&bottom - left&right*/
+  width: 150px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -67,9 +73,17 @@ button.users {
  	width: 150px;
 }
 
-button.menu,button.bet_button {
+button.menu {
 	background-color: var(--dark-red);
 	width: 200px;
+}
+
+button.scommetti {
+	background-color: var(--dark-green);
+	width: 150px;
+	height: 50px;
+	text-align: center;
+	padding-top: 10px;
 }
 
 table {
@@ -89,7 +103,7 @@ td {
 
 p {
 	font-family: arial;
-	font-size:25px;
-	color: var(--black);
+	font-size:20px;
+	color: var(--transparent-black);
 	display: inline;
 }

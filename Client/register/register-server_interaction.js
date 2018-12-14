@@ -1,6 +1,6 @@
 function register(){
 	if(validaAccessForm()){
-		var url='http://filippo-ubuntu:8000/register'
+		var url='http://localhost:8000/register'
 		var data={
 			'username':$('#username').val(),
 			'email':$('#email').val(),

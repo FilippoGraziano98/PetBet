@@ -273,3 +273,4 @@
 [queryLogin 2018-12-14 00:33:47.898495] {"password": "f", "user": "ff"}	-> valid credentials
 [queryLogin 2018-12-14 00:34:20.017474] {"password": "d", "user": "gg"}	-> not valid credentials
 [queryLogin 2018-12-14 00:48:22.835328] {"password": "f", "user": "ff"}	-> valid credentials
+[queryLogin 2018-12-14 12:20:16.996522] {"password": "f", "user": "ff"}	-> valid credentials

@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 function login(){
 	if(validaForm()){
-		var url='http://filippo-ubuntu:8000/login'
+		var url='http://localhost:8000/login'
 		var data={
 			'user':$('#user').val(),
 			'password':$('#password').val()

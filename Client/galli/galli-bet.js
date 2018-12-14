@@ -1,3 +1,13 @@
+function freeze_galli_bet_buttons() {
+	document.getElementById("gallo_red_quota_button").disabled = true;
+	document.getElementById("gallo_blue_quota_button").disabled = true;
+}
+
+function unfreeze_galli_bet_buttons() {
+	document.getElementById("gallo_red_quota_button").disabled = false;
+	document.getElementById("gallo_blue_quota_button").disabled = false;
+}
+
 //event listener for click on gallo quote button
 function bet_on(pressed_button){
 	var chosen_gallo = pressed_button.id.split('_')[1];
@@ -22,7 +32,7 @@ function ufficialize_bet() {
 	if(!check){
 		return false;
 	}
-	
+	freeze_galli_bet_buttons();
 	start_round();
 }
 
@@ -39,4 +49,7 @@ function bet_get_reward(){
 	else
 		writeLoserMsg();
 	sessionStorage.removeItem("Gallo-bet_on");
+	unfreeze_galli_bet_buttons();
 }
+
+//add button for reset fight and fight without bet

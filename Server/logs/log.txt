@@ -1087,3 +1087,7 @@
 	 <Request 'http://filippo-ubuntu:8000/login' [POST]>
 	 cookies:{}
 	 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+[2018-12-14 12:26:46.726080] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+	 cookies:{}
+	 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])

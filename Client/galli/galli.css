@@ -9,7 +9,7 @@ div[id=header_div],[id=quote] {
 div.background {
 	width:1360px;
 	height:600px;
-	background-color: var(--dark-orange);
+	background-color: var(--dark-red);
 	position: relative;
 }
 
@@ -17,7 +17,7 @@ div[id=battle_field] {
 	width: 1260px;
 	height: 500px;
 	border-radius:25px;
-	border: 5px solid var(--dark-red);
+	border: 5px solid var(--dark-orange);
 	background: url(../img/galli/ring-fieno.png);
 	background-size:100% 100%;
 	position: absolute;

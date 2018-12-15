@@ -85,8 +85,24 @@ table {
     width: 100%;
 }
 
+table.quote{
+    border-radius: 1em;
+	border:2px solid green;
+ 	overflow: hidden;
+
+}
+
+
 tr:nth-child(even){
-	background-color: var(--transparent-white);
+	background-color: #FAEBD7;
+}
+
+tr.back {
+	background-color: #DEB887; 
+}
+
+th {
+	background-color: var(--dark-green);
 }
 
 td {
@@ -95,9 +111,25 @@ td {
 	padding: 8px;
 }
 
+
 p {
 	font-family: arial;
 	font-size:20px;
 	color: var(--transparent-black);
 	display: inline;
 }
+
+p.bet_font {
+	font-weight: bold;
+}
+
+p.report_font {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+p.header_font_quote {
+	color: white;
+	font-size:25px;
+}
+

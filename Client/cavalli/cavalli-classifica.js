@@ -6,7 +6,7 @@ function prepareClassifica(){
 	start_timer = Date.now();
 	
 	var classifica_html =
-		'<p class=title>Classifica:</p>\
+		'<p class=title>Classifica:</p><br><br>\
 			<table>'
 	for(var i=0; i<5; i++){
 		classifica_html =
@@ -45,9 +45,9 @@ function firstPlace(horse_colour) {
 	var button = sessionStorage.getItem("Chosen quote");
 	var chosen_horse = button.substring(0,button.length-6);
 	if (chosen_horse == horse_colour) {
-		writeWinnerMsg("COMPLIMENTI! IL TUO CAVALLO HA VINTO");
+		writeWinnerMsg("COMPLIMENTI! IL TUO CAVALLO HA VINTO 😀");	// emoji discutibile lol
 	} else {
-		writeLoserMsg("IL TUO CAVALLO HA PERSO");	
+		writeLoserMsg("IL TUO CAVALLO HA PERSO 😪");	// emoji discutibile lol
 	}
 	sessionStorage.removeItem("Chosen quote");
 }

@@ -14,12 +14,7 @@ var horses_velocity = [];
 var horses_quotes = [];
 
 function setGame() {
-	if (document.getElementById("winner_msg").value != "") {
-		document.getElementById("winner_msg").innerHTML = "";
-	}
-	if (document.getElementById("loser_msg").value != "") {
-		document.getElementById("loser_msg").innerHTML = "";
-	}
+	prepareClassifica();
 	initialize_bet_area();
 	for(var c=0; c<5; c++) {	
 		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
@@ -54,7 +49,7 @@ function setGame() {
 		//scelgo random la velocità del cavallo e setto la relativa quota
 		//horses_velocity[i] = Math.random()*0.4+1.2;
 		horses_velocity[i] = Math.random()*0.15+1.45-Math.floor((horses_animated[i].horse_id-1)/n_horses)*0.2-Math.abs((4-horses_animated[i].horse_age)/(n_horses/4))*0.1;		
-		horses_quotes[i] = 5.8-horses_velocity[i]*3+Math.random()*1.5;
+		horses_quotes[i] = 6-horses_velocity[i]*3+Math.random()*1.5;
 		document.getElementById(col+"button").innerHTML = String(horses_quotes[i]).substring(0,4);
 		
 		//personalizzo la tabella delle quote
@@ -75,9 +70,14 @@ function update_quote(idbutton) {
 	var money = document.getElementById("bet").value;
 	var chosen_quote = String(horses_quotes[i]).substring(0,4);
 	quote_calculator(chosen_quote, money);
+	check_scommessa();
 	for(var c=0; c<5; c++) {	
 		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
 	}
+	
+	var chosen_horse = document.getElementById("quota_nome_"+color).innerHTML
+	document.getElementById("report").innerHTML = "<p class=report_font> Hai puntato su </p><p class=quota_cavallo_nome id='quota_nome_" + color + "'>" + chosen_horse + "</p>";
+	
 	document.getElementById(idbutton).setAttribute("class", "buttonselected");
 	sessionStorage.setItem("Chosen quote", idbutton);
 }

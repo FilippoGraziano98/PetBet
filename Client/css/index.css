@@ -81,7 +81,7 @@ p.msg {
 }
 p.emphasized_msg {
 	color: white;
-	font-size:25px;
+	font-size:20px;
 	text-transform:uppercase;
 	text-shadow: 
 	   1px   0  0   var(--black), 
@@ -97,37 +97,37 @@ div[id=ok_msg] {
 div[id=alert_msg] {
 	background-color: var(--dark-red);
 }
-div[id=winner_msg] {
-	background-color: green;
-}
-div[id=loser_msg] {
-	background-color: var(--dark-red);
-}
+
 
 div.top {
-	background-color: teal;
+	background-color: var(--dark-green);
 	height: 20px; 
-	border-top-left-radius:20px;
-	border-top-right-radius:20px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
 }
 div.bottom {
-	background-color: teal;
+	background-color: var(--dark-green);
 	height: 20px; 
-	border-bottom-left-radius:20px;
-	border-bottom-right-radius:20px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
 }
 
 div.bet {
-	background-color: var(--transparent-white);
+	background-color: #DEB887;
 	display: block;
-	border-radius: 30px;
+	border-radius: 20px;
 	border-style: solid;
-  	border-color: teal;
+  	border-color: var(--dark-green);
   	border-width: 5px;
 	font-size:30px;
 	position: absolute;
 	width: 14%;
 	margin: 0 3%;
+}
+
+div.bet2 {
+	background-color: #FAEBD7;
+	height: auto;	
 }
 
 div.body {

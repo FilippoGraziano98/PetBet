@@ -9,7 +9,7 @@ function unfreeze_galli_bet_buttons() {
 }
 
 //event listener for click on gallo quote button
-function bet_on(pressed_button){
+function bet_on_handler(pressed_button){
 	var chosen_gallo = pressed_button.id.split('_')[1];
 
 	var money = document.getElementById("bet").value;
@@ -26,9 +26,13 @@ function bet_on(pressed_button){
 }
 
 //event listener for click on Scommetti button
-function ufficialize_bet() {
+function ufficialize_galli_bet() {
 	var chosen_gallo = sessionStorage.getItem("Gallo-bet_on");
-	var check = confirm_bet("Hai scommesso su "+chosen_gallo);
+
+	comunicate_bet_to_server(on_server_response_start_match, "Hai scommesso su "+chosen_gallo);
+}
+
+function on_server_response_start_match(check){
 	if(!check){
 		return false;
 	}

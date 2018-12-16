@@ -47,8 +47,13 @@ function getCookies(){
 			return refreshCookie(cookie, permanent);
 		}
 	}
+	return false;
 }
 
+
+function getSessionIdFromCookie(cookie){
+	return cookie['session-id'];
+}
 function getNameFromCookie(cookie){
 	return cookie['session-id'].split('@')[0].split('_')[0];
 }
@@ -70,4 +75,47 @@ function refreshCookie(cookie, permanent){
 		sessionStorage.setItem("PetBet-Cookies", JSON.stringify(cookie));
 	}
 	return cookie;
+}
+
+
+function setSessionIdInCookie(cookie, new_session_id, permanent){
+	cookie['session-id'] = new_session_id;
+	if(permanent) {
+		localStorage.setItem("PetBet-Cookies", JSON.stringify(cookie));
+	} else {
+		sessionStorage.setItem("PetBet-Cookies", JSON.stringify(cookie));
+	}
+	return cookie;
+}
+
+function changeCookieValue(old_cookie, new_value){
+		console.log("localStorage -> "+localStorage.getItem("PetBet-Cookies"));
+	console.log("sessionStorage -> "+sessionStorage.getItem("PetBet-Cookies"));
+	//var cookie = JSON.parse(localStorage.getItem("PetBet-Cookies")) || JSON.parse(sessionStorage.getItem("PetBet-Cookies")) || false;
+	var cookie = false;
+	var permanent = false;
+	if(localStorage.getItem("PetBet-Cookies")){
+		cookie = JSON.parse(localStorage.getItem("PetBet-Cookies"));
+		permanent = true;
+	} else if(sessionStorage.getItem("PetBet-Cookies")) {
+		cookie = JSON.parse(sessionStorage.getItem("PetBet-Cookies"));
+		permanent = false;
+	} else {
+		cookie = false;
+		permanent = false;
+	}
+	
+	if(cookie){//se ho trovato cookie
+		var expiration = Date.parse(getExpirationFromCookie(cookie));
+		var current_time = Date.now();
+		if(current_time <= expiration && getSessionIdFromCookie(cookie) == old_cookie){//se i cookie son validi e son quelli che mi aspettavo
+			new_cookie = setSessionIdInCookie(cookie, new_value, permanent);
+			return refreshCookie(new_cookie, permanent);
+		} else {//se i cookie sono scaduti, buttali
+			localStorage.removeItem("PetBet-Cookies");
+			sessionStorage.removeItem("PetBet-Cookies");
+			return false;
+		}
+	}
+	return false;
 }

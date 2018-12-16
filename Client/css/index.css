@@ -98,18 +98,17 @@ div[id=alert_msg] {
 	background-color: var(--dark-red);
 }
 
-div[id=index_button] {
+div.menu {
 	background-color: var(--no-color);
 	width: 350px;
 	height: 120px;
 	margin: 0 15px;
 	cursor: pointer;
 }
-
 img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.top {
@@ -130,15 +129,14 @@ div.bet {
 	display: block;
 	border-radius: 20px;
 	border-style: solid;
-  	border-color: var(--dark-green);
-  	border-width: 5px;
+	border-color:  var(--dark-green);
+	border-width: 5px;
 	font-size:30px;
 	position: absolute;
 	width: 14%;
 	margin: 0 3%;
 }
-
-div.bet2 {
+div.bet_msgs {
 	background-color: #FAEBD7;
 	height: auto;	
 }

@@ -1,16 +1,6 @@
-[insert 2018-12-14 18:14:18.565088] {"username": "ff", "giornoNascita": "1", "cittaResidenza": "f", "password": "f", "meseNascita": "01m", "nome": "ff", "cognome": "f", "cap": "12345", "budget": "4", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "f", "indirizzoResidenza": "f", "email": "f@.f"}
-[check_username 2018-12-14 18:14:18.565862] requested user: ff	 -> username available
-[check_email 2018-12-14 18:14:18.566803] requested email: f@.f	 -> email available
-[queryLogin 2018-12-14 18:14:22.294893] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 18:38:28.922793] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 18:39:50.095812] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 18:41:36.658628] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 18:42:44.593231] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 18:43:30.753767] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 18:44:51.817180] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 18:47:17.787121] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 18:53:12.377947] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 19:06:46.367416] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-14 20:01:13.075903] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-15 17:09:58.359986] {"password": "f", "user": "ff"}	-> valid credentials
-[queryLogin 2018-12-16 16:11:04.300453] {"password": "f", "user": "ff"}	-> valid credentials
+[queryLogin 2018-12-16 18:33:38.086396] {"password": "f", "user": "ff"}	-> valid credentials
+[updateBudget 2018-12-16 18:33:44.707283] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-16 18:33:44.709367] username: ff, key: budget, new_value: 99.0[updateBudget 2018-12-16 18:34:17.638786] username: ff, importo: 98
+	-> valid username
+[updateUser 2018-12-16 18:34:17.639627] username: ff, key: budget, new_value: 1.0

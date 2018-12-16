@@ -40,21 +40,30 @@ var galli_html = '\
 			</div>\
 		</div>\
 		<br>\
+		<div id="galli_report"></div>\
+		<br>\
 		<div name="quote" id="quote">\
 			<table>\
 				<tr>\
 					<td><p class=quota_gallo_nome name="gallo_red_quota_nome" id="gallo_red_quota_nome"> Gallo Rosso </p></td>\
-					<td><button class=quota_gallo_button name="gallo_red_quota_button" id="gallo_red_quota_button" onclick="bet_on(this)">???</button></td>\
+					<td><button class=quota_gallo_button name="gallo_red_quota_button" id="gallo_red_quota_button" onclick="bet_on_handler(this)">???</button></td>\
 					\
 					<td><p>Scegli su chi vuoi scommettere:</p></td>\
 					\
-					<td><button class=quota_gallo_button name="gallo_blue_quota_button" id="gallo_blue_quota_button" onclick="bet_on(this)">???</button></td>\
+					<td><button class=quota_gallo_button name="gallo_blue_quota_button" id="gallo_blue_quota_button" onclick="bet_on_handler(this)">???</button></td>\
 					<td><p class=quota_gallo_nome name="gallo_blue_quota_nome" id="gallo_blue_quota_nome"> Gallo Blu </p></td>\
 			</table>\
 		</div>\
 		'
 
 function loadGalli(){
+	var url_string = window.location.href;
+	var url_base = url_string.split("?")[0];
+	var update_url = url_base+"?bet_on=galli"
+	if(update_url.includes("index.html")){
+		history.pushState(null, null, update_url);
+	}
+	
 	document.getElementById("dynamic_area").style.background = "var(--no-colour)";
 	document.getElementById("dynamic_area").innerHTML = galli_html;
 	GALLI_LIST.populate_galli();
@@ -69,6 +78,7 @@ function loadGalli(){
 	}
 	initialize_bet_area();
 
-	document.getElementById("scommetti").addEventListener("click", ufficialize_bet);
+	document.getElementById("scommetti").removeEventListener("click", ufficialize_cavalli_bet);
+	document.getElementById("scommetti").addEventListener("click", ufficialize_galli_bet);
 	freeze_bet_area(false);
 }

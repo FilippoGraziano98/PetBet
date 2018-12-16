@@ -67,9 +67,32 @@ def login():
 	(access, name, budget) = user_dbms.query(usr);
 
 	if (access):
-		response={"msg":"login_success","cookies":"session-id="+name+"_"+budget+"@petbet"}
+		response={"msg":"login_success","cookies":"session-id="+name+"_"+str(budget)+"@petbet"}
 	else:
 		response={"msg":"login_failure__credentials_not_valid"}
+	return json.dumps(response)
+
+@app.route('/bet', methods=['POST'])
+def bet():
+	if ("application/x-www-form-urlencoded" in request.headers['Content-Type']):
+		data = request.form
+	elif ("application/json" in request.headers['Content-Type']):
+		data = request.json
+	else :
+		logger.log("\n[WARNING] Not recognizing the Content-Type of the following login request:")
+		return json.dumps({"msg":"bet_failure__server_not_able_to_understand_data"})
+	
+	cookies = data['cookies']
+	username = cookies.split("@")[0].split("_")[0]
+	previous_budget = cookies.split("@")[0].split("_")[1]
+	importo_scommessa = data['importo_scommessa']
+
+	(ok, name, budget) = user_dbms.update_budget(username, previous_budget, importo_scommessa);
+
+	if (ok):
+		response={"msg":"bet_success","cookies":"session-id="+name+"_"+str(budget)+"@petbet"}
+	else:
+		response={"msg":"bet_failure__cookie_not_valid"}
 	return json.dumps(response)
 
 print

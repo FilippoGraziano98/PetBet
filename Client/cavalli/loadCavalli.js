@@ -1,7 +1,7 @@
 var cavalli_html = '\
 		<link rel=stylesheet type="text/css" href="cavalli/cavalli.css">\
 		<div id=main_div_cavalli>\
-		<br>\
+			<br>\
 			<div id=header_div><p class=title>Corsa di Cavalli</p></div>\
 			<br>\
 			<div class=back name="backcavalli" id="backcavalli">\
@@ -20,49 +20,40 @@ var cavalli_html = '\
 				<br><br>\
 			</div>\
 			<br>\
-			<div id="report"></div>\
+			<div id="cavalli_report"></div>\
 			<br>\
 			<div name="quote" id="quote" style="overflow-x:auto;">\
-					<table>\
-						<tr class=back>\
-							<td class=quote>\
-								<table class=quote>\
-									<th colspan=2>\
-										<br><p class=header_font_quote>Scegli su chi vuoi scommettere:</p><br><br>\
-									</th>\
-									<tr>\
-										<td><p class=quota_cavallo_nome name="quota_nome_red" id="quota_nome_red"></p></td>\
-										<td><button class=button name="redbutton" id="redbutton" onclick="update_quote(this.id)">???</button></td>\
-									</tr>\
-									<tr>\
-										<td><p class=quota_cavallo_nome name="quota_nome_blue" id="quota_nome_blue"></p></td>\
-										<td><button class=button name="bluebutton" id="bluebutton" onclick="update_quote(this.id)">???</button></td>\
-									</tr>\
-									<tr>\
-										<td><p class=quota_cavallo_nome name="quota_nome_green" id="quota_nome_green"></p></td>\
-										<td><button class=button name="greenbutton" id="greenbutton" onclick="update_quote(this.id)">???</button></td>\
-									</tr>\
-									<tr class=even_row>\
-										<td><p class=quota_cavallo_nome name="quota_nome_yellow" id="quota_nome_yellow"></p></td>\
-										<td><button class=button name="yellowbutton" id="yellowbutton" onclick="update_quote(this.id)">???</button></td>\
-									</tr>\
-									<tr>\
-										<td><p class=quota_cavallo_nome name="quota_nome_white" id="quota_nome_white"></p></td>\
-										<td><button class=button name="whitebutton" id="whitebutton" onclick="update_quote(this.id)">???</button></td>\
-									</tr>\
-								</table>\
-							</td>\
-							<td class=classifica>\
-								<div name="timerEndGame" id="timerEndGame">\
-								</div>\
-								<div name="infoCavallo" id="infoCavallo">\
-								</div>\
-								<div name="classifica" id="classifica">\
-								</div>\
-							</td>\
-						</tr>\
-					</table>\
-					<br>\
+				<table>\
+					<tr class=back>\
+						<td class=quote>\
+							<table class=quote>\
+								<th colspan=2>\
+									<br><p class=header_font_quote>Scegli su chi vuoi scommettere:</p><br><br>\
+								</th>\
+								<tr>\
+									<td><p class=quota_cavallo_nome name="quota_nome_red" id="quota_nome_red"></p></td>\
+									<td><button class=button name="redbutton" id="redbutton" onclick="update_quote(this.id)">???</button></td>\
+								<tr>\
+									<td><p class=quota_cavallo_nome name="quota_nome_blue" id="quota_nome_blue"></p></td>\
+									<td><button class=button name="bluebutton" id="bluebutton" onclick="update_quote(this.id)">???</button></td>\
+								<tr>\
+									<td><p class=quota_cavallo_nome name="quota_nome_green" id="quota_nome_green"></p></td>\
+									<td><button class=button name="greenbutton" id="greenbutton" onclick="update_quote(this.id)">???</button></td>\
+								<tr class=even_row>\
+									<td><p class=quota_cavallo_nome name="quota_nome_yellow" id="quota_nome_yellow"></p></td>\
+									<td><button class=button name="yellowbutton" id="yellowbutton" onclick="update_quote(this.id)">???</button></td>\
+								<tr>\
+									<td><p class=quota_cavallo_nome name="quota_nome_white" id="quota_nome_white"></p></td>\
+									<td><button class=button name="whitebutton" id="whitebutton" onclick="update_quote(this.id)">???</button></td>\
+							</table>\
+						</td>\
+						<td class=classifica>\
+							<div name="infoCavallo" id="infoCavallo"></div>\
+							<div name="classifica" id="classifica"></div>\
+							<div name="timerEndGame" id="timerEndGame"></div>\
+						</td>\
+				</table>\
+				<br>\
 			</div>\
 		</div>\
 		<br><br>\
@@ -70,9 +61,15 @@ var cavalli_html = '\
 
 
 function loadCavalli(){
+	var url_string = window.location.href;
+	var url_base = url_string.split("?")[0];
+	var update_url = url_base+"?bet_on=cavalli"
+	if(update_url.includes("index.html")){
+		history.pushState(null, null, update_url);
+	}
+
 	document.getElementById("dynamic_area").style.background = "var(--no-colour)";
 	document.getElementById("dynamic_area").innerHTML = cavalli_html;
-	prepareClassifica();
 
 	var COLORS = ['red','blue','green', 'yellow','white'];
 	for(var i=0; i<5; i++){
@@ -98,7 +95,9 @@ function loadCavalli(){
 
 		localStorage.setItem("PetBet - Horses", JSON.stringify(horses));
 	}
-	document.getElementById("scommetti").addEventListener("click", startGame_Timer);
+	document.getElementById("scommetti").removeEventListener("click", ufficialize_galli_bet);
+	document.getElementById("scommetti").addEventListener("click", ufficialize_cavalli_bet);
 	freeze_bet_area(false);
+	prepareClassifica();
 	setGame("redbutton");
 }

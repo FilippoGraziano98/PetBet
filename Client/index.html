@@ -15,6 +15,7 @@
 		<script type="text/javascript" lang="javascript" src="cavalli/cavalli.js"></script>
 		<script type="text/javascript" lang="javascript" src="cavalli/cavalli-info_cavalli.js"></script>
 		<script type="text/javascript" lang="javascript" src="cavalli/cavalli-classifica.js"></script>
+		<script type="text/javascript" lang="javascript" src="cavalli/cavalli-bet.js"></script>
 		<script type="text/javascript" lang="javascript" src="cavalli/aux.js"></script>
 		<script type="text/javascript" lang="javascript" src="galli/loadGalli.js"></script>
 		<script type="text/javascript" lang="javascript" src="galli/galli.js"></script>
@@ -36,12 +37,13 @@
 		</div>
 		<br><br>
 		<div class=body name="body" id="body">
-			<div class=body_area name="left_menu" id="left">
-				<div id="index_button" onclick="loadCavalli()">
-				<img src="img/home/woodsign_cavalli.png" alt="error" width=300px>
+			<div class=body_area name="left_menu" id="left_menu">
+				<!-- div class=menu are the menu buttons -->
+				<div class=menu name="cavalli_entry" id="cavalli_entry" onclick="loadCavalli()">
+					<img src="img/home/woodsign_cavalli.png" alt="error" width=300px>
 				</div>
-				<div id="index_button" onclick="loadGalli()">
-				<img src="img/home/woodsign_galli.png" alt="error" width=300px>
+				<div class=menu name="galli_entry" id="galli_entry" onclick="loadGalli()">
+					<img src="img/home/woodsign_galli.png" alt="error" width=300px>
 				</div>
 				<br>
 				<div class=bet name="bet_font" id="left">
@@ -56,15 +58,15 @@
 						<tr>
 							<td><p class=bet_font>Vincita Potenzale</p></td>
 							<td id="vincita_potenziale"><p class=bet_font>- - -</p></td>
-					</table>	
-					<div class=bet2>
-						<br>	
+					</table>
+					<br>
+					<div class=bet_msgs>
 						<button class=scommetti name="scommetti" id="scommetti">SCOMMETTI</button>
 						<br><br>
 						<div id="alert_msg"></div>
 						<div id="ok_msg"></div>
-						<br>
 					</div>
+					<br>
 					<div class=bottom></div>
 				</div>
 			</div>

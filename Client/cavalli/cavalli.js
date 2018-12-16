@@ -14,8 +14,8 @@ var horses_velocity = [];
 var horses_quotes = [];
 
 function setGame() {
-	prepareClassifica();
 	initialize_bet_area();
+	prepareClassifica();
 	for(var c=0; c<5; c++) {	
 		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
 	}
@@ -60,40 +60,8 @@ function setGame() {
 	}
 }
 
-//setta nella scommesssa la quota del cavallo selzionato
-function update_quote(idbutton) {
-	var i;
-	var color = idbutton.substring(0,idbutton.length-6);
-	for(var x=0; x<5; x++) {
-		if (COLORS[x] == color) i = x;
-	}
-	var money = document.getElementById("bet").value;
-	var chosen_quote = String(horses_quotes[i]).substring(0,4);
-	quote_calculator(chosen_quote, money);
-	check_scommessa();
-	for(var c=0; c<5; c++) {	
-		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
-	}
-	
-	var chosen_horse = document.getElementById("quota_nome_"+color).innerHTML
-	document.getElementById("report").innerHTML = "<p class=report_font> Hai puntato su </p><p class=quota_cavallo_nome id='quota_nome_" + color + "'>" + chosen_horse + "</p>";
-	
-	document.getElementById(idbutton).setAttribute("class", "buttonselected");
-	sessionStorage.setItem("Chosen quote", idbutton);
-}
-
-
-function startGame_Timer(){
-	var check = confirm_bet();
-	if(!check){
-		return false;
-	}
-	
+function startGame_Timer(){	
 	document.getElementById("classifica").innerHTML = "<p class=startTimer>3</p>";
-	for(var i=0; i<5; i++){
-		var col = COLORS[i];
-		document.getElementById(col+"button").disabled = true;
-	}
 	var time = setInterval(timer, 1000);
 	var t = 3;
 	function timer() {

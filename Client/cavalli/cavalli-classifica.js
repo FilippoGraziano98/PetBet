@@ -41,13 +41,12 @@ function addToClassifica(horse_colour){
 }
 
 function firstPlace(horse_colour) {
-	document.getElementById("ok_msg").innerHTML = "";
-	var button = sessionStorage.getItem("Chosen quote");
+	var button = sessionStorage.getItem("Cavallo-bet_on");
 	var chosen_horse = button.substring(0,button.length-6);
 	if (chosen_horse == horse_colour) {
 		writeWinnerMsg("🎉 COMPLIMENTI! IL TUO CAVALLO HA VINTO 🎉");	// emoji discutibile lol
 	} else {
 		writeLoserMsg("IL TUO CAVALLO HA PERSO 😪");	// emoji discutibile lol
 	}
-	sessionStorage.removeItem("Chosen quote");
+	sessionStorage.removeItem("Cavallo-bet_on");
 }

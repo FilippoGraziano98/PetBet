@@ -48,10 +48,12 @@ function bet_get_reward(){
 		}
 	}
 	var gallo_bet_on = sessionStorage.getItem("Gallo-bet_on");
-	if(winning_gallo == gallo_bet_on)
+	if(winning_gallo == gallo_bet_on){
 		writeWinnerMsg();
-	else
+		comunicate_reward_to_server();
+	}	else {
 		writeLoserMsg();
+	}
 	sessionStorage.removeItem("Gallo-bet_on");
 	unfreeze_galli_bet_buttons();
 }

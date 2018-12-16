@@ -122,7 +122,6 @@ var GALLI_LIST = {
 							} else {
 								GALLI_LIST[g].ko_html.style.right = GALLI_LIST[g].ko_border+'px';
 							}
-							console.log(GALLI_LIST[g].ko_size, GALLI_LIST[g].ko_top, GALLI_LIST[g].ko_border)
 						}
 					}
 				}

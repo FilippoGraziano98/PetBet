@@ -67,7 +67,7 @@ class dbms:
 			[writer.write(json.dumps(d)+"\n") for d in new_list_users]
 
 	def update_user(self, username, key, new_value):
-		self.log.write("[updateUser "+str(datetime.now())+"] username: "+username+", key: "+key+", new_value: "+str(new_value))
+		self.log.write("[updateUser "+str(datetime.now())+"] username: "+username+", key: "+key+", new_value: "+str(new_value)+"\n")
 		check_aux = filter(lambda usr: usr['username'] == username, self.list_current_users())
 		if (len(check_aux) == 0):
 			self.log.write("\t-> user not found in db\n")
@@ -85,21 +85,37 @@ class dbms:
 		
 		return user_entry
 	
-	def update_budget(self, username, _previous_budget, _importo_scommessa):
-		self.log.write("[updateBudget "+str(datetime.now())+"] username: "+username+", importo: "+_importo_scommessa+"\n")
+	def decrease_budget(self, username, _previous_budget, _importo_scommessa):
+		self.log.write("[decreaseBudget "+str(datetime.now())+"] username: "+username+", importo: "+_importo_scommessa+"\n")
 		previous_budget = float(_previous_budget)
 		importo_scommessa = float(_importo_scommessa)
 		for registered_user in self.list_current_users():
 			if (username==registered_user['username']): #username is chiave primaria del db
 				self.log.write("\t-> valid username"+"\n")
-				if(float(registered_user['budget']) != previous_budget): #seems as if he increased his budget client-side
+				if(float(registered_user['budget']) - previous_budget > 0.1): #seems as if he increased his budget client-side
 					self.log.write("\t-> previous budget not matching server info\n")
 					return (False, "", 0)
 				if(float(registered_user['budget']) - importo_scommessa < 0):
 					self.log.write("\t-> cannot bet more than remaining budget\n")
 					return (False, "", 0)
 				#change entry in db
-				user_entry = self.update_user(username, "budget", previous_budget-importo_scommessa)
+				user_entry = self.update_user(username, "budget", float(registered_user['budget'])-importo_scommessa)
+				return (True, user_entry['username'], user_entry['budget'])
+		self.log.write("\t-> not valid username\n")
+		return (False, "", 0)
+	
+	def increase_budget(self, username, _previous_budget, _vincita):
+		self.log.write("[increaseBudget "+str(datetime.now())+"] username: "+username+", importo: "+_vincita+"\n")
+		previous_budget = float(_previous_budget)
+		vincita = float(_vincita)
+		for registered_user in self.list_current_users():
+			if (username==registered_user['username']): #username is chiave primaria del db
+				self.log.write("\t-> valid username"+"\n")
+				if(float(registered_user['budget']) - previous_budget > 0.1): #seems as if he increased his budget client-side
+					self.log.write("\t-> previous budget not matching server info\n")
+					return (False, "", 0)
+				#change entry in db
+				user_entry = self.update_user(username, "budget", float(registered_user['budget'])+vincita)
 				return (True, user_entry['username'], user_entry['budget'])
 		self.log.write("\t-> not valid username\n")
 		return (False, "", 0)

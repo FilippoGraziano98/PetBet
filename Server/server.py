@@ -87,12 +87,35 @@ def bet():
 	previous_budget = cookies.split("@")[0].split("_")[1]
 	importo_scommessa = data['importo_scommessa']
 
-	(ok, name, budget) = user_dbms.update_budget(username, previous_budget, importo_scommessa);
+	(ok, name, budget) = user_dbms.decrease_budget(username, previous_budget, importo_scommessa);
 
 	if (ok):
 		response={"msg":"bet_success","cookies":"session-id="+name+"_"+str(budget)+"@petbet"}
 	else:
 		response={"msg":"bet_failure__cookie_not_valid"}
+	return json.dumps(response)
+
+@app.route('/bet_reward', methods=['POST'])
+def bet_reward():
+	if ("application/x-www-form-urlencoded" in request.headers['Content-Type']):
+		data = request.form
+	elif ("application/json" in request.headers['Content-Type']):
+		data = request.json
+	else :
+		logger.log("\n[WARNING] Not recognizing the Content-Type of the following login request:")
+		return json.dumps({"msg":"reward_failure__server_not_able_to_understand_data"})
+	
+	cookies = data['cookies']
+	username = cookies.split("@")[0].split("_")[0]
+	previous_budget = cookies.split("@")[0].split("_")[1]
+	vincita = data['vincita']
+
+	(ok, name, budget) = user_dbms.increase_budget(username, previous_budget, vincita);
+
+	if (ok):
+		response={"msg":"reward_success","cookies":"session-id="+name+"_"+str(budget)+"@petbet"}
+	else:
+		response={"msg":"reward_failure__cookie_not_valid"}
 	return json.dumps(response)
 
 print

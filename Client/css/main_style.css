@@ -31,6 +31,7 @@
 	--dark-gray: rgba(128,128,128);
 }
 
+
 body {
 	background: url("../img/home/background-1.jpg") center center fixed;
 	background-size: cover;
@@ -78,6 +79,15 @@ button.scommetti {
 	height: 50px;
 	text-align: center;
 	padding-top: 10px;
+}
+
+button.small_button {
+	background-color: var(--dark-red);
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	padding-top: 5px;
+
 }
 
 table {

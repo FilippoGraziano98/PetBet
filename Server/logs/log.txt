@@ -87,3 +87,11 @@
 		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
 	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_4@petbet"}']>
 
+[2018-12-16 12:29:14.379992] server restarted
+[2018-12-16 12:29:14.710817] server restarted
+[2018-12-16 16:11:04.358749] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_4@petbet"}']>
+

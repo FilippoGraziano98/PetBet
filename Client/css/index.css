@@ -98,6 +98,19 @@ div[id=alert_msg] {
 	background-color: var(--dark-red);
 }
 
+div[id=index_button] {
+	background-color: var(--no-color);
+	width: 350px;
+	height: 120px;
+	margin: 0 15px;
+	cursor: pointer;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 div.top {
 	background-color: var(--dark-green);

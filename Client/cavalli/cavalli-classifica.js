@@ -45,7 +45,7 @@ function firstPlace(horse_colour) {
 	var button = sessionStorage.getItem("Chosen quote");
 	var chosen_horse = button.substring(0,button.length-6);
 	if (chosen_horse == horse_colour) {
-		writeWinnerMsg("COMPLIMENTI! IL TUO CAVALLO HA VINTO 😀");	// emoji discutibile lol
+		writeWinnerMsg("🎉 COMPLIMENTI! IL TUO CAVALLO HA VINTO 🎉");	// emoji discutibile lol
 	} else {
 		writeLoserMsg("IL TUO CAVALLO HA PERSO 😪");	// emoji discutibile lol
 	}

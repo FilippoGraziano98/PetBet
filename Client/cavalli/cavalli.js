@@ -175,11 +175,11 @@ function endGame() {
 				localStorage.setItem("PetBet - Horses", JSON.stringify(horses_database));
 			}
 			document.getElementById("timerEndGame").innerHTML =
-				"<p>Un'altra corsa sta per iniziare! </p>"+
-				"<button class=menu onclick='setGame()'> VAI </button> <br><br>";
+				"<p class=report_font>Un'altra corsa sta per iniziare! </p>"+
+				"<button class=small_button onclick='setGame()'> VAI </button> <br><br>";
 		}
 		if (t > 0) {
-			document.getElementById("timerEndGame").innerHTML = "<p>La prossima corsa sarà disponibile tra " + t + " ...</p>";
+			document.getElementById("timerEndGame").innerHTML = "<p class=report_font>La prossima corsa sarà disponibile tra " + t + "<br><br></p>";
 			t--;
 		}
 	}

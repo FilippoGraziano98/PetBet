@@ -41,13 +41,13 @@ function showInfoHorse(e) {
 	document.getElementById("animate_"+color).style.transform = "scale(1.20)";
 	
 	info_html =
-		"<p class=title>Informazioni sul Cavallo</p>"+
+		"<br><p class=subtitle>Informazioni sul Cavallo</p><br><br>"+
 			"<table>"+
 			//"<tr>"+
 			//	"<td><p> Id: </p></td>"+
 			//	"<td><p>"+horse_id+"</p></td>"+
 				"<tr>"+
-					"<td class=info_key><p> Name: </p></td>"+
+					"<td class=info_key><p> Nome: </p></td>"+
 					"<td class=info_value><p>"+horse_name+"</p></td>"+
 				"<tr>"+
 					"<td class=info_key><p> Razza: </p></td>"+

@@ -3,8 +3,13 @@ div {
 	height: auto;
 	background-color: var(--no-colour);
 }
-div[id=header_div],[id=quote],[id=infoCavallo],[id=classifica] {
+div[id=header_div],[id=infoCavallo],[id=classifica] {
 	background-color: #FAEBD7;
+}
+
+div [id=quote]{ 
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
 }
 
 div[id=container] {
@@ -45,6 +50,7 @@ div.horse {
 	position: absolute;
 	content: url(../img/cavalli/cavallo-fermo.png);
 	background-color: var(--no-color);
+	cursor: pointer;
 }
 
 .buttonselected {
@@ -87,11 +93,13 @@ div.horse {
 td.classifica {
 	width: 30%;	
 	height: 380px;
+	border-bottom-right-radius:20px;	
 }
 
 td.quote {
 	width: 70%;
 	height: 380px;
+	border-bottom-left-radius:20px;
 }
 
 td.info_key {

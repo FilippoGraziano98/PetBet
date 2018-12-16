@@ -22,7 +22,7 @@ var cavalli_html = '\
 			<br>\
 			<div id="cavalli_report"></div>\
 			<br>\
-			<div name="quote" id="quote" style="overflow-x:auto;">\
+			<div name="cavalli_bottom_area" id="cavalli_bottom_area" style="overflow-x:auto;">\
 				<table>\
 					<tr class=back>\
 						<td class=quote>\

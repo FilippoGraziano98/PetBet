@@ -7,7 +7,7 @@ div[id=header_div],[id=infoCavallo],[id=classifica] {
 	background-color: #FAEBD7;
 }
 
-div [id=quote]{ 
+div [id=cavalli_bottom_area]{ 
 	border-top-left-radius:20px;
 	border-top-right-radius:20px;
 }
@@ -26,17 +26,19 @@ div[id=container] {
 
 div [id=main_div_cavalli] {
 	background-color: #DEB887;
-	border-top-left-radius:20px;
-	border-top-right-radius:20px;
 	border-radius: 30px;
 	border: 8px;
 	border-style: solid;
 	border-color: teal;
 }
-div [id=report] {
+div [id=cavalli_report] {
 	background-color: #FAEBD7;
 	height: 50px;
 	line-height: 50px;	
+}
+
+div [id=classifica],[id=infoCavallo] {
+	border-radius: 20px;
 }
 
 div.back {
@@ -78,27 +80,14 @@ div.horse {
     font-size: 16px;
 }
 
-/*moved in main_style.css*/
-/*table {*/
-/*    border-collapse: collapse;*/
-/*    width: 100%;*/
-/*}*/
-
-/*td {*/
-/*	width:250px;*/
-/*	text-align: center;*/
-/*	padding: 8px;*/
-/*}*/
 td.classifica {
 	width: 30%;	
-	height: 380px;
-	border-bottom-right-radius:20px;	
+	height: 380px;	
 }
 
 td.quote {
 	width: 70%;
 	height: 380px;
-	border-bottom-left-radius:20px;
 }
 
 td.info_key {
@@ -192,7 +181,6 @@ p.title {
 }
 p.subtitle {
 	font-size:30px;
-	font-style:extra-bold;
 	font-weight:bolder;
 	color: green;
 	text-shadow: 

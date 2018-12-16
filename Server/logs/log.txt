@@ -157,3 +157,35 @@
 		 data: ImmutableMultiDict([('cookies', u'ff_120.29@petbet'), ('importo_scommessa', u'5')])
 	 <Response ['{"msg": "bet_success", "cookies": "session-id=ff_115.29@petbet"}']>
 
+[2018-12-16 19:46:59.114231] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_115.29@petbet"}']>
+
+[2018-12-16 20:49:19.161105] server restarted
+[2018-12-16 20:49:19.408196] server restarted
+[2018-12-16 20:49:21.111961] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_115.29@petbet"}']>
+
+[2018-12-16 21:12:31.035446] 127.0.0.1 - "POST /bet" 200 OK -
+	 <Request 'http://localhost:8000/bet' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('cookies', u'ff_115.29@petbet'), ('importo_scommessa', u'1')])
+	 <Response ['{"msg": "bet_success", "cookies": "session-id=ff_114.29@petbet"}']>
+
+[2018-12-16 21:12:39.880109] 127.0.0.1 - "POST /bet_reward" 200 OK -
+	 <Request 'http://localhost:8000/bet_reward' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('vincita', u'3.45'), ('cookies', u'ff_114.29@petbet')])
+	 <Response ['{"msg": "reward_success", "cookies": "session-id=ff_117.74@petbet"}']>
+
+[2018-12-16 21:13:30.724216] 127.0.0.1 - "POST /bet" 200 OK -
+	 <Request 'http://localhost:8000/bet' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('cookies', u'ff_117.74@petbet'), ('importo_scommessa', u'1')])
+	 <Response ['{"msg": "bet_success", "cookies": "session-id=ff_116.74@petbet"}']>
+

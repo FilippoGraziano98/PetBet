@@ -60,3 +60,7 @@
 [decreaseBudget 2018-12-16 21:13:30.719680] username: ff, importo: 1
 	-> valid username
 [updateUser 2018-12-16 21:13:30.721606] username: ff, key: budget, new_value: 116.74
+[queryLogin 2018-12-17 13:33:23.991657] {"password": "f", "user": "ff"}	-> valid credentials
+[decreaseBudget 2018-12-17 13:39:56.665214] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 13:39:56.666870] username: ff, key: budget, new_value: 115.74

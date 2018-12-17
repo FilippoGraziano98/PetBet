@@ -141,7 +141,13 @@ div[id=galli_bottom_area] {
 	border-bottom-left-radius: 20px;
 }
 div [id=quote]{
-	border-radius:20px;
+	background-color: var(--no-colour);
+}
+
+table.quote{
+	border-radius: 1em;
+	border:2px solid green;
+ 	overflow: hidden;
 }
 
 td.gallo_hp {
@@ -203,4 +209,19 @@ p.text_on_wood {
 	 -1px	 -1px 0	var(--dark-brown),
 		1px	 -1px 0	var(--dark-brown),
 	 -1px		1px 0	var(--dark-brown);
+}
+p.quota_gallo_nome {
+	font-style:extra-bold;
+	font-size: 25px;
+	text-shadow: 
+   1px   0  0   var(--black), 
+  -1px   0  0   var(--black), 
+   0    1px 0   var(--black), 
+   0   -1px 0   var(--black);
+}
+p.quota_gallo_nome[id=gallo_red_quota_nome] {
+	color: var(--red);
+}
+p.quota_gallo_nome[id=gallo_blue_quota_nome] {
+	color: var(--blue);
 }

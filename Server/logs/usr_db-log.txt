@@ -64,3 +64,81 @@
 [decreaseBudget 2018-12-17 13:39:56.665214] username: ff, importo: 1
 	-> valid username
 [updateUser 2018-12-17 13:39:56.666870] username: ff, key: budget, new_value: 115.74
+[decreaseBudget 2018-12-17 14:33:46.465188] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:33:46.467057] username: ff, key: budget, new_value: 114.74
+[decreaseBudget 2018-12-17 14:34:17.757876] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:34:17.759706] username: ff, key: budget, new_value: 113.74
+[increaseBudget 2018-12-17 14:34:29.184509] username: ff, importo: 3.38
+	-> valid username
+[updateUser 2018-12-17 14:34:29.185611] username: ff, key: budget, new_value: 117.12
+[decreaseBudget 2018-12-17 14:36:15.828558] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:36:15.829397] username: ff, key: budget, new_value: 116.12
+[decreaseBudget 2018-12-17 14:36:42.792286] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:36:42.794307] username: ff, key: budget, new_value: 115.12
+[increaseBudget 2018-12-17 14:38:16.971272] username: ff, importo: 3.04
+	-> valid username
+[updateUser 2018-12-17 14:38:16.972183] username: ff, key: budget, new_value: 118.16
+[decreaseBudget 2018-12-17 14:38:39.822618] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:38:39.824927] username: ff, key: budget, new_value: 117.16
+[decreaseBudget 2018-12-17 14:39:13.738461] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:39:13.739467] username: ff, key: budget, new_value: 116.16
+[increaseBudget 2018-12-17 14:39:20.922679] username: ff, importo: 3.63
+	-> valid username
+[updateUser 2018-12-17 14:39:20.923748] username: ff, key: budget, new_value: 119.79
+[decreaseBudget 2018-12-17 14:40:11.273632] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:40:11.274356] username: ff, key: budget, new_value: 118.79
+[increaseBudget 2018-12-17 14:40:25.717602] username: ff, importo: 3.54
+	-> valid username
+[updateUser 2018-12-17 14:40:25.719059] username: ff, key: budget, new_value: 122.33
+[decreaseBudget 2018-12-17 14:41:26.121544] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:41:26.124004] username: ff, key: budget, new_value: 121.33
+[decreaseBudget 2018-12-17 14:41:49.551271] username: ff, importo: 2
+	-> valid username
+[updateUser 2018-12-17 14:41:49.553342] username: ff, key: budget, new_value: 119.33
+[decreaseBudget 2018-12-17 14:42:11.384783] username: ff, importo: 2
+	-> valid username
+[updateUser 2018-12-17 14:42:11.386699] username: ff, key: budget, new_value: 117.33
+[increaseBudget 2018-12-17 14:42:18.534918] username: ff, importo: 6.74
+	-> valid username
+[updateUser 2018-12-17 14:42:18.536350] username: ff, key: budget, new_value: 124.07
+[decreaseBudget 2018-12-17 14:42:35.688095] username: ff, importo: 2
+	-> valid username
+[updateUser 2018-12-17 14:42:35.690028] username: ff, key: budget, new_value: 122.07
+[increaseBudget 2018-12-17 14:42:43.964951] username: ff, importo: 6.04
+	-> valid username
+[updateUser 2018-12-17 14:42:43.966279] username: ff, key: budget, new_value: 128.11
+[decreaseBudget 2018-12-17 14:46:20.092969] username: ff, importo: 
+[decreaseBudget 2018-12-17 14:46:20.568401] username: ff, importo: 
+[decreaseBudget 2018-12-17 14:46:20.993882] username: ff, importo: 
+[decreaseBudget 2018-12-17 14:46:21.298165] username: ff, importo: 
+[decreaseBudget 2018-12-17 14:46:21.474131] username: ff, importo: 
+[decreaseBudget 2018-12-17 14:46:21.652583] username: ff, importo: 
+[decreaseBudget 2018-12-17 14:46:21.826748] username: ff, importo: 
+[decreaseBudget 2018-12-17 14:46:33.051685] username: ff, importo: 
+[decreaseBudget 2018-12-17 14:54:01.611647] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:54:01.613876] username: ff, key: budget, new_value: 127.11
+[increaseBudget 2018-12-17 14:54:08.896402] username: ff, importo: 2.58
+	-> valid username
+[updateUser 2018-12-17 14:54:08.897112] username: ff, key: budget, new_value: 129.69
+[decreaseBudget 2018-12-17 14:54:43.049243] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:54:43.051281] username: ff, key: budget, new_value: 128.69
+[decreaseBudget 2018-12-17 14:55:24.930805] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 14:55:24.934343] username: ff, key: budget, new_value: 127.69
+[queryLogin 2018-12-17 15:18:21.996732] {"password": "f", "user": "ff"}	-> valid credentials
+[decreaseBudget 2018-12-17 15:21:38.529114] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 15:21:38.531146] username: ff, key: budget, new_value: 98.74
+[decreaseBudget 2018-12-17 15:21:48.505596] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-17 15:21:48.507039] username: ff, key: budget, new_value: 97.74

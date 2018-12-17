@@ -17,6 +17,7 @@ class gallo {
 	constructor(gallo, horizontal){
 			//vertical & horizontal parameter are given from bottom-left angle (as in carthesian plane)
 		this.gallo_html = gallo;											//references the div containing the gallo
+		this.gallo_html.style.display = "block";
 		this.ko_html = document.getElementById("ko_"+this.gallo_html.id.split("_")[1]);
 		this.ko_html.style.display = "none";
 		this.winner_html = document.getElementById("winner_"+this.gallo_html.id.split("_")[1]);

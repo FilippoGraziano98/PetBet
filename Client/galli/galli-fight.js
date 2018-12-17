@@ -2,11 +2,29 @@ var ROUND_LEN = 5*1000; // in millisecs
 var BREAK_LEN = 3; //in secs, time between two rounds
 var ROUND_NUMBER = 0;
 
+var BREAK_BEFORE_NEXT_FIGHT = 3;
+
 var MATCH_ACTIVE = false;
 
-function start_round() {
+function fight_prepare(){
+	GALLI_LIST.populate_galli();
+
+	//displaying list of fighting galli
 	for(var g in GALLI_LIST){
-		if(GALLI_LIST[g] instanceof gallo && GALLI_LIST[g].isDead ){//se un cavallo è morto blocco il match
+		if(GALLI_LIST[g] instanceof gallo){
+			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_percentage").innerHTML = GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START + ' %';
+			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").style.width = Math.floor(GALLI_LIST[g].health*HP_BAR_WIDTH/GALLI_LIST[g].HEALTH_START)+'px';
+			document.getElementById(GALLI_LIST[g].gallo_html.id+"_quota_button").innerHTML = String(GALLI_LIST[g].quota).substr(0,4);
+		}
+	}
+	initialize_bet_area();
+	reset_quote_buttons();
+	document.getElementById("galli_timerEndGame").style.display = "none";
+}
+
+function round_startTimer() {
+	for(var g in GALLI_LIST){
+		if(GALLI_LIST[g] instanceof gallo && GALLI_LIST[g].isDead ){//se un gallo è morto blocco il match
 			MATCH_ACTIVE = false;
 			return;
 		}
@@ -16,13 +34,13 @@ function start_round() {
 	document.getElementById("round_number").innerHTML = "ROUND " + ROUND_NUMBER;
 	document.getElementById("timer").innerHTML = String(BREAK_LEN);
 	var secs = BREAK_LEN-1;
-	var countdown_round = setInterval(galliToTheCenter, 1000);
+	var countdown_round = setInterval(startTimer, 1000);
 	
-	function galliToTheCenter() {
+	function startTimer() {
 		if (secs == 0) {
 			clearInterval(countdown_round);
 			document.getElementById("timer").innerHTML = "FIGHT!";
-			fight_start();
+			round_start();
 		} else {
 			document.getElementById("timer").innerHTML = String(secs);
 			secs--;
@@ -30,7 +48,7 @@ function start_round() {
 	}
 }
 
-function fight_start() {
+function round_start() {
 	GALLI_LIST.rotate_galli();
 	var timerToTheCenter = setInterval(galliToTheCenter, 1);	
 	function galliToTheCenter() {
@@ -43,14 +61,14 @@ function fight_start() {
 			}
 			document.getElementById("fight").style.content = "url(img/galli/fight_round.gif)";
 			clearInterval(timerToTheCenter);
-			fight_loop();
+			round_loop();
 		} else {
 			GALLI_LIST.move_galli_to_the_center();
 		}
 	}
 }
 
-function fight_loop() {
+function round_loop() {
 	var timerFight = setInterval(galliFight, 10);
 	var secs = 0;
 	var end = false;//set to true if a gallo is dead
@@ -58,7 +76,7 @@ function fight_loop() {
 	function galliFight() {
 		if (end || secs == ROUND_LEN) {
 			document.getElementById("timer").innerHTML = String(msToTime(secs)).substr(0,5);
-			fight_end();
+			round_end();
 			clearInterval(timerFight);
 		} else {
 			for(var g in GALLI_LIST){
@@ -78,7 +96,7 @@ function fight_loop() {
 	}
 }
 
-function fight_end() {
+function round_end() {
 	document.getElementById("fight").style.content = "";
 	for(var g in GALLI_LIST){
 		if(GALLI_LIST[g] instanceof gallo & !GALLI_LIST[g].isDead){
@@ -100,10 +118,30 @@ function fight_end() {
 				}
 			}
 			if( !end_match ) {
-				start_round();		
+				round_startTimer();		
+			} else {
+				fight_end();
 			}
 		} else {
 			GALLI_LIST.move_galli_to_the_angles();
+		}
+	}
+}
+
+function fight_end() {
+	document.getElementById("galli_timerEndGame").style.display = "block";
+	var time = setInterval(timerEndGame, 1000);
+	var t = BREAK_BEFORE_NEXT_FIGHT;
+	function timerEndGame() {
+		if (t == 0) {
+			clearInterval(time);
+			document.getElementById("galli_timerEndGame").innerHTML =
+				"<p class=report_font>Un'altra lotta sta per iniziare! </p>"+
+				"<button class=small_button onclick='fight_prepare()'> VAI </button> <br><br>";
+		}
+		if (t > 0) {
+			document.getElementById("galli_timerEndGame").innerHTML = "<p class=report_font>La prossima lotta sarà disponibile tra " + t + "<br><br></p>";
+			t--;
 		}
 	}
 }

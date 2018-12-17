@@ -97,7 +97,7 @@ function loadCavalli(){
 	}
 	document.getElementById("scommetti").removeEventListener("click", ufficialize_galli_bet);
 	document.getElementById("scommetti").addEventListener("click", ufficialize_cavalli_bet);
-	freeze_bet_area(false);
+
 	prepareClassifica();
-	setGame("redbutton");
+	setGame();
 }

@@ -8,6 +8,13 @@ function unfreeze_galli_bet_buttons() {
 	document.getElementById("gallo_blue_quota_button").disabled = false;
 }
 
+function reset_quote_buttons(){
+	var selected_buttons = document.getElementsByClassName("quota_gallo_button_selected");
+	for (var i = 0; i < selected_buttons.length; i++) {
+		  selected_buttons[i].setAttribute("class", "quota_gallo_button");
+	}
+}
+
 //event listener for click on gallo quote button
 function bet_on_handler(pressed_button){
 	var chosen_gallo = pressed_button.id.split('_')[1];
@@ -16,11 +23,7 @@ function bet_on_handler(pressed_button){
 	var chosen_quote = pressed_button.innerHTML;
 	quote_calculator(chosen_quote, money);
 	
-	var selected_buttons = document.getElementsByClassName("quota_gallo_button_selected");
-	for (var i = 0; i < selected_buttons.length; i++) {
-		  selected_buttons[i].setAttribute("class", "quota_gallo_button");
-	}
-	
+	reset_quote_buttons();
 	pressed_button.setAttribute("class", "quota_gallo_button_selected");
 	sessionStorage.setItem("Gallo-bet_on", "gallo_"+chosen_gallo);
 }
@@ -37,7 +40,7 @@ function on_server_response_start_match(check){
 		return false;
 	}
 	freeze_galli_bet_buttons();
-	start_round();
+	round_startTimer();
 }
 
 function bet_get_reward(){

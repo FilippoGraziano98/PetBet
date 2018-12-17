@@ -83,6 +83,7 @@ function getBet(){
 
 function freeze_bet_area(bet_quota) {
 	if(bet_quota) document.getElementById("bet").disabled = true;
+	else document.getElementById("bet").disabled = false;
 	document.getElementById("scommetti").disabled = true;
 }
 function unfreeze_bet_area() {
@@ -99,7 +100,7 @@ function initialize_bet_area() {
 	writeOkMsg("");
 	writeWelcomeMessage();
 	
-	unfreeze_bet_area();
+	freeze_bet_area(false);
 }
 
 //controlla che vi sia una socmmessa presente

@@ -9,7 +9,7 @@ var galli_html = '\
 					<br>\
 					<div class=galli_lifes name="galli_lifes" id="galli_lifes">\
 						<table>\
-							<tr>\
+							<tr class=no_colour>\
 								<td class=gallo_hp>\
 									<p class=text_on_wood id="gallo_red_HP_header"> Gallo Rosso </p>\
 									<div class=gallo_hp_bar_container id="gallo_red_HP_container">\
@@ -45,18 +45,28 @@ var galli_html = '\
 			<div id="galli_report"></div>\
 			<br>\
 			<div name="galli_bottom_area" id="galli_bottom_area" style="overflow-x:auto;">\
-				<div name="quote" id="quote">\
-					<table>\
-						<tr>\
-							<td><p class=quota_gallo_nome name="gallo_red_quota_nome" id="gallo_red_quota_nome"> Gallo Rosso </p></td>\
-							<td><button class=quota_gallo_button name="gallo_red_quota_button" id="gallo_red_quota_button" onclick="bet_on_handler(this)">???</button></td>\
-							\
-							<td><p>Scegli su chi vuoi scommettere:</p></td>\
-							\
-							<td><button class=quota_gallo_button name="gallo_blue_quota_button" id="gallo_blue_quota_button" onclick="bet_on_handler(this)">???</button></td>\
-							<td><p class=quota_gallo_nome name="gallo_blue_quota_nome" id="gallo_blue_quota_nome"> Gallo Blu </p></td>\
-					</table>\
-				</div>\
+				<table>\
+					<tr class=no_colour>\
+						<td>\
+							<div name="quote" id="quote">\
+								<table class=quote>\
+									<th colspan=2>\
+										<br><p class=header_font_quote>Scegli su chi vuoi scommettere:</p><br><br>\
+									</th>\
+									<tr>\
+										<td><p class=quota_gallo_nome name="gallo_red_quota_nome" id="gallo_red_quota_nome"> Gallo Rosso </p></td>\
+										<td><button class=quota_gallo_button name="gallo_red_quota_button" id="gallo_red_quota_button" onclick="bet_on_handler(this)">???</button></td>\
+									<tr>\
+										<td><p class=quota_gallo_nome name="gallo_blue_quota_nome" id="gallo_blue_quota_nome"> Gallo Blu </p></td>\
+										<td><button class=quota_gallo_button name="gallo_blue_quota_button" id="gallo_blue_quota_button" onclick="bet_on_handler(this)">???</button></td>\
+								</table>\
+							</div>\
+						</td>\
+						<td>\
+							<div name="timerEndGame" id="galli_timerEndGame"></div>\
+							<div name="infoGallo" id="infoGallo">STUFF</div>\
+						</td>\
+				</table>\
 				<br>\
 			</div>\
 		</div>\
@@ -73,19 +83,9 @@ function loadGalli(){
 	
 	document.getElementById("dynamic_area").style.background = "var(--no-colour)";
 	document.getElementById("dynamic_area").innerHTML = galli_html;
-	GALLI_LIST.populate_galli();
-
-	//displaying list of fighting galli
-	for(var g in GALLI_LIST){
-		if(GALLI_LIST[g] instanceof gallo){
-			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_percentage").innerHTML = GALLI_LIST[g].health*100/GALLI_LIST[g].HEALTH_START + ' %';
-			document.getElementById(GALLI_LIST[g].gallo_html.id+"_HP_value").style.width = Math.floor(GALLI_LIST[g].health*HP_BAR_WIDTH/GALLI_LIST[g].HEALTH_START)+'px';
-			document.getElementById(GALLI_LIST[g].gallo_html.id+"_quota_button").innerHTML = String(GALLI_LIST[g].quota).substr(0,4);
-		}
-	}
-	initialize_bet_area();
-
+	
 	document.getElementById("scommetti").removeEventListener("click", ufficialize_cavalli_bet);
 	document.getElementById("scommetti").addEventListener("click", ufficialize_galli_bet);
-	freeze_bet_area(false);
+	
+	fight_prepare();
 }

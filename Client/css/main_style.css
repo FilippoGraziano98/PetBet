@@ -94,11 +94,6 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-table.quote{
-	border-radius: 1em;
-	border:2px solid green;
- 	overflow: hidden;
-}
  
 tr:nth-child(even){
 	background-color: #FAEBD7;
@@ -107,7 +102,7 @@ tr.back {
 	background-color: #DEB887; 
 }
 th {
-	background-color: var(--dark-green);
+	background-color: teal;
 }
 
 td {

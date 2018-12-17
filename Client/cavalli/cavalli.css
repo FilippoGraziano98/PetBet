@@ -55,11 +55,11 @@ div.horse {
 }
 
 .button {
-    background-color: #FAEBD7;
+    background-color: 	#FFFAF0;
     border: solid;
     border-radius: 4px;
-    border-color: green;
-    color: 	green;
+    border-color: teal;
+    color: 	teal;
     padding: 10px 32px;
     text-align: center;
     text-decoration: none;
@@ -67,7 +67,7 @@ div.horse {
     font-size: 16px;
 }
 .buttonselected {
-    background-color: green;
+    background-color: teal;
     border: solid;
     border-radius: 4px;
     border-color: green;
@@ -78,6 +78,17 @@ div.horse {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+table.quote{
+	border-radius: 1em;
+	border:2px solid green;
+ 	overflow: hidden;
+ 	background-color: silver;
+}
+
+table.quote tr:nth-child(even){
+	background-color: 	#FFFAF0;
 }
 
 td.classifica {
@@ -172,7 +183,7 @@ p.title {
 	font-style:extra-bold;
 	font-variant:small-caps;
 	font-weight:bolder;
-	color: var(--dark-red);
+	color: teal;
 	text-shadow: 
    1px   0  0   var(--black), 
   -1px   0  0   var(--black), 
@@ -182,7 +193,7 @@ p.title {
 p.subtitle {
 	font-size:30px;
 	font-weight:bolder;
-	color: green;
+	color: teal;
 	text-shadow: 
    1px   0  0   var(--black), 
   -1px   0  0   var(--black), 

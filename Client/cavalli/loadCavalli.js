@@ -48,9 +48,9 @@ var cavalli_html = '\
 							</table>\
 						</td>\
 						<td class=classifica>\
+							<div name="timerEndGame" id="timerEndGame"></div>\
 							<div name="infoCavallo" id="infoCavallo"></div>\
 							<div name="classifica" id="classifica"></div>\
-							<div name="timerEndGame" id="timerEndGame"></div>\
 						</td>\
 				</table>\
 				<br>\

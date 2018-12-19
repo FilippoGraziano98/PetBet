@@ -20,6 +20,14 @@ div.header_area {
 	 */
 }
 
+table.index {
+	background-color: #FAEBD7;
+	width: 80%;
+	height: 50%;
+	border-radius: 8px;
+	
+}
+
 div.header_area[id=main_title] {
 	width:65%;
 	font-family: arial;
@@ -34,6 +42,12 @@ div.header_area[id=login] {
 	width:25%;
 	text-align:right;
 	font-size:30px;
+}
+
+div.header [id=petbet] {
+	width: 200px;
+	text-align: center;
+	cursor: pointer;
 }
 
 div.info_logged_user {
@@ -161,7 +175,7 @@ div.body_area[id=left_menu] {
 }
 
 div.body_area[id=dynamic_area] {
-	background: url(../img/home/gorilla_pubblicita.jpg) no-repeat top center;
+	background: url(../img/home/index-galli-definitivo2.png) no-repeat top center;
 	height:100%;
 	width: 75%;
 	text-align:center;

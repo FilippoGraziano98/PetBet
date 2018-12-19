@@ -32,6 +32,12 @@
 }
 
 
+
+@font-face {
+    font-family: 'LemonMilk'; /*a name to be used later*/
+    src: url('../img/font/LemonMilk.otf'); /*URL to font*/
+}
+
 body {
 	background: url("../img/home/background-1.jpg") center center fixed;
 	background-size: cover;
@@ -94,7 +100,7 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
- 
+
 tr:nth-child(even){
 	background-color: #FAEBD7;
 }
@@ -118,7 +124,7 @@ p {
 	display: inline;
 }
 p.bet_font {
-	font-weight: bold;
+	font-family: 'LemonMilk';
 }
 p.report_font {
 	font-weight: bold;

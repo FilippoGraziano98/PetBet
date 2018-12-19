@@ -40,8 +40,13 @@
     src: url('../img/font/LemonMilk.otf'); /*URL to font*/
 }
 
+::-webkit-scrollbar { /*to hide the scrollbar*/
+	display: none;
+}
+
 body {
-	background: url("../img/home/background-1.jpg") center center fixed;
+	background: url("../img/home/background-1.jpg");
+  background-attachment: fixed;
 	background-size: cover;
 	/*just one occurence of the image*/
 	/*background-repeat:no-repeat;*/

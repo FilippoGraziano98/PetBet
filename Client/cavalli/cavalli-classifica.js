@@ -42,12 +42,19 @@ function addToClassifica(horse_colour){
 
 function firstPlace(horse_colour) {
 	var button = sessionStorage.getItem("Cavallo-bet_on");
-	var chosen_horse = button.substring(0,button.length-6);
-	if (chosen_horse == horse_colour) {
-		writeWinnerMsg("COMPLIMENTI! IL TUO CAVALLO HA VINTO");	
-		comunicate_reward_to_server();
+	if(!button.includes("simulazione")) {
+		var chosen_horse = button.substring(0,button.length-6);
+		if (chosen_horse == horse_colour) {
+			writeWinnerMsg("COMPLIMENTI! IL TUO CAVALLO HA VINTO");
+			comunicate_reward_to_server();
+		} else {
+			writeLoserMsg("IL TUO CAVALLO HA PERSO");
+		}
 	} else {
-		writeLoserMsg("IL TUO CAVALLO HA PERSO");
+		var cavallo_obj = document.getElementById("animate_"+horse_colour);
+		document.getElementById("cavalli_report").innerHTML =
+			"<p class=report_font> Ha vinto </p>"+
+			"<p class=scommessa_cavallo_nome id=cavallo_"+horse_colour+"_scommessa_nome>"+cavallo_obj.horse_name+"</p>";
 	}
 	sessionStorage.removeItem("Cavallo-bet_on");
 }

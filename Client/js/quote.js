@@ -16,7 +16,7 @@ function writeWelcomeMessage(){
 			break;
 		case "galli" :
 			document.getElementById(bet_on+"_report").style.backgroundColor = "#FAEBD7";
-			document.getElementById(bet_on+"_report").innerHTML = "<p class=subtitle>BENVENUTO SUL RING</p>";
+			document.getElementById(bet_on+"_report").innerHTML = "<p class=subtitle>BENVENUTO AL ROOSTER CLUB</p>";
 			break;
 		default:
 			console.log("bet_on (expects cavalli or galli): " + bet_on);

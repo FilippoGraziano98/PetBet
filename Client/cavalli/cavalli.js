@@ -14,6 +14,8 @@ var horses_velocity = [];
 var horses_quotes = [];
 
 function setGame() {
+	document.getElementById("timerEndGame").style.display = "none";
+	document.getElementById("cavalli_simulaGame").style.display = "block";
 	initialize_bet_area();
 	prepareClassifica();
 	for(var c=0; c<5; c++) {	
@@ -129,6 +131,8 @@ function startGame() {
 
 
 function endGame() {
+	document.getElementById("cavalli_simulaGame").style.display = "none";
+	document.getElementById("timerEndGame").style.display = "block";
 	var time = setInterval(timer, 1000);
 	var t = 3;
 	function timer() {
@@ -153,3 +157,12 @@ function endGame() {
 	}
 }
 
+function simulaCorsa(){
+	freeze_bet_area(true);
+	reset_cavalli_quote_buttons();
+	freeze_cavalli_bet_buttons();
+	freeze_simula_button();
+	writeAlert("Non è possibile scommettere in modalità Simulazione");
+	sessionStorage.setItem("Cavallo-bet_on", "simulazione__no_bet");
+	startGame_Timer();
+}

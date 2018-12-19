@@ -6,6 +6,9 @@ div {
 div[id=header_div],[id=infoCavallo],[id=classifica] {
 	background-color: #FAEBD7;
 }
+div [id=classifica],[id=infoCavallo] {
+	border-radius: 20px;
+}
 
 div [id=cavalli_bottom_area]{ 
 	border-top-left-radius:20px;
@@ -35,10 +38,6 @@ div [id=cavalli_report] {
 	background-color: #FAEBD7;
 	height: 50px;
 	line-height: 50px;	
-}
-
-div [id=classifica],[id=infoCavallo] {
-	border-radius: 20px;
 }
 
 div.back {
@@ -71,7 +70,6 @@ div.horse {
     border: solid;
     border-radius: 4px;
     border-color: teal;
-    border-radius: 8px;
     color:  white; 
     padding: 10px 32px;
     text-align: center;
@@ -79,7 +77,9 @@ div.horse {
     display: inline-block;
     font-size: 16px;
 }
-
+table {
+	width:100%;
+}
 table.quote{
 	border-radius: 1em;
 	border:2px solid green;
@@ -87,10 +87,9 @@ table.quote{
  	background-color: silver;
 }
 
-table.quote tr:nth-child(even){
+table.quote tr:nth-child(even), table.infoCavallo tr:nth-child(even){
 	background-color: 	#FFFAF0;
 }
-
 td.classifica {
 	width: 30%;	
 	height: 380px;	
@@ -102,6 +101,7 @@ td.quote {
 }
 
 td.info_key {
+	font-weight:bolder;
 	width:180px;
 }
 td.info_value {
@@ -180,7 +180,7 @@ p.startTimer {
 
 p.title {
 	font-size:50px;
-	font-style:extra-bold;
+	font-weight:bolder;
 	font-variant:small-caps;
 	font-weight:bolder;
 	color: teal;
@@ -201,8 +201,8 @@ p.subtitle {
    0   -1px 0   var(--black);
 }
 
-p.horse, p.quota_cavallo_nome {
-	font-style:extra-bold;
+p.horse, p.quota_cavallo_nome, p.scommessa_cavallo_nome {
+	font-weight:bolder;
 	font-size: 25px;
 	text-shadow: 
    1px   0  0   var(--black), 
@@ -211,18 +211,18 @@ p.horse, p.quota_cavallo_nome {
    0   -1px 0   var(--black);
 }
 
-p.horse[id=red], p.quota_cavallo_nome[id=quota_nome_red] {
+p.horse[id=red], p.quota_cavallo_nome[id=quota_nome_red], p.scommessa_cavallo_nome[id=cavallo_red_scommessa_nome] {
 	color: var(--red);
 }
-p.horse[id=blue], p.quota_cavallo_nome[id=quota_nome_blue] {
+p.horse[id=blue], p.quota_cavallo_nome[id=quota_nome_blue], p.scommessa_cavallo_nome[id=cavallo_blue_scommessa_nome] {
 	color: var(--blue);
 }
-p.horse[id=green], p.quota_cavallo_nome[id=quota_nome_green] {
+p.horse[id=green], p.quota_cavallo_nome[id=quota_nome_green], p.scommessa_cavallo_nome[id=cavallo_green_scommessa_nome] {
 	color: var(--forest-green);
 }
-p.horse[id=yellow], p.quota_cavallo_nome[id=quota_nome_yellow] {
+p.horse[id=yellow], p.quota_cavallo_nome[id=quota_nome_yellow], p.scommessa_cavallo_nome[id=cavallo_yellow_scommessa_nome] {
 	color: var(--yellow);
 }
-p.horse[id=white], p.quota_cavallo_nome[id=quota_nome_white] {
+p.horse[id=white], p.quota_cavallo_nome[id=quota_nome_white], p.scommessa_cavallo_nome[id=cavallo_white_scommessa_nome] {
 	color: var(--white);
 }

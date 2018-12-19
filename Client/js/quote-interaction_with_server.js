@@ -1,7 +1,6 @@
 //params:
 	//function to call if server-interaction was successfull
-	//ok_msg to prin if all was successfull
-function comunicate_bet_to_server(on_response_start_game, ok_msg){
+function comunicate_bet_to_server(on_response_start_game){
 	var importo_scommesso = getBet();
 	
 	var old_sessionid = getSessionIdFromCookie(getCookies());
@@ -23,7 +22,7 @@ function comunicate_bet_to_server(on_response_start_game, ok_msg){
 			if(new_cookie) {
 				set_user_info_area(new_cookie);
 				writeOkMsg("Il server ha registrato la scommessa");
-				if(confirm_bet(ok_msg)){
+				if(confirm_bet("")){
 					on_response_start_game(true);
 				} else {
 					on_response_start_game(false);

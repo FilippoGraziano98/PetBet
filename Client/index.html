@@ -22,6 +22,7 @@
 		<script type="text/javascript" lang="javascript" src="galli/galli.js"></script>
 		<script type="text/javascript" lang="javascript" src="galli/galli-fight.js"></script>
 		<script type="text/javascript" lang="javascript" src="galli/galli-bet.js"></script>
+		<script type="text/javascript" lang="javascript" src="galli/galli-info_galli.js"></script>
 		<link rel=stylesheet type="text/css" href="css/main_style.css">
 		<link rel=stylesheet type="text/css" href="css/index.css">
 	</head>
@@ -29,7 +30,9 @@
 	<body>
 		<br>
 		<div class=header name="header" id="header">
-			<div class=header_area name="main_title" id="main_title""><div class=header id="petbet" onclick="window.location.href='index.html'">PetBet</div></div>
+			<div class=header_area name="main_title" id="main_title">
+				<div class=header id="petbet" onclick="window.location.href='index.html'">PetBet</div>
+			</div>
 			<div class=header_area name="login" id="login">
 				<button class=users name="login_btn" id="login_btn" onclick="window.location.href='login/login.html'">Accedi</button>
 				<button class=users name="register_btn" id="register_btn" onclick="window.location.href='register/register.html'">Registrati</button>
@@ -41,10 +44,10 @@
 		<div class=body name="body" id="body">
 			<div class=body_area name="left_menu" id="left_menu">
 				<!-- div class=menu are the menu buttons -->
-				<div class=menu name="cavalli_entry" id="cavalli_entry" onclick="loadCavalli()">
+				<div class=menu name="cavalli_entry" id="cavalli_entry">
 					<img src="img/home/woodsign_cavalli.png" alt="error" width=300px>
 				</div>
-				<div class=menu name="galli_entry" id="galli_entry" onclick="loadGalli()">
+				<div class=menu name="galli_entry" id="galli_entry">
 					<img src="img/home/woodsign_galli.png" alt="error" width=300px>
 				</div>
 				<br>
@@ -73,14 +76,14 @@
 				</div>
 			</div>
 			<div class=body_area name="dynamic_area" id="dynamic_area">
-					<table class=index>
-						<tr onclick="loadCavalli()">
-							<td><img src="img/home/index-cavalli-definitivo.png" alt="error"></td>
-						</tr>
-						<tr onclick="loadGalli()">
-							<td><img src="img/home/index-galli-finale.png" alt="error" width=1036 height=358></td>
-						</tr>
-					</table>
+				<table class=index>
+					<tr onclick="loadCavalli()">
+						<td><img src="img/home/index-cavalli-definitivo.png" alt="error"></td>
+					</tr>
+					<tr onclick="loadGalli()">
+						<td><img src="img/home/index-galli-finale.png" alt="error" width=1036 height=358></td>
+					</tr>
+				</table>
 			</div>
 	</body>
 </html>

@@ -20,9 +20,13 @@
 	--dark-orange: rgba(255,76,0);
 
 	--yellow: rgba(255,255,0);
+	--lemon-cream: rgba(225,250,205);
 
 	--brown: rgba(139,69,19);
 	--red-brown: rgba(165,42,42);
+	--light-brown: rgba(236,193,157);
+	--beige-brown: rgba(210,180,140);
+	--peru-brown: rgba(201,133,63);
 	--dark-brown: rgba(63,37,11);
 	--maroon: rgba(128,0,0);
 
@@ -30,8 +34,6 @@
 	--transparent-black: rgba(0,0,0,0.8);
 	--dark-gray: rgba(128,128,128);
 }
-
-
 
 @font-face {
     font-family: 'LemonMilk'; /*a name to be used later*/
@@ -70,15 +72,6 @@ button:hover{
 	background-color: var(--dark-green);
 }
 
-button.login {
-	background-color: var(--forest-green);
- 	width: 150px;
- 	height: 50px;
- 	text-align: center;
-	padding-top: 10px;
-}
-	
- 	
 /*button.menu {*/
 /*	background-color: var(--dark-red);*/
 /*	width: 200px;*/
@@ -102,10 +95,9 @@ button.small_button {
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
 }
-
+ 
 tr:nth-child(even){
 	background-color: #FAEBD7;
 }
@@ -129,6 +121,7 @@ p {
 	display: inline;
 }
 p.bet_font {
+/*	font-weight: bold;*/
 	font-family: 'LemonMilk';
 }
 p.report_font {

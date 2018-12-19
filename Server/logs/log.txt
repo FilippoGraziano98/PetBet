@@ -465,3 +465,5 @@
 		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
 	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_100.32@petbet"}']>
 
+[2018-12-19 18:56:31.416605] server restarted
+[2018-12-19 18:56:31.667248] server restarted

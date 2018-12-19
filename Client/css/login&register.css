@@ -47,3 +47,11 @@ div.login_buttons_paragraph {
 	background-color: var(--transparent);
 }
 
+
+button.login {
+	background-color: var(--forest-green);
+ 	width: 150px;
+ 	height: 50px;
+ 	text-align: center;
+	padding-top: 10px;
+}

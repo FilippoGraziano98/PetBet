@@ -38,3 +38,18 @@ function on_server_response_start_run(check){
 	}
 	startGame_Timer();
 }
+
+function reset_cavalli_quote_buttons(){
+	var selected_buttons = document.getElementsByClassName("buttonselected");
+	for (var i = 0; i < selected_buttons.length; i++) {
+		  selected_buttons[i].setAttribute("class", "button");
+	}
+	writeWelcomeMessage();
+}
+
+function freeze_cavalli_bet_buttons() {
+	for(var i=0; i<5; i++){
+		var col = COLORS[i];
+		document.getElementById(col+"button").disabled = true;
+	}
+}

@@ -2,10 +2,15 @@ function freeze_galli_bet_buttons() {
 	document.getElementById("gallo_red_quota_button").disabled = true;
 	document.getElementById("gallo_blue_quota_button").disabled = true;
 }
-
 function unfreeze_galli_bet_buttons() {
 	document.getElementById("gallo_red_quota_button").disabled = false;
 	document.getElementById("gallo_blue_quota_button").disabled = false;
+}
+function freeze_simula_button(){
+	document.getElementById("simula_fight").disabled = true;
+}
+function unfreeze_simula_button(){
+	document.getElementById("simula_fight").disabled = false;
 }
 
 function reset_quote_buttons(){
@@ -13,6 +18,7 @@ function reset_quote_buttons(){
 	for (var i = 0; i < selected_buttons.length; i++) {
 		  selected_buttons[i].setAttribute("class", "quota_gallo_button");
 	}
+	writeWelcomeMessage();
 }
 
 //event listener for click on gallo quote button
@@ -25,6 +31,26 @@ function bet_on_handler(pressed_button){
 	
 	reset_quote_buttons();
 	pressed_button.setAttribute("class", "quota_gallo_button_selected");
+	
+	var gallo_name="";
+	
+	switch(chosen_gallo) {
+		case "red":
+			gallo_name="Gallo Rosso";
+			break;
+		case "blue":
+			gallo_name="Gallo Blue";
+			break;
+		default:
+			gallo_name=chosen_gallo;
+			break;
+			
+	}
+	
+	document.getElementById("galli_report").innerHTML =
+		"<p class=report_font> Hai puntato su </p>"+
+		"<p class=scommessa_gallo_nome id=gallo_"+chosen_gallo+"_scommessa_nome>"+gallo_name+"</p>";
+	
 	sessionStorage.setItem("Gallo-bet_on", "gallo_"+chosen_gallo);
 }
 
@@ -32,7 +58,7 @@ function bet_on_handler(pressed_button){
 function ufficialize_galli_bet() {
 	var chosen_gallo = sessionStorage.getItem("Gallo-bet_on");
 
-	comunicate_bet_to_server(on_server_response_start_match, "Hai scommesso su "+chosen_gallo);
+	comunicate_bet_to_server(on_server_response_start_match);
 }
 
 function on_server_response_start_match(check){
@@ -40,6 +66,7 @@ function on_server_response_start_match(check){
 		return false;
 	}
 	freeze_galli_bet_buttons();
+	freeze_simula_button();
 	round_startTimer();
 }
 
@@ -51,14 +78,15 @@ function bet_get_reward(){
 		}
 	}
 	var gallo_bet_on = sessionStorage.getItem("Gallo-bet_on");
-	if(winning_gallo == gallo_bet_on){
-		writeWinnerMsg();
-		comunicate_reward_to_server();
-	}	else {
-		writeLoserMsg();
+	if( !gallo_bet_on.includes("simulazione")){
+		if(winning_gallo == gallo_bet_on){
+			writeWinnerMsg();
+			comunicate_reward_to_server();
+		}	else {
+			writeLoserMsg();
+		}
 	}
 	sessionStorage.removeItem("Gallo-bet_on");
-	unfreeze_galli_bet_buttons();
 }
 
 //add button for reset fight and fight without bet

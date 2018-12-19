@@ -1,17 +1,12 @@
 function freeze_menu() {
-	var menu_entries = document.getElementsByClassName("menu");
-	for (var i = 0; i < menu_entries.length; i++) {
-		console.log("e:"+menu_entries[i].id)
-	  menu_entries[i].onclick = false;
-	}
+	document.getElementById("cavalli_entry").removeEventListener("click",loadCavalli);
+	document.getElementById("galli_entry").removeEventListener("click",loadGalli);
 }
 
 function unfreeze_menu() {
-	var menu_entries = document.getElementsByClassName("menu");
-	for (var i = 0; i < menu_entries.length; i++) {
-		console.log("e:"+menu_entries[i].id)
-	  menu_entries[i].disabled = false;
-	}
+	document.getElementById("cavalli_entry").addEventListener("click",loadCavalli);
+	document.getElementById("galli_entry").addEventListener("click",loadGalli);
+	
 }
 
 function set_user_info_area(cookie) {
@@ -22,7 +17,7 @@ function set_user_info_area(cookie) {
 		document.getElementById("logged_user_name").innerHTML = 
 				"Ciao "+name +', <a name="logout" id="logout" onclick="logout()">logout</a>';
 		document.getElementById("logged_user_budget").innerHTML = 
-				"Il tuo budget è di "+budget;
+				"Il tuo budget è di &#8364 "+budget;
 }
 
 //function that read the url to determine weither we are betting on cavalli or galli
@@ -51,6 +46,7 @@ $(document).ready(function(){
 	var cookie=getCookies();
 	if(cookie){
 		set_user_info_area(cookie);
+		unfreeze_menu();
 	}
 	else {
 		freeze_menu();

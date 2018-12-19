@@ -1,15 +1,18 @@
-var RING_WIDTH = 1250;
+var RING_WIDTH = 1300;
 var GALLO_WIDTH = 250;
 var DIST_BORDER = 75; //distance from border
 var HP_BAR_WIDTH = 300;
 
-var MIN_HEALTH = 800;
+var BASE_HEALTH = 900;
 var MAX_HEALTH = 1000;
-var MIN_STRENGTH = 80;
+var BASE_STRENGTH = 90;
 var MAX_STRENGTH = 100;
 
 var MIN_QUOTA = 1;
-var MAX_QUOTA = 5;
+var MAX_QUOTA = 4.5;
+
+var GALLI_DATABASE = JSON.parse(localStorage.getItem("PetBet - Galli")); //JSON contenente la lista di tutti e 10 i galli
+var chosen_galli = []; //lista contenente gli indici di galli già scelti dal database
 
 var accelleration_factor = 4;
 
@@ -22,18 +25,47 @@ class gallo {
 		this.ko_html.style.display = "none";
 		this.winner_html = document.getElementById("winner_"+this.gallo_html.id.split("_")[1]);
 		this.winner_html.style.display = "none";
+		document.getElementById(this.gallo_html.id+"_HP_value").style['background-color'] = "var(--forest-green)";
 		this.right = RING_WIDTH-GALLO_WIDTH-horizontal;		//distance of the div from the right border
 		this.left = horizontal;												//distance of the div from the left border
 		this.ko_top = 325;
 		this.ko_border = 250;
 		this.ko_size = 0;
 		this.winner_height = 0;
-		this.HEALTH_START = MIN_HEALTH+Math.floor(Math.random()*(MAX_HEALTH-MIN_HEALTH));	//inizializzo la vita con un valore random tra 0 e 1000
-		this.health = this.HEALTH_START/accelleration_factor;//qui memorizzo la vita attuale
-		this.strength = MIN_STRENGTH+Math.floor(Math.random()*(MAX_STRENGTH-MIN_STRENGTH));//fisso la forza del gallo a un valore tra 0 e 100
+		
+		this.set_anagraphic_info();
+		
+		//per la salute conta più l'età
+		var health_age_decrease_component = Math.abs((10-parseInt(String(this.gallo_info_age).split(" "))))*20;
+		var health_peso_decrease_component = Math.abs((2-parseFloat(String(this.gallo_info_peso).split(" "))))*2*10;
+		this.HEALTH_START = BASE_HEALTH-health_age_decrease_component-health_peso_decrease_component+Math.floor(Math.random()*(MAX_HEALTH-BASE_HEALTH));	//inizializzo la vita con un valore random tra 0 e 1000
+		this.health = this.HEALTH_START;//qui memorizzo la vita attuale
+		
+		//per la forza conta più il peso
+		var strength_age_decrease_component = Math.floor(Math.abs((10-parseInt(String(this.gallo_info_age).split(" "))))*2.5);
+		var strength_peso_decrease_component = Math.abs((2-parseFloat(String(this.gallo_info_peso).split(" "))))*2*5;
+		this.strength = BASE_STRENGTH-strength_age_decrease_component-strength_peso_decrease_component+Math.floor(Math.random()*(MAX_STRENGTH-BASE_STRENGTH));//fisso la forza del gallo a un valore tra 0 e 100
+		
 		this.quota = MAX_QUOTA+Math.random()*0.3-Math.random()*(this.HEALTH_START/MAX_HEALTH)-Math.random()*2*(this.strength/MAX_STRENGTH);
 		this.isDead = false;
 		console.log(this);
+	}
+	set_anagraphic_info(){
+		var idx;
+		do {
+			idx = Math.floor(Math.random()*GALLI_DATABASE.length);
+		} while( chosen_galli.includes(idx) );
+		var gallo_info = GALLI_DATABASE[idx];
+		chosen_galli.push(idx);
+		console.log(gallo_info);
+		
+		this.gallo_info_id = gallo_info['id'];
+		this.gallo_info_name = gallo_info['name'];
+		this.gallo_info_age = gallo_info['age'];
+		this.gallo_info_peso = gallo_info['peso'];
+		this.gallo_info_fattoria = gallo_info['fattoria'];
+		this.gallo_info_wins = gallo_info['wins'];
+		this.gallo_info_races = gallo_info['races'];
 	}
 	move(horizontal){
 		//horizontal	{>0 => right, 0 => nomove, <0 => left}
@@ -76,6 +108,7 @@ class gallo {
 //list of galli, global to all js (setted in populate_galli, called from loadGalli)
 var GALLI_LIST = {
 	populate_galli : function() {
+		chosen_galli = [];//reset lista degli indici dei galli scelti
     this.red = new gallo(document.getElementById("gallo_red"),DIST_BORDER);
     this.blue = new gallo(document.getElementById("gallo_blue"),RING_WIDTH-GALLO_WIDTH-DIST_BORDER);
 	},
@@ -129,10 +162,53 @@ var GALLI_LIST = {
 			}
 		}
 	},
-	celebrate_winner() {
+	celebrate_winner() {		
+		var winning_gallo_id = null;
+		var winning_gallo_obj = null;
+		var loser_gallo_obj = null;
 		for(var g in GALLI_LIST){
-			if(GALLI_LIST[g] instanceof gallo && !GALLI_LIST[g].isDead ){
-				GALLI_LIST[g].winner_html.style.display = "block";
+			if(GALLI_LIST[g] instanceof gallo){
+				if(!GALLI_LIST[g].isDead){
+					winning_gallo_obj = GALLI_LIST[g];
+					winning_gallo_id = GALLI_LIST[g].gallo_html.id;
+				} else {
+					loser_gallo_obj = GALLI_LIST[g];
+				}
+			}
+		}
+		
+		var gallo_bet_on = sessionStorage.getItem("Gallo-bet_on");
+		if( gallo_bet_on.includes("simulazione")){
+			winning_gallo_obj.winner_html.style.display = "block";
+			var winning_gallo_name="";
+				switch(winning_gallo_id) {
+					case "gallo_red":
+						winning_gallo_name="Gallo Rosso";
+						break;
+					case "gallo_blue":
+						winning_gallo_name="Gallo Blue";
+						break;
+					default:
+						winning_gallo_name=winning_gallo_id;
+						break;
+				}
+				document.getElementById("galli_report").innerHTML =
+					"<p class=report_font> Ha vinto </p>"+
+					"<p class=scommessa_gallo_nome id="+winning_gallo_id+"_scommessa_nome>"+winning_gallo_name+"</p>";
+		}
+		winning_gallo_obj.gallo_info_wins++;
+		winning_gallo_obj.gallo_info_races++;
+		loser_gallo_obj.gallo_info_races++;
+	},
+	update_galli_database() {
+		for(var g in GALLI_LIST){
+			if(GALLI_LIST[g] instanceof gallo){
+				var gallo_obj = GALLI_LIST[g];
+				var idx = gallo_obj.gallo_info_id;
+				//sfrutto il fatto che gli id sono crescenti da 1 in poi, e univoci in GALLI_DATABASE
+				GALLI_DATABASE[idx-1].wins = gallo_obj.gallo_info_wins;
+				GALLI_DATABASE[idx-1].races = gallo_obj.gallo_info_races;
+				localStorage.setItem("PetBet - Galli", JSON.stringify(GALLI_DATABASE));
 			}
 		}
 	}

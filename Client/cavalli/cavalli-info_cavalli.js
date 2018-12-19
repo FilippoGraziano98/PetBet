@@ -42,7 +42,7 @@ function showInfoHorse(e) {
 	
 	info_html =
 		"<br><p class=subtitle>Informazioni sul Cavallo</p><br><br>"+
-			"<table>"+
+			"<table class=infoCavallo>"+
 			//"<tr>"+
 			//	"<td><p> Id: </p></td>"+
 			//	"<td><p>"+horse_id+"</p></td>"+
@@ -75,6 +75,4 @@ function hideInfoHorse(e) {
 	document.getElementById("animate_"+color).style.transform = "";
 	document.getElementById("infoCavallo").innerHTML = "";
 	document.getElementById("classifica").style.display = 'block'; //make classifica visible again
-
-	sessionStorage.removeItem("PetBetClassifica");
 }

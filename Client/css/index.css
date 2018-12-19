@@ -4,9 +4,15 @@ input {
 	border-radius: 5px;
 }
 div.header {
-	width: auto;
+	position: fixed;
+	width: 100%;
 	height: 100px;
 	background-color: var(--transparent-black);
+	z-index: 5;
+}
+div.body {
+	position: relative;
+	top:120px;
 }
 
 div.header_area {
@@ -20,15 +26,21 @@ div.header_area {
 	 */
 }
 
+table.index tr {
+	cursor: pointer;
+}
+
 table.index {
 	background-color: #FAEBD7;
 	width: 80%;
 	height: 50%;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto auto;
 	border-radius: 8px;
-}
-
-table.index tr {
-	cursor: pointer;
 }
 
 div.header_area[id=main_title] {
@@ -43,12 +55,16 @@ div.header_area[id=main_title] {
 
 div.header_area[id=login] {
 	width:25%;
+	position:absolute;
+	right:100px;
 	text-align:right;
 	font-size:30px;
 }
 
 div.header [id=petbet] {
-	width: 200px;
+	width: 500px;
+	position:absolute;
+	left:200px;
 	text-align: center;
 	cursor: pointer;
 }
@@ -65,6 +81,8 @@ div[id=logged_user_budget] {
 }
 
 button.users {
+ 	width: 45%;
+  display: inline-block;
 	background-color: var(--dark-red);
  	width: 170px;
 	display: inline-block;
@@ -174,12 +192,21 @@ div.body_area {
 }
 
 div.body_area[id=left_menu] {
-	width: 20%;
+	display:block;
+	position:fixed;
 	text-align:center;
+	width:20%;
 }
-
+div.bet[id=left] {
+	display:block;
+	position:fixed;
+	text-align:center;
+	width:12%;
+}
 div.body_area[id=dynamic_area] {
-	background: url(../img/home/index-galli-definitivo2.png) no-repeat top center;
+	display:block;
+	position:relative;
+	left:370px;
 	height:100%;
 	width: 75%;
 	text-align:center;

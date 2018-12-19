@@ -8,7 +8,8 @@ var MATCH_ACTIVE = false;
 
 function fight_prepare(){
 	GALLI_LIST.populate_galli();
-
+	ROUND_NUMBER=0;
+	
 	//displaying list of fighting galli
 	for(var g in GALLI_LIST){
 		if(GALLI_LIST[g] instanceof gallo){
@@ -18,8 +19,11 @@ function fight_prepare(){
 		}
 	}
 	initialize_bet_area();
+	unfreeze_galli_bet_buttons();
+	unfreeze_simula_button();
 	reset_quote_buttons();
 	document.getElementById("galli_timerEndGame").style.display = "none";
+	document.getElementById("galli_simulaGame").style.display = "block";
 }
 
 function round_startTimer() {
@@ -112,8 +116,6 @@ function round_end() {
 			var end_match = false;
 			for(var g in GALLI_LIST){
 				if(GALLI_LIST[g] instanceof gallo && GALLI_LIST[g].isDead){//se c'è un gallo ko
-					GALLI_LIST.celebrate_winner();
-					bet_get_reward();
 					end_match = true;
 				}
 			}
@@ -129,6 +131,13 @@ function round_end() {
 }
 
 function fight_end() {
+	//comunico al server la vittoria
+	bet_get_reward();
+	//setto al schermata di vincita e aggiorno il db del galli
+	GALLI_LIST.celebrate_winner();
+	GALLI_LIST.update_galli_database();
+	
+	document.getElementById("galli_simulaGame").style.display = "none";
 	document.getElementById("galli_timerEndGame").style.display = "block";
 	var time = setInterval(timerEndGame, 1000);
 	var t = BREAK_BEFORE_NEXT_FIGHT;
@@ -144,4 +153,14 @@ function fight_end() {
 			t--;
 		}
 	}
+}
+
+function simulaFight(){
+	freeze_bet_area(true);
+	reset_quote_buttons();
+	freeze_galli_bet_buttons();
+	freeze_simula_button();
+	writeAlert("Non è possibile scommettere in modalità Simulazione");
+	sessionStorage.setItem("Gallo-bet_on", "simulazione__no_bet");
+	round_startTimer();
 }

@@ -7,10 +7,10 @@ div[id=header_div],[id=quote] {
 	background-color: var(--transparent-white);
 }
 div.background {
+	background-color: var(--dark-red);
 	width:100%;
 	height:600px;
-	background-color: var(--dark-red);
-	position: relative;
+	position:relative;
 }
 div [id=main_div_galli] {
 	background-color: #DEB887;
@@ -26,8 +26,8 @@ div [id=galli_report] {
 }
 
 div[id=battle_field] {
-	width: 1260px;
-	height: 500px;
+	width: 1300px;
+	height: 450px;
 	border-radius:25px;
 	border: 5px solid var(--dark-orange);
 	background: url(../img/galli/ring-fieno.png);
@@ -48,12 +48,12 @@ div.gallo {
 }
 div.gallo[id=gallo_red] {
 	content: url(../img/galli/gallo_red.png);
-	top: 175px;
+	top: 140px;
 	left: 75px;
 }
 div.gallo[id=gallo_blue] {
 	content: url(../img/galli/gallo_blue.png);
-	top: 175px;
+	top: 140px;
 	right: 75px;
 }
 
@@ -105,11 +105,16 @@ div.fight {
 	left: 0;
 	margin: auto;
 }
-
+div.gallo_hp_name {
+	display:inline-block;
+}
 div.gallo_hp_bar_container {
-	background-color: var(--no-colour);
-	border-style: solid;
-	border-color:	var(--dark-brown);
+	background-color: var(--dark-brown);
+	top:2px;
+	border-style: ridge;
+  border-width: 2px;
+	border-color: var(--dark-brown);
+	border-radius: 8px;
 	width:300px;
 	height: 20px;
 	position: relative;
@@ -118,20 +123,29 @@ div.gallo_hp_bar_container {
 div.gallo_hp_percentage {
 	background-color: var(--no-colour);
 	position: absolute;
-	top: 0;
 	right: 0;
-	bottom: 0;
+	bottom: 3;
 	left: 0;
 	margin: auto;
 	z-index: 1;
-	font-size: 20px;
-	color: var(--dark-brown);
+	font-size: 30px;
+	color: var(--light-brown);
+	text-shadow: 
+		2px		0  	0	var(--dark-brown), 
+	 -2px		0 	0	var(--dark-brown), 
+		0			2px 0	var(--dark-brown), 
+		0		 -2px 0	var(--dark-brown),
+		1px		1px 0	var(--dark-brown),
+	 -1px	 -1px 0	var(--dark-brown),
+		1px	 -1px 0	var(--dark-brown),
+	 -1px		1px 0	var(--dark-brown);
 	font-weight:bold;
 }
 div.gallo_hp_bar {
 	width: 100%;
 	height: 100%;
 	background-color: var(--forest-green);
+	border-radius: 6px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -143,13 +157,30 @@ div[id=galli_bottom_area] {
 div [id=quote]{
 	background-color: var(--no-colour);
 }
-
-table.quote{
-	border-radius: 1em;
-	border:2px solid green;
+div[id=galli_regolamento], [id=infoGallo] {
+	background-color: #FAEBD7;
+	border-radius: 20px;
  	overflow: hidden;
 }
-
+table {
+	width:100%;
+}
+table.quote {
+	border-radius: 20px;
+	border:2px solid green;
+ 	overflow: hidden;
+ 	background-color: silver;
+}
+table.quote tr:nth-child(even), table.regolamento tr:nth-child(even), table.infoGallo tr:nth-child(even){
+	background-color: 	#FFFAF0;
+}
+tr.back {
+	background-color: 	#DEB887;
+}
+td.bottom_area_data {
+	width:50%;
+	height:470px;
+}
 td.gallo_hp {
 	width:40%;
 	background: url(../img/galli/asse_legno_lunga.png);
@@ -160,20 +191,37 @@ td.timer {
 	background: url(../img/galli/asse_legno_corta.png);
 	background-size:100% 100%;
 }
+td.info_key {
+	font-weight:bolder;
+	width:180px;
+}
+td.info_value {
+	width:320px;
+}
 
 button.quota_gallo_button {
-	background-color: var(--dark-red); /* Green */
-	width: 100px;
-	border: none;
-	padding: 10px 32px;
-	font-size: 16px;
+  background-color: #FFFAF0;
+  border: solid;
+  border-radius: 4px;
+  border-color: teal;
+  color: 	teal;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 button.quota_gallo_button_selected {
-  background-color: var(--dark-green);
-	width: 100px;
-	border: none;
-	padding: 10px 32px;
-	font-size: 16px;
+  background-color: teal;
+  border: solid;
+  border-radius: 4px;
+  border-color: teal;
+  color:  white; 
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 p.title {
@@ -191,7 +239,7 @@ p.title {
 p.subtitle {
 	font-size:30px;
 	font-weight:bolder;
-	color: green;
+	color: var(--dark-red);
 	text-shadow: 
    1px   0  0   var(--black), 
   -1px   0  0   var(--black), 
@@ -199,19 +247,48 @@ p.subtitle {
    0   -1px 0   var(--black);
 }
 p.text_on_wood {
-	color: var(--maroon);
+	color: var(--light-brown);
 	text-shadow: 
-		2px		0  	0	var(--dark-brown), 
-	 -2px		0 	0	var(--dark-brown), 
-		0			2px 0	var(--dark-brown), 
-		0		 -2px 0	var(--dark-brown),
-		1px		1px 0	var(--dark-brown),
-	 -1px	 -1px 0	var(--dark-brown),
-		1px	 -1px 0	var(--dark-brown),
-	 -1px		1px 0	var(--dark-brown);
+		3px		0  	0	var(--dark-brown), 
+	 -3px		0 	0	var(--dark-brown), 
+		0			3px 0	var(--dark-brown), 
+		0		 -3px 0	var(--dark-brown),
+		2px		2px 0	var(--dark-brown),
+	 -2px	 -2px 0	var(--dark-brown),
+		2px	 -2px 0	var(--dark-brown),
+	 -2px		2px 0	var(--dark-brown);
 }
-p.quota_gallo_nome {
-	font-style:extra-bold;
+p.text_on_wood[id=round_number], [id=round_number]{
+
+}
+p.text_on_wood[id=gallo_red_HP_header]{
+	color: var(--red);
+	font-weight:bolder;
+	text-shadow: 
+		2px		0  	0	var(--beige-brown), 
+	 -2px		0 	0	var(--beige-brown),
+		0			2px 0	var(--beige-brown),
+		0		 -2px 0	var(--beige-brown),
+		1px		1px 0	var(--beige-brown),
+	 -1px	 -1px 0	var(--beige-brown),
+		1px	 -1px 0	var(--beige-brown),
+	 -1px		1px 0	var(--beige-brown);
+}
+p.text_on_wood[id=gallo_blue_HP_header]{
+	color: var(--blue);
+	font-weight:bolder;
+	text-shadow: 
+		2px		0  	0	var(--beige-brown), 
+	 -2px		0 	0	var(--beige-brown),
+		0			2px 0	var(--beige-brown),
+		0		 -2px 0	var(--beige-brown),
+		1px		1px 0	var(--beige-brown),
+	 -1px	 -1px 0	var(--beige-brown),
+		1px	 -1px 0	var(--beige-brown),
+	 -1px		1px 0	var(--beige-brown);
+}
+p.quota_gallo_nome, p.scommessa_gallo_nome {
+	font-weight:bolder;
 	font-size: 25px;
 	text-shadow: 
    1px   0  0   var(--black), 
@@ -219,9 +296,9 @@ p.quota_gallo_nome {
    0    1px 0   var(--black), 
    0   -1px 0   var(--black);
 }
-p.quota_gallo_nome[id=gallo_red_quota_nome] {
+p.quota_gallo_nome[id=gallo_red_quota_nome], p.scommessa_gallo_nome[id=gallo_red_scommessa_nome] {
 	color: var(--red);
 }
-p.quota_gallo_nome[id=gallo_blue_quota_nome] {
+p.quota_gallo_nome[id=gallo_blue_quota_nome], p.scommessa_gallo_nome[id=gallo_blue_scommessa_nome] {
 	color: var(--blue);
 }

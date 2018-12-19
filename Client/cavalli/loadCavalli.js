@@ -5,7 +5,7 @@ var cavalli_html = '\
 			<div id=header_div><p class=title>Corsa di Cavalli</p></div>\
 			<br>\
 			<div class=back name="backcavalli" id="backcavalli">\
-				<br><br>\
+				<br><br><br>\
 				<div class=field name="container" id ="container">\
 					<div class=horse id="animate_red"></div>\
 					<br><br><br>\
@@ -17,13 +17,22 @@ var cavalli_html = '\
 					<br><br><br>\
 					<div class=horse id="animate_white"></div>\
 				</div>\
-				<br><br>\
+				<br><br><br>\
 			</div>\
 			<br>\
 			<div id="cavalli_report"></div>\
 			<br>\
 			<div name="cavalli_bottom_area" id="cavalli_bottom_area" style="overflow-x:auto;">\
 				<table>\
+					<tr>\
+						<td colspan=2>\
+							<div name="simulaGame" id="cavalli_simulaGame">\
+								<p class=report_font>Vuoi simulare una corsa senza scommettere? </p>\
+								<button class=small_button id=simula_fight onclick="simulaCorsa()"> Simula </button>\
+								<br><br>\
+							</div>\
+							<div name="timerEndGame" id="timerEndGame"></div>\
+						</td>\
 					<tr class=back>\
 						<td class=quote>\
 							<table class=quote>\
@@ -48,7 +57,6 @@ var cavalli_html = '\
 							</table>\
 						</td>\
 						<td class=classifica>\
-							<div name="timerEndGame" id="timerEndGame"></div>\
 							<div name="infoCavallo" id="infoCavallo"></div>\
 							<div name="classifica" id="classifica"></div>\
 						</td>\
@@ -71,12 +79,6 @@ function loadCavalli(){
 	document.getElementById("dynamic_area").style.background = "var(--no-colour)";
 	document.getElementById("dynamic_area").innerHTML = cavalli_html;
 
-	var COLORS = ['red','blue','green', 'yellow','white'];
-	for(var i=0; i<5; i++){
-		var col = COLORS[i];
-		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
-		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
-	}
 	if( ! localStorage.getItem("PetBet - Horses") ){
 		var horses = [
 				{"id":1, "name":"Nearco", "age":4, "razza":"Purosangue Inglese", "wins":0, "races":0},
@@ -95,6 +97,13 @@ function loadCavalli(){
 
 		localStorage.setItem("PetBet - Horses", JSON.stringify(horses));
 	}
+	var COLORS = ['red','blue','green', 'yellow','white'];
+	for(var i=0; i<5; i++){
+		var col = COLORS[i];
+		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
+		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
+	}
+	
 	document.getElementById("scommetti").removeEventListener("click", ufficialize_galli_bet);
 	document.getElementById("scommetti").addEventListener("click", ufficialize_cavalli_bet);
 

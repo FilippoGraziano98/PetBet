@@ -28,7 +28,7 @@ class gallo {
 		document.getElementById(this.gallo_html.id+"_HP_value").style['background-color'] = "var(--forest-green)";
 		this.right = RING_WIDTH-GALLO_WIDTH-horizontal;		//distance of the div from the right border
 		this.left = horizontal;												//distance of the div from the left border
-		this.ko_top = 325;
+		this.ko_top = 300;
 		this.ko_border = 250;
 		this.ko_size = 0;
 		this.winner_height = 0;

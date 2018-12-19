@@ -163,6 +163,7 @@ function simulaFight(){
 	reset_quote_buttons();
 	freeze_galli_bet_buttons();
 	freeze_simula_button();
+	freeze_menu();
 	writeAlert("Non è possibile scommettere in modalità Simulazione");
 	sessionStorage.setItem("Gallo-bet_on", "simulazione__no_bet");
 	round_startTimer();

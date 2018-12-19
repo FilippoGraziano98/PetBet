@@ -42,7 +42,6 @@ var galli_html = '\
 			</div>\
 			<br>\
 			<div id="galli_report"></div>\
-			<br>\
 			<div name="galli_bottom_area" id="galli_bottom_area" style="overflow-x:auto;">\
 				<table>\
 					<tr class=back>\

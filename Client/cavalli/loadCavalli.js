@@ -21,7 +21,6 @@ var cavalli_html = '\
 			</div>\
 			<br>\
 			<div id="cavalli_report"></div>\
-			<br>\
 			<div name="cavalli_bottom_area" id="cavalli_bottom_area" style="overflow-x:auto;">\
 				<table>\
 					<tr class=back>\

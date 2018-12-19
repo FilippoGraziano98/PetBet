@@ -163,6 +163,7 @@ function simulaCorsa(){
 	reset_cavalli_quote_buttons();
 	freeze_cavalli_bet_buttons();
 	freeze_simula_button();
+	freeze_menu();
 	writeAlert("Non è possibile scommettere in modalità Simulazione");
 	sessionStorage.setItem("Cavallo-bet_on", "simulazione__no_bet");
 	startGame_Timer();

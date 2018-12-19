@@ -171,7 +171,8 @@ div.bet {
 	border-color:  var(--dark-green);
 	border-width: 5px;
 	font-size:30px;
-	position: absolute;
+	position:fixed;
+	text-align:center;
 	width: 14%;
 	margin: 0 3%;
 }
@@ -201,13 +202,6 @@ div.body_area[id=left_menu] {
 	position:fixed;
 	text-align:center;
 	width:20%;
-}
-div.bet[id=left] {
-	display:block;
-	position:fixed;
-	text-align:center;
-	left:25px;
-	width:12%;
 }
 div.body_area[id=dynamic_area] {
 	display:block;

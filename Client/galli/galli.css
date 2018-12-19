@@ -9,7 +9,7 @@ div[id=header_div],[id=quote] {
 div.background {
 	background-color: var(--dark-red);
 	width:100%;
-	height:600px;
+	height:500px;
 	position:relative;
 }
 div [id=main_div_galli] {
@@ -33,11 +33,9 @@ div[id=battle_field] {
 	background: url(../img/galli/ring-fieno.png);
 	background-size:100% 100%;
 	position: absolute;
-	top:0;
 	right:0;
-	bottom:0;
 	left:0;
-	margin: auto auto;
+	margin: 18 auto;
 }
 
 div.gallo {
@@ -62,7 +60,7 @@ div.ko {
 	position: absolute;
 	width: 4px; /*250px;*/
 	height: 5px; /*200px;*/
-	top: 325px;
+	top: 300px;
 }
 div.ko[id=ko_red] {
 	filter:

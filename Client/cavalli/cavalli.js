@@ -149,10 +149,10 @@ function endGame() {
 			}
 			document.getElementById("timerEndGame").innerHTML =
 				"<p class=report_font>Un'altra corsa sta per iniziare! </p>"+
-				"<button class=small_button onclick='setGame()'> VAI </button> <br><br>";
+				"<button class=small_button onclick='setGame()'><p>VAI</p></button>";
 		}
 		if (t > 0) {
-			document.getElementById("timerEndGame").innerHTML = "<p class=report_font>La prossima corsa sarà disponibile tra " + t + "<br><br></p>";
+			document.getElementById("timerEndGame").innerHTML = "<p class=report_font>La prossima corsa sarà disponibile tra " + t + "</p>";
 			t--;
 		}
 	}

@@ -21,6 +21,7 @@ var cavalli_html = '\
 			</div>\
 			<br>\
 			<div id="cavalli_report"></div>\
+			<br>\
 			<div name="cavalli_bottom_area" id="cavalli_bottom_area" style="overflow-x:auto;">\
 				<table>\
 					<tr class=back>\
@@ -51,10 +52,11 @@ var cavalli_html = '\
 							<div name="classifica" id="classifica"></div>\
 						</td>\
 					<tr>\
+					<tr>\
 						<td colspan=2>\
 							<div name="simulaGame" id="cavalli_simulaGame">\
 								<p class=report_font>Vuoi simulare una corsa senza scommettere? </p>\
-								<button class=small_button id=simula_fight onclick="simulaCorsa()"> Simula </button>\
+								<button class=small_button id=simula_fight onclick="simulaCorsa()"><p>SIMULA</p></button>\
 								<br>\
 							</div>\
 							<div name="timerEndGame" id="timerEndGame"></div>\

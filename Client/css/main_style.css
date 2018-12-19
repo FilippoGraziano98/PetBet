@@ -86,8 +86,9 @@ button.scommetti {
 }
 
 button.small_button {
-	background-color: var(--dark-red);
-	width: 80px;
+	background-color: #FAEBD7;
+	border-color: black;
+	width: 100px;
 	height: 40px;
 	text-align: center;
 	padding-top: 5px;

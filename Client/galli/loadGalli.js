@@ -87,10 +87,11 @@ var galli_html = '\
 							<div name="infoGallo" id="infoGallo"></div>\
 						</td>\
 					<tr>\
+					<tr>\
 						<td colspan=2>\
 							<div name="simulaGame" id="galli_simulaGame">\
 								<p class=report_font>Vuoi simulare una lotta senza scommettere? </p>\
-								<button class=small_button id=simula_fight onclick="simulaFight()"> Simula </button>\
+								<button class=small_button id=simula_fight onclick="simulaFight()"><p>SIMULA</p></button>\
 								<br>\
 							</div>\
 							<div name="timerEndGame" id="galli_timerEndGame"></div>\

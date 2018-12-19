@@ -177,9 +177,10 @@ var GALLI_LIST = {
 			}
 		}
 		
+		winning_gallo_obj.winner_html.style.display = "block";
+		
 		var gallo_bet_on = sessionStorage.getItem("Gallo-bet_on");
-		if( gallo_bet_on.includes("simulazione")){
-			winning_gallo_obj.winner_html.style.display = "block";
+		if( gallo_bet_on.includes("simulazione") ){
 			var winning_gallo_name="";
 				switch(winning_gallo_id) {
 					case "gallo_red":

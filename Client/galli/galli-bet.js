@@ -56,9 +56,11 @@ function bet_on_handler(pressed_button){
 
 //event listener for click on Scommetti button
 function ufficialize_galli_bet() {
-	var chosen_gallo = sessionStorage.getItem("Gallo-bet_on");
-
-	comunicate_bet_to_server(on_server_response_start_match);
+	var cookie=getCookies();
+	if(cookie){
+		comunicate_bet_to_server(on_server_response_start_match, "");
+	}
+	writeAlert("Solo gli utenti registrati possono scommettere");
 }
 
 function on_server_response_start_match(check){

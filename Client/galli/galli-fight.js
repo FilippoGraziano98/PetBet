@@ -131,11 +131,14 @@ function round_end() {
 }
 
 function fight_end() {
-	//comunico al server la vittoria
-	bet_get_reward();
 	//setto al schermata di vincita e aggiorno il db del galli
 	GALLI_LIST.celebrate_winner();
 	GALLI_LIST.update_galli_database();
+	
+	//comunico al server la vittoria
+	bet_get_reward();
+	
+	unfreeze_menu();
 	
 	document.getElementById("galli_simulaGame").style.display = "none";
 	document.getElementById("galli_timerEndGame").style.display = "block";

@@ -131,6 +131,7 @@ function startGame() {
 
 
 function endGame() {
+	unfreeze_menu();
 	document.getElementById("cavalli_simulaGame").style.display = "none";
 	document.getElementById("timerEndGame").style.display = "block";
 	var time = setInterval(timer, 1000);

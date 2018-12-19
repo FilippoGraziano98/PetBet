@@ -24,7 +24,11 @@ function update_quote(idbutton) {
 
 //event listener for click on Scommetti button
 function ufficialize_cavalli_bet() {
-	comunicate_bet_to_server(on_server_response_start_run, "");
+	var cookie=getCookies();
+	if(cookie){
+		comunicate_bet_to_server(on_server_response_start_run, "");
+	}
+	writeAlert("Solo gli utenti registrati possono scommettere");
 }
 
 function on_server_response_start_run(check){

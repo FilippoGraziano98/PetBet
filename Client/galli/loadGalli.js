@@ -45,15 +45,6 @@ var galli_html = '\
 			<br>\
 			<div name="galli_bottom_area" id="galli_bottom_area" style="overflow-x:auto;">\
 				<table>\
-					<tr>\
-						<td colspan=2>\
-							<div name="simulaGame" id="galli_simulaGame">\
-								<p class=report_font>Vuoi simulare una lotta senza scommettere? </p>\
-								<button class=small_button id=simula_fight onclick="simulaFight()"> Simula </button>\
-								<br><br>\
-							</div>\
-							<div name="timerEndGame" id="galli_timerEndGame"></div>\
-						</td>\
 					<tr class=back>\
 						<td class=bottom_area_data>\
 							<div name="quote" id="quote">\
@@ -72,35 +63,38 @@ var galli_html = '\
 						</td>\
 						<td class=bottom_area_data>\
 							<div name="galli_regolamento" id="galli_regolamento">\
-								<br><p class=subtitle>Regolamento del Rooster Club:</p><br><br>\
-								<table class=regolamento>\
+								<br><p class=subtitle>Informazioni sul Gallo</p><br><br>\
+								<table class=infoGallo>\
 									<tr>\
-										<td class=info_key><p>Prima regola:</p></td>\
-										<td class=info_value><p>non parlare mai del Rooster Club.</p></td>\
+										<td class=info_key><p> Nome: </p></td>\
+										<td class=info_value><p> - </p></td>\
 									<tr>\
-										<td class=info_key><p>Seconda regola:</p></td>\
-										<td class=info_value><p>non dovete parlare mai del Fight Club.</p></td>\
+										<td class=info_key><p> Età: </p></td>\
+										<td class=info_value><p> - </p></td>\
 									<tr>\
-										<td class=info_key><p>Terza regola:</p></td>\
-										<td class=info_value><p>se un gallo si accascia, è spompato, grida basta, fine del combattimento.</p></td>\
+										<td class=info_key><p> Peso: </p></td>\
+										<td class=info_value><p> - </p></td>\
 									<tr>\
-										<td class=info_key><p>Quarta regola:</p></td>\
-										<td class=info_value><p>si combatte solo due per volta.</p></td>\
+										<td class=info_key><p> Colore: </p></td>\
+										<td class=info_value><p> - </p></td>\
 									<tr>\
-										<td class=info_key><p>Quinta regola:</p></td>\
-										<td class=info_value><p>un combattimento alla volta.</p></td>\
+										<td class=info_key><p> Fattoria<br>di provenienza: </p></td>\
+										<td class=info_value><p> - </p></td>\
 									<tr>\
-										<td class=info_key><p>Sesta regola:</p></td>\
-										<td class=info_value><p>niente camicia, niente scarpe.</p></td>\
-									<tr>\
-										<td class=info_key><p>Settima regola:</p></td>\
-										<td class=info_value><p>i combattimenti durano per tutto il tempo necessario.</p></td>\
-									<tr>\
-										<td class=info_key><p>Ottava ed ultima regola:</p></td>\
-										<td class=info_value><p>se questa è la vostra prima sera al Rooster Club, dovete scommettere.</p></td>\
-								</table>\
+										<td class=info_key><p> Vittorie: </p></td>\
+										<td class=info_value><p> - </p></td>\
+								</table><br>\
 							</div>\
 							<div name="infoGallo" id="infoGallo"></div>\
+						</td>\
+					<tr>\
+						<td colspan=2>\
+							<div name="simulaGame" id="galli_simulaGame">\
+								<p class=report_font>Vuoi simulare una lotta senza scommettere? </p>\
+								<button class=small_button id=simula_fight onclick="simulaFight()"> Simula </button>\
+								<br>\
+							</div>\
+							<div name="timerEndGame" id="galli_timerEndGame"></div>\
 						</td>\
 				</table>\
 				<br>\
@@ -159,6 +153,46 @@ function loadGalli(){
 	
 	document.getElementById("scommetti").removeEventListener("click", ufficialize_cavalli_bet);
 	document.getElementById("scommetti").addEventListener("click", ufficialize_galli_bet);
+	
+	//easter egg
+	var cookie=getCookies();
+	if(cookie && getNameFromCookie(cookie) == "Filippo") {
+		var rooster_club = "\
+			<br><p class=subtitle>Regolamento del Rooster Club:</p><br><br>\
+			<table class=regolamento>\
+				<tr>\
+					<td class=info_key><p>Prima regola:</p></td>\
+					<td class=info_value><p>non parlare mai del Rooster Club.</p></td>\
+				<tr>\
+					<td class=info_key><p>Seconda regola:</p></td>\
+					<td class=info_value><p>non dovete parlare mai del Fight Club.</p></td>\
+				<tr>\
+					<td class=info_key><p>Terza regola:</p></td>\
+					<td class=info_value><p>se un gallo si accascia, è spompato, grida basta, fine del combattimento.</p></td>\
+				<tr>\
+					<td class=info_key><p>Quarta regola:</p></td>\
+					<td class=info_value><p>si combatte solo due per volta.</p></td>\
+				<tr>\
+					<td class=info_key><p>Quinta regola:</p></td>\
+					<td class=info_value><p>un combattimento alla volta.</p></td>\
+				<tr>\
+					<td class=info_key><p>Sesta regola:</p></td>\
+					<td class=info_value><p>niente camicia, niente scarpe.</p></td>\
+				<tr>\
+					<td class=info_key><p>Settima regola:</p></td>\
+					<td class=info_value><p>i combattimenti durano per tutto il tempo necessario.</p></td>\
+				<tr>\
+					<td class=info_key><p>Ottava ed ultima regola:</p></td>\
+					<td class=info_value><p>se questa è la vostra prima sera al Rooster Club, dovete scommettere.</p></td>\
+			</table>\
+			"
+			
+			var elems = document.getElementsByClassName('bottom_area_data');
+			for (var i = 0; i < elems.length; i++) {
+				elems[i].style.height="470px";
+			}
+			document.getElementById("galli_regolamento").innerHTML = rooster_club;
+	}
 	
 	fight_prepare();
 }

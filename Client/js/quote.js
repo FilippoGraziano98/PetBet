@@ -127,7 +127,6 @@ function bet_update() {
 
 	var quota = getQuota();
 	var money = getBet();
-	var user_budget = getBudgetFromCookie(getCookies());
 
 	if(isNaN(parseInt(money))) {
 		writeAlert("La puntata minima deve essere un numero!");
@@ -141,12 +140,18 @@ function bet_update() {
 		writeVincitaPotenziale("");
 		freeze_bet_area(false);
 		return false;
-	} else if (parseInt(money) > parseInt(user_budget)) {
-		writeAlert("Non puoi scommettere un importo superiore al tuo budget");
-		writeVincitaPotenziale("");
-		freeze_bet_area(false);
-		return false;
 	}
+	var cookie = getCookies();
+	if(cookie){
+		var user_budget = getBudgetFromCookie(cookie);
+		if (parseInt(money) > parseInt(user_budget)) {
+			writeAlert("Non puoi scommettere un importo superiore al tuo budget");
+			writeVincitaPotenziale("");
+			freeze_bet_area(false);
+			return false;
+		}
+	}
+	
 	writeAlert("");
 	quote_calculator(quota, money);
 
@@ -171,7 +176,9 @@ function confirm_bet(msg="") {
 	if( !check_scommessa() ) {
 		return false;
 	}
+	
 	appendOkMsg(msg);
 	freeze_bet_area(true);
+	freeze_menu();
 	return true;
 }

@@ -31,7 +31,7 @@
 	--maroon: rgba(128,0,0);
 
 	--black: rgba(0,0,0);
-	--transparent-black: rgba(0,0,0,0.8);
+	--transparent-black: rgba(0,0,0,0.9);
 	--dark-gray: rgba(128,128,128);
 }
 
@@ -69,7 +69,7 @@ button {
 
 button:hover{
 	cursor:pointer;
-	background-color: var(--dark-green);
+/*	background-color: var(--dark-green);*/
 }
 
 /*button.menu {*/

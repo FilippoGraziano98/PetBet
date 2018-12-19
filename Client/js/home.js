@@ -1,12 +1,17 @@
+function reload_home(){
+  window.location.href='index.html';
+}
+
 function freeze_menu() {
 	document.getElementById("cavalli_entry").removeEventListener("click",loadCavalli);
 	document.getElementById("galli_entry").removeEventListener("click",loadGalli);
+	document.getElementById("petbet").removeEventListener("click", reload_home);
 }
 
 function unfreeze_menu() {
 	document.getElementById("cavalli_entry").addEventListener("click",loadCavalli);
 	document.getElementById("galli_entry").addEventListener("click",loadGalli);
-	
+	document.getElementById("petbet").addEventListener("click", reload_home);
 }
 
 function set_user_info_area(cookie) {
@@ -46,10 +51,7 @@ $(document).ready(function(){
 	var cookie=getCookies();
 	if(cookie){
 		set_user_info_area(cookie);
-		unfreeze_menu();
 	}
-	else {
-		freeze_menu();
-	}
+	unfreeze_menu();
 	freeze_bet_area(true);
 });

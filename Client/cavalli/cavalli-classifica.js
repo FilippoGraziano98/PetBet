@@ -44,10 +44,10 @@ function firstPlace(horse_colour) {
 	var button = sessionStorage.getItem("Cavallo-bet_on");
 	var chosen_horse = button.substring(0,button.length-6);
 	if (chosen_horse == horse_colour) {
-		writeWinnerMsg("🎉 COMPLIMENTI! IL TUO CAVALLO HA VINTO 🎉");	// emoji discutibile lol
+		writeWinnerMsg("COMPLIMENTI! IL TUO CAVALLO HA VINTO");	
 		comunicate_reward_to_server();
 	} else {
-		writeLoserMsg("IL TUO CAVALLO HA PERSO 😪");	// emoji discutibile lol
+		writeLoserMsg("IL TUO CAVALLO HA PERSO");
 	}
 	sessionStorage.removeItem("Cavallo-bet_on");
 }

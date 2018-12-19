@@ -1,1 +1,1 @@
-{"username": "ff", "giornoNascita": "1", "cittaResidenza": "f", "indirizzoResidenza": "f", "meseNascita": "01m", "nome": "ff", "cognome": "f", "cap": "12345", "budget": 99.25999999999999, "cittaNascita": "f", "annoNascita": "2000", "sesso": "maschio", "password": "f", "email": "f@.f"}
+{"username": "ff", "giornoNascita": "1", "cittaResidenza": "f", "indirizzoResidenza": "f", "meseNascita": "01m", "nome": "ff", "cognome": "f", "cap": "12345", "budget": 100.32, "cittaNascita": "f", "annoNascita": "2000", "sesso": "maschio", "password": "f", "email": "f@.f"}

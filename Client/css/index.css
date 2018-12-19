@@ -25,7 +25,10 @@ table.index {
 	width: 80%;
 	height: 50%;
 	border-radius: 8px;
-	
+}
+
+table.index tr {
+	cursor: pointer;
 }
 
 div.header_area[id=main_title] {

@@ -24,6 +24,8 @@ function prepareClassifica(){
 }
 
 function addToClassifica(horse_colour){
+	document.getElementById("infoCavallo").style.display = "none";
+	document.getElementById("classifica").style.display = "block";
 	var finish_time = msToTime(Date.now() - start_timer);
 	document.getElementById("classifica_pos_"+rank_classifica).innerHTML = 
 		"<td class=pos><p class=horse id='"+horse_colour+"'>"+String(rank_classifica+1)+"</p></td>"+

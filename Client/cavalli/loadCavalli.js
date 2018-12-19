@@ -50,7 +50,7 @@ var cavalli_html = '\
 							<div name="infoCavallo" id="infoCavallo"></div>\
 							<div name="classifica" id="classifica"></div>\
 						</td>\
-					<tr>\
+					<tr class=back>\
 						<td colspan=2>\
 							<div name="simulaGame" id="cavalli_simulaGame">\
 								<p class=report_font>Vuoi simulare una corsa senza scommettere? </p>\

@@ -86,7 +86,7 @@ var galli_html = '\
 							</div>\
 							<div name="infoGallo" id="infoGallo"></div>\
 						</td>\
-					<tr>\
+					<tr class=back>\
 						<td colspan=2>\
 							<div name="simulaGame" id="galli_simulaGame">\
 								<p class=report_font>Vuoi simulare una lotta senza scommettere? </p>\

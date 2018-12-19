@@ -90,6 +90,11 @@ table.quote{
 table.quote tr:nth-child(even), table.infoCavallo tr:nth-child(even){
 	background-color: 	#FFFAF0;
 }
+
+tr.back {
+	background-color: 	#DEB887;
+}
+
 td.classifica {
 	width: 30%;	
 	height: 380px;	

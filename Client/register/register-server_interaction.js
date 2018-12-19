@@ -1,5 +1,6 @@
 function register(){
 	if(validaAccessForm()){
+		alertMsg("");
 		var url='http://localhost:8000/register'
 		var data={
 			'username':$('#username').val(),

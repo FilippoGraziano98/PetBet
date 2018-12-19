@@ -142,17 +142,18 @@ function fight_end() {
 	
 	document.getElementById("galli_simulaGame").style.display = "none";
 	document.getElementById("galli_timerEndGame").style.display = "block";
+	document.getElementById("galli_timerEndGame").innerHTML = "<p class=report_font>La prossima lotta sarà disponibile tra " + BREAK_BEFORE_NEXT_FIGHT + "</p><br>";
 	var time = setInterval(timerEndGame, 1000);
-	var t = BREAK_BEFORE_NEXT_FIGHT;
+	var t = BREAK_BEFORE_NEXT_FIGHT-1;
 	function timerEndGame() {
 		if (t == 0) {
 			clearInterval(time);
 			document.getElementById("galli_timerEndGame").innerHTML =
 				"<p class=report_font>Un'altra lotta sta per iniziare! </p>"+
-				"<button class=small_button onclick='fight_prepare()'> VAI </button> <br><br>";
+				"<button class=small_button onclick='fight_prepare()'><p>VAI</p></button><br>";
 		}
 		if (t > 0) {
-			document.getElementById("galli_timerEndGame").innerHTML = "<p class=report_font>La prossima lotta sarà disponibile tra " + t + "<br><br></p>";
+			document.getElementById("galli_timerEndGame").innerHTML = "<p class=report_font>La prossima lotta sarà disponibile tra " + t + "</p><br>";
 			t--;
 		}
 	}

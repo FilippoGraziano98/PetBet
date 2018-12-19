@@ -216,3 +216,77 @@
 [decreaseBudget 2018-12-19 20:31:49.748110] username: ff, importo: 1
 	-> valid username
 [updateUser 2018-12-19 20:31:49.750365] username: ff, key: budget, new_value: 57.76
+[queryLogin 2018-12-20 00:07:06.810187] {"password": "f", "user": "ff"}	-> valid credentials
+[decreaseBudget 2018-12-20 00:07:13.170600] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-20 00:07:13.172127] username: ff, key: budget, new_value: 54.76
+[increaseBudget 2018-12-20 00:07:26.595632] username: ff, importo: 2.23
+	-> valid username
+[updateUser 2018-12-20 00:07:26.596390] username: ff, key: budget, new_value: 56.99
+[decreaseBudget 2018-12-20 00:07:42.245638] username: ff, importo: 1
+	-> valid username
+[updateUser 2018-12-20 00:07:42.248950] username: ff, key: budget, new_value: 55.99
+[insert 2018-12-20 00:12:47.768186] {"username": "dd", "giornoNascita": "1", "cittaResidenza": "", "password": "d", "meseNascita": "01m", "nome": "dd", "cognome": "d", "cap": "12345", "budget": "3", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "via", "email": "d@."}
+[check_username 2018-12-20 00:12:47.768996] requested user: dd	 -> username available
+[check_email 2018-12-20 00:12:47.771615] requested email: d@.	 -> email available
+[queryLogin 2018-12-20 00:12:51.289553] {"password": "d", "user": "dd"}	-> valid credentials
+[insert 2018-12-20 00:17:23.392038] {"username": "dd", "giornoNascita": "1", "cittaResidenza": "", "password": "e", "meseNascita": "01m", "nome": "tre", "cognome": "tre", "cap": "55555", "budget": "4", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "rty", "email": "d@."}
+[check_username 2018-12-20 00:17:23.392740] requested user: dd	 -> username not available!
+[queryLogin 2018-12-20 00:17:42.042348] {"password": "w", "user": "ww"}	-> not valid credentials
+[insert 2018-12-20 00:20:17.378397] {"username": "qq", "giornoNascita": "1", "cittaResidenza": "", "password": "q", "meseNascita": "01m", "nome": "qq", "cognome": "q", "cap": "11111", "budget": "1", "sesso": "maschio", "annoNascita": "2000", "cittaNascita": "", "indirizzoResidenza": "q", "email": "q@."}
+[check_username 2018-12-20 00:20:17.378608] requested user: qq	 -> username available
+[check_email 2018-12-20 00:20:17.378884] requested email: q@.	 -> email available
+[queryLogin 2018-12-20 00:20:22.409346] {"password": "w", "user": "qwe"}	-> not valid credentials
+[queryLogin 2018-12-20 00:20:25.516530] {"password": "q", "user": "qq"}	-> valid credentials
+[queryLogin 2018-12-20 00:23:58.304890] {"password": "f", "user": "Filippo"}	-> valid credentials
+[decreaseBudget 2018-12-20 00:24:16.910504] username: Filippo, importo: 100
+	-> valid username
+[updateUser 2018-12-20 00:24:16.912077] username: Filippo, key: budget, new_value: 900.0
+[increaseBudget 2018-12-20 00:24:41.167651] username: Filippo, importo: 344.00
+	-> valid username
+[updateUser 2018-12-20 00:24:41.168593] username: Filippo, key: budget, new_value: 1244.0
+[decreaseBudget 2018-12-20 00:27:39.693074] username: Filippo, importo: 30
+	-> valid username
+[updateUser 2018-12-20 00:27:39.694773] username: Filippo, key: budget, new_value: 1214.0
+[decreaseBudget 2018-12-20 00:28:22.974384] username: Filippo, importo: 100
+	-> valid username
+[updateUser 2018-12-20 00:28:22.976039] username: Filippo, key: budget, new_value: 1114.0
+[increaseBudget 2018-12-20 00:28:50.838634] username: Filippo, importo: 278.00
+	-> valid username
+[updateUser 2018-12-20 00:28:50.839727] username: Filippo, key: budget, new_value: 1392.0
+[decreaseBudget 2018-12-20 00:29:24.324340] username: Filippo, importo: 10
+	-> valid username
+[updateUser 2018-12-20 00:29:24.326052] username: Filippo, key: budget, new_value: 1382.0
+[increaseBudget 2018-12-20 00:29:38.149842] username: Filippo, importo: 19.90
+	-> valid username
+[updateUser 2018-12-20 00:29:38.151274] username: Filippo, key: budget, new_value: 1401.9
+[decreaseBudget 2018-12-20 00:32:01.719731] username: Filippo, importo: 100
+	-> valid username
+[updateUser 2018-12-20 00:32:01.721734] username: Filippo, key: budget, new_value: 1301.9
+[increaseBudget 2018-12-20 00:32:26.679096] username: Filippo, importo: 366.00
+	-> valid username
+[updateUser 2018-12-20 00:32:26.680489] username: Filippo, key: budget, new_value: 1667.9
+[decreaseBudget 2018-12-20 00:33:50.022646] username: Filippo, importo: 50
+	-> valid username
+[updateUser 2018-12-20 00:33:50.024490] username: Filippo, key: budget, new_value: 1617.9
+[increaseBudget 2018-12-20 00:35:06.642415] username: Filippo, importo: 188.50
+	-> valid username
+[updateUser 2018-12-20 00:35:06.643628] username: Filippo, key: budget, new_value: 1806.4
+[decreaseBudget 2018-12-20 00:35:32.973229] username: Filippo, importo: 50
+	-> valid username
+[updateUser 2018-12-20 00:35:32.974792] username: Filippo, key: budget, new_value: 1756.4
+[decreaseBudget 2018-12-20 00:38:06.436782] username: Filippo, importo: 100
+	-> valid username
+[updateUser 2018-12-20 00:38:06.438631] username: Filippo, key: budget, new_value: 1656.4
+[decreaseBudget 2018-12-20 00:38:43.156574] username: Filippo, importo: 100
+	-> valid username
+[updateUser 2018-12-20 00:38:43.158287] username: Filippo, key: budget, new_value: 1556.4
+[increaseBudget 2018-12-20 00:39:27.260483] username: Filippo, importo: 440.00
+	-> valid username
+[updateUser 2018-12-20 00:39:27.262840] username: Filippo, key: budget, new_value: 1996.4
+[decreaseBudget 2018-12-20 00:39:47.590180] username: Filippo, importo: 100
+	-> valid username
+[updateUser 2018-12-20 00:39:47.591741] username: Filippo, key: budget, new_value: 1896.4
+[increaseBudget 2018-12-20 00:40:06.415818] username: Filippo, importo: 341.00
+	-> valid username
+[updateUser 2018-12-20 00:40:06.416733] username: Filippo, key: budget, new_value: 2237.4

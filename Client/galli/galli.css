@@ -165,12 +165,17 @@ table {
 }
 table.quote {
 	border-radius: 20px;
-	border:2px solid green;
  	overflow: hidden;
- 	background-color: silver;
+ 	background-color: var(--dark-red);
+}
+table.quote th{
+ 	background-color: var(--dark-red);
 }
 table.quote tr:nth-child(even), table.regolamento tr:nth-child(even), table.infoGallo tr:nth-child(even){
 	background-color: 	#FFFAF0;
+}
+table.quote tr:nth-child(odd){
+	background-color: 	#FAEBD7;
 }
 tr.back {
 	background-color: 	#DEB887;

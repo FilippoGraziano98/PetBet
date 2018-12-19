@@ -32,20 +32,7 @@ function bet_on_handler(pressed_button){
 	reset_quote_buttons();
 	pressed_button.setAttribute("class", "quota_gallo_button_selected");
 	
-	var gallo_name="";
-	
-	switch(chosen_gallo) {
-		case "red":
-			gallo_name="Gallo Rosso";
-			break;
-		case "blue":
-			gallo_name="Gallo Blue";
-			break;
-		default:
-			gallo_name=chosen_gallo;
-			break;
-			
-	}
+	var gallo_name = GALLI_LIST[chosen_gallo].gallo_info_name;
 	
 	document.getElementById("galli_report").innerHTML =
 		"<p class=report_font> Hai puntato su </p>"+
@@ -82,10 +69,10 @@ function bet_get_reward(){
 	var gallo_bet_on = sessionStorage.getItem("Gallo-bet_on");
 	if( !gallo_bet_on.includes("simulazione")){
 		if(winning_gallo == gallo_bet_on){
-			writeWinnerMsg();
+			writeWinnerMsg("COMPLIMENTI! IL TUO GALLO HA VINTO");
 			comunicate_reward_to_server();
 		}	else {
-			writeLoserMsg();
+			writeLoserMsg("IL TUO GALLO HA PERSO");
 		}
 	}
 	sessionStorage.removeItem("Gallo-bet_on");

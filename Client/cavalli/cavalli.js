@@ -62,10 +62,14 @@ function setGame() {
 }
 
 function startGame_Timer(){
+	document.getElementById("infoCavallo").style.display = "none";
+	document.getElementById("classifica").style.display = "block";
 	document.getElementById("classifica").innerHTML = "<p class=startTimer>3</p>";
 	var time = setInterval(timer, 1000);
 	var t = 3;
 	function timer() {
+		document.getElementById("infoCavallo").style.display = "none";
+		document.getElementById("classifica").style.display = "block";
 		switch (t) {
 			case 3:
 			case 2:
@@ -133,8 +137,9 @@ function endGame() {
 	unfreeze_menu();
 	document.getElementById("cavalli_simulaGame").style.display = "none";
 	document.getElementById("timerEndGame").style.display = "block";
+	document.getElementById("timerEndGame").innerHTML = "<p class=report_font>La prossima corsa sarà disponibile tra 3</p><br>";
 	var time = setInterval(timer, 1000);
-	var t = 3;
+	var t = 2;
 	function timer() {
 		if (t == 0) {
 			clearInterval(time);
@@ -148,10 +153,10 @@ function endGame() {
 			}
 			document.getElementById("timerEndGame").innerHTML =
 				"<p class=report_font>Un'altra corsa sta per iniziare! </p>"+
-				"<button class=small_button onclick='setGame()'><p>VAI</p></button> <br><br>";
+				"<button class=small_button onclick='setGame()'><p>VAI</p></button><br>";
 		}
 		if (t > 0) {
-			document.getElementById("timerEndGame").innerHTML = "<p class=report_font>La prossima corsa sarà disponibile tra " + t + "</p>";
+			document.getElementById("timerEndGame").innerHTML = "<p class=report_font>La prossima corsa sarà disponibile tra " + t + "</p><br>";
 			t--;
 		}
 	}

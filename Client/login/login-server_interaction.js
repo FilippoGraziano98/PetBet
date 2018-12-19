@@ -6,6 +6,7 @@ $(document).ready(function(){
 	var redirect = url.searchParams.get("redirect_from");
 	console.log("redirect_from: "+redirect);
 	if(redirect=="registration"){
+		document.getElementById("login_sub_header").style.color = "var(--forest-green)";
 		document.getElementById("login_sub_header").innerHTML="Congratulations!<br>\nServer accepted your registration.<br>\nYou are now a user of PetBet!<br>\n<br>";
 		//now removing redirect_from from the visualized url
 		var current_url = window.location.href;
@@ -29,6 +30,7 @@ $(document).ready(function(){
 
 function login(){
 	if(validaForm()){
+		alertMsg("");
 		var url='http://localhost:8000/login'
 		var data={
 			'user':$('#user').val(),
@@ -36,6 +38,7 @@ function login(){
 		}
 		var remember = document.getElementById('rememberMe').checked;
 		$.post(url, data, function onsuccess(_response){
+			document.getElementById("login_sub_header").style.color = "";
 			var response = JSON.parse(_response);
 			console.log(response);
 			if(response.msg=="login_success"){

@@ -66,6 +66,10 @@ class gallo {
 		this.gallo_info_fattoria = gallo_info['fattoria'];
 		this.gallo_info_wins = gallo_info['wins'];
 		this.gallo_info_races = gallo_info['races'];
+		
+		//displaying anagraphic info in the battle_field
+		document.getElementById(this.gallo_html.id+"_quota_nome").innerHTML = this.gallo_info_name;
+		document.getElementById(this.gallo_html.id+"_HP_header").innerHTML = this.gallo_info_name;
 	}
 	move(horizontal){
 		//horizontal	{>0 => right, 0 => nomove, <0 => left}
@@ -181,21 +185,9 @@ var GALLI_LIST = {
 		
 		var gallo_bet_on = sessionStorage.getItem("Gallo-bet_on");
 		if( gallo_bet_on.includes("simulazione") ){
-			var winning_gallo_name="";
-				switch(winning_gallo_id) {
-					case "gallo_red":
-						winning_gallo_name="Gallo Rosso";
-						break;
-					case "gallo_blue":
-						winning_gallo_name="Gallo Blue";
-						break;
-					default:
-						winning_gallo_name=winning_gallo_id;
-						break;
-				}
-				document.getElementById("galli_report").innerHTML =
-					"<p class=report_font> Ha vinto </p>"+
-					"<p class=scommessa_gallo_nome id="+winning_gallo_id+"_scommessa_nome>"+winning_gallo_name+"</p>";
+			document.getElementById("galli_report").innerHTML =
+				"<p class=report_font> Ha vinto </p>"+
+				"<p class=scommessa_gallo_nome id="+winning_gallo_id+"_scommessa_nome>"+winning_gallo_obj.gallo_info_name+"</p>";
 		}
 		winning_gallo_obj.gallo_info_wins++;
 		winning_gallo_obj.gallo_info_races++;

@@ -1,4 +1,11 @@
+var permanent_info = false;
+
 function showInfoHorse(e) {
+	if(e.type == "click") {
+		permanent_info = true;
+	} else { //alternative is "mouseenter", as this is a common event handler
+		permanent_info = false;
+	}
 	var color = e.target.id.split("_")[1];
 	var horse = document.getElementById("animate_"+color);
 	var horse_id = horse.horse_id;
@@ -66,13 +73,17 @@ function showInfoHorse(e) {
 					"<td class=info_value><p>"+commento+"</p></td>"+
 			"</table><br>"
 	
-	document.getElementById("classifica").style.display = 'none';	//hide classifica
 	document.getElementById("infoCavallo").innerHTML = info_html;
+	document.getElementById("classifica").style.display = 'none';	//hide classifica
+	document.getElementById("infoCavallo").style.display = 'block';
 }
 
 function hideInfoHorse(e) {
 	var color = e.target.id.split("_")[1];
 	document.getElementById("animate_"+color).style.transform = "";
-	document.getElementById("infoCavallo").innerHTML = "";
-	document.getElementById("classifica").style.display = 'block'; //make classifica visible again
+	if(!permanent_info) {
+		document.getElementById("infoCavallo").style.display = 'none';
+		document.getElementById("classifica").style.display = 'block'; //make classifica visible again
+		document.getElementById("infoCavallo").innerHTML = "";
+	 }
 }

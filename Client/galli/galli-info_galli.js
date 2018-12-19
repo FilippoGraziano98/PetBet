@@ -1,4 +1,12 @@
-function showInfoGallo_handler(e) {
+var permanent_info = false;
+
+function showInfoGallo_handler(event) {
+	if(event.type == "click") {
+		permanent_info = true;
+	} else { //alternative is "mouseenter", as this is a common event handler
+		permanent_info = false;
+	}
+
 	var obj_id = event.target.id;
 
 	var col = obj_id.split("_")[1];
@@ -10,7 +18,7 @@ function showInfoGallo(gallo_id) { //gallo_red, gallo_blue
 	
 	var gallo_obj = GALLI_LIST[color];
 	
-	var gallo_id = gallo_obj.gallo_info_id; //unused
+	var gallo_info_id = gallo_obj.gallo_info_id; //unused
 	var gallo_name = gallo_obj.gallo_info_name;
 	var gallo_age = gallo_obj.gallo_info_age;
 	var gallo_peso = gallo_obj.gallo_info_peso;
@@ -23,7 +31,7 @@ function showInfoGallo(gallo_id) { //gallo_red, gallo_blue
 				"<table class=infoGallo>"+
 				//"<tr>"+
 				//	"<td><p> Id: </p></td>"+
-				//	"<td><p>"+gallo_id+"</p></td>"+
+				//	"<td><p>"+gallo_info_id+"</p></td>"+
 					"<tr>"+
 						"<td class=info_key><p> Nome: </p></td>"+
 						"<td class=info_value><p>"+gallo_name+"</p></td>"+
@@ -44,14 +52,26 @@ function showInfoGallo(gallo_id) { //gallo_red, gallo_blue
 						"<td class=info_value><p>"+gallo_wins+"/"+gallo_races+"</p></td>"+
 				"</table><br>"
 	
+	document.getElementById(gallo_id).style.transform = "scale(1.10)";
+	
 	document.getElementById("infoGallo").innerHTML = info_html;
 	document.getElementById("galli_regolamento").style.display = "none";
 	document.getElementById("infoGallo").style.display = "block";
 	
 }
 
-function hideInfoGallo(e) {
-	document.getElementById("infoGallo").style.display = "none";
-	document.getElementById("galli_regolamento").style.display = "block";
-	document.getElementById("infoGallo").innerHTML = "";
+function hideInfoGallo_handler(event) {
+	var obj_id = event.target.id;
+
+	var col = obj_id.split("_")[1];
+	hideInfoGallo("gallo_"+col);
+}
+
+function hideInfoGallo(gallo_id) {
+	document.getElementById(gallo_id).style.transform = "";
+	if(!permanent_info) {
+		document.getElementById("infoGallo").style.display = "none";
+		document.getElementById("galli_regolamento").style.display = "block";
+		document.getElementById("infoGallo").innerHTML = "";
+	}
 }

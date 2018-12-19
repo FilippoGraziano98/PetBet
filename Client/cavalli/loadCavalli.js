@@ -21,7 +21,6 @@ var cavalli_html = '\
 			</div>\
 			<br>\
 			<div id="cavalli_report"></div>\
-			<br>\
 			<div name="cavalli_bottom_area" id="cavalli_bottom_area" style="overflow-x:auto;">\
 				<table>\
 					<tr class=back>\
@@ -51,7 +50,6 @@ var cavalli_html = '\
 							<div name="infoCavallo" id="infoCavallo"></div>\
 							<div name="classifica" id="classifica"></div>\
 						</td>\
-					<tr>\
 					<tr>\
 						<td colspan=2>\
 							<div name="simulaGame" id="cavalli_simulaGame">\
@@ -102,12 +100,38 @@ function loadCavalli(){
 	for(var i=0; i<5; i++){
 		var col = COLORS[i];
 		document.getElementById("animate_"+col).addEventListener("mouseenter", showInfoHorse, false);
+		document.getElementById("animate_"+col).addEventListener("click", showInfoHorse, false);
 		document.getElementById("animate_"+col).addEventListener("mouseout", hideInfoHorse, false);
 	}
 	
 	document.getElementById("scommetti").removeEventListener("click", ufficialize_galli_bet);
 	document.getElementById("scommetti").addEventListener("click", ufficialize_cavalli_bet);
 
-	prepareClassifica();
+	info_html =
+		"<br><p class=subtitle>Informazioni sul Cavallo</p><br><br>"+
+			"<table class=infoCavallo>"+
+				"<tr>"+
+					"<td class=info_key><p> Nome: </p></td>"+
+					"<td class=info_value><p> - </p></td>"+
+				"<tr>"+
+					"<td class=info_key><p> Razza: </p></td>"+
+					"<td class=info_value><p> - </p></td>"+
+				"<tr>"+
+					"<td class=info_key><p> Età: </p></td>"+
+					"<td class=info_value><p> - </p></td>"+
+				"<tr>"+
+					"<td class=info_key><p> Colore: </p></td>"+
+					"<td class=info_value><p> - </p></td>"+
+				"<tr>"+
+					"<td class=info_key><p> Vittorie: </p></td>"+
+					"<td class=info_value><p> - </p></td>"+
+				"<tr>"+
+					"<td class=info_key><p> Cosa dicono<br>i bookmaker: </p></td>"+
+					"<td class=info_value><p> - </p></td>"+
+			"</table><br>"
+	
+	document.getElementById("infoCavallo").style.display = 'none';	//hide classifica
+	document.getElementById("classifica").style.display = 'display';
+	document.getElementById("classifica").innerHTML = info_html;
 	setGame();
 }

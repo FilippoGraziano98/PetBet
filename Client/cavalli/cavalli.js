@@ -17,7 +17,6 @@ function setGame() {
 	document.getElementById("timerEndGame").style.display = "none";
 	document.getElementById("cavalli_simulaGame").style.display = "block";
 	initialize_bet_area();
-	prepareClassifica();
 	for(var c=0; c<5; c++) {	
 		document.getElementById(COLORS[c] + "button").setAttribute("class", "button");
 	}
@@ -62,7 +61,7 @@ function setGame() {
 	}
 }
 
-function startGame_Timer(){	
+function startGame_Timer(){
 	document.getElementById("classifica").innerHTML = "<p class=startTimer>3</p>";
 	var time = setInterval(timer, 1000);
 	var t = 3;
@@ -149,7 +148,7 @@ function endGame() {
 			}
 			document.getElementById("timerEndGame").innerHTML =
 				"<p class=report_font>Un'altra corsa sta per iniziare! </p>"+
-				"<button class=small_button onclick='setGame()'><p>VAI</p></button>";
+				"<button class=small_button onclick='setGame()'><p>VAI</p></button> <br><br>";
 		}
 		if (t > 0) {
 			document.getElementById("timerEndGame").innerHTML = "<p class=report_font>La prossima corsa sarà disponibile tra " + t + "</p>";

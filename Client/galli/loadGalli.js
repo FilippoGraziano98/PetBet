@@ -87,7 +87,6 @@ var galli_html = '\
 							<div name="infoGallo" id="infoGallo"></div>\
 						</td>\
 					<tr>\
-					<tr>\
 						<td colspan=2>\
 							<div name="simulaGame" id="galli_simulaGame">\
 								<p class=report_font>Vuoi simulare una lotta senza scommettere? </p>\
@@ -134,21 +133,28 @@ function loadGalli(){
 	var galli_id = ['gallo_red','gallo_blue'];
 	for (var i = 0; i < galli_id.length; i++) {
 		document.getElementById(galli_id[i]).addEventListener("mouseenter", showInfoGallo_handler, false);
-		document.getElementById(galli_id[i]).addEventListener("mouseout", hideInfoGallo, false);
+		document.getElementById(galli_id[i]).addEventListener("click", showInfoGallo_handler, false);
+		document.getElementById(galli_id[i]).addEventListener("mouseout", hideInfoGallo_handler, false);
 		//metto i Listener anche sulle barre della vita (altrimenti durante la lotta non si ha modo di accedere alle info del gallo)
 		document.getElementById(galli_id[i]+"_hp_name").addEventListener("mouseenter", showInfoGallo_handler, false);
-		document.getElementById(galli_id[i]+"_hp_name").addEventListener("mouseout", hideInfoGallo, false);
+		document.getElementById(galli_id[i]+"_hp_name").addEventListener("click", showInfoGallo_handler, false);
+		document.getElementById(galli_id[i]+"_hp_name").addEventListener("mouseout", hideInfoGallo_handler, false);
 		document.getElementById(galli_id[i]+"_HP_container").addEventListener("mouseenter", showInfoGallo_handler, false);
-		document.getElementById(galli_id[i]+"_HP_container").addEventListener("mouseout", hideInfoGallo, false);
+		document.getElementById(galli_id[i]+"_HP_container").addEventListener("click", showInfoGallo_handler, false);
+		document.getElementById(galli_id[i]+"_HP_container").addEventListener("mouseout", hideInfoGallo_handler, false);
 		document.getElementById(galli_id[i]+"_HP_value").addEventListener("mouseenter", showInfoGallo_handler, false);
-		document.getElementById(galli_id[i]+"_HP_value").addEventListener("mouseout", hideInfoGallo, false);
+		document.getElementById(galli_id[i]+"_HP_value").addEventListener("click", showInfoGallo_handler, false);
+		document.getElementById(galli_id[i]+"_HP_value").addEventListener("mouseout", hideInfoGallo_handler, false);
 		document.getElementById(galli_id[i]+"_HP_percentage").addEventListener("mouseenter", showInfoGallo_handler, false);
-		document.getElementById(galli_id[i]+"_HP_percentage").addEventListener("mouseout", hideInfoGallo, false);
+		document.getElementById(galli_id[i]+"_HP_percentage").addEventListener("click", showInfoGallo_handler, false);
+		document.getElementById(galli_id[i]+"_HP_percentage").addEventListener("mouseout", hideInfoGallo_handler, false);
 		//e anche sui div di KO e coriandoli (altrimenti a fine lotta non posso più accedere alle info)
 		document.getElementById("ko_"+galli_id[i].split("_")[1]).addEventListener("mouseenter", showInfoGallo_handler, false);
-		document.getElementById("ko_"+galli_id[i].split("_")[1]).addEventListener("mouseout", hideInfoGallo, false);
+		document.getElementById("ko_"+galli_id[i].split("_")[1]).addEventListener("click", showInfoGallo_handler, false);
+		document.getElementById("ko_"+galli_id[i].split("_")[1]).addEventListener("mouseout", hideInfoGallo_handler, false);
 		document.getElementById("winner_"+galli_id[i].split("_")[1]).addEventListener("mouseenter", showInfoGallo_handler, false);
-		document.getElementById("winner_"+galli_id[i].split("_")[1]).addEventListener("mouseout", hideInfoGallo, false);
+		document.getElementById("winner_"+galli_id[i].split("_")[1]).addEventListener("click", showInfoGallo_handler, false);
+		document.getElementById("winner_"+galli_id[i].split("_")[1]).addEventListener("mouseout", hideInfoGallo_handler, false);
 	}
 	
 	document.getElementById("scommetti").removeEventListener("click", ufficialize_cavalli_bet);

@@ -8,12 +8,6 @@ function validaAccessForm() {
 	} if(document.register_form.inputCognome.value=="") {
 		alertMsg("Il campo cognome non pu\u00F2 essere vuoto");
 		return false;
-	} if(document.register_form.nascita.value=="") {
-		alertMsg("Il campo nascita non pu\u00F2 essere vuoto");
-		return false;
-	} if(document.register_form.residenza.value=="") {
-		alertMsg("Il campo residenza non pu\u00F2 essere vuoto");
-		return false;
 	} if(document.register_form.indirizzo.value=="") {
 		alertMsg("Il campo indirizzo non pu\u00F2 essere vuoto");
 		return false;

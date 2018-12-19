@@ -67,13 +67,18 @@ button {
 
 button:hover{
 	cursor:pointer;
-}
-
-button.users {
 	background-color: var(--dark-green);
- 	width: 150px;
 }
 
+button.login {
+	background-color: var(--forest-green);
+ 	width: 150px;
+ 	height: 50px;
+ 	text-align: center;
+	padding-top: 10px;
+}
+	
+ 	
 /*button.menu {*/
 /*	background-color: var(--dark-red);*/
 /*	width: 200px;*/

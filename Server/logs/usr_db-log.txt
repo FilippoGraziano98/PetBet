@@ -171,3 +171,10 @@
 [increaseBudget 2018-12-19 15:48:10.793611] username: ff, importo: 3.06
 	-> valid username
 [updateUser 2018-12-19 15:48:10.793914] username: ff, key: budget, new_value: 100.32
+[queryLogin 2018-12-19 16:38:03.998327] {"password": "f", "user": "ff"}	-> valid credentials
+[queryLogin 2018-12-19 16:47:03.677726] {"password": "jj", "user": "ggg"}	-> not valid credentials
+[queryLogin 2018-12-19 16:48:42.285569] {"password": "a", "user": "aa"}	-> not valid credentials
+[queryLogin 2018-12-19 17:06:31.164001] {"password": "f", "user": "ff"}	-> valid credentials
+[queryLogin 2018-12-19 17:07:22.957711] {"password": "f", "user": "ff"}	-> valid credentials
+[queryLogin 2018-12-19 17:08:24.008633] {"password": "f", "user": "ff"}	-> valid credentials
+[queryLogin 2018-12-19 17:09:51.524966] {"password": "f", "user": "ff"}	-> valid credentials

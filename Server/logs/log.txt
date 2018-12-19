@@ -423,3 +423,45 @@
 		 data: ImmutableMultiDict([('vincita', u'3.06'), ('cookies', u'ff_97.26@petbet')])
 	 <Response ['{"msg": "reward_success", "cookies": "session-id=ff_100.32@petbet"}']>
 
+[2018-12-19 16:38:03.999690] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_100.32@petbet"}']>
+
+[2018-12-19 16:47:03.678226] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'jj'), ('user', u'ggg')])
+	 <Response ['{"msg": "login_failure__credentials_not_valid"}']>
+
+[2018-12-19 16:48:42.286879] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'a'), ('user', u'aa')])
+	 <Response ['{"msg": "login_failure__credentials_not_valid"}']>
+
+[2018-12-19 17:06:31.165651] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_100.32@petbet"}']>
+
+[2018-12-19 17:07:22.959410] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_100.32@petbet"}']>
+
+[2018-12-19 17:08:24.010020] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_100.32@petbet"}']>
+
+[2018-12-19 17:09:51.525568] 127.0.0.1 - "POST /login" 200 OK -
+	 <Request 'http://localhost:8000/login' [POST]>
+		 cookies:{}
+		 data: ImmutableMultiDict([('password', u'f'), ('user', u'ff')])
+	 <Response ['{"msg": "login_success", "cookies": "session-id=ff_100.32@petbet"}']>
+

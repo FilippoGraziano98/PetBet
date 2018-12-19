@@ -65,8 +65,9 @@ div[id=logged_user_budget] {
 }
 
 button.users {
- 	width: 45%;
-  display: inline-block;
+	background-color: var(--dark-red);
+ 	width: 170px;
+	display: inline-block;
 }
 
 a[id=logout] {

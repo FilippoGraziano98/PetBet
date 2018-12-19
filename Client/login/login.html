@@ -13,27 +13,27 @@
 		<link rel=stylesheet type="text/css" href="../css/login&register.css">
 	</head>
 	<body>
-		<div class=title name="login_header" id="login_header">
-			ACCEDI<br>
-		</div>
-		<div class=subtitle name="login_sub_header" id="login_sub_header">
-		</div>
-		<div class=error name=error_msg id=error_msg>
-		</div>
+		<br><br>
 		<div class=form_paragraph name="login_paragraph" id="login_paragraph">
-			<br><br><br>
+			<br><br><p class=title>ACCEDI</p><br><br>
+			<div class=subtitle name="login_sub_header" id="login_sub_header">
+			</div>
+			<br>
+			<div class=error name=error_msg id=error_msg>
+			</div>
+			<br>
 			<form method="post" name="login_form" id="login_form">
 					<input type="text" name="user" id="user" placeholder="Username/Email" autofocus/>
 					<br><br>
 					<input type="password" name="password" id="password" placeholder="Password" />
 					<br><br>
 					<input type="checkbox" name="rememberMe" id="rememberMe" size="3">
-					Ricordami
+					<p>Ricordami</p>
 					<br><br>
-				<button class=users name="login_btn" id="login_btn" onclick="event.preventDefault(); login()">Login</button><br>
+				<button class=login name="login_btn" id="login_btn" onclick="event.preventDefault(); login()">Login</button><br>
 					<br><br>
-					Non hai un account?
-					<a href="../register/register.html" title="Link per registrazione">Registrati<a> 
+					<p>Non hai un account?
+					<a href="../register/register.html" title="Link per registrazione">Registrati<a></p><br><br> 
 			</form>
 			<br><br>
 		</div>

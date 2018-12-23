@@ -290,3 +290,25 @@
 [increaseBudget 2018-12-20 00:40:06.415818] username: Filippo, importo: 341.00
 	-> valid username
 [updateUser 2018-12-20 00:40:06.416733] username: Filippo, key: budget, new_value: 2237.4
+[decreaseBudget 2018-12-20 10:53:59.849092] username: ff, importo: 2
+	-> valid username
+	-> previous budget not matching server info
+[queryLogin 2018-12-20 10:54:13.188559] {"password": "f", "user": "ff"}	-> valid credentials
+[decreaseBudget 2018-12-20 10:54:21.223174] username: ff, importo: 2
+	-> valid username
+[updateUser 2018-12-20 10:54:21.223610] username: ff, key: budget, new_value: 53.99
+[decreaseBudget 2018-12-20 10:55:02.584562] username: ff, importo: 2
+	-> valid username
+[updateUser 2018-12-20 10:55:02.585046] username: ff, key: budget, new_value: 51.99
+[decreaseBudget 2018-12-20 10:55:58.519416] username: ff, importo: 2
+	-> valid username
+[updateUser 2018-12-20 10:55:58.519883] username: ff, key: budget, new_value: 49.99
+[increaseBudget 2018-12-20 10:56:35.382630] username: ff, importo: 5.74
+	-> valid username
+[updateUser 2018-12-20 10:56:35.383051] username: ff, key: budget, new_value: 55.73
+[decreaseBudget 2018-12-20 10:57:27.686991] username: ff, importo: 2
+	-> valid username
+[updateUser 2018-12-20 10:57:27.687445] username: ff, key: budget, new_value: 53.73
+[increaseBudget 2018-12-20 10:57:41.241967] username: ff, importo: 3.08
+	-> valid username
+[updateUser 2018-12-20 10:57:41.242390] username: ff, key: budget, new_value: 56.81

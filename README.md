@@ -1,4 +1,4 @@
-# hey sexy
+# PetBet
 
 How to run Server:
 	you need to install flask a& flask_cors for python (suggested to install them in a specific virtualenv)
